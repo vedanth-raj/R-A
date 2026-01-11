@@ -1,0 +1,97 @@
+[
+  {
+    "paperId": "32d21dc13f8770958b196a96f99a6f3959c7dc0f",
+    "title": "MUSAN: A Music, Speech, and Noise Corpus",
+    "authors": [
+      {
+        "authorId": "48486321",
+        "name": "David Snyder"
+      },
+      {
+        "authorId": "2335354",
+        "name": "Guoguo Chen"
+      },
+      {
+        "authorId": "1792214",
+        "name": "Daniel Povey"
+      }
+    ],
+    "year": 2015,
+    "abstract": "This report introduces a new corpus of music, speech, and noise. This dataset is suitable for training models for voice activity detection (VAD) and music/speech discrimination. Our corpus is released under a flexible Creative Commons license. The dataset consists of music from several genres, speech from twelve languages, and a wide assortment of technical and non-technical noises. We demonstrate use of this corpus for music/speech discrimination on Broadcast news and VAD for speaker identification.",
+    "citationCount": 1542,
+    "openAccessPdf": {
+      "url": ""
+    },
+    "hasOpenAccessPdf": true,
+    "pdfUrl": ""
+  },
+  {
+    "paperId": "67dea28495cab71703993d0d52ca4733b9a66077",
+    "title": "Jukebox: A Generative Model for Music",
+    "authors": [
+      {
+        "authorId": "6515819",
+        "name": "Prafulla Dhariwal"
+      },
+      {
+        "authorId": "35450887",
+        "name": "Heewoo Jun"
+      },
+      {
+        "authorId": "152581089",
+        "name": "Christine Payne"
+      },
+      {
+        "authorId": "2110935237",
+        "name": "Jong Wook Kim"
+      },
+      {
+        "authorId": "38909097",
+        "name": "Alec Radford"
+      },
+      {
+        "authorId": "1701686",
+        "name": "I. Sutskever"
+      }
+    ],
+    "year": 2020,
+    "abstract": "We introduce Jukebox, a model that generates music with singing in the raw audio domain. We tackle the long context of raw audio using a multi-scale VQ-VAE to compress it to discrete codes, and modeling those using autoregressive Transformers. We show that the combined model at scale can generate high-fidelity and diverse songs with coherence up to multiple minutes. We can condition on artist and genre to steer the musical and vocal style, and on unaligned lyrics to make the singing more controllable. We are releasing thousands of non cherry-picked samples at this https URL, along with model weights and code at this https URL",
+    "citationCount": 894,
+    "openAccessPdf": {
+      "url": ""
+    },
+    "hasOpenAccessPdf": true,
+    "pdfUrl": ""
+  },
+  {
+    "paperId": "021bd56b6c95d0196f3b8e818c948ea0702b0836",
+    "title": "AI Choreographer: Music Conditioned 3D Dance Generation with AIST++",
+    "authors": [
+      {
+        "authorId": "51104559",
+        "name": "Ruilong Li"
+      },
+      {
+        "authorId": "2115300260",
+        "name": "Sha Yang"
+      },
+      {
+        "authorId": "144711958",
+        "name": "David A. Ross"
+      },
+      {
+        "authorId": "20615377",
+        "name": "Angjoo Kanazawa"
+      }
+    ],
+    "year": 2021,
+    "abstract": "We present AIST++, a new multi-modal dataset of 3D dance motion and music, along with FACT, a Full-Attention Cross-modal Transformer network for generating 3D dance motion conditioned on music. The proposed AIST++ dataset contains 5.2 hours of 3D dance motion in 1408 sequences, covering 10 dance genres with multi-view videos with known camera poses—the largest dataset of this kind to our knowledge. We show that naively applying sequence models such as transformers to this dataset for the task of music conditioned 3D motion generation does not produce satisfactory 3D motion that is well correlated with the input music. We overcome these shortcomings by introducing key changes in its architecture design and supervision: FACT model involves a deep cross-modal transformer block with full-attention that is trained to predict N future motions. We empirically show that these changes are key factors in generating long sequences of realistic dance motion that are well-attuned to the input music. We conduct extensive experiments on AIST++ with user studies, where our method outperforms recent state-of-the-art methods both qualitatively and quantitatively. The code and the dataset can be found at: https://google.github.io/aichoreographer.",
+    "citationCount": 631,
+    "openAccessPdf": {
+      "url": "https://arxiv.org/pdf/2101.08779",
+      "status": "GREEN"
+    },
+    "hasOpenAccessPdf": true,
+    "pdfUrl": "https://arxiv.org/pdf/2101.08779"
+  }
+]
