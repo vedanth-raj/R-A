@@ -15,6 +15,8 @@ python main.py "AI research" --max-papers 5 --randomize --diversity 0.5
 ```bash
 # Extract text from all downloaded PDFs
 python -c "from paper_retrieval.text_extractor import process_downloaded_pdfs; process_downloaded_pdfs()"
+
+python -c "from paper_retrieval.text_extractor import PDFTextExtractor; extractor = PDFTextExtractor(); extractor.process_downloaded_pdfs('data/papers', 'data/extracted_texts')"
 ```
 
 ### 3. View Extracted Papers
