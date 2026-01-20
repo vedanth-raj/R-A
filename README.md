@@ -185,3 +185,35 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+1. **PDF Download Failures**:
+   - Ensure stable internet connection
+   - Check if papers have open access versions
+   - Verify Semantic Scholar API availability
+
+2. **Text Extraction Errors**:
+   - Ensure PDFs are not password-protected
+   - Check if PDFs are corrupted
+   - Verify sufficient disk space
+
+3. **Section Extraction Issues**:
+   - Some papers may not follow standard section formats
+   - Try adjusting section detection parameters
+   - Check paper language (optimized for English)
+
+### Getting Help
+
+- Check [COMMAND_SEQUENCE.md](COMMAND_SEQUENCE.md) for detailed command reference
+- Review [SECTION_EXTRACTION_README.md](SECTION_EXTRACTION_README.md) for section extraction guide
+- Open an issue on GitHub for technical support
+
+## 📊 Performance Tips
+
+- Use `--max-papers` to limit downloads for faster processing
+- Process papers in batches for large datasets
+- Clear `Downloaded_pdfs/` directory periodically to save space
+- Use section-specific extraction to reduce processing time
