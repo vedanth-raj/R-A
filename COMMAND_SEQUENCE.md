@@ -205,8 +205,6 @@ python section_wise_extractor.py --pdf "problematic.pdf" --debug --verbose
 # Use custom section patterns
 python section_extractor.py --papers "data/extracted_texts/*.json" --custom-patterns '{"introduction": ["introduction", "background", "overview"], "methodology": ["method", "approach", "technique"]}'
 ```
-python -c "from paper_retrieval.searcher import PaperSearcher; from paper_retrieval.downloader import PaperDownloader; from paper_retrieval.text_extractor import process_downloaded_pdfs; searcher = PaperSearcher(); papers = searcher.search_papers(query='machine learning', max_results=3); downloader = PaperDownloader(); [downloader.download_paper(arxiv_id=p['arxiv_id'], save_path='Downloaded_pdfs') for p in papers]; results = process_downloaded_pdfs()"
-```
 
 ### Step 9: Utility Commands
 ```bash
