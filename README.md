@@ -92,14 +92,28 @@ python3 --version
 
 ```
 project/
-├── main.py              # Main script for searching and downloading
-├── view_papers.py       # Script to view extracted papers
-├── paper_retrieval/     # Core functionality modules
-├── Downloaded_pdfs/     # Downloaded PDF files
+├── main.py                      # Main script for searching and downloading papers
+├── view_papers.py               # Script to view and search extracted papers
+├── section_extractor.py         # Advanced section-wise text extraction
+├── section_analyzer.py          # Section content analysis and quality assessment
+├── section_wise_extractor.py    # Comprehensive section extraction tool
+├── config.py                    # Configuration settings and constants
+├── paper_retrieval/             # Core functionality modules
+│   ├── searcher.py             # Semantic Scholar API integration
+│   ├── downloader.py           # PDF download management
+│   ├── selector.py             # Paper selection and filtering
+│   ├── text_extractor.py       # PDF text extraction engine
+│   └── models.py               # Data models and schemas
+├── utils/                       # Utility functions and helpers
+│   └── helpers.py              # Common utility functions
+├── Downloaded_pdfs/             # Downloaded PDF files
 ├── data/
-│   └── extracted_texts/ # Extracted text files
-├── requirements.txt     # Python dependencies
-└── COMMAND_SEQUENCE.md # Detailed command reference
+│   └── extracted_texts/        # Extracted text files in JSON format
+├── requirements.txt             # Python dependencies
+├── .env                         # Environment variables (API keys, etc.)
+├── .gitignore                   # Git ignore file
+├── COMMAND_SEQUENCE.md          # Detailed command reference
+└── SECTION_EXTRACTION_README.md # Section extraction guide
 ```
 
 ## Usage Examples
