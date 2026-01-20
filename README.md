@@ -60,26 +60,31 @@ python3 --version
 
 1. **Search and download papers**:
    ```bash
+   # Search for machine learning papers and download up to 3 papers
    python main.py "machine learning" --max-papers 3
    ```
 
 2. **Extract full text from downloaded papers**:
    ```bash
+   # Process all downloaded PDFs and extract text content
    python -c "from paper_retrieval.text_extractor import process_downloaded_pdfs; process_downloaded_pdfs()"
    ```
 
 3. **Extract specific sections from papers**:
    ```bash
+   # Extract abstract, introduction, and conclusion sections
    python section_extractor.py --papers "data/extracted_texts/*.json" --sections abstract,introduction,conclusion
    ```
 
 4. **View extracted papers**:
    ```bash
+   # Interactive viewer for extracted paper content
    python view_papers.py
    ```
 
 5. **Analyze sections with detailed breakdown**:
    ```bash
+   # Generate comprehensive section analysis report
    python section_analyzer.py --input "data/extracted_texts/*.json" --output "section_analysis.json"
    ```
 
