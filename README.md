@@ -1,27 +1,52 @@
-# AI Research Agent
+# AI Research Agent - Advanced Paper Analysis System
 
-A powerful tool for finding, downloading, and extracting text from research papers with a simple command-line interface.
+A comprehensive AI-powered system for finding, downloading, extracting, and analyzing research papers with advanced section-wise text extraction capabilities. This tool provides intelligent paper retrieval and structured content analysis for researchers and academics.
 
-## Features
+## 🚀 Key Features
 
-- 🔍 Search for research papers by keywords, authors, or year range
-- 📥 Download papers in PDF format
-- 📝 Extract text and metadata from downloaded papers
-- 🔍 Search within extracted content
-- 🎯 Simple command-line interface
+- 🔍 **Smart Paper Search**: Find research papers by keywords, authors, topics, or year ranges
+- 📥 **Automated Download**: Download papers in PDF format from Semantic Scholar
+- 📝 **Advanced Text Extraction**: Extract full text and metadata from downloaded papers
+- 🎯 **Section-Wise Analysis**: Intelligent extraction of specific sections (Abstract, Introduction, Methodology, Results, Conclusion, References)
+- 🔍 **Content Search**: Search within extracted papers and sections
+- 📊 **Structured Output**: Export extracted content in JSON format for further analysis
+- 🎛️ **Simple CLI Interface**: User-friendly command-line interface with comprehensive options
 
 ## Installation
 
-1. Clone the repository:
+### Prerequisites
+- Python 3.8 or higher
+- Git
+
+### Setup Instructions
+
+1. **Clone the repository**:
    ```bash
    git clone https://github.com/springboardmentor23/ai_research_agent.git
    cd ai_research_agent
    git checkout Vedanth_Raj
    ```
 
-2. Install dependencies:
+2. **Create and activate virtual environment**:
+   ```bash
+   # For Windows
+   python -m venv venv
+   venv\Scripts\activate
+   
+   # For macOS/Linux
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+
+3. **Install dependencies**:
    ```bash
    pip install -r requirements.txt
+   ```
+
+4. **Set up environment variables** (optional):
+   ```bash
+   cp .env.example .env
+   # Edit .env file with your API keys if needed
    ```
 
 ## Quick Start
@@ -31,14 +56,24 @@ A powerful tool for finding, downloading, and extracting text from research pape
    python main.py "machine learning" --max-papers 3
    ```
 
-2. **Extract text from downloaded papers**:
+2. **Extract full text from downloaded papers**:
    ```bash
    python -c "from paper_retrieval.text_extractor import process_downloaded_pdfs; process_downloaded_pdfs()"
    ```
 
-3. **View extracted papers**:
+3. **Extract specific sections from papers**:
+   ```bash
+   python section_extractor.py --papers "data/extracted_texts/*.json" --sections abstract,introduction,conclusion
+   ```
+
+4. **View extracted papers**:
    ```bash
    python view_papers.py
+   ```
+
+5. **Analyze sections with detailed breakdown**:
+   ```bash
+   python section_analyzer.py --input "data/extracted_texts/*.json" --output "section_analysis.json"
    ```
 
 ## Project Structure
@@ -80,6 +115,40 @@ python view_papers.py --search "neural networks"
 # View in JSON format
 python view_papers.py --format json
 ```
+
+## 🔧 Section Extraction Features
+
+The system provides advanced section-wise extraction capabilities for detailed paper analysis:
+
+### Available Sections
+- **Abstract**: Paper summary and key findings
+- **Introduction**: Background and problem statement
+- **Methodology**: Research methods and approaches
+- **Results**: Experimental outcomes and data
+- **Conclusion**: Summary and implications
+- **References**: Citation list and bibliography
+
+### Section Extraction Commands
+
+```bash
+# Extract specific sections from multiple papers
+python section_extractor.py --papers "data/extracted_texts/*.json" --sections abstract,introduction,conclusion
+
+# Extract all sections with detailed analysis
+python section_wise_extractor.py --input "data/extracted_texts/" --output "sections_output/"
+
+# Analyze section content and structure
+python section_analyzer.py --input "data/extracted_texts/*.json" --output "section_analysis.json"
+
+# Extract sections with custom filtering
+python section_extractor.py --papers "paper1.json,paper2.json" --sections methodology,results --min-length 100
+```
+
+### Section Analysis Features
+- **Content Classification**: Automatically identify and categorize sections
+- **Quality Assessment**: Evaluate section completeness and quality
+- **Cross-Paper Comparison**: Compare similar sections across multiple papers
+- **Export Options**: Save extracted sections in JSON, CSV, or TXT formats
 
 ## License
 
