@@ -161,6 +161,8 @@ python section_extractor.py --papers "paper1.json,paper2.json" --sections method
 - **Quality Assessment**: Evaluate section completeness and quality
 - **Cross-Paper Comparison**: Compare similar sections across multiple papers
 - **Export Options**: Save extracted sections in JSON, CSV, or TXT formats
+- **Custom Filtering**: Filter sections by length, keywords, or quality metrics
+- **Batch Processing**: Process multiple papers simultaneously for efficiency
 
 ## License
 
