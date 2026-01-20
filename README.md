@@ -18,6 +18,13 @@ A comprehensive AI-powered system for finding, downloading, extracting, and anal
 - Python 3.8 or higher
 - Git
 
+**Check Python version**:
+```bash
+python --version
+# or
+python3 --version
+```
+
 ### Setup Instructions
 
 1. **Clone the repository**:
