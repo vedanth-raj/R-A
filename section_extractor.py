@@ -17,8 +17,8 @@ class Section:
     """Represents a section of a research paper."""
     title: str
     content: str
-    start_page: int
-    end_page: int
+    start_page: int = 1
+    end_page: int = 1
     section_type: str = "unknown"
     word_count: int = 0
     
@@ -95,6 +95,20 @@ class SectionWiseExtractor:
                 r'^a\s+appendix\s*$'
             ]
         }
+    
+    def detect_sections_from_text(self, full_text: str) -> List[Section]:
+        """
+        Detect sections from full text without page information.
+        
+        Args:
+            full_text (str): Full text of the paper
+            
+        Returns:
+            List[Section]: Detected sections
+        """
+        # Create a simple page_texts structure for compatibility
+        page_texts = [{'page_num': 1, 'text': full_text}]
+        return self.detect_sections(full_text, page_texts)
     
     def detect_sections(self, full_text: str, page_texts: List[Dict]) -> List[Section]:
         """
