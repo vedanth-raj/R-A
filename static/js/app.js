@@ -16,6 +16,8 @@ class AIResearchAgent {
         this.setupEventListeners();
         this.setupSocketListeners();
         this.loadPapers();
+        this.loadDownloadedPapers();
+        this.loadSearchResults();
     }
 
     setupEventListeners() {
@@ -32,9 +34,19 @@ class AIResearchAgent {
             this.searchPapers();
         });
 
-        // Extract button
-        document.getElementById('extractBtn').addEventListener('click', () => {
+        // Extract buttons
+        document.getElementById('extractSelectedBtn').addEventListener('click', () => {
+            this.extractSelectedPaper();
+        });
+
+        document.getElementById('extractAllBtn').addEventListener('click', () => {
             this.extractText();
+        });
+
+        // Extract paper selection
+        document.getElementById('extractPaperSelect').addEventListener('change', (e) => {
+            const extractBtn = document.getElementById('extractSelectedBtn');
+            extractBtn.disabled = !e.target.value;
         });
 
         // Analyze button
@@ -133,6 +145,103 @@ class AIResearchAgent {
         }
     }
 
+    async extractSelectedPaper() {
+        const paperFile = document.getElementById('extractPaperSelect').value;
+        
+        if (!paperFile) {
+            this.showNotification('Please select a paper to extract', 'error');
+            return;
+        }
+
+        try {
+            this.showProgress('extract', 'Starting text extraction...');
+            
+            const response = await fetch('/api/extract_selected_paper', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    paper_file: paperFile
+                })
+            });
+
+            const data = await response.json();
+            
+            if (data.status === 'started') {
+                this.activeOperations[data.operation_id] = 'extract';
+                this.showNotification('Text extraction started', 'success');
+            } else {
+                this.hideProgress('extract');
+                this.showNotification('Failed to start text extraction', 'error');
+            }
+        } catch (error) {
+            this.hideProgress('extract');
+            this.showNotification('Text extraction failed: ' + error.message, 'error');
+        }
+    }
+
+    async loadSearchResults() {
+        try {
+            const response = await fetch('/api/get_search_results');
+            const data = await response.json();
+            
+            this.displaySearchResults(data.papers || []);
+        } catch (error) {
+            console.error('Failed to load search results:', error);
+        }
+    }
+
+    displaySearchResults(papers) {
+        const resultsContainer = document.getElementById('searchResultsContainer');
+        const resultsList = document.getElementById('searchResultsList');
+        
+        if (papers.length === 0) {
+            resultsContainer.style.display = 'none';
+            return;
+        }
+
+        resultsContainer.style.display = 'block';
+        resultsList.innerHTML = '';
+        
+        papers.forEach(paper => {
+            const paperItem = document.createElement('div');
+            paperItem.className = 'paper-item';
+            
+            paperItem.innerHTML = `
+                <div class="paper-info">
+                    <div class="paper-title">${paper.name}</div>
+                    <div class="paper-meta">
+                        Size: ${(paper.size / 1024).toFixed(1)} KB | 
+                        Modified: ${new Date(paper.modified * 1000).toLocaleDateString()}
+                    </div>
+                </div>
+                <div class="paper-actions">
+                    <button class="btn btn-sm btn-primary" onclick="window.downloadPaper('${paper.file}')">
+                        <i class="fas fa-download"></i> Download
+                    </button>
+                    <button class="btn btn-sm btn-secondary" onclick="window.extractPaper('${paper.file}')">
+                        <i class="fas fa-file-export"></i> Extract
+                    </button>
+                </div>
+            `;
+            
+            resultsList.appendChild(paperItem);
+        });
+    }
+
+    updateExtractPaperSelect() {
+        const select = document.getElementById('extractPaperSelect');
+        select.innerHTML = '<option value="">Select a paper...</option>';
+        
+        this.downloadedPapers.forEach(paper => {
+            const option = document.createElement('option');
+            option.value = paper.file;
+            option.textContent = paper.name;
+            select.appendChild(option);
+        });
+    }
+
     async extractText() {
         try {
             this.showProgress('extract', 'Starting text extraction...');
@@ -226,6 +335,18 @@ class AIResearchAgent {
         } catch (error) {
             this.hideProgress('compare');
             this.showNotification('Paper comparison failed: ' + error.message, 'error');
+        }
+    }
+
+    async loadDownloadedPapers() {
+        try {
+            const response = await fetch('/api/get_downloaded_papers');
+            const data = await response.json();
+            
+            this.downloadedPapers = data.papers || [];
+            this.updateExtractPaperSelect();
+        } catch (error) {
+            console.error('Failed to load downloaded papers:', error);
         }
     }
 
@@ -332,6 +453,8 @@ class AIResearchAgent {
         } else if (operationType === 'search' || operationType === 'extract') {
             // Reload papers after search or extraction
             this.loadPapers();
+            this.loadDownloadedPapers();
+            this.loadSearchResults();
             this.displayResults(result);
         }
     }
@@ -580,3 +703,16 @@ document.head.appendChild(style);
 document.addEventListener('DOMContentLoaded', () => {
     window.aiResearchAgent = new AIResearchAgent();
 });
+
+// Global window functions for paper actions
+window.downloadPaper = (file) => {
+    const filename = file.split('\\').pop().split('/').pop();
+    window.open(`/api/download_paper/${filename}`, '_blank');
+};
+
+window.extractPaper = (file) => {
+    const select = document.getElementById('extractPaperSelect');
+    select.value = file;
+    document.getElementById('extractSelectedBtn').disabled = false;
+    window.aiResearchAgent.extractSelectedPaper();
+};

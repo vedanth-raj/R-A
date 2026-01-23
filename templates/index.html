@@ -682,6 +682,20 @@
                     <div class="progress-text" id="searchProgressText">Searching...</div>
                 </div>
             </div>
+            
+            <!-- Search Results -->
+            <div id="searchResultsContainer" class="card" style="display: none;">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-list"></i>
+                    </div>
+                    <h3 class="card-title">Search Results</h3>
+                </div>
+                
+                <div id="searchResultsList" class="paper-list">
+                    <!-- Search results will be displayed here -->
+                </div>
+            </div>
         </div>
 
         <!-- Extract Tab -->
@@ -694,13 +708,22 @@
                     <h2 class="card-title">Extract Text from PDFs</h2>
                 </div>
                 
-                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
-                    Extract text content from all downloaded PDF papers in the Downloaded_pdfs directory.
-                </p>
+                <div class="form-group">
+                    <label class="form-label">Select Paper to Extract</label>
+                    <select class="form-control" id="extractPaperSelect">
+                        <option value="">Select a paper...</option>
+                    </select>
+                </div>
                 
-                <button id="extractBtn" class="btn btn-primary">
-                    <i class="fas fa-download"></i> Extract Text from All PDFs
-                </button>
+                <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                    <button id="extractSelectedBtn" class="btn btn-primary" disabled>
+                        <i class="fas fa-file-export"></i> Extract Selected Paper
+                    </button>
+                    
+                    <button id="extractAllBtn" class="btn btn-secondary">
+                        <i class="fas fa-download"></i> Extract All PDFs
+                    </button>
+                </div>
                 
                 <div id="extractProgress" class="progress-container" style="display: none;">
                     <div class="progress-bar">

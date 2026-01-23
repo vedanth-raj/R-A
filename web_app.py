@@ -93,6 +93,36 @@ class WebInterface:
         except Exception as e:
             return {"papers": [], "error": str(e)}
     
+    def get_downloaded_papers(self):
+        """Get list of downloaded PDF papers"""
+        try:
+            papers_dir = Path("Downloaded_pdfs")
+            if not papers_dir.exists():
+                return {"papers": []}
+            
+            papers = []
+            for file_path in papers_dir.glob("*.pdf"):
+                paper_name = file_path.stem
+                papers.append({
+                    "name": paper_name,
+                    "file": str(file_path),
+                    "size": file_path.stat().st_size,
+                    "modified": file_path.stat().st_mtime
+                })
+            
+            return {"papers": sorted(papers, key=lambda x: x["modified"], reverse=True)}
+        except Exception as e:
+            return {"papers": [], "error": str(e)}
+    
+    def get_search_results(self):
+        """Get recent search results"""
+        try:
+            # This would typically read from a database or recent search cache
+            # For now, we'll return the downloaded papers as search results
+            return self.get_downloaded_papers()
+        except Exception as e:
+            return {"papers": [], "error": str(e)}
+    
     def analyze_paper(self, paper_file):
         """Analyze a specific paper"""
         try:
@@ -329,6 +359,122 @@ def get_papers():
     """Get available papers API endpoint"""
     result = web_interface.get_available_papers()
     return jsonify(result)
+
+@app.route('/api/get_downloaded_papers')
+def get_downloaded_papers():
+    """Get downloaded PDF papers API endpoint"""
+    result = web_interface.get_downloaded_papers()
+    return jsonify(result)
+
+@app.route('/api/get_search_results')
+def get_search_results():
+    """Get search results API endpoint"""
+    result = web_interface.get_search_results()
+    return jsonify(result)
+
+@app.route('/api/extract_selected_paper', methods=['POST'])
+def extract_selected_paper():
+    """Extract text from selected paper API endpoint"""
+    data = request.json
+    paper_file = data.get('paper_file')
+    
+    if not paper_file:
+        return jsonify({"success": False, "error": "Paper file not specified"})
+    
+    operation_id = f"extract_selected_{int(time.time())}"
+    active_operations[operation_id] = {"status": "running", "progress": 0}
+    
+    def run_selected_extraction():
+        try:
+            socketio.emit('operation_update', {
+                'operation_id': operation_id,
+                'status': 'running',
+                'message': f'Extracting text from selected paper: {Path(paper_file).stem}',
+                'progress': 10
+            })
+            
+            # Extract text from specific PDF
+            extractor = PDFTextExtractor()
+            result = extractor.extract_text_from_pdf(paper_file)
+            
+            if result:
+                # Save extracted text
+                output_dir = Path("data/extracted_texts")
+                output_dir.mkdir(exist_ok=True)
+                
+                paper_name = Path(paper_file).stem
+                output_file = output_dir / f"{paper_name}_extracted.txt"
+                
+                with open(output_file, 'w', encoding='utf-8') as f:
+                    f.write(result['full_text'])
+                
+                active_operations[operation_id] = {
+                    "status": "completed",
+                    "progress": 100,
+                    "result": {
+                        "success": True,
+                        "extracted_file": str(output_file),
+                        "metadata": result['metadata']
+                    }
+                }
+                
+                socketio.emit('operation_update', {
+                    'operation_id': operation_id,
+                    'status': 'completed',
+                    'message': f'Text extraction completed for {paper_name}',
+                    'progress': 100,
+                    'result': {
+                        "success": True,
+                        "extracted_file": str(output_file),
+                        "metadata": result['metadata']
+                    }
+                })
+            else:
+                active_operations[operation_id] = {
+                    "status": "error",
+                    "error": "Failed to extract text from PDF"
+                }
+                
+                socketio.emit('operation_update', {
+                    'operation_id': operation_id,
+                    'status': 'error',
+                    'message': 'Failed to extract text from PDF',
+                    'error': 'Failed to extract text from PDF'
+                })
+                
+        except Exception as e:
+            active_operations[operation_id] = {
+                "status": "error",
+                "error": str(e)
+            }
+            socketio.emit('operation_update', {
+                'operation_id': operation_id,
+                'status': 'error',
+                'message': f'Extraction failed: {str(e)}',
+                'error': str(e)
+            })
+    
+    # Run extraction in background
+    thread = threading.Thread(target=run_selected_extraction)
+    thread.daemon = True
+    thread.start()
+    
+    return jsonify({"operation_id": operation_id, "status": "started"})
+
+@app.route('/api/download_paper/<path:filename>')
+def download_paper(filename):
+    """Download paper API endpoint"""
+    try:
+        papers_dir = Path("Downloaded_pdfs")
+        file_path = papers_dir / filename
+        
+        if file_path.exists():
+            return send_file(str(file_path), as_attachment=True)
+        else:
+            return jsonify({"error": "File not found"}), 404
+            
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 @app.route('/api/analyze_paper', methods=['POST'])
 def analyze_paper():
