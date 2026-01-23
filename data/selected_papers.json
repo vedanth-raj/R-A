@@ -1,85 +1,140 @@
 [
   {
-    "paperId": "9b25f097fe738e53bb3aaf4b0ae2ab2a61b73da8",
-    "title": "Gravity with Gravitas: A Solution to the Border Puzzle",
+    "paperId": "6dbaff29d3898cf60f63f5a34cb9610ebb75220c",
+    "title": "Beyond Bags of Features: Spatial Pyramid Matching for Recognizing Natural Scene Categories",
     "authors": [
       {
-        "authorId": "121761881",
-        "name": "James E. Anderson"
+        "authorId": "1749609",
+        "name": "Svetlana Lazebnik"
       },
       {
-        "authorId": "1420295209",
-        "name": "Eric van Wincoop"
+        "authorId": "2462253",
+        "name": "C. Schmid"
+      },
+      {
+        "authorId": "144189388",
+        "name": "J. Ponce"
       }
     ],
-    "year": 2001,
-    "citationCount": 8263,
+    "year": 2006,
+    "citationCount": 8851,
     "openAccessPdf": {
-      "url": "http://fmwww.bc.edu/EC-P/wp485.pdf",
+      "url": "http://hal.inria.fr/docs/00/54/85/85/PDF/cvpr06_lana.pdf",
       "status": "GREEN"
     },
     "hasOpenAccessPdf": true,
-    "pdfUrl": "http://fmwww.bc.edu/EC-P/wp485.pdf"
+    "pdfUrl": "http://hal.inria.fr/docs/00/54/85/85/PDF/cvpr06_lana.pdf"
   },
   {
-    "paperId": "5a6bace4b8e2221f658b89e42a2a75a460668c1d",
-    "title": "The Log of Gravity",
+    "paperId": "b91180d8853d00e8f2df7ee3532e07d3d0cce2af",
+    "title": "Visual categorization with bags of keypoints",
     "authors": [
       {
-        "authorId": "1741212316",
-        "name": "J. M. S. Santos Silva"
+        "authorId": "69931662",
+        "name": "Gabriella Csurka"
       },
       {
-        "authorId": "35493311",
-        "name": "Silvana Tenreyro"
+        "authorId": "3344005",
+        "name": "C. Dance"
+      },
+      {
+        "authorId": "2034793",
+        "name": "Lixin Fan"
+      },
+      {
+        "authorId": "2990188",
+        "name": "J. Willamowski"
+      },
+      {
+        "authorId": "2235852704",
+        "name": "Cédric Bray"
       }
     ],
-    "year": 2004,
-    "abstract": "Abstract Although economists have long been aware of Jensen's inequality, many econometric applications have neglected an important implication of it: under heteroskedasticity, the parameters of log-linearized models estimated by OLS lead to biased estimates of the true elasticities. We explain why this problem arises and propose an appropriate estimator. Our criticism of conventional practices and the proposed solution extend to a broad range of applications where log-linearized equations are estimated. We develop the argument using one particular illustration, the gravity equation for trade. We find significant differences between estimates obtained with the proposed estimator and those obtained with the traditional method.",
-    "citationCount": 6844,
+    "year": 2002,
+    "citationCount": 5349,
     "openAccessPdf": {
-      "url": "https://direct.mit.edu/rest/article-pdf/88/4/641/1982805/rest.88.4.641.pdf",
-      "status": "HYBRID"
+      "url": ""
     },
     "hasOpenAccessPdf": true,
-    "pdfUrl": "https://direct.mit.edu/rest/article-pdf/88/4/641/1982805/rest.88.4.641.pdf"
+    "pdfUrl": ""
   },
   {
-    "paperId": "ce7f904bb25a5c2680f4eac0c0a5cf117b2b9102",
-    "title": "Large N Field Theories, String Theory and Gravity",
+    "paperId": "978e7f8557774fa1ebd228e181c4c154449423c9",
+    "title": "Bags of Binary Words for Fast Place Recognition in Image Sequences",
     "authors": [
       {
-        "authorId": "51249917",
-        "name": "O. Aharony"
+        "authorId": "1402973256",
+        "name": "Dorian Gálvez-López"
       },
       {
-        "authorId": "9858865",
-        "name": "S. Gubser"
-      },
-      {
-        "authorId": "48149060",
-        "name": "J. Maldacena"
-      },
-      {
-        "authorId": "3380826",
-        "name": "H. Ooguri"
-      },
-      {
-        "authorId": "3380826",
-        "name": "H. Ooguri"
-      },
-      {
-        "authorId": "3734459",
-        "name": "Y. Oz"
+        "authorId": "2642938",
+        "name": "J. D. Tardós"
       }
     ],
-    "year": 1999,
-    "citationCount": 5505,
+    "year": 2012,
+    "citationCount": 1787,
     "openAccessPdf": {
-      "url": "https://authors.library.caltech.edu/records/6s3cy-sx460/files/9905111.pdf?download=1",
+      "url": "",
+      "status": "CLOSED"
+    },
+    "hasOpenAccessPdf": true,
+    "pdfUrl": ""
+  },
+  {
+    "paperId": "6bb22117542bbc06e2a5dbaddf26325e62fb6789",
+    "title": "International policies to reduce plastic marine pollution from single-use plastics (plastic bags and microbeads): A review.",
+    "authors": [
+      {
+        "authorId": "12764418",
+        "name": "Dirk Xanthos"
+      },
+      {
+        "authorId": "49460362",
+        "name": "T. Walker"
+      }
+    ],
+    "year": 2017,
+    "citationCount": 968,
+    "openAccessPdf": {
+      "url": "",
+      "status": "CLOSED"
+    },
+    "hasOpenAccessPdf": true,
+    "pdfUrl": ""
+  },
+  {
+    "paperId": "10667c1ae4b49808772b5a377c5b52196701267f",
+    "title": "When and why vision-language models behave like bags-of-words, and what to do about it?",
+    "authors": [
+      {
+        "authorId": "2186981598",
+        "name": "Mert Yuksekgonul"
+      },
+      {
+        "authorId": "49224924",
+        "name": "Federico Bianchi"
+      },
+      {
+        "authorId": "13014201",
+        "name": "Pratyusha Kalluri"
+      },
+      {
+        "authorId": "1746807",
+        "name": "Dan Jurafsky"
+      },
+      {
+        "authorId": "145085305",
+        "name": "James Y. Zou"
+      }
+    ],
+    "year": 2022,
+    "abstract": "Despite the success of large vision and language models (VLMs) in many downstream applications, it is unclear how well they encode compositional information. Here, we create the Attribution, Relation, and Order (ARO) benchmark to systematically evaluate the ability of VLMs to understand different types of relationships, attributes, and order. ARO consists of Visual Genome Attribution, to test the understanding of objects' properties; Visual Genome Relation, to test for relational understanding; and COCO&Flickr30k-Order, to test for order sensitivity. ARO is orders of magnitude larger than previous benchmarks of compositionality, with more than 50,000 test cases. We show where state-of-the-art VLMs have poor relational understanding, can blunder when linking objects to their attributes, and demonstrate a severe lack of order sensitivity. VLMs are predominantly trained and evaluated on large datasets with rich compositional structure in the images and captions. Yet, training on these datasets has not been enough to address the lack of compositional understanding, and evaluating on these datasets has failed to surface this deficiency. To understand why these limitations emerge and are not represented in the standard tests, we zoom into the evaluation and training procedures. We demonstrate that it is possible to perform well on retrieval over existing datasets without using the composition and order information. Given that contrastive pretraining optimizes for retrieval on datasets with similar shortcuts, we hypothesize that this can explain why the models do not need to learn to represent compositional information. This finding suggests a natural solution: composition-aware hard negative mining. We show that a simple-to-implement modification of contrastive learning significantly improves the performance on tasks requiring understanding of order and compositionality.",
+    "citationCount": 524,
+    "openAccessPdf": {
+      "url": "http://arxiv.org/pdf/2210.01936",
       "status": "GREEN"
     },
     "hasOpenAccessPdf": true,
-    "pdfUrl": "https://authors.library.caltech.edu/records/6s3cy-sx460/files/9905111.pdf?download=1"
+    "pdfUrl": "http://arxiv.org/pdf/2210.01936"
   }
 ]
