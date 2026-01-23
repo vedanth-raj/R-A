@@ -105,19 +105,21 @@ class WebInterface:
     def get_downloaded_papers(self):
         """Get list of downloaded PDF papers"""
         try:
-            papers_dir = Path("Downloaded_pdfs")
-            if not papers_dir.exists():
-                return {"papers": []}
-            
+            # Check both possible directories
+            papers_dirs = [Path("data/papers"), Path("Downloaded_pdfs")]
             papers = []
-            for file_path in papers_dir.glob("*.pdf"):
-                paper_name = file_path.stem
-                papers.append({
-                    "name": paper_name,
-                    "file": str(file_path),
-                    "size": file_path.stat().st_size,
-                    "modified": file_path.stat().st_mtime
-                })
+            
+            for papers_dir in papers_dirs:
+                if papers_dir.exists():
+                    for file_path in papers_dir.glob("*.pdf"):
+                        paper_name = file_path.stem
+                        papers.append({
+                            "name": paper_name,
+                            "file": str(file_path),
+                            "size": file_path.stat().st_size,
+                            "modified": file_path.stat().st_mtime,
+                            "directory": str(papers_dir.name)
+                        })
             
             return {"papers": sorted(papers, key=lambda x: x["modified"], reverse=True)}
         except Exception as e:
@@ -369,6 +371,33 @@ def get_papers():
     result = web_interface.get_available_papers()
     return jsonify(result)
 
+@app.route('/api/view_papers_directory')
+def view_papers_directory():
+    """View papers directory API endpoint"""
+    try:
+        papers_dir = Path("data/papers")
+        if not papers_dir.exists():
+            return jsonify({"papers": [], "message": "Papers directory not found"})
+        
+        papers = []
+        for file_path in papers_dir.glob("*.pdf"):
+            paper_name = file_path.stem
+            papers.append({
+                "name": paper_name,
+                "file": str(file_path),
+                "size": file_path.stat().st_size,
+                "modified": file_path.stat().st_mtime,
+                "filename": file_path.name
+            })
+        
+        return jsonify({
+            "papers": sorted(papers, key=lambda x: x["modified"], reverse=True),
+            "directory": str(papers_dir),
+            "total_count": len(papers)
+        })
+    except Exception as e:
+        return jsonify({"papers": [], "error": str(e)})
+
 @app.route('/api/get_downloaded_papers')
 def get_downloaded_papers():
     """Get downloaded PDF papers API endpoint"""
@@ -474,13 +503,15 @@ def extract_selected_paper():
 def download_paper(filename):
     """Download paper API endpoint"""
     try:
-        papers_dir = Path("Downloaded_pdfs")
-        file_path = papers_dir / filename
+        # Check both possible directories
+        papers_dirs = [Path("data/papers"), Path("Downloaded_pdfs")]
         
-        if file_path.exists():
-            return send_file(str(file_path), as_attachment=True)
-        else:
-            return jsonify({"error": "File not found"}), 404
+        for papers_dir in papers_dirs:
+            file_path = papers_dir / filename
+            if file_path.exists():
+                return send_file(str(file_path), as_attachment=True)
+        
+        return jsonify({"error": "File not found"}), 404
             
     except Exception as e:
         return jsonify({"error": str(e)}), 500

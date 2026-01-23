@@ -18,6 +18,7 @@ class AIResearchAgent {
         this.loadPapers();
         this.loadDownloadedPapers();
         this.loadSearchResults();
+        this.loadPapersDirectory();
     }
 
     setupEventListeners() {
@@ -47,6 +48,11 @@ class AIResearchAgent {
         document.getElementById('extractPaperSelect').addEventListener('change', (e) => {
             const extractBtn = document.getElementById('extractSelectedBtn');
             extractBtn.disabled = !e.target.value;
+        });
+
+        // Refresh papers directory button
+        document.getElementById('refreshPapersBtn').addEventListener('click', () => {
+            this.loadPapersDirectory();
         });
 
         // Analyze button
@@ -187,6 +193,53 @@ class AIResearchAgent {
             this.hideProgress('extract');
             this.showNotification('Text extraction failed: ' + error.message, 'error');
         }
+    }
+
+    async loadPapersDirectory() {
+        try {
+            const response = await fetch('/api/view_papers_directory');
+            const data = await response.json();
+            
+            this.displayPapersDirectory(data.papers || [], data.total_count || 0);
+        } catch (error) {
+            console.error('Failed to load papers directory:', error);
+        }
+    }
+
+    displayPapersDirectory(papers, totalCount) {
+        const papersList = document.getElementById('papersDirectoryList');
+        
+        if (papers.length === 0) {
+            papersList.innerHTML = '<p style="color: var(--text-secondary); text-align: center; padding: 2rem;">No papers found in data/papers directory.</p>';
+            return;
+        }
+
+        papersList.innerHTML = `<div style="color: var(--text-secondary); margin-bottom: 1rem;">Found ${totalCount} papers in directory:</div>`;
+        
+        papers.forEach(paper => {
+            const paperItem = document.createElement('div');
+            paperItem.className = 'paper-item';
+            
+            paperItem.innerHTML = `
+                <div class="paper-info">
+                    <div class="paper-title">${paper.name}</div>
+                    <div class="paper-meta">
+                        Size: ${(paper.size / 1024).toFixed(1)} KB | 
+                        Modified: ${new Date(paper.modified * 1000).toLocaleDateString()}
+                    </div>
+                </div>
+                <div class="paper-actions">
+                    <button class="btn btn-sm btn-primary" onclick="window.downloadPaper('${paper.filename}')">
+                        <i class="fas fa-download"></i> Download
+                    </button>
+                    <button class="btn btn-sm btn-secondary" onclick="window.extractPaper('${paper.file}')">
+                        <i class="fas fa-file-export"></i> Extract
+                    </button>
+                </div>
+            `;
+            
+            papersList.appendChild(paperItem);
+        });
     }
 
     async loadSearchResults() {
@@ -472,6 +525,7 @@ class AIResearchAgent {
             this.loadPapers();
             this.loadDownloadedPapers();
             this.loadSearchResults();
+            this.loadPapersDirectory();
             this.displayResults(result);
         }
     }
