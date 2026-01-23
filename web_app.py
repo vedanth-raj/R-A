@@ -43,7 +43,7 @@ class WebInterface:
         self.text_processor = AdvancedTextProcessor()
         
     def search_papers(self, query, max_papers=5, year_start=None, year_end=None):
-        """Search for papers"""
+        """Search for papers with optimized performance"""
         try:
             import subprocess
             
@@ -53,13 +53,22 @@ class WebInterface:
             if year_end:
                 cmd.extend(["--year-end", str(year_end)])
             
-            result = subprocess.run(cmd, capture_output=True, text=True)
+            # Add timeout and optimize execution
+            result = subprocess.run(
+                cmd, 
+                capture_output=True, 
+                text=True,
+                timeout=60,  # 60 second timeout
+                cwd=os.getcwd()
+            )
             
             if result.returncode == 0:
                 return {"success": True, "message": "Search completed successfully"}
             else:
                 return {"success": False, "error": result.stderr}
                 
+        except subprocess.TimeoutExpired:
+            return {"success": False, "error": "Search timed out. Please try again."}
         except Exception as e:
             return {"success": False, "error": str(e)}
     

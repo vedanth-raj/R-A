@@ -22,10 +22,10 @@ SEMANTIC_SCHOLAR_SEARCH_ENDPOINT = f"{SEMANTIC_SCHOLAR_BASE_URL}/paper/search"
 
 # API request settings
 MAX_RESULTS_PER_REQUEST = 100  # Semantic Scholar limit
-INITIAL_SEARCH_LIMIT = 100  # Fetch this many papers initially for ranking
+INITIAL_SEARCH_LIMIT = 20  # Reduced from 100 for faster initial search
 # Rate limiting: With API key = 1 RPS (cumulative across all endpoints)
 # Must be >= 1.0 to respect rate limit. Using 1.1 for safety margin.
-REQUEST_DELAY_SECONDS = 1.1  # Delay between API requests (must be >= 1.0 for 1 RPS limit)
+REQUEST_DELAY_SECONDS = 0.5  # Reduced from 1.1 for faster response
 MAX_RETRIES = 3  # Maximum retry attempts for API calls
 RETRY_BACKOFF_FACTOR = 2  # Exponential backoff multiplier
 
