@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Abstract",
+    "content": "The ﬁeld of ﬂuid mechanics is rapidly advancing, driven by unprece-\ndented volumes of data from ﬁeld measurements, experiments and large-\nscale simulations at multiple spatiotemporal scales. Machine learning\noﬀers a wealth of techniques to extract information from data that\ncould be translated into knowledge about the underlying ﬂuid me-\nchanics. Moreover, machine learning algorithms can augment domain\nknowledge and automate tasks related to ﬂow control and optimiza-\ntion. This article presents ...",
+    "start_page": 1,
+    "end_page": 2,
+    "section_type": "abstract",
+    "word_count": 168
+  },
+  {
+    "title": "1. INTRODUCTION",
+    "content": "Fluid mechanics has traditionally dealt with massive amounts of data from experiments,\nﬁeld measurements, and large-scale numerical simulations. Big data has been a reality in\nﬂuid mechanics (Pollard et al. 2016) over the last decade due to high-performance comput-\ning architectures and advances in experimental measurement capabilities. Over the past 50\nyears many techniques were developed to handle data of ﬂuid ﬂows, ranging from advanced\nalgorithms for data processing and compression, to datab...",
+    "start_page": 2,
+    "end_page": 32,
+    "section_type": "introduction",
+    "word_count": 16520
+  },
+  {
+    "title": "ABSTRACT",
+    "content": "==================================================\n\nThe ﬁeld of ﬂuid mechanics is rapidly advancing, driven by unprece- dented volumes of data from ﬁeld measurements, experiments and large- scale simulations at multiple spatiotemporal scales. Machine learning oﬀers a wealth of techniques to extract information from data that could be translated into knowledge about the underlying ﬂuid me- chanics. Moreover, machine learning algorithms can augment domain knowledge and automate tasks related to ﬂo...",
+    "start_page": 32,
+    "end_page": 32,
+    "section_type": "abstract",
+    "word_count": 107
+  }
+]

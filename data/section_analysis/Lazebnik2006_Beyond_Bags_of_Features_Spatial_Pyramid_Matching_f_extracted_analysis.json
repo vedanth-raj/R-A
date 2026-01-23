@@ -1,0 +1,55 @@
+{
+  "paper_name": "Lazebnik2006_Beyond_Bags_of_Features_Spatial_Pyramid_Matching_f_extracted",
+  "total_sections": 6,
+  "sections": [
+    {
+      "title": "Abstract",
+      "type": "abstract",
+      "word_count": 122,
+      "pages": "2-2"
+    },
+    {
+      "title": "1. Introduction",
+      "type": "introduction",
+      "word_count": 2347,
+      "pages": "2-5"
+    },
+    {
+      "title": "5. Experiments",
+      "type": "experiments",
+      "word_count": 2432,
+      "pages": "5-8"
+    },
+    {
+      "title": "6. Discussion",
+      "type": "discussion",
+      "word_count": 46,
+      "pages": "8-9"
+    },
+    {
+      "title": "background",
+      "type": "related_work",
+      "word_count": 169,
+      "pages": "9-9"
+    },
+    {
+      "title": "References",
+      "type": "references",
+      "word_count": 598,
+      "pages": "9-9"
+    }
+  ],
+  "section_types": [
+    "abstract",
+    "introduction",
+    "experiments",
+    "discussion",
+    "related_work",
+    "references"
+  ],
+  "total_words": 5714,
+  "key_insights": [
+    "This paper presents a method for recognizing scene cat-\negories based on approximate global geometric correspon-\ndence",
+    "This technique works by partitioning the image into\nincreasingly ﬁne sub-regions and computing histograms of\nlocal features found inside each sub-region.\nThe result-\ning “spatial pyramid” is a simple and computationally efﬁ-\ncient extension of an orderless bag-of-features image rep-\nresentation, and it shows signiﬁcantly improved perfor-\nmance on challenging scene categorizatio..."
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "paper_name": "Krishna2020_Structure,_Function,_Regulation_and_Phylogenetic_R_extracted",
+  "total_sections": 4,
+  "sections": [
+    {
+      "title": "INTRODUCTION",
+      "type": "introduction",
+      "word_count": 8434,
+      "pages": "1-12"
+    },
+    {
+      "title": "References",
+      "type": "references",
+      "word_count": 964,
+      "pages": "12-13"
+    },
+    {
+      "title": "References",
+      "type": "references",
+      "word_count": 837,
+      "pages": "13-14"
+    },
+    {
+      "title": "REFERENCES",
+      "type": "references",
+      "word_count": 4633,
+      "pages": "14-18"
+    }
+  ],
+  "section_types": [
+    "introduction",
+    "references",
+    "references",
+    "references"
+  ],
+  "total_words": 14868,
+  "key_insights": []
+}

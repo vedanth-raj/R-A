@@ -1,140 +1,84 @@
 [
   {
-    "paperId": "6dbaff29d3898cf60f63f5a34cb9610ebb75220c",
-    "title": "Beyond Bags of Features: Spatial Pyramid Matching for Recognizing Natural Scene Categories",
+    "paperId": "b6b87f4a11ece51c932e36ea45b19fe3497b4929",
+    "title": "Review of Battery Charger Topologies, Charging Power Levels, and Infrastructure for Plug-In Electric and Hybrid Vehicles",
     "authors": [
       {
-        "authorId": "1749609",
-        "name": "Svetlana Lazebnik"
+        "authorId": "153396496",
+        "name": "Mustafa YILMAZ"
       },
       {
-        "authorId": "2462253",
-        "name": "C. Schmid"
-      },
-      {
-        "authorId": "144189388",
-        "name": "J. Ponce"
+        "authorId": "2608060",
+        "name": "P. Krein"
       }
     ],
-    "year": 2006,
-    "citationCount": 8851,
+    "year": 2013,
+    "citationCount": 2640,
     "openAccessPdf": {
-      "url": "http://hal.inria.fr/docs/00/54/85/85/PDF/cvpr06_lana.pdf",
-      "status": "GREEN"
+      "url": "",
+      "status": "CLOSED"
     },
     "hasOpenAccessPdf": true,
-    "pdfUrl": "http://hal.inria.fr/docs/00/54/85/85/PDF/cvpr06_lana.pdf"
+    "pdfUrl": ""
   },
   {
-    "paperId": "b91180d8853d00e8f2df7ee3532e07d3d0cce2af",
-    "title": "Visual categorization with bags of keypoints",
+    "paperId": "ef9e7d7b5347597f855a71b8ba14671ac794be01",
+    "title": "Public electric vehicle charger access disparities across race and income in California",
     "authors": [
       {
-        "authorId": "69931662",
-        "name": "Gabriella Csurka"
+        "authorId": "2110550856",
+        "name": "Chih-Wei Hsu"
       },
       {
-        "authorId": "3344005",
-        "name": "C. Dance"
-      },
-      {
-        "authorId": "2034793",
-        "name": "Lixin Fan"
-      },
-      {
-        "authorId": "2990188",
-        "name": "J. Willamowski"
-      },
-      {
-        "authorId": "2235852704",
-        "name": "Cédric Bray"
+        "authorId": "89985198",
+        "name": "K. Fingerman"
       }
     ],
-    "year": 2002,
-    "citationCount": 5349,
+    "year": 2021,
+    "citationCount": 190,
+    "openAccessPdf": {
+      "url": "https://doi.org/10.1016/j.tranpol.2020.10.003",
+      "status": "HYBRID"
+    },
+    "hasOpenAccessPdf": true,
+    "pdfUrl": "https://doi.org/10.1016/j.tranpol.2020.10.003"
+  },
+  {
+    "paperId": "98d0799ab79427038f880e14599522bcc5c0cb70",
+    "title": "A 300-kHz 6.6-kW SiC Bidirectional LLC Onboard Charger",
+    "authors": [
+      {
+        "authorId": "2145539959",
+        "name": "Haoran Li"
+      },
+      {
+        "authorId": "122542913",
+        "name": "Zhiliang Zhang"
+      },
+      {
+        "authorId": "2151486308",
+        "name": "Shengdong Wang"
+      },
+      {
+        "authorId": "48252112",
+        "name": "Jiacheng Tang"
+      },
+      {
+        "authorId": "1954726",
+        "name": "X. Ren"
+      },
+      {
+        "authorId": "3191194",
+        "name": "Qianhong Chen"
+      }
+    ],
+    "year": 2020,
+    "abstract": "The reverse LLC voltage gain is lower than unity. The dc-link voltage is then lower than the peak grid voltage so that the buck type dc–ac converters cannot be grid-tied directly, which causes the LLC reverse operation difficult in bidirectional application. This paper proposes a silicon carbide (SiC) bidirectional LLC charger architecture to achieve high efficiency and high power density. The first stage is an interleaved bridgeless totem pole power factor correction (PFC) to achieve unity power factor. The second stage is a 300-kHz LLC taking advantage of wide zero voltage switching (ZVS) range and magnetic integration. Thanks to extra control freedom of high dc-link voltage, the dc–dc voltage gain regulation is shared by the dc–ac stage taking advantage of high voltage SiC MOSFETs. A reverse LLC voltage gain compensation control by regulating dc-link voltage is proposed to enable the LLC bidirectional operation. A digital adaptive synchronous rectification driving scheme is proposed based on the LLC primary driver signals, which immunes to the circuit oscillation caused by high dv/dt and parasitic elements. A 6.6 kW SiC bidirectional LLC charger is build. The power density is 3.42 kW/L with 3 kW/kg and increases 55.6% over the reference design. The charging efficiency is above 96% through the battery voltage from 240 to 420 V, and 2% higher than the state-of-the-art products. The peak discharging efficiency under 6.6 kW is 96%, and 1% higher than the state-of-the-art efficiency.",
+    "citationCount": 179,
     "openAccessPdf": {
       "url": ""
     },
     "hasOpenAccessPdf": true,
     "pdfUrl": ""
-  },
-  {
-    "paperId": "978e7f8557774fa1ebd228e181c4c154449423c9",
-    "title": "Bags of Binary Words for Fast Place Recognition in Image Sequences",
-    "authors": [
-      {
-        "authorId": "1402973256",
-        "name": "Dorian Gálvez-López"
-      },
-      {
-        "authorId": "2642938",
-        "name": "J. D. Tardós"
-      }
-    ],
-    "year": 2012,
-    "citationCount": 1787,
-    "openAccessPdf": {
-      "url": "",
-      "status": "CLOSED"
-    },
-    "hasOpenAccessPdf": true,
-    "pdfUrl": ""
-  },
-  {
-    "paperId": "6bb22117542bbc06e2a5dbaddf26325e62fb6789",
-    "title": "International policies to reduce plastic marine pollution from single-use plastics (plastic bags and microbeads): A review.",
-    "authors": [
-      {
-        "authorId": "12764418",
-        "name": "Dirk Xanthos"
-      },
-      {
-        "authorId": "49460362",
-        "name": "T. Walker"
-      }
-    ],
-    "year": 2017,
-    "citationCount": 968,
-    "openAccessPdf": {
-      "url": "",
-      "status": "CLOSED"
-    },
-    "hasOpenAccessPdf": true,
-    "pdfUrl": ""
-  },
-  {
-    "paperId": "10667c1ae4b49808772b5a377c5b52196701267f",
-    "title": "When and why vision-language models behave like bags-of-words, and what to do about it?",
-    "authors": [
-      {
-        "authorId": "2186981598",
-        "name": "Mert Yuksekgonul"
-      },
-      {
-        "authorId": "49224924",
-        "name": "Federico Bianchi"
-      },
-      {
-        "authorId": "13014201",
-        "name": "Pratyusha Kalluri"
-      },
-      {
-        "authorId": "1746807",
-        "name": "Dan Jurafsky"
-      },
-      {
-        "authorId": "145085305",
-        "name": "James Y. Zou"
-      }
-    ],
-    "year": 2022,
-    "abstract": "Despite the success of large vision and language models (VLMs) in many downstream applications, it is unclear how well they encode compositional information. Here, we create the Attribution, Relation, and Order (ARO) benchmark to systematically evaluate the ability of VLMs to understand different types of relationships, attributes, and order. ARO consists of Visual Genome Attribution, to test the understanding of objects' properties; Visual Genome Relation, to test for relational understanding; and COCO&Flickr30k-Order, to test for order sensitivity. ARO is orders of magnitude larger than previous benchmarks of compositionality, with more than 50,000 test cases. We show where state-of-the-art VLMs have poor relational understanding, can blunder when linking objects to their attributes, and demonstrate a severe lack of order sensitivity. VLMs are predominantly trained and evaluated on large datasets with rich compositional structure in the images and captions. Yet, training on these datasets has not been enough to address the lack of compositional understanding, and evaluating on these datasets has failed to surface this deficiency. To understand why these limitations emerge and are not represented in the standard tests, we zoom into the evaluation and training procedures. We demonstrate that it is possible to perform well on retrieval over existing datasets without using the composition and order information. Given that contrastive pretraining optimizes for retrieval on datasets with similar shortcuts, we hypothesize that this can explain why the models do not need to learn to represent compositional information. This finding suggests a natural solution: composition-aware hard negative mining. We show that a simple-to-implement modification of contrastive learning significantly improves the performance on tasks requiring understanding of order and compositionality.",
-    "citationCount": 524,
-    "openAccessPdf": {
-      "url": "http://arxiv.org/pdf/2210.01936",
-      "status": "GREEN"
-    },
-    "hasOpenAccessPdf": true,
-    "pdfUrl": "http://arxiv.org/pdf/2210.01936"
   }
 ]

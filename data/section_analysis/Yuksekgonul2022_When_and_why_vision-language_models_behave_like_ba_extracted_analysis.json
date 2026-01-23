@@ -1,0 +1,48 @@
+{
+  "paper_name": "Yuksekgonul2022_When_and_why_vision-language_models_behave_like_ba_extracted",
+  "total_sections": 5,
+  "sections": [
+    {
+      "title": "ABSTRACT",
+      "type": "abstract",
+      "word_count": 303,
+      "pages": "1-1"
+    },
+    {
+      "title": "INTRODUCTION",
+      "type": "introduction",
+      "word_count": 4481,
+      "pages": "1-8"
+    },
+    {
+      "title": "RELATED WORK",
+      "type": "related_work",
+      "word_count": 820,
+      "pages": "8-9"
+    },
+    {
+      "title": "CONCLUSION",
+      "type": "conclusion",
+      "word_count": 1043,
+      "pages": "9-11"
+    },
+    {
+      "title": "REFERENCES",
+      "type": "references",
+      "word_count": 4718,
+      "pages": "11-20"
+    }
+  ],
+  "section_types": [
+    "abstract",
+    "introduction",
+    "related_work",
+    "conclusion",
+    "references"
+  ],
+  "total_words": 11365,
+  "key_insights": [
+    "Despite the use of large vision and language models (VLMs) in many downstream\napplications, it is unclear how well they encode the compositional relationships\nbetween objects and attributes",
+    "Here, we create the Attribution, Relation, and Order\n(ARO) benchmark to systematically evaluate the ability of VLMs to understand\ndifferent types of relationships, attributes, and order information"
+  ]
+}

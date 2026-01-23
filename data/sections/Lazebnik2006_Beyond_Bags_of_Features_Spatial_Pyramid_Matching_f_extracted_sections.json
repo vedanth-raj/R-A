@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Abstract",
+    "content": "This paper presents a method for recognizing scene cat-\negories based on approximate global geometric correspon-\ndence. This technique works by partitioning the image into\nincreasingly ﬁne sub-regions and computing histograms of\nlocal features found inside each sub-region.\nThe result-\ning “spatial pyramid” is a simple and computationally efﬁ-\ncient extension of an orderless bag-of-features image rep-\nresentation, and it shows signiﬁcantly improved perfor-\nmance on challenging scene categorizatio...",
+    "start_page": 2,
+    "end_page": 2,
+    "section_type": "abstract",
+    "word_count": 122
+  },
+  {
+    "title": "1. Introduction",
+    "content": "In this paper, we consider the problem of recognizing\nthe semantic category of an image. For example, we may\nwant to classify a photograph as depicting a scene (forest,\nstreet, ofﬁce, etc.) or as containing a certain object of in-\nterest. For such whole-image categorization tasks, bag-of-\nfeatures methods, which represent an image as an orderless\ncollection of local features, have recently demonstrated im-\npressive levels of performance [7, 22, 23, 25]. However,\nbecause these methods disregard a...",
+    "start_page": 2,
+    "end_page": 5,
+    "section_type": "introduction",
+    "word_count": 2347
+  },
+  {
+    "title": "5. Experiments",
+    "content": "In this section, we report results on three diverse\ndatasets: ﬁfteen scene categories [4], Caltech-101 [3], and\nGraz [14]. We perform all processing in grayscale, even\nwhen color images are available. All experiments are re-\npeated ten times with different randomly selected training\nand test images, and the average of per-class recognition\nrates2 is recorded for each run. The ﬁnal result is reported as\nthe mean and standard deviation of the results from the in-\ndividual runs. Multi-class classiﬁ...",
+    "start_page": 5,
+    "end_page": 8,
+    "section_type": "experiments",
+    "word_count": 2432
+  },
+  {
+    "title": "6. Discussion",
+    "content": "This paper has presented a “holistic” approach for image\ncategorization based on a modiﬁcation of pyramid match\nkernels [7]. Our method, which works by repeatedly sub-\ndividing an image and computing histograms of image fea-\ntures over the resulting subregions, has shown promising re-\n\n\nbike\nperson",
+    "start_page": 8,
+    "end_page": 9,
+    "section_type": "discussion",
+    "word_count": 46
+  },
+  {
+    "title": "background",
+    "content": "Figure 6. The Graz database.\nsults on three large-scale, diverse datasets. Despite the sim-\nplicity of our method, and despite the fact that it works not\nby constructing explicit object models, but by using global\ncues as indirect evidence about the presence of an object,\nit consistently achieves an improvement over an orderless\nimage representation. This is not a trivial accomplishment,\ngiven that a well-designed bag-of-features method can out-\nperform more sophisticated approaches based on par...",
+    "start_page": 9,
+    "end_page": 9,
+    "section_type": "related_work",
+    "word_count": 169
+  },
+  {
+    "title": "References",
+    "content": "[1] A. Berg, T. Berg, and J. Malik. Shape matching and object\nrecognition using low distortion correspondences. In Proc.\nCVPR, volume 1, pages 26–33, 2005.\n[2] D. Blei, A. Ng, and M. Jordan. Latent Dirichlet allocation.\nJournal of Machine Learning Research, 3:993–1022, 2003.\n[3] L. Fei-Fei, R. Fergus, and P. Perona. Learning generative\nvisual models from few training examples: an incremental\nBayesian approach tested on 101 object categories. In IEEE\nCVPR Workshop on Generative-Model Based Vision...",
+    "start_page": 9,
+    "end_page": 9,
+    "section_type": "references",
+    "word_count": 598
+  }
+]

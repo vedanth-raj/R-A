@@ -1,0 +1,71 @@
+{
+  "paper_name": "Li2021_AI_Choreographer_Music_Conditioned_3D_Dance_Genera_extracted",
+  "total_sections": 8,
+  "sections": [
+    {
+      "title": "Abstract",
+      "type": "abstract",
+      "word_count": 199,
+      "pages": "1-1"
+    },
+    {
+      "title": "1. Introduction",
+      "type": "introduction",
+      "word_count": 831,
+      "pages": "1-2"
+    },
+    {
+      "title": "2. Related Work",
+      "type": "related_work",
+      "word_count": 2420,
+      "pages": "2-5"
+    },
+    {
+      "title": "5. Experiments",
+      "type": "experiments",
+      "word_count": 216,
+      "pages": "5-5"
+    },
+    {
+      "title": "Experimental Setup",
+      "type": "experiments",
+      "word_count": 2510,
+      "pages": "5-9"
+    },
+    {
+      "title": "References",
+      "type": "references",
+      "word_count": 2879,
+      "pages": "9-12"
+    },
+    {
+      "title": "Appendix",
+      "type": "appendix",
+      "word_count": 1123,
+      "pages": "12-15"
+    },
+    {
+      "title": "ABSTRACT",
+      "type": "abstract",
+      "word_count": 170,
+      "pages": "15-15"
+    }
+  ],
+  "section_types": [
+    "abstract",
+    "introduction",
+    "related_work",
+    "experiments",
+    "experiments",
+    "references",
+    "appendix",
+    "abstract"
+  ],
+  "total_words": 10348,
+  "key_insights": [
+    "We present AIST++, a new multi-modal dataset of 3D\ndance motion and music, along with FACT, a Full-Attention\nCross-modal Transformer network for generating 3D dance\nmotion conditioned on music.\nThe proposed AIST++\ndataset contains 5.2 hours of 3D dance motion in 1408 se-\nquences, covering 10 dance genres with multi-view videos\nwith known camera poses—the largest dataset of this kind\nto our knowledge",
+    "We show that naively applying sequence\nmodels such as transformers to this dataset for the task ...",
+    "==================================================\n\nWe present AIST++, a new multi-modal dataset of 3D dance motion and music, along with FACT, a Full-Attention Cross-modal Transformer network for generating 3D dance motion conditioned on music",
+    "The proposed AIST++ dataset contains 5.2 hours of 3D dance motion in 1408 se- quences, covering 10 dance genres with multi-view videos with known camera poses—the largest dataset of this kind to our knowledge"
+  ]
+}

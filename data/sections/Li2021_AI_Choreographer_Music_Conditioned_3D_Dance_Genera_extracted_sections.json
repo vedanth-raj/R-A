@@ -1,0 +1,66 @@
+[
+  {
+    "title": "Abstract",
+    "content": "We present AIST++, a new multi-modal dataset of 3D\ndance motion and music, along with FACT, a Full-Attention\nCross-modal Transformer network for generating 3D dance\nmotion conditioned on music.\nThe proposed AIST++\ndataset contains 5.2 hours of 3D dance motion in 1408 se-\nquences, covering 10 dance genres with multi-view videos\nwith known camera poses—the largest dataset of this kind\nto our knowledge. We show that naively applying sequence\nmodels such as transformers to this dataset for the task ...",
+    "start_page": 1,
+    "end_page": 1,
+    "section_type": "abstract",
+    "word_count": 199
+  },
+  {
+    "title": "1. Introduction",
+    "content": "The ability to dance by composing movement patterns\nthat align to musical beats is a fundamental aspect of hu-\nman behavior. Dancing is an universal language found in all\ncultures [50], and today, many people express themselves\nthrough dance on contemporary online media platforms.\nThe most watched videos on YouTube are dance-centric\nmusic videos such as “Baby Shark Dance”, and “Gangnam\nStyle” [75], making dance a more and more powerful tool\nto spread messages across the internet. However, dancin...",
+    "start_page": 1,
+    "end_page": 2,
+    "section_type": "introduction",
+    "word_count": 831
+  },
+  {
+    "title": "2. Related Work",
+    "content": "3D Human Motion Synthesis\nThe problem of generating\nrealistic and controllable 3D human motion sequences has\nlong been studied. Earlier works employ statistical models\nsuch as kernel-based probability distribution [64, 10, 25,\n11] to synthesize motion, but abstract away motion details.\nMotion graphs [53, 7, 47] address this problem by generat-\ning motions in a non-parametric manner. Motion graph is\na directed graph constructed on a corpus of motion capture\ndata, where each node is a pose and the...",
+    "start_page": 2,
+    "end_page": 5,
+    "section_type": "related_work",
+    "word_count": 2420
+  },
+  {
+    "title": "5. Experiments",
+    "content": "5.1. AIST++ Motion Quality Validation\nWe ﬁrst carefully validate the quality of our 3D motion\nreconstruction. Possible error sources that may affect the\nquality of our 3D reconstruction include inaccurate 2D key-\npoints detection and the estimated camera parameters. As\nthere is no 3D ground-truth for AIST dataset, our validation\nhere is based-on the observation that the re-projected 2D\nkeypoints should be consistent with the predicted 2D key-\npoints which have high prediction conﬁdence in each i...",
+    "start_page": 5,
+    "end_page": 5,
+    "section_type": "experiments",
+    "word_count": 216
+  },
+  {
+    "title": "Experimental Setup",
+    "content": "Dataset Split\nAll the experiments in this paper are con-\nducted on our AIST++ dataset, which to our knowledge is\nthe largest dataset of this kind. We split AIST++ into train\nand test set, and report the performance on the test set only.\nWe carefully split the dataset to make sure that the music\nand dance motion in the test set does not overlap with that\nin the train set. To build the test set, we ﬁrst select one mu-\nsic piece from each of the 10 genres. Then for each music\n\n\nMotion Quality\nMotio...",
+    "start_page": 5,
+    "end_page": 9,
+    "section_type": "experiments",
+    "word_count": 2510
+  },
+  {
+    "title": "References",
+    "content": "[1] Mixamo. https://www.mixamo.com/. 1, 3\n[2] Hyemin Ahn, Jaehun Kim, Kihyun Kim, and Songhwai Oh.\nGenerative autoregressive networks for 3d dancing move\nsynthesis from music. IEEE Robotics and Automation Let-\nters, 5(2):3500–3507, 2020. 3\n[3] Emre Aksan, Peng Cao, Manuel Kaufmann, and Otmar\nHilliges.\nAttention, please:\nA spatio-temporal trans-\nformer for 3d human motion prediction.\narXiv preprint\narXiv:2004.08692, 2020. 2, 3, 5, 7\n[4] Emre Aksan, Manuel Kaufmann, and Otmar Hilliges. Struc-\nture...",
+    "start_page": 9,
+    "end_page": 12,
+    "section_type": "references",
+    "word_count": 2879
+  },
+  {
+    "title": "Appendix",
+    "content": "A. AIST++ Dataset Details\n3D Reconstruction\nHere we describe how we reconstruct\n3D motion from the AIST dataset.\nAlthough the AIST\ndataset contains multi-view videos, they are not calibrated\nmeaning their camera intrinsic and extrinsic parameters are\nnot available. Without camera parameters, it is not trivial\nto automatically and accurately reconstruct the 3D human\nmotion. We start with 2D human pose detection [?] and\nmanually initialized the camera parameters.\nOn this we\napply bundle adjustment...",
+    "start_page": 12,
+    "end_page": 15,
+    "section_type": "appendix",
+    "word_count": 1123
+  },
+  {
+    "title": "ABSTRACT",
+    "content": "==================================================\n\nWe present AIST++, a new multi-modal dataset of 3D dance motion and music, along with FACT, a Full-Attention Cross-modal Transformer network for generating 3D dance motion conditioned on music. The proposed AIST++ dataset contains 5.2 hours of 3D dance motion in 1408 se- quences, covering 10 dance genres with multi-view videos with known camera poses—the largest dataset of this kind to our knowledge. We show that naively applying sequence model...",
+    "start_page": 15,
+    "end_page": 15,
+    "section_type": "abstract",
+    "word_count": 170
+  }
+]

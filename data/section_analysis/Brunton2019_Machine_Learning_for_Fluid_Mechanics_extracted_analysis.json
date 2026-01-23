@@ -1,0 +1,36 @@
+{
+  "paper_name": "Brunton2019_Machine_Learning_for_Fluid_Mechanics_extracted",
+  "total_sections": 3,
+  "sections": [
+    {
+      "title": "Abstract",
+      "type": "abstract",
+      "word_count": 168,
+      "pages": "1-2"
+    },
+    {
+      "title": "1. INTRODUCTION",
+      "type": "introduction",
+      "word_count": 16520,
+      "pages": "2-32"
+    },
+    {
+      "title": "ABSTRACT",
+      "type": "abstract",
+      "word_count": 107,
+      "pages": "32-32"
+    }
+  ],
+  "section_types": [
+    "abstract",
+    "introduction",
+    "abstract"
+  ],
+  "total_words": 16795,
+  "key_insights": [
+    "The ﬁeld of ﬂuid mechanics is rapidly advancing, driven by unprece-\ndented volumes of data from ﬁeld measurements, experiments and large-\nscale simulations at multiple spatiotemporal scales",
+    "Machine learning\noﬀers a wealth of techniques to extract information from data that\ncould be translated into knowledge about the underlying ﬂuid me-\nchanics",
+    "==================================================\n\nThe ﬁeld of ﬂuid mechanics is rapidly advancing, driven by unprece- dented volumes of data from ﬁeld measurements, experiments and large- scale simulations at multiple spatiotemporal scales",
+    "Machine learning oﬀers a wealth of techniques to extract information from data that could be translated into knowledge about the underlying ﬂuid me- chanics"
+  ]
+}

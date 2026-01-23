@@ -1,0 +1,41 @@
+{
+  "paper_name": "Miller2010_Creating_the_CIPRES_Science_Gateway_for_inference_extracted",
+  "total_sections": 4,
+  "sections": [
+    {
+      "title": "ABSTRACT",
+      "type": "abstract",
+      "word_count": 283,
+      "pages": "1-1"
+    },
+    {
+      "title": "1. INTRODUCTION",
+      "type": "introduction",
+      "word_count": 4969,
+      "pages": "1-7"
+    },
+    {
+      "title": "6. CONCLUSIONS",
+      "type": "conclusion",
+      "word_count": 236,
+      "pages": "7-7"
+    },
+    {
+      "title": "8. REFERENCES",
+      "type": "references",
+      "word_count": 495,
+      "pages": "7-7"
+    }
+  ],
+  "section_types": [
+    "abstract",
+    "introduction",
+    "conclusion",
+    "references"
+  ],
+  "total_words": 5983,
+  "key_insights": [
+    "Understanding the evolutionary history of living organisms is a \ncentral problem in biology",
+    "Until recently the ability to infer \nevolutionary relationships was limited by the amount of DNA \nsequence data available, but new DNA sequencing technologies \nhave largely removed this limitation"
+  ]
+}

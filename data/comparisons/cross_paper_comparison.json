@@ -1,0 +1,213 @@
+{
+  "total_papers": 10,
+  "papers": [
+    {
+      "name": "Aharony1999_Large_N_Field_Theories,_String_Theory_and_Gravity_extracted",
+      "section_count": 4,
+      "word_count": 115114,
+      "section_types": [
+        "abstract",
+        "introduction",
+        "introduction",
+        "references"
+      ]
+    },
+    {
+      "name": "Brunton2019_Machine_Learning_for_Fluid_Mechanics_extracted",
+      "section_count": 3,
+      "word_count": 16795,
+      "section_types": [
+        "abstract",
+        "introduction",
+        "abstract"
+      ]
+    },
+    {
+      "name": "Forman1998_ROADS_AND_THEIR_MAJOR_ECOLOGICAL_EFFECTS_extracted",
+      "section_count": 3,
+      "word_count": 8531,
+      "section_types": [
+        "introduction",
+        "conclusion",
+        "references"
+      ]
+    },
+    {
+      "name": "Krishna2020_Structure,_Function,_Regulation_and_Phylogenetic_R_extracted",
+      "section_count": 4,
+      "word_count": 14868,
+      "section_types": [
+        "introduction",
+        "references",
+        "references",
+        "references"
+      ]
+    },
+    {
+      "name": "Lazebnik2006_Beyond_Bags_of_Features_Spatial_Pyramid_Matching_f_extracted",
+      "section_count": 6,
+      "word_count": 5714,
+      "section_types": [
+        "abstract",
+        "introduction",
+        "experiments",
+        "discussion",
+        "related_work",
+        "references"
+      ]
+    },
+    {
+      "name": "Lee2018_Structures_of_β-klotho_reveal_a_‘zip_code’-like_me_extracted",
+      "section_count": 3,
+      "word_count": 8506,
+      "section_types": [
+        "abstract",
+        "methodology",
+        "references"
+      ]
+    },
+    {
+      "name": "Li2021_AI_Choreographer_Music_Conditioned_3D_Dance_Genera_extracted",
+      "section_count": 8,
+      "word_count": 10348,
+      "section_types": [
+        "abstract",
+        "introduction",
+        "related_work",
+        "experiments",
+        "experiments",
+        "references",
+        "appendix",
+        "abstract"
+      ]
+    },
+    {
+      "name": "Miller2010_Creating_the_CIPRES_Science_Gateway_for_inference_extracted",
+      "section_count": 4,
+      "word_count": 5983,
+      "section_types": [
+        "abstract",
+        "introduction",
+        "conclusion",
+        "references"
+      ]
+    },
+    {
+      "name": "Schloss2009_Introducing_mothur_Open-Source,_Platform-Independe_extracted",
+      "section_count": 1,
+      "word_count": 978,
+      "section_types": [
+        "references"
+      ]
+    },
+    {
+      "name": "Yuksekgonul2022_When_and_why_vision-language_models_behave_like_ba_extracted",
+      "section_count": 5,
+      "word_count": 11365,
+      "section_types": [
+        "abstract",
+        "introduction",
+        "related_work",
+        "conclusion",
+        "references"
+      ]
+    }
+  ],
+  "section_type_distribution": {
+    "abstract": 9,
+    "introduction": 9,
+    "references": 11,
+    "conclusion": 3,
+    "experiments": 3,
+    "discussion": 1,
+    "related_work": 3,
+    "methodology": 1,
+    "appendix": 1
+  },
+  "word_count_stats": {
+    "total_words": 198202,
+    "average_words_per_paper": 19820.2,
+    "min_words": 978,
+    "max_words": 115114
+  },
+  "common_themes": [
+    {
+      "theme": "dance",
+      "count": 8
+    },
+    {
+      "theme": "dataset",
+      "count": 7
+    },
+    {
+      "theme": "motion",
+      "count": 6
+    },
+    {
+      "theme": "knowledge",
+      "count": 4
+    },
+    {
+      "theme": "between",
+      "count": 3
+    },
+    {
+      "theme": "information",
+      "count": 3
+    },
+    {
+      "theme": "review",
+      "count": 2
+    },
+    {
+      "theme": "correspondence",
+      "count": 2
+    },
+    {
+      "theme": "theories",
+      "count": 2
+    },
+    {
+      "theme": "string/m",
+      "count": 2
+    }
+  ],
+  "section_patterns": {
+    "abstract": {
+      "paper_count": 7,
+      "percentage": 70.0
+    },
+    "introduction": {
+      "paper_count": 8,
+      "percentage": 80.0
+    },
+    "references": {
+      "paper_count": 9,
+      "percentage": 90.0
+    },
+    "conclusion": {
+      "paper_count": 3,
+      "percentage": 30.0
+    },
+    "experiments": {
+      "paper_count": 2,
+      "percentage": 20.0
+    },
+    "discussion": {
+      "paper_count": 1,
+      "percentage": 10.0
+    },
+    "related_work": {
+      "paper_count": 3,
+      "percentage": 30.0
+    },
+    "methodology": {
+      "paper_count": 1,
+      "percentage": 10.0
+    },
+    "appendix": {
+      "paper_count": 1,
+      "percentage": 10.0
+    }
+  }
+}

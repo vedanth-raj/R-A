@@ -1,0 +1,31 @@
+{
+  "paper_name": "Forman1998_ROADS_AND_THEIR_MAJOR_ECOLOGICAL_EFFECTS_extracted",
+  "total_sections": 3,
+  "sections": [
+    {
+      "title": "Introduction",
+      "type": "introduction",
+      "word_count": 7273,
+      "pages": "1-23"
+    },
+    {
+      "title": "Conclusions",
+      "type": "conclusion",
+      "word_count": 799,
+      "pages": "23-25"
+    },
+    {
+      "title": "References",
+      "type": "references",
+      "word_count": 459,
+      "pages": "25-26"
+    }
+  ],
+  "section_types": [
+    "introduction",
+    "conclusion",
+    "references"
+  ],
+  "total_words": 8531,
+  "key_insights": []
+}

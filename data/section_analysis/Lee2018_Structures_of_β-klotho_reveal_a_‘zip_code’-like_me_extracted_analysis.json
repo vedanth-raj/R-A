@@ -1,0 +1,34 @@
+{
+  "paper_name": "Lee2018_Structures_of_β-klotho_reveal_a_‘zip_code’-like_me_extracted",
+  "total_sections": 3,
+  "sections": [
+    {
+      "title": "Abstract",
+      "type": "abstract",
+      "word_count": 2856,
+      "pages": "1-6"
+    },
+    {
+      "title": "METHODS",
+      "type": "methodology",
+      "word_count": 3848,
+      "pages": "6-23"
+    },
+    {
+      "title": "REFERENCES",
+      "type": "references",
+      "word_count": 1802,
+      "pages": "23-32"
+    }
+  ],
+  "section_types": [
+    "abstract",
+    "methodology",
+    "references"
+  ],
+  "total_words": 8506,
+  "key_insights": [
+    "Canonical FGFs activate FGF receptors (FGFR) via paracrine or autocrine mechanisms, in a \nprocess requiring cooperation with heparan sulfate proteoglycans that function as co-receptors for \nFGFR activation1,2",
+    "By contrast, endocrine FGFs (FGF 19, 21, and 23) are circulating hormones \nthat regulate critical metabolic processes in a variety of tissues3,4"
+  ]
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "title": "ABSTRACT",
+    "content": "Despite the use of large vision and language models (VLMs) in many downstream\napplications, it is unclear how well they encode the compositional relationships\nbetween objects and attributes. Here, we create the Attribution, Relation, and Order\n(ARO) benchmark to systematically evaluate the ability of VLMs to understand\ndifferent types of relationships, attributes, and order information. ARO consists\nof Visual Genome Attribution, to test the understanding of objects’ properties;\nVisual Genome Rel...",
+    "start_page": 1,
+    "end_page": 1,
+    "section_type": "abstract",
+    "word_count": 303
+  },
+  {
+    "title": "INTRODUCTION",
+    "content": "Vision and language models (VLMs) have demonstrated high performance on dozens of well-\nestablished benchmarks (Radford et al., 2021; Li et al., 2022; Singh et al., 2022; Alayrac et al.,\n2022; Wang et al., 2022a;b; Zhai et al., 2022). Yet it is unclear whether performance on these\nbenchmarks indicates rich compositional understanding of either text or images. For example, does\nCLIP distinguish between “the horse is eating the grass” and “the grass is eating the horse”? Natural\nscenes are complex...",
+    "start_page": 1,
+    "end_page": 8,
+    "section_type": "introduction",
+    "word_count": 4481
+  },
+  {
+    "title": "RELATED WORK",
+    "content": "Visio-linguistic compositionality: Understanding what aspects of language and vision VLMs cap-\nture is the main objective of several recent papers. Frank et al. (2021) suggest that information sharing\nbetween the text and vision modalities is not balanced, as the representations from the text encoder\nare more inﬂuenced by the vision modality than the other way round. Parcalabescu et al. (2021b)\nshow that VLMs have difﬁculties in counting objects in images. In terms of the evaluation part of\nour ...",
+    "start_page": 8,
+    "end_page": 9,
+    "section_type": "related_work",
+    "word_count": 820
+  },
+  {
+    "title": "CONCLUSION",
+    "content": "In this work, we evaluate the ability of VLMs to encode composition and order structure, introducing\nlarge-scale test beds to generate ﬁne-grained and statistically strong insights. We show that mod-\nels struggle with relation, attribution, and order understanding, and our datasets revealed various\nlimitations of models. We show that models can achieve high performance on the task of cross-\nmodal retrieval without needing to learn order and composition information. Given that contrastive\npretrai...",
+    "start_page": 9,
+    "end_page": 11,
+    "section_type": "conclusion",
+    "word_count": 1043
+  },
+  {
+    "title": "REFERENCES",
+    "content": "Jean-Baptiste Alayrac, Jeff Donahue, Pauline Luc, Antoine Miech, Iain Barr, Yana Hasson, Karel\nLenc, Arthur Mensch, Katie Millican, Malcolm Reynolds, et al. Flamingo: a visual language\nmodel for few-shot learning. arXiv preprint arXiv:2204.14198, 2022. 1\nHritik Bansal, Da Yin, Masoud Monajatipoor, and Kai-Wei Chang.\nHow well can Text-to-\nImage Generative Models understand Ethical Natural Language Interventions? ArXiv preprint,\nabs/2210.15230, 2022. URL https://arxiv.org/abs/2210.15230. 10\nFederi...",
+    "start_page": 11,
+    "end_page": 20,
+    "section_type": "references",
+    "word_count": 4718
+  }
+]

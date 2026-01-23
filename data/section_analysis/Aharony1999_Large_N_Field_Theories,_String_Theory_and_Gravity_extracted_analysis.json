@@ -1,0 +1,41 @@
+{
+  "paper_name": "Aharony1999_Large_N_Field_Theories,_String_Theory_and_Gravity_extracted",
+  "total_sections": 4,
+  "sections": [
+    {
+      "title": "Abstract",
+      "type": "abstract",
+      "word_count": 128,
+      "pages": "1-2"
+    },
+    {
+      "title": "Introduction",
+      "type": "introduction",
+      "word_count": 1838,
+      "pages": "2-5"
+    },
+    {
+      "title": "Introduction",
+      "type": "introduction",
+      "word_count": 98377,
+      "pages": "5-230"
+    },
+    {
+      "title": "Bibliography",
+      "type": "references",
+      "word_count": 14771,
+      "pages": "230-261"
+    }
+  ],
+  "section_types": [
+    "abstract",
+    "introduction",
+    "introduction",
+    "references"
+  ],
+  "total_words": 115114,
+  "key_insights": [
+    "We review the holographic correspondence between ﬁeld theories and string/M theory,\nfocusing on the relation between compactiﬁcations of string/M theory on Anti-de Sitter\nspaces and conformal ﬁeld theories",
+    "We review the background for this correspondence\nand discuss its motivations and the evidence for its correctness"
+  ]
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "title": "ABSTRACT",
+    "content": "Understanding the evolutionary history of living organisms is a \ncentral problem in biology. Until recently the ability to infer \nevolutionary relationships was limited by the amount of DNA \nsequence data available, but new DNA sequencing technologies \nhave largely removed this limitation. As a result, DNA sequence \ndata are readily available or obtainable for a wide spectrum of \norganisms, thus creating an unprecedented opportunity to explore \nevolutionary relationships broadly and deeply acros...",
+    "start_page": 1,
+    "end_page": 1,
+    "section_type": "abstract",
+    "word_count": 283
+  },
+  {
+    "title": "1. INTRODUCTION",
+    "content": "Assembling the Tree of Life is one of the most complex and \ndifficult problems in modern science. The process of inferring \nphylogenetic relationships among all living organisms requires \nthe collection and analysis of large amounts of data from as many \nspecies as possible. Recent advances in DNA sequencing \ntechnologies have dramatically increased both the number of \nspecies for which data are available and the amount of DNA \nsequence data available for many species. Moreover, the rate at \nwhi...",
+    "start_page": 1,
+    "end_page": 7,
+    "section_type": "introduction",
+    "word_count": 4969
+  },
+  {
+    "title": "6. CONCLUSIONS",
+    "content": "The CSG has accomplished the primary goal of the Science \nGateway program. It provides a significant and growing \npopulation of domain scientists with access to fast tree inference \ncodes and scalable TeraGrid resources. The overhead of accessing \nthese resources would have been prohibitive for the vast majority \nof these users. In a recent user survey 96% of respondents state \nthat the CSG benefits their research in a tangible way, while 84% \nindicate that it permits them to do research that wo...",
+    "start_page": 7,
+    "end_page": 7,
+    "section_type": "conclusion",
+    "word_count": 236
+  },
+  {
+    "title": "8. REFERENCES",
+    "content": "[1] Morrison, D. A. 2006. Multiple Sequence Alignment for \nPhylogenetic Purposes. Australian Systematic Biology 19, \n479-539. \n[2] Morrison, D. A. 2006. Phylogenetic analyses of parasites in \nthe new millennium. Advances in Parasitology 83, 1-124. \n[3] Subramaniam, S. 1998. The biology workbench - A seamless \ndatabase and analysis environment for the biologist. \nProteins-Structure Function and Genetics 32, 1, 1-2. \n[4] Badidi, E., De Sousa, C., Lang, B. F., Burger, G. 2003. \nAnaBench: a Web/CORB...",
+    "start_page": 7,
+    "end_page": 7,
+    "section_type": "references",
+    "word_count": 495
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Abstract",
+    "content": "We review the holographic correspondence between ﬁeld theories and string/M theory,\nfocusing on the relation between compactiﬁcations of string/M theory on Anti-de Sitter\nspaces and conformal ﬁeld theories. We review the background for this correspondence\nand discuss its motivations and the evidence for its correctness. We describe the main\nresults that have been derived from the correspondence in the regime that the ﬁeld\ntheory is approximated by classical or semiclassical gravity. We focus on ...",
+    "start_page": 1,
+    "end_page": 2,
+    "section_type": "abstract",
+    "word_count": 128
+  },
+  {
+    "title": "Introduction",
+    "content": "4\n1.1\nGeneral Introduction and Overview . . . . . . . . . . . . . . . . . . . .\n4\n1.2\nLarge N Gauge Theories as String Theories\n. . . . . . . . . . . . . . .\n10\n1.3\nBlack p-Branes\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n16\n1.3.1\nClassical Solutions\n. . . . . . . . . . . . . . . . . . . . . . . . .\n16\n1.3.2\nD-Branes\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n20\n1.3.3\nGreybody Factors and Black Holes\n. . . . . . . . . . . . . . . .\n21\n2\nConformal Field Theori...",
+    "start_page": 2,
+    "end_page": 5,
+    "section_type": "introduction",
+    "word_count": 1838
+  },
+  {
+    "title": "Introduction",
+    "content": "1.1\nGeneral Introduction and Overview\nThe microscopic description of nature as presently understood and veriﬁed by experi-\nment involves quantum ﬁeld theories. All particles are excitations of some ﬁeld. These\nparticles are pointlike and they interact locally with other particles.\nEven though\nquantum ﬁeld theories describe nature at the distance scales we observe, there are\nstrong indications that new elements will be involved at very short distances (or very\nhigh energies), distances of the ord...",
+    "start_page": 5,
+    "end_page": 230,
+    "section_type": "introduction",
+    "word_count": 98377
+  },
+  {
+    "title": "Bibliography",
+    "content": "[1] M. B. Green, J. H. Schwarz, and E. Witten, “Superstring Theory,”. Cambridge University\nPress (1987).\n[2] J. Polchinski, “String Theory,”. Cambridge University Press (1998).\n[3] G. ’t Hooft, “A Planar Diagram Theory for Strong Interactions,” Nucl. Phys. B72 (1974) 461.\n[4] A. M. Polyakov, “Quantum Geometry of Bosonic Strings,” Phys. Lett. 103B (1981) 207.\n[5] J. Maldacena, “The Large N limit of superconformal ﬁeld theories and supergravity,” Adv.\nTheor. Math. Phys. 2 (1998) 231, hep-th/971120...",
+    "start_page": 230,
+    "end_page": 261,
+    "section_type": "references",
+    "word_count": 14771
+  }
+]
