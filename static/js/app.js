@@ -87,13 +87,21 @@ class AIResearchAgent {
         document.querySelectorAll('.tab-btn').forEach(btn => {
             btn.classList.remove('active');
         });
-        document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+        
+        const tabButton = document.querySelector(`[data-tab="${tabName}"]`);
+        if (tabButton) {
+            tabButton.classList.add('active');
+        }
 
         // Update tab content
         document.querySelectorAll('.tab-content').forEach(content => {
             content.classList.remove('active');
         });
-        document.getElementById(tabName).classList.add('active');
+        
+        const tabContent = document.getElementById(tabName);
+        if (tabContent) {
+            tabContent.classList.add('active');
+        }
 
         this.currentTab = tabName;
 
@@ -232,6 +240,8 @@ class AIResearchAgent {
 
     updateExtractPaperSelect() {
         const select = document.getElementById('extractPaperSelect');
+        if (!select) return;
+        
         select.innerHTML = '<option value="">Select a paper...</option>';
         
         this.downloadedPapers.forEach(paper => {
@@ -365,6 +375,8 @@ class AIResearchAgent {
 
     updatePaperSelect() {
         const select = document.getElementById('paperSelect');
+        if (!select) return;
+        
         select.innerHTML = '<option value="">Select a paper...</option>';
         
         this.papers.forEach(paper => {
@@ -377,6 +389,7 @@ class AIResearchAgent {
 
     updatePaperList() {
         const paperList = document.getElementById('paperList');
+        if (!paperList) return;
         
         if (this.papers.length === 0) {
             paperList.innerHTML = '<p style="color: var(--text-secondary); text-align: center; padding: 2rem;">No papers found. Please extract text from PDFs first.</p>';
@@ -408,14 +421,16 @@ class AIResearchAgent {
             
             // Add checkbox event listener
             const checkbox = paperItem.querySelector('.paper-checkbox');
-            checkbox.addEventListener('change', (e) => {
-                if (e.target.checked) {
-                    this.selectedPapers.add(paper.file);
-                } else {
-                    this.selectedPapers.delete(paper.file);
-                }
-                this.updateCompareButton();
-            });
+            if (checkbox) {
+                checkbox.addEventListener('change', (e) => {
+                    if (e.target.checked) {
+                        this.selectedPapers.add(paper.file);
+                    } else {
+                        this.selectedPapers.delete(paper.file);
+                    }
+                    this.updateCompareButton();
+                });
+            }
             
             paperList.appendChild(paperItem);
         });
@@ -423,7 +438,9 @@ class AIResearchAgent {
 
     updateCompareButton() {
         const compareBtn = document.getElementById('compareBtn');
-        compareBtn.disabled = this.selectedPapers.size < 2;
+        if (compareBtn) {
+            compareBtn.disabled = this.selectedPapers.size < 2;
+        }
     }
 
     updateOperationProgress(data) {
