@@ -17,7 +17,7 @@
       "Schloss2009_Introducing_mothur_Open-Source,_Platform-Independe_extracted",
       "Yuksekgonul2022_When_and_why_vision-language_models_behave_like_ba_extracted"
     ],
-    "generated_at": "2026-01-26T12:08:01.941894"
+    "generated_at": "2026-01-26T12:35:41.718257"
   },
   "introduction": {
     "section_type": "introduction",
@@ -37,7 +37,7 @@
       "Schloss2009_Introducing_mothur_Open-Source,_Platform-Independe_extracted",
       "Yuksekgonul2022_When_and_why_vision-language_models_behave_like_ba_extracted"
     ],
-    "generated_at": "2026-01-26T12:08:01.942000"
+    "generated_at": "2026-01-26T12:35:41.718318"
   },
   "methods": {
     "section_type": "methods",
@@ -57,13 +57,13 @@
       "Schloss2009_Introducing_mothur_Open-Source,_Platform-Independe_extracted",
       "Yuksekgonul2022_When_and_why_vision-language_models_behave_like_ba_extracted"
     ],
-    "generated_at": "2026-01-26T12:08:01.942048"
+    "generated_at": "2026-01-26T12:35:41.718345"
   },
   "metadata": {
     "total_sections": 3,
     "total_words": 238,
     "average_confidence": 0.6,
-    "generated_at": "2026-01-26T12:08:01.942687",
+    "generated_at": "2026-01-26T12:35:41.718750",
     "model_used": "gpt-3.5-turbo"
   }
 }

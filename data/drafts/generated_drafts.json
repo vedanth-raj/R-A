@@ -1,0 +1,77 @@
+{
+  "abstract": {
+    "title": "Abstract",
+    "content": "This abstract synthesizes findings from diverse fields, highlighting advances in",
+    "word_count": 10,
+    "confidence_score": 0.6699999999999999,
+    "ai_provider": "gemini",
+    "generation_time": 2.804511,
+    "sources_used": [
+      "Aharony1999_Large_N_Field_Theories,_String_Theory_and_Gravity_extracted_analysis",
+      "Brunton2019_Machine_Learning_for_Fluid_Mechanics_extracted_analysis",
+      "Forman1998_ROADS_AND_THEIR_MAJOR_ECOLOGICAL_EFFECTS_extracted_analysis",
+      "Krishna2020_Structure,_Function,_Regulation_and_Phylogenetic_R_extracted_analysis",
+      "Lazebnik2006_Beyond_Bags_of_Features_Spatial_Pyramid_Matching_f_extracted_analysis"
+    ]
+  },
+  "introduction": {
+    "title": "Introduction",
+    "content": "In an era characterized by unprecedented data proliferation and increasingly complex scientific challenges, the ability to synthesize knowledge and methodologies across traditionally disparate",
+    "word_count": 23,
+    "confidence_score": 0.6499999999999999,
+    "ai_provider": "gemini",
+    "generation_time": 4.594935,
+    "sources_used": [
+      "Aharony1999_Large_N_Field_Theories,_String_Theory_and_Gravity_extracted_analysis",
+      "Brunton2019_Machine_Learning_for_Fluid_Mechanics_extracted_analysis",
+      "Forman1998_ROADS_AND_THEIR_MAJOR_ECOLOGICAL_EFFECTS_extracted_analysis",
+      "Krishna2020_Structure,_Function,_Regulation_and_Phylogenetic_R_extracted_analysis",
+      "Lazebnik2006_Beyond_Bags_of_Features_Spatial_Pyramid_Matching_f_extracted_analysis"
+    ]
+  },
+  "methods": {
+    "title": "Methods",
+    "content": "This systematic review aims to comprehensively identify, evaluate, and synthesize existing literature on the application of advanced computational and analytical",
+    "word_count": 20,
+    "confidence_score": 0.6499999999999999,
+    "ai_provider": "gemini",
+    "generation_time": 4.162815,
+    "sources_used": [
+      "Aharony1999_Large_N_Field_Theories,_String_Theory_and_Gravity_extracted_analysis",
+      "Brunton2019_Machine_Learning_for_Fluid_Mechanics_extracted_analysis",
+      "Forman1998_ROADS_AND_THEIR_MAJOR_ECOLOGICAL_EFFECTS_extracted_analysis",
+      "Krishna2020_Structure,_Function,_Regulation_and_Phylogenetic_R_extracted_analysis",
+      "Lazebnik2006_Beyond_Bags_of_Features_Spatial_Pyramid_Matching_f_extracted_analysis"
+    ]
+  },
+  "results": {
+    "title": "Results",
+    "content": "The following results section synthesizes findings from five distinct research papers spanning theoretical physics, machine learning in fluid dynamics, environmental ecology, molecular biology,",
+    "word_count": 23,
+    "confidence_score": 0.71,
+    "ai_provider": "gemini",
+    "generation_time": 4.927737,
+    "sources_used": [
+      "Aharony1999_Large_N_Field_Theories,_String_Theory_and_Gravity_extracted_analysis",
+      "Brunton2019_Machine_Learning_for_Fluid_Mechanics_extracted_analysis",
+      "Forman1998_ROADS_AND_THEIR_MAJOR_ECOLOGICAL_EFFECTS_extracted_analysis",
+      "Krishna2020_Structure,_Function,_Regulation_and_Phylogenetic_R_extracted_analysis",
+      "Lazebnik2006_Beyond_Bags_of_Features_Spatial_Pyramid_Matching_f_extracted_analysis"
+    ]
+  },
+  "discussion": {
+    "title": "Discussion",
+    "content": "I am unable to write the discussion section as requested because the \"Paper Summaries,\" \"Key Findings,\" and \"Implications\" for each of the five research papers are empty. To provide an insightful discussion that interprets findings, compares with literature, discusses implications, limitations, and future research, I need the actual content from these sections.\n\nPlease provide the detailed information for each paper, and I will be happy to generate the discussion section.",
+    "word_count": 70,
+    "confidence_score": 0.89,
+    "ai_provider": "gemini",
+    "generation_time": 5.741761,
+    "sources_used": [
+      "Aharony1999_Large_N_Field_Theories,_String_Theory_and_Gravity_extracted_analysis",
+      "Brunton2019_Machine_Learning_for_Fluid_Mechanics_extracted_analysis",
+      "Forman1998_ROADS_AND_THEIR_MAJOR_ECOLOGICAL_EFFECTS_extracted_analysis",
+      "Krishna2020_Structure,_Function,_Regulation_and_Phylogenetic_R_extracted_analysis",
+      "Lazebnik2006_Beyond_Bags_of_Features_Spatial_Pyramid_Matching_f_extracted_analysis"
+    ]
+  }
+}

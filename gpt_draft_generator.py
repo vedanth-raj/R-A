@@ -424,7 +424,7 @@ Future research should focus on longitudinal studies and standardized methodolog
                 paper_implications=prompt_input
             )
             
-            response = self.client.ChatCompletion.create(
+            response = self.client.chat.completions.create(
                 model=self.model,
                 messages=[
                     {"role": "system", "content": "You are an expert academic writer specializing in research papers."},

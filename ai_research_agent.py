@@ -22,7 +22,7 @@ from datetime import datetime
 from paper_retrieval.text_extractor import PDFTextExtractor
 from section_extractor import SectionWiseExtractor
 from section_analyzer import SectionAnalyzer, analyze_paper_sections
-from gpt_draft_generator import GPTDraftGenerator, generate_drafts_from_analysis
+from enhanced_gpt_generator import EnhancedGPTDraftGenerator, generate_drafts_from_analysis
 from apa_formatter import APAFormatter, generate_apa_bibliography
 from web_app import WebInterface
 
@@ -60,7 +60,7 @@ class AIResearchAgent:
         self.text_extractor = PDFTextExtractor()
         self.section_extractor = SectionWiseExtractor()
         self.section_analyzer = SectionAnalyzer()
-        self.draft_generator = GPTDraftGenerator()
+        self.draft_generator = EnhancedGPTDraftGenerator(preferred_provider="gemini")
         self.apa_formatter = APAFormatter()
         self.web_interface = WebInterface()
     

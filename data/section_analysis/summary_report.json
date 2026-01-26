@@ -2,25 +2,25 @@
   "total_papers": 10,
   "total_sections": 41,
   "section_types": [
-    "conclusion",
     "experiments",
+    "abstract",
+    "related_work",
+    "introduction",
+    "conclusion",
     "methodology",
     "references",
     "appendix",
-    "abstract",
-    "related_work",
-    "discussion",
-    "introduction"
+    "discussion"
   ],
   "section_type_counts": {
-    "conclusion": 3,
     "experiments": 3,
+    "abstract": 9,
+    "related_work": 3,
+    "introduction": 9,
+    "conclusion": 3,
     "methodology": 1,
     "references": 11,
     "appendix": 1,
-    "abstract": 9,
-    "related_work": 3,
-    "discussion": 1,
-    "introduction": 9
+    "discussion": 1
   }
 }
