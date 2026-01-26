@@ -1,0 +1,8 @@
+References
+==========
+
+YILMAZ, M. & Krein, P. (2013). Review of battery charger topologies, charging power levels, and infrastructure for plug-in electric and hybrid vehicles **
+
+Hsu, C. & Fingerman, K. (2021). Public electric vehicle charger access disparities across race and income in california **
+
+Li, H., Zhang, Z., Wang, S., Tang, J., Ren, X., & Chen, Q. (2020). A 300-khz 6.6-kw sic bidirectional llc onboard charger **

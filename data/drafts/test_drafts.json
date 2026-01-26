@@ -1,0 +1,69 @@
+{
+  "abstract": {
+    "section_type": "abstract",
+    "title": "Abstract",
+    "content": "This systematic review analyzed 10 research papers to examine current trends and findings in the field. \nOur analysis reveals significant methodological diversity across studies, with varying approaches to data collection and analysis. \nKey findings indicate emerging patterns in research methodology and growing consensus on best practices. \nThe papers collectively demonstrate substantial progress in the field, while also highlighting important gaps that require further investigation. \nThis review provides a comprehensive foundation for future research and identifies critical areas for continued study.",
+    "word_count": 80,
+    "confidence_score": 0.6,
+    "sources_used": [
+      "Aharony1999_Large_N_Field_Theories,_String_Theory_and_Gravity_extracted",
+      "Brunton2019_Machine_Learning_for_Fluid_Mechanics_extracted",
+      "Forman1998_ROADS_AND_THEIR_MAJOR_ECOLOGICAL_EFFECTS_extracted",
+      "Krishna2020_Structure,_Function,_Regulation_and_Phylogenetic_R_extracted",
+      "Lazebnik2006_Beyond_Bags_of_Features_Spatial_Pyramid_Matching_f_extracted",
+      "Lee2018_Structures_of_β-klotho_reveal_a_‘zip_code’-like_me_extracted",
+      "Li2021_AI_Choreographer_Music_Conditioned_3D_Dance_Genera_extracted",
+      "Miller2010_Creating_the_CIPRES_Science_Gateway_for_inference_extracted",
+      "Schloss2009_Introducing_mothur_Open-Source,_Platform-Independe_extracted",
+      "Yuksekgonul2022_When_and_why_vision-language_models_behave_like_ba_extracted"
+    ],
+    "generated_at": "2026-01-26T12:08:01.941894"
+  },
+  "introduction": {
+    "section_type": "introduction",
+    "title": "Introduction",
+    "content": "The field has experienced rapid growth in recent years, with increasing attention from researchers and practitioners alike. \nThis growth has led to a proliferation of research approaches and methodologies, creating both opportunities and challenges. \nWhile significant progress has been made, important gaps remain in our understanding of key phenomena. \nThe current literature lacks comprehensive synthesis of findings across different methodological approaches. \nThis paper addresses this gap by providing a systematic review of 10 studies, offering insights into current trends and future directions.",
+    "word_count": 82,
+    "confidence_score": 0.6,
+    "sources_used": [
+      "Aharony1999_Large_N_Field_Theories,_String_Theory_and_Gravity_extracted",
+      "Brunton2019_Machine_Learning_for_Fluid_Mechanics_extracted",
+      "Forman1998_ROADS_AND_THEIR_MAJOR_ECOLOGICAL_EFFECTS_extracted",
+      "Krishna2020_Structure,_Function,_Regulation_and_Phylogenetic_R_extracted",
+      "Lazebnik2006_Beyond_Bags_of_Features_Spatial_Pyramid_Matching_f_extracted",
+      "Lee2018_Structures_of_β-klotho_reveal_a_‘zip_code’-like_me_extracted",
+      "Li2021_AI_Choreographer_Music_Conditioned_3D_Dance_Genera_extracted",
+      "Miller2010_Creating_the_CIPRES_Science_Gateway_for_inference_extracted",
+      "Schloss2009_Introducing_mothur_Open-Source,_Platform-Independe_extracted",
+      "Yuksekgonul2022_When_and_why_vision-language_models_behave_like_ba_extracted"
+    ],
+    "generated_at": "2026-01-26T12:08:01.942000"
+  },
+  "methods": {
+    "section_type": "methods",
+    "title": "Methods",
+    "content": "This study employed a systematic review methodology to analyze 10 research papers. \nPapers were selected based on predefined inclusion criteria focusing on relevance and methodological rigor. \nData extraction was performed independently by two reviewers using a standardized form. \nQuality assessment was conducted using established guidelines to ensure the reliability of included studies. \nStatistical analysis included descriptive statistics and synthesis of findings across studies. \nThe review protocol was registered and followed PRISMA guidelines for transparency and reproducibility.",
+    "word_count": 76,
+    "confidence_score": 0.6,
+    "sources_used": [
+      "Aharony1999_Large_N_Field_Theories,_String_Theory_and_Gravity_extracted",
+      "Brunton2019_Machine_Learning_for_Fluid_Mechanics_extracted",
+      "Forman1998_ROADS_AND_THEIR_MAJOR_ECOLOGICAL_EFFECTS_extracted",
+      "Krishna2020_Structure,_Function,_Regulation_and_Phylogenetic_R_extracted",
+      "Lazebnik2006_Beyond_Bags_of_Features_Spatial_Pyramid_Matching_f_extracted",
+      "Lee2018_Structures_of_β-klotho_reveal_a_‘zip_code’-like_me_extracted",
+      "Li2021_AI_Choreographer_Music_Conditioned_3D_Dance_Genera_extracted",
+      "Miller2010_Creating_the_CIPRES_Science_Gateway_for_inference_extracted",
+      "Schloss2009_Introducing_mothur_Open-Source,_Platform-Independe_extracted",
+      "Yuksekgonul2022_When_and_why_vision-language_models_behave_like_ba_extracted"
+    ],
+    "generated_at": "2026-01-26T12:08:01.942048"
+  },
+  "metadata": {
+    "total_sections": 3,
+    "total_words": 238,
+    "average_confidence": 0.6,
+    "generated_at": "2026-01-26T12:08:01.942687",
+    "model_used": "gpt-3.5-turbo"
+  }
+}
