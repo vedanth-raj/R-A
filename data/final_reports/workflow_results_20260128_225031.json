@@ -1,0 +1,104 @@
+{
+  "topic": "machine learning",
+  "max_papers": 2,
+  "start_time": "2026-01-28T22:50:31.849901",
+  "end_time": "",
+  "success": false,
+  "stages": {
+    "data_loading": {
+      "success": true,
+      "papers_loaded": 10
+    },
+    "generate_abstract": {
+      "success": true,
+      "word_count": 80,
+      "ai_provider": "mock",
+      "confidence": 0.7
+    },
+    "generate_introduction": {
+      "success": true,
+      "word_count": 98,
+      "ai_provider": "mock",
+      "confidence": 0.64
+    },
+    "generate_methods": {
+      "success": true,
+      "word_count": 89,
+      "ai_provider": "mock",
+      "confidence": 0.7
+    },
+    "generate_results": {
+      "success": true,
+      "word_count": 91,
+      "ai_provider": "mock",
+      "confidence": 0.7
+    },
+    "generate_discussion": {
+      "success": true,
+      "word_count": 108,
+      "ai_provider": "mock",
+      "confidence": 0.6599999999999999
+    },
+    "review_abstract": {
+      "success": true,
+      "overall_quality": 0.7899999999999999,
+      "suggestions_count": 1
+    },
+    "review_introduction": {
+      "success": true,
+      "overall_quality": 0.77555,
+      "suggestions_count": 1
+    },
+    "review_methods": {
+      "success": true,
+      "overall_quality": 0.730425,
+      "suggestions_count": 1
+    },
+    "review_results": {
+      "success": true,
+      "overall_quality": 0.734575,
+      "suggestions_count": 1
+    },
+    "review_discussion": {
+      "success": true,
+      "overall_quality": 0.77973,
+      "suggestions_count": 1
+    },
+    "revise_abstract": {
+      "success": true,
+      "iterations": 1,
+      "quality_improvement": 0.0
+    },
+    "revise_introduction": {
+      "success": true,
+      "iterations": 1,
+      "quality_improvement": 0.0
+    },
+    "revise_methods": {
+      "success": true,
+      "iterations": 1,
+      "quality_improvement": 0.0
+    },
+    "revise_results": {
+      "success": true,
+      "iterations": 1,
+      "quality_improvement": 0.0
+    },
+    "revise_discussion": {
+      "success": true,
+      "iterations": 1,
+      "quality_improvement": 0.0
+    },
+    "references": {
+      "success": true,
+      "references_length": 427
+    },
+    "final_report": {
+      "success": true,
+      "report_file": "data\\final_reports\\final_report_20260128_225031.md",
+      "word_count": 948
+    }
+  },
+  "final_report": "",
+  "error": ""
+}

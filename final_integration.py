@@ -54,6 +54,7 @@ class FinalIntegration:
             'topic': topic,
             'max_papers': max_papers,
             'start_time': datetime.now().isoformat(),
+            'end_time': '',
             'stages': {},
             'final_report': "",
             'success': False
@@ -230,6 +231,7 @@ class FinalIntegration:
             self.logger.error(f"Workflow failed: {e}")
             workflow_results['error'] = str(e)
             workflow_results['success'] = False
+            workflow_results['end_time'] = datetime.now().isoformat()
         
         return workflow_results
     
@@ -359,50 +361,79 @@ The AI Research Agent is an advanced system for automated research paper generat
     def _save_workflow_results(self, results: Dict[str, Any], timestamp: str):
         """Save workflow results to files"""
         
-        # Save main results
-        results_file = Path(f"data/final_reports/workflow_results_{timestamp}.json")
-        with open(results_file, 'w', encoding='utf-8') as f:
-            json.dump(results, f, indent=2, ensure_ascii=False)
-        
-        # Save review results
-        if self.review_results:
-            reviews_file = Path(f"data/reviews/review_results_{timestamp}.json")
-            reviews_data = {}
+        try:
+            # Create serializable copy of results
+            serializable_results = {
+                'topic': results['topic'],
+                'max_papers': results['max_papers'],
+                'start_time': results['start_time'],
+                'end_time': results['end_time'],
+                'success': results['success'],
+                'stages': results['stages'],
+                'final_report': results.get('final_report', ''),
+                'error': results.get('error', '')
+            }
             
-            for section_type, review in self.review_results.items():
-                reviews_data[section_type] = {
-                    'section_type': review.section_type,
-                    'quality_metrics': {
-                        'clarity_score': review.quality_metrics.clarity_score,
-                        'coherence_score': review.quality_metrics.coherence_score,
-                        'academic_tone_score': review.quality_metrics.academic_tone_score,
-                        'completeness_score': review.quality_metrics.completeness_score,
-                        'citation_quality_score': review.quality_metrics.citation_quality_score,
-                        'overall_quality': review.quality_metrics.overall_quality,
-                        'word_count': review.quality_metrics.word_count,
-                        'sentence_count': review.quality_metrics.sentence_count,
-                        'avg_sentence_length': review.quality_metrics.avg_sentence_length
-                    },
-                    'revision_suggestions': [
-                        {
-                            'category': s.category,
-                            'severity': s.severity,
-                            'description': s.description,
-                            'suggestion': s.suggestion,
-                            'location': s.location
-                        } for s in review.revision_suggestions
-                    ],
-                    'review_timestamp': review.review_timestamp
-                }
+            # Save main results
+            results_file = Path(f"data/final_reports/workflow_results_{timestamp}.json")
+            with open(results_file, 'w', encoding='utf-8') as f:
+                json.dump(serializable_results, f, indent=2, ensure_ascii=False)
             
-            with open(reviews_file, 'w', encoding='utf-8') as f:
-                json.dump(reviews_data, f, indent=2, ensure_ascii=False)
-        
-        # Save revision history
-        if self.revision_history:
-            revisions_file = Path(f"data/revisions/revision_history_{timestamp}.json")
-            with open(revisions_file, 'w', encoding='utf-8') as f:
-                json.dump(self.revision_history, f, indent=2, ensure_ascii=False)
+            # Save review results
+            if self.review_results:
+                reviews_file = Path(f"data/reviews/review_results_{timestamp}.json")
+                reviews_data = {}
+                
+                for section_type, review in self.review_results.items():
+                    reviews_data[section_type] = {
+                        'section_type': review.section_type,
+                        'quality_metrics': {
+                            'clarity_score': review.quality_metrics.clarity_score,
+                            'coherence_score': review.quality_metrics.coherence_score,
+                            'academic_tone_score': review.quality_metrics.academic_tone_score,
+                            'completeness_score': review.quality_metrics.completeness_score,
+                            'citation_quality_score': review.quality_metrics.citation_quality_score,
+                            'overall_quality': review.quality_metrics.overall_quality,
+                            'word_count': review.quality_metrics.word_count,
+                            'sentence_count': review.quality_metrics.sentence_count,
+                            'avg_sentence_length': review.quality_metrics.avg_sentence_length
+                        },
+                        'revision_suggestions': [
+                            {
+                                'category': s.category,
+                                'severity': s.severity,
+                                'description': s.description,
+                                'suggestion': s.suggestion,
+                                'location': s.location
+                            } for s in review.revision_suggestions
+                        ],
+                        'review_timestamp': review.review_timestamp
+                    }
+                
+                with open(reviews_file, 'w', encoding='utf-8') as f:
+                    json.dump(reviews_data, f, indent=2, ensure_ascii=False)
+            
+            # Save revision history
+            if self.revision_history:
+                revisions_file = Path(f"data/revisions/revision_history_{timestamp}.json")
+                serializable_history = {}
+                
+                for section_type, revision_data in self.revision_history.items():
+                    serializable_history[section_type] = {
+                        'original_content': revision_data['original_content'],
+                        'final_content': revision_data['final_content'],
+                        'total_iterations': revision_data['total_iterations'],
+                        'final_quality': revision_data['final_quality']
+                    }
+                
+                with open(revisions_file, 'w', encoding='utf-8') as f:
+                    json.dump(serializable_history, f, indent=2, ensure_ascii=False)
+            
+            self.logger.info(f"Results saved successfully for timestamp {timestamp}")
+            
+        except Exception as e:
+            self.logger.error(f"Failed to save results: {e}")
+            # Don't raise the exception, just log it
     
     def get_quality_summary(self) -> Dict[str, Any]:
         """Get quality summary of all generated content"""

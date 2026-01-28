@@ -1,0 +1,122 @@
+{
+  "abstract": {
+    "section_type": "abstract",
+    "quality_metrics": {
+      "clarity_score": 0.8999999999999999,
+      "coherence_score": 0.7,
+      "academic_tone_score": 0.82,
+      "completeness_score": 0.8066666666666666,
+      "citation_quality_score": 0.7,
+      "overall_quality": 0.7899999999999999,
+      "word_count": 80,
+      "sentence_count": 5,
+      "avg_sentence_length": 16.0
+    },
+    "revision_suggestions": [
+      {
+        "category": "structure",
+        "severity": "low",
+        "description": "General improvement opportunity",
+        "suggestion": "Consider reviewing the overall structure and flow of the section to ensure logical progression of ideas.",
+        "location": null
+      }
+    ],
+    "review_timestamp": "2026-01-28T22:50:48.142478"
+  },
+  "introduction": {
+    "section_type": "introduction",
+    "quality_metrics": {
+      "clarity_score": 0.8999999999999999,
+      "coherence_score": 0.7,
+      "academic_tone_score": 0.76,
+      "completeness_score": 0.7903333333333333,
+      "citation_quality_score": 0.7,
+      "overall_quality": 0.77555,
+      "word_count": 98,
+      "sentence_count": 6,
+      "avg_sentence_length": 16.333333333333332
+    },
+    "revision_suggestions": [
+      {
+        "category": "structure",
+        "severity": "low",
+        "description": "General improvement opportunity",
+        "suggestion": "Consider reviewing the overall structure and flow of the section to ensure logical progression of ideas.",
+        "location": null
+      }
+    ],
+    "review_timestamp": "2026-01-28T22:50:48.142543"
+  },
+  "methods": {
+    "section_type": "methods",
+    "quality_metrics": {
+      "clarity_score": 0.7,
+      "coherence_score": 0.7,
+      "academic_tone_score": 0.7999999999999999,
+      "completeness_score": 0.7695,
+      "citation_quality_score": 0.7,
+      "overall_quality": 0.730425,
+      "word_count": 89,
+      "sentence_count": 7,
+      "avg_sentence_length": 12.714285714285714
+    },
+    "revision_suggestions": [
+      {
+        "category": "structure",
+        "severity": "low",
+        "description": "General improvement opportunity",
+        "suggestion": "Consider reviewing the overall structure and flow of the section to ensure logical progression of ideas.",
+        "location": null
+      }
+    ],
+    "review_timestamp": "2026-01-28T22:50:48.142618"
+  },
+  "results": {
+    "section_type": "results",
+    "quality_metrics": {
+      "clarity_score": 0.7,
+      "coherence_score": 0.7,
+      "academic_tone_score": 0.82,
+      "completeness_score": 0.7705,
+      "citation_quality_score": 0.7,
+      "overall_quality": 0.734575,
+      "word_count": 91,
+      "sentence_count": 7,
+      "avg_sentence_length": 13.0
+    },
+    "revision_suggestions": [
+      {
+        "category": "structure",
+        "severity": "low",
+        "description": "General improvement opportunity",
+        "suggestion": "Consider reviewing the overall structure and flow of the section to ensure logical progression of ideas.",
+        "location": null
+      }
+    ],
+    "review_timestamp": "2026-01-28T22:50:48.142674"
+  },
+  "discussion": {
+    "section_type": "discussion",
+    "quality_metrics": {
+      "clarity_score": 0.8999999999999999,
+      "coherence_score": 0.7,
+      "academic_tone_score": 0.76,
+      "completeness_score": 0.8182,
+      "citation_quality_score": 0.7,
+      "overall_quality": 0.77973,
+      "word_count": 108,
+      "sentence_count": 7,
+      "avg_sentence_length": 15.428571428571429
+    },
+    "revision_suggestions": [
+      {
+        "category": "structure",
+        "severity": "low",
+        "description": "General improvement opportunity",
+        "suggestion": "Consider reviewing the overall structure and flow of the section to ensure logical progression of ideas.",
+        "location": null
+      }
+    ],
+    "review_timestamp": "2026-01-28T22:50:48.142731"
+  }
+}

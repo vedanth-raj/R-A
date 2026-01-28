@@ -1,0 +1,104 @@
+{
+  "topic": "machine learning in healthcare",
+  "max_papers": 3,
+  "start_time": "2026-01-28T22:51:27.955203",
+  "end_time": "",
+  "success": false,
+  "stages": {
+    "data_loading": {
+      "success": true,
+      "papers_loaded": 10
+    },
+    "generate_abstract": {
+      "success": true,
+      "word_count": 80,
+      "ai_provider": "mock",
+      "confidence": 0.7
+    },
+    "generate_introduction": {
+      "success": true,
+      "word_count": 98,
+      "ai_provider": "mock",
+      "confidence": 0.64
+    },
+    "generate_methods": {
+      "success": true,
+      "word_count": 89,
+      "ai_provider": "mock",
+      "confidence": 0.7
+    },
+    "generate_results": {
+      "success": true,
+      "word_count": 91,
+      "ai_provider": "mock",
+      "confidence": 0.7
+    },
+    "generate_discussion": {
+      "success": true,
+      "word_count": 108,
+      "ai_provider": "mock",
+      "confidence": 0.6599999999999999
+    },
+    "review_abstract": {
+      "success": true,
+      "overall_quality": 0.7899999999999999,
+      "suggestions_count": 1
+    },
+    "review_introduction": {
+      "success": true,
+      "overall_quality": 0.77555,
+      "suggestions_count": 1
+    },
+    "review_methods": {
+      "success": true,
+      "overall_quality": 0.730425,
+      "suggestions_count": 1
+    },
+    "review_results": {
+      "success": true,
+      "overall_quality": 0.734575,
+      "suggestions_count": 1
+    },
+    "review_discussion": {
+      "success": true,
+      "overall_quality": 0.77973,
+      "suggestions_count": 1
+    },
+    "revise_abstract": {
+      "success": true,
+      "iterations": 2,
+      "quality_improvement": 0.02320000000000011
+    },
+    "revise_introduction": {
+      "success": true,
+      "iterations": 2,
+      "quality_improvement": 0.021600000000000064
+    },
+    "revise_methods": {
+      "success": true,
+      "iterations": 2,
+      "quality_improvement": 0.07120000000000004
+    },
+    "revise_results": {
+      "success": true,
+      "iterations": 2,
+      "quality_improvement": 0.07120000000000004
+    },
+    "revise_discussion": {
+      "success": true,
+      "iterations": 2,
+      "quality_improvement": 0.02095999999999998
+    },
+    "references": {
+      "success": true,
+      "references_length": 427
+    },
+    "final_report": {
+      "success": true,
+      "report_file": "data\\final_reports\\final_report_20260128_225127.md",
+      "word_count": 964
+    }
+  },
+  "final_report": "",
+  "error": ""
+}
