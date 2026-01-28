@@ -1,0 +1,161 @@
+{
+  "start_time": "2026-01-28T22:21:56.433991",
+  "test_categories": {
+    "initialization": {
+      "success": true,
+      "tests": {
+        "gpt_generator": true,
+        "content_reviewer": true,
+        "final_integration": true,
+        "apa_formatter": true
+      },
+      "details": {
+        "gpt_generator": {
+          "initialized": true,
+          "available_providers": [
+            "mock"
+          ],
+          "preferred_provider": "gemini"
+        },
+        "content_reviewer": {
+          "initialized": true,
+          "best_provider": "mock"
+        },
+        "final_integration": {
+          "initialized": true
+        },
+        "apa_formatter": {
+          "initialized": true
+        }
+      }
+    },
+    "generation": {
+      "success": true,
+      "tests": {
+        "abstract_generation": true,
+        "introduction_generation": true
+      },
+      "details": {
+        "abstract_generation": {
+          "word_count": 80,
+          "confidence": 0.7,
+          "ai_provider": "mock",
+          "generation_time": 4e-05
+        },
+        "introduction_generation": {
+          "word_count": 98,
+          "confidence": 0.64,
+          "ai_provider": "mock",
+          "generation_time": 3.3e-05
+        }
+      }
+    },
+    "review": {
+      "success": true,
+      "tests": {
+        "quality_analysis": true,
+        "suggestion_generation": true
+      },
+      "details": {
+        "quality_analysis": {
+          "overall_quality": 0.72295,
+          "clarity_score": 0.7,
+          "coherence_score": 0.7,
+          "academic_tone_score": 0.76,
+          "word_count": 36
+        },
+        "suggestion_generation": {
+          "suggestions_count": 1,
+          "categories": [
+            "structure"
+          ]
+        }
+      }
+    },
+    "revision": {
+      "success": true,
+      "tests": {
+        "revision_cycle": true
+      },
+      "details": {
+        "revision_cycle": {
+          "iterations": 2,
+          "final_quality": 0.78855,
+          "content_improved": true
+        }
+      }
+    },
+    "apa_formatting": {
+      "success": false,
+      "tests": {
+        "journal_formatting": false
+      },
+      "details": {
+        "journal_formatting": {
+          "error": "'APAFormatter' object has no attribute 'format_journal_article'"
+        }
+      }
+    },
+    "integration": {
+      "success": false,
+      "tests": {
+        "complete_workflow": false
+      },
+      "details": {
+        "complete_workflow": {
+          "workflow_success": false,
+          "stages_completed": 18,
+          "has_final_report": true
+        }
+      }
+    },
+    "performance": {
+      "success": true,
+      "tests": {
+        "generation_speed": true,
+        "review_speed": true
+      },
+      "details": {
+        "generation_speed": {
+          "generation_time": 0.00019073486328125,
+          "within_limit": true
+        },
+        "review_speed": {
+          "review_time": 5.125999450683594e-05,
+          "within_limit": true
+        }
+      }
+    },
+    "error_handling": {
+      "success": true,
+      "tests": {
+        "invalid_section": true,
+        "empty_content": true
+      },
+      "details": {
+        "invalid_section": {
+          "handled_gracefully": true,
+          "expected_error": "Unknown section type: invalid_section"
+        },
+        "empty_content": {
+          "handled_gracefully": true,
+          "quality_score": 0.7
+        }
+      }
+    }
+  },
+  "overall_success": false,
+  "summary": {
+    "total_categories": 8,
+    "passed_categories": 6,
+    "failed_categories": 2,
+    "total_tests": 15,
+    "passed_tests": 13,
+    "failed_tests": 2,
+    "execution_time": 0.122434
+  },
+  "recommendations": [
+    "Review integration workflow and data flow"
+  ],
+  "end_time": "2026-01-28T22:21:56.556425"
+}

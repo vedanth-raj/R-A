@@ -23,7 +23,11 @@ from paper_retrieval.text_extractor import PDFTextExtractor
 from section_extractor import SectionWiseExtractor
 from section_analyzer import SectionAnalyzer, analyze_paper_sections
 from enhanced_gpt_generator import EnhancedGPTDraftGenerator, generate_drafts_from_analysis
+from content_reviewer import ContentReviewer, perform_full_revision_cycle
 from apa_formatter import APAFormatter, generate_apa_bibliography
+from final_integration import FinalIntegration, run_complete_workflow
+from final_testing import run_comprehensive_tests
+from final_documentation import FinalDocumentation
 from web_app import WebInterface
 
 # Setup logging
@@ -61,6 +65,8 @@ class AIResearchAgent:
         self.section_extractor = SectionWiseExtractor()
         self.section_analyzer = SectionAnalyzer()
         self.draft_generator = EnhancedGPTDraftGenerator(preferred_provider="gemini")
+        self.content_reviewer = ContentReviewer(preferred_provider="gemini")
+        self.integration = FinalIntegration()
         self.apa_formatter = APAFormatter()
         self.web_interface = WebInterface()
     
@@ -432,10 +438,14 @@ Examples:
     parser.add_argument("--format-apa", action="store_true", help="Format APA references")
     parser.add_argument("--final-paper", action="store_true", help="Create final paper")
     parser.add_argument("--complete-workflow", help="Run complete workflow for topic")
-    parser.add_argument("--web-interface", action="store_true", help="Start web interface")
-    parser.add_argument("--port", type=int, default=5000, help="Web interface port")
-    parser.add_argument("--cleanup", action="store_true", help="Remove unnecessary files")
-    parser.add_argument("--status", action="store_true", help="Show system status")
+    parser.add_argument('--review-content', action='store_true', help='Review and refine generated content')
+    parser.add_argument('--test-system', action='store_true', help='Run comprehensive system tests')
+    parser.add_argument('--generate-docs', action='store_true', help='Generate documentation and presentation materials')
+    parser.add_argument('--gradio-interface', action='store_true', help='Launch Gradio web interface')
+    parser.add_argument('--web-interface', action='store_true', help='Start web interface')
+    parser.add_argument('--port', type=int, default=5000, help='Web interface port')
+    parser.add_argument('--cleanup', action='store_true', help='Remove unnecessary files')
+    parser.add_argument('--status', action='store_true', help='Show system status')
     
     args = parser.parse_args()
     
@@ -487,13 +497,102 @@ Examples:
         
         return
     
-    # Handle web interface
-    if args.web_interface:
-        result = agent.start_web_interface(args.port)
-        if result["success"]:
-            print(f"🌐 Web interface started: {result['url']}")
-        else:
-            print(f"❌ Failed to start web interface: {result['error']}")
+    # Handle Gradio interface
+    if args.gradio_interface:
+        try:
+            from gradio_interface import GradioInterface
+            app = GradioInterface()
+            app.launch(share=False, port=7860)
+            return
+        except Exception as e:
+            print(f"❌ Failed to start Gradio interface: {e}")
+            return
+    
+    # Handle content review
+    if args.review_content:
+        print("🔍 Reviewing and refining generated content...")
+        try:
+            # Load existing drafts
+            drafts_dir = agent.data_dir / "drafts"
+            drafts_file = drafts_dir / "generated_drafts.json"
+            
+            if not drafts_file.exists():
+                print("❌ No drafts found to review. Please generate drafts first.")
+                return
+            
+            with open(drafts_file, 'r', encoding='utf-8') as f:
+                drafts_data = json.load(f)
+            
+            reviewed_sections = {}
+            
+            for section_type, content_data in drafts_data.items():
+                print(f"\n📝 Reviewing {section_type}...")
+                
+                # Review content
+                review = agent.content_reviewer.review_content(content_data['content'], section_type)
+                
+                # Perform revision if quality is low
+                if review.quality_metrics.overall_quality < 0.8:
+                    print(f"🔄 Revising {section_type} (Quality: {review.quality_metrics.overall_quality:.2f})")
+                    revised_content = agent.content_reviewer.revise_content(
+                        content_data['content'], section_type, review.revision_suggestions
+                    )
+                    reviewed_sections[section_type] = revised_content
+                else:
+                    print(f"✅ {section_type} quality is good (Quality: {review.quality_metrics.overall_quality:.2f})")
+                    reviewed_sections[section_type] = content_data['content']
+            
+            # Save reviewed drafts
+            reviewed_file = drafts_dir / "reviewed_drafts.json"
+            with open(reviewed_file, 'w', encoding='utf-8') as f:
+                json.dump(reviewed_sections, f, indent=2, ensure_ascii=False)
+            
+            print(f"\n✅ Content review completed. Reviewed drafts saved to: {reviewed_file}")
+            
+        except Exception as e:
+            print(f"❌ Error during content review: {e}")
+        return
+    
+    # Handle system testing
+    if args.test_system:
+        print("🧪 Running comprehensive system tests...")
+        try:
+            test_results = run_comprehensive_tests()
+            
+            print(f"\n📊 Test Results:")
+            print(f"Overall Success: {'✅ PASSED' if test_results['overall_success'] else '❌ FAILED'}")
+            
+            if 'summary' in test_results:
+                summary = test_results['summary']
+                print(f"Categories: {summary['passed_categories']}/{summary['total_categories']} passed")
+                print(f"Tests: {summary['passed_tests']}/{summary['total_tests']} passed")
+                print(f"Execution Time: {summary['execution_time']:.2f} seconds")
+            
+            if 'recommendations' in test_results:
+                print(f"\n💡 Recommendations:")
+                for i, rec in enumerate(test_results['recommendations'], 1):
+                    print(f"{i}. {rec}")
+            
+        except Exception as e:
+            print(f"❌ Error during testing: {e}")
+        return
+    
+    # Handle documentation generation
+    if args.generate_docs:
+        print("📚 Generating documentation and presentation materials...")
+        try:
+            doc_generator = FinalDocumentation()
+            files = doc_generator.generate_all_documentation()
+            
+            print(f"\n📚 Documentation Generated Successfully!")
+            print("=" * 50)
+            for doc_type, file_path in files.items():
+                print(f"{doc_type}: {file_path}")
+            
+            print(f"\n📁 All documentation saved to: {doc_generator.output_dir}")
+            
+        except Exception as e:
+            print(f"❌ Error generating documentation: {e}")
         return
     
     # Handle individual commands
