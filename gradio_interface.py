@@ -332,7 +332,7 @@ Generated on: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
         .quality-low { background: #f8d7da; color: #721c24; }
         """
         
-        with gr.Blocks(css=css, title="AI Research Agent - Content Generation & Review") as interface:
+        with gr.Blocks(title="AI Research Agent - Content Generation & Review") as interface:
             
             # Header
             gr.HTML("""
@@ -388,8 +388,7 @@ Generated on: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
                             content_output = gr.Textbox(
                                 label="Generated Content",
                                 lines=15,
-                                placeholder="Generated content will appear here...",
-                                show_copy_button=True
+                                placeholder="Generated content will appear here..."
                             )
                         
                         with gr.Column():
@@ -570,6 +569,42 @@ Generated on: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
     
     def launch(self, share=False, port=7860):
         """Launch the Gradio interface"""
+        css = """
+        .main-header {
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        .main-header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        .main-header h2 {
+            margin: 0.5rem 0;
+            font-size: 1.5rem;
+            font-weight: 400;
+        }
+        .main-header p {
+            margin: 1rem 0 0 0;
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+        .quality-metric {
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+            background: #f8f9fa;
+        }
+        .quality-high { background: #d4edda; color: #155724; }
+        .quality-medium { background: #fff3cd; color: #856404; }
+        .quality-low { background: #f8d7da; color: #721c24; }
+        """
+        
         interface = self.create_interface()
         interface.launch(
             share=share,
@@ -577,7 +612,8 @@ Generated on: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
             server_name="0.0.0.0",
             show_error=True,
             show_tips=True,
-            inbrowser=True
+            inbrowser=True,
+            css=css
         )
 
 def main():
