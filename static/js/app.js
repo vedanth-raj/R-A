@@ -37,49 +37,80 @@ class AIResearchAgent {
         });
 
         // Extract buttons
-        document.getElementById('extractSelectedBtn').addEventListener('click', () => {
-            this.extractSelectedPaper();
-        });
+        const extractSelectedBtn = document.getElementById('extractSelectedBtn');
+        if (extractSelectedBtn) {
+            extractSelectedBtn.addEventListener('click', () => {
+                this.extractSelectedPaper();
+            });
+        }
 
-        document.getElementById('extractAllBtn').addEventListener('click', () => {
-            this.extractText();
-        });
+        const extractAllBtn = document.getElementById('extractAllBtn');
+        if (extractAllBtn) {
+            extractAllBtn.addEventListener('click', () => {
+                this.extractText();
+            });
+        }
 
         // Extract paper selection
-        document.getElementById('extractPaperSelect').addEventListener('change', (e) => {
-            const extractBtn = document.getElementById('extractSelectedBtn');
-            extractBtn.disabled = !e.target.value;
-        });
+        const extractPaperSelect = document.getElementById('extractPaperSelect');
+        if (extractPaperSelect) {
+            extractPaperSelect.addEventListener('change', (e) => {
+                const extractBtn = document.getElementById('extractSelectedBtn');
+                if (extractBtn) {
+                    extractBtn.disabled = !e.target.value;
+                }
+            });
+        }
 
         // Refresh papers directory button
-        document.getElementById('refreshPapersBtn').addEventListener('click', () => {
-            this.loadPapersDirectory();
-        });
+        const refreshPapersBtn = document.getElementById('refreshPapersBtn');
+        if (refreshPapersBtn) {
+            refreshPapersBtn.addEventListener('click', () => {
+                this.loadPapersDirectory();
+            });
+        }
 
         // Analyze button
-        document.getElementById('analyzeBtn').addEventListener('click', () => {
-            this.analyzePaper();
-        });
+        const analyzeBtn = document.getElementById('analyzeBtn');
+        if (analyzeBtn) {
+            analyzeBtn.addEventListener('click', () => {
+                this.analyzePaper();
+            });
+        }
 
         // Compare button
-        document.getElementById('compareBtn').addEventListener('click', () => {
-            this.comparePapers();
-        });
+        const compareBtn = document.getElementById('compareBtn');
+        if (compareBtn) {
+            compareBtn.addEventListener('click', () => {
+                this.comparePapers();
+            });
+        }
 
         // Draft generation buttons
-        document.getElementById('generateDraftBtn').addEventListener('click', () => {
-            this.generateDraft();
-        });
+        const generateDraftBtn = document.getElementById('generateDraftBtn');
+        if (generateDraftBtn) {
+            generateDraftBtn.addEventListener('click', () => {
+                this.generateDraft();
+            });
+        }
 
-        document.getElementById('generateComprehensiveBtn').addEventListener('click', () => {
-            this.generateComprehensiveDraft();
-        });
+        const generateComprehensiveBtn = document.getElementById('generateComprehensiveBtn');
+        if (generateComprehensiveBtn) {
+            generateComprehensiveBtn.addEventListener('click', () => {
+                this.generateComprehensiveDraft();
+            });
+        }
 
         // Paper selection
-        document.getElementById('paperSelect').addEventListener('change', (e) => {
-            const analyzeBtn = document.getElementById('analyzeBtn');
-            analyzeBtn.disabled = !e.target.value;
-        });
+        const paperSelect = document.getElementById('paperSelect');
+        if (paperSelect) {
+            paperSelect.addEventListener('change', (e) => {
+                const analyzeBtn = document.getElementById('analyzeBtn');
+                if (analyzeBtn) {
+                    analyzeBtn.disabled = !e.target.value;
+                }
+            });
+        }
     }
 
     setupSocketListeners() {
