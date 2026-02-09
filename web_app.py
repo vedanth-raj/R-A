@@ -22,6 +22,7 @@ from paper_retrieval.text_extractor import PDFTextExtractor
 from section_extractor import SectionWiseExtractor
 from section_analyzer import SectionAnalyzer
 from advanced_text_processor import AdvancedTextProcessor
+from lengthy_draft_generator import LengthyDraftGenerator
 from error_handler import handle_error, safe_execute
 from performance_monitor import monitor_performance
 
@@ -41,17 +42,16 @@ class WebInterface:
         self.section_extractor = SectionWiseExtractor()
         self.section_analyzer = SectionAnalyzer()
         self.text_processor = AdvancedTextProcessor()
+        self.draft_generator = LengthyDraftGenerator()
         
     def search_papers(self, query, max_papers=5, year_start=None, year_end=None):
         """Search for papers with optimized performance"""
         try:
             import subprocess
             
+            # main.py supports: topic, --max-papers, --randomize, --diversity (no year filters)
             cmd = ["python", "main.py", query, "--max-papers", str(max_papers)]
-            if year_start:
-                cmd.extend(["--year-start", str(year_start)])
-            if year_end:
-                cmd.extend(["--year-end", str(year_end)])
+            # year_start/year_end not passed - main.py does not support them yet
             
             # Add timeout and optimize execution
             result = subprocess.run(
@@ -73,11 +73,17 @@ class WebInterface:
             return {"success": False, "error": str(e)}
     
     def extract_text_from_pdfs(self):
-        """Extract text from all downloaded PDFs"""
+        """Extract text from all downloaded PDFs (checks data/papers then Downloaded_pdfs)"""
         try:
             from paper_retrieval.text_extractor import process_downloaded_pdfs
-            results = process_downloaded_pdfs()
-            return {"success": True, "extracted_count": len(results)}
+            # Use data/papers (where main.py saves PDFs); fallback to Downloaded_pdfs
+            for pdf_dir in ["data/papers", "Downloaded_pdfs"]:
+                if Path(pdf_dir).exists() and list(Path(pdf_dir).glob("*.pdf")):
+                    results = process_downloaded_pdfs(downloaded_dir=pdf_dir)
+                    count = len(results.get("success", []))
+                    return {"success": True, "extracted_count": count, "directory": pdf_dir}
+            # No PDFs in either directory
+            return {"success": True, "extracted_count": 0, "message": "No PDFs found in data/papers or Downloaded_pdfs"}
         except Exception as e:
             return {"success": False, "error": str(e)}
     
@@ -225,6 +231,80 @@ class WebInterface:
                     pass
             
             return {"success": True, "comparison": comparison}
+            
+        except Exception as e:
+            return {"success": False, "error": str(e)}
+    
+    def generate_draft(self, papers_data, section_type="abstract", topic=""):
+        """Generate lengthy draft from selected papers using Gemini"""
+        try:
+            # Convert papers data to format expected by lengthy draft generator
+            papers_for_draft = []
+            
+            for paper in papers_data:
+                paper_info = {
+                    'title': paper.get('title', ''),
+                    'content': paper.get('content', ''),
+                    'sections': paper.get('sections', [])
+                }
+                papers_for_draft.append(paper_info)
+            
+            # Generate draft using LengthyDraftGenerator
+            if section_type == "abstract":
+                draft_content = self.draft_generator.generate_lengthy_abstract(topic, papers_for_draft)
+            elif section_type == "introduction":
+                draft_content = self.draft_generator.generate_lengthy_introduction(topic, papers_for_draft)
+            elif section_type == "methodology":
+                draft_content = self.draft_generator.generate_lengthy_methods(topic, papers_for_draft)
+            elif section_type == "results":
+                draft_content = self.draft_generator.generate_lengthy_results(topic, papers_for_draft)
+            elif section_type == "discussion":
+                draft_content = self.draft_generator.generate_lengthy_discussion(topic, papers_for_draft)
+            elif section_type == "references":
+                draft_content = self.draft_generator.generate_apa_references(papers_for_draft)
+            else:
+                return {"success": False, "error": f"Unsupported section type: {section_type}"}
+            
+            if draft_content:
+                return {
+                    "success": True,
+                    "draft": {
+                        "section_type": section_type,
+                        "title": f"{section_type.title()} Section",
+                        "content": draft_content,
+                        "word_count": len(draft_content.split()),
+                        "confidence_score": 0.85,  # Default confidence for lengthy drafts
+                        "sources_used": [paper.get('title', '') for paper in papers_for_draft],
+                        "generated_at": datetime.now().isoformat()
+                    }
+                }
+            else:
+                return {"success": False, "error": "Failed to generate draft"}
+                
+        except Exception as e:
+            return {"success": False, "error": str(e)}
+    
+    def generate_comprehensive_draft(self, papers_data, topic="", sections=["abstract", "introduction", "methodology", "results", "discussion", "references"]):
+        """Generate comprehensive lengthy draft with multiple sections"""
+        try:
+            # Convert papers data to format expected by lengthy draft generator
+            papers_for_draft = []
+            
+            for paper in papers_data:
+                paper_info = {
+                    'title': paper.get('title', ''),
+                    'content': paper.get('content', ''),
+                    'sections': paper.get('sections', [])
+                }
+                papers_for_draft.append(paper_info)
+            
+            # Generate complete draft using LengthyDraftGenerator
+            complete_draft = self.draft_generator.generate_complete_draft(topic, papers_for_draft)
+            
+            if complete_draft:
+                return {"success": True, "drafts": complete_draft}
+            else:
+                return {"success": False, "error": "Failed to generate comprehensive draft"}
             
         except Exception as e:
             return {"success": False, "error": str(e)}
@@ -645,6 +725,216 @@ def compare_papers():
     
     # Run comparison in background
     thread = threading.Thread(target=run_comparison)
+    thread.daemon = True
+    thread.start()
+    
+    return jsonify({"operation_id": operation_id, "status": "started"})
+
+@app.route('/api/generate_draft', methods=['POST'])
+def generate_draft():
+    """Generate lengthy draft from selected papers API endpoint"""
+    data = request.json
+    paper_files = data.get('paper_files', [])
+    section_type = data.get('section_type', 'abstract')
+    topic = data.get('topic', 'Research Paper')
+    
+    if not paper_files:
+        return jsonify({"success": False, "error": "No papers selected for draft generation"})
+    
+    operation_id = f"draft_{int(time.time())}"
+    active_operations[operation_id] = {"status": "running", "progress": 0}
+    
+    def run_draft_generation():
+        try:
+            socketio.emit('operation_update', {
+                'operation_id': operation_id,
+                'status': 'running',
+                'message': f'Generating {section_type} draft from {len(paper_files)} papers...',
+                'progress': 10
+            })
+            
+            # Load paper data
+            papers_data = []
+            for paper_file in paper_files:
+                try:
+                    if paper_file.endswith('_sections.json'):
+                        # Load section data
+                        with open(paper_file, 'r', encoding='utf-8') as f:
+                            section_data = json.load(f)
+                            papers_data.append({
+                                'title': section_data.get('metadata', {}).get('title', ''),
+                                'content': '\n'.join([s.get('content', '') for s in section_data.get('sections', [])]),
+                                'sections': section_data.get('sections', [])
+                            })
+                    else:
+                        # Load extracted text
+                        with open(paper_file, 'r', encoding='utf-8') as f:
+                            content = f.read()
+                            papers_data.append({
+                                'title': Path(paper_file).stem.replace('_extracted', ''),
+                                'content': content,
+                                'sections': []
+                            })
+                except Exception as e:
+                    print(f"Error loading paper {paper_file}: {e}")
+                    continue
+            
+            if not papers_data:
+                raise Exception("No valid paper data loaded")
+            
+            socketio.emit('operation_update', {
+                'operation_id': operation_id,
+                'status': 'running',
+                'message': 'Processing paper content...',
+                'progress': 40
+            })
+            
+            # Generate draft using LengthyDraftGenerator
+            result = web_interface.generate_draft(papers_data, section_type, topic)
+            
+            if result["success"]:
+                active_operations[operation_id] = {
+                    "status": "completed",
+                    "progress": 100,
+                    "result": result
+                }
+                socketio.emit('operation_update', {
+                    'operation_id': operation_id,
+                    'status': 'completed',
+                    'message': f'{section_type.title()} draft generated successfully',
+                    'progress': 100,
+                    'result': result
+                })
+            else:
+                active_operations[operation_id] = {
+                    "status": "error",
+                    "error": result["error"]
+                }
+                socketio.emit('operation_update', {
+                    'operation_id': operation_id,
+                    'status': 'error',
+                    'message': f'Draft generation failed: {result["error"]}',
+                    'error': result["error"]
+                })
+                
+        except Exception as e:
+            active_operations[operation_id] = {
+                "status": "error",
+                "error": str(e)
+            }
+            socketio.emit('operation_update', {
+                'operation_id': operation_id,
+                'status': 'error',
+                'message': f'Draft generation failed: {str(e)}',
+                'error': str(e)
+            })
+    
+    # Run draft generation in background
+    thread = threading.Thread(target=run_draft_generation)
+    thread.daemon = True
+    thread.start()
+    
+    return jsonify({"operation_id": operation_id, "status": "started"})
+
+@app.route('/api/generate_comprehensive_draft', methods=['POST'])
+def generate_comprehensive_draft():
+    """Generate comprehensive lengthy draft with multiple sections API endpoint"""
+    data = request.json
+    paper_files = data.get('paper_files', [])
+    sections = data.get('sections', ['abstract', 'introduction', 'methodology', 'results', 'discussion', 'references'])
+    topic = data.get('topic', 'Research Paper')
+    
+    if not paper_files:
+        return jsonify({"success": False, "error": "No papers selected for draft generation"})
+    
+    operation_id = f"comprehensive_draft_{int(time.time())}"
+    active_operations[operation_id] = {"status": "running", "progress": 0}
+    
+    def run_comprehensive_draft():
+        try:
+            socketio.emit('operation_update', {
+                'operation_id': operation_id,
+                'status': 'running',
+                'message': f'Generating comprehensive draft from {len(paper_files)} papers...',
+                'progress': 5
+            })
+            
+            # Load paper data
+            papers_data = []
+            for paper_file in paper_files:
+                try:
+                    if paper_file.endswith('_sections.json'):
+                        with open(paper_file, 'r', encoding='utf-8') as f:
+                            section_data = json.load(f)
+                            papers_data.append({
+                                'title': section_data.get('metadata', {}).get('title', ''),
+                                'content': '\n'.join([s.get('content', '') for s in section_data.get('sections', [])]),
+                                'sections': section_data.get('sections', [])
+                            })
+                    else:
+                        with open(paper_file, 'r', encoding='utf-8') as f:
+                            content = f.read()
+                            papers_data.append({
+                                'title': Path(paper_file).stem.replace('_extracted', ''),
+                                'content': content,
+                                'sections': []
+                            })
+                except Exception as e:
+                    print(f"Error loading paper {paper_file}: {e}")
+                    continue
+            
+            if not papers_data:
+                raise Exception("No valid paper data loaded")
+            
+            # Generate comprehensive draft using LengthyDraftGenerator
+            socketio.emit('operation_update', {
+                'operation_id': operation_id,
+                'status': 'running',
+                'message': 'Generating comprehensive draft...',
+                'progress': 20
+            })
+            
+            result = web_interface.generate_comprehensive_draft(papers_data, topic, sections)
+            
+            if result["success"]:
+                active_operations[operation_id] = {
+                    "status": "completed",
+                    "progress": 100,
+                    "result": result
+                }
+                socketio.emit('operation_update', {
+                    'operation_id': operation_id,
+                    'status': 'completed',
+                    'message': 'Comprehensive draft generated successfully',
+                    'progress': 100,
+                    'result': result
+                })
+            else:
+                active_operations[operation_id] = {
+                    "status": "error",
+                    "error": result["error"]
+                }
+                socketio.emit('operation_update', {
+                    'operation_id': operation_id,
+                    'status': 'error',
+                    'message': f'Comprehensive draft generation failed: {result["error"]}',
+                    'error': result["error"]
+                })
+                
+        except Exception as e:
+            active_operations[operation_id] = {
+                "status": "error",
+                "error": str(e)
+            }
+            socketio.emit('operation_update', {
+                'operation_id': operation_id,
+                'status': 'error',
+                'message': f'Comprehensive draft generation failed: {str(e)}',
+                'error': str(e)
+            })
+    
+    # Run comprehensive draft generation in background
+    thread = threading.Thread(target=run_comprehensive_draft)
     thread.daemon = True
     thread.start()
     

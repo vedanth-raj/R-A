@@ -19,6 +19,7 @@ class AIResearchAgent {
         this.loadDownloadedPapers();
         this.loadSearchResults();
         this.loadPapersDirectory();
+        this.updateDraftPaperList();
     }
 
     setupEventListeners() {
@@ -63,6 +64,15 @@ class AIResearchAgent {
         // Compare button
         document.getElementById('compareBtn').addEventListener('click', () => {
             this.comparePapers();
+        });
+
+        // Draft generation buttons
+        document.getElementById('generateDraftBtn').addEventListener('click', () => {
+            this.generateDraft();
+        });
+
+        document.getElementById('generateComprehensiveBtn').addEventListener('click', () => {
+            this.generateComprehensiveDraft();
         });
 
         // Paper selection
@@ -401,6 +411,94 @@ class AIResearchAgent {
         }
     }
 
+    async generateDraft() {
+        if (this.selectedPapers.size === 0) {
+            this.showNotification('Please select at least 1 paper for draft generation', 'error');
+            return;
+        }
+
+        const topic = document.getElementById('draftTopic').value.trim();
+        if (!topic) {
+            this.showNotification('Please enter a research topic', 'error');
+            return;
+        }
+
+        const sectionType = document.getElementById('draftSectionType').value;
+        const paperFiles = Array.from(this.selectedPapers);
+
+        try {
+            this.showProgress('draft', 'Generating draft...');
+
+            const response = await fetch('/api/generate_draft', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    paper_files: paperFiles,
+                    section_type: sectionType,
+                    topic: topic
+                })
+            });
+
+            const data = await response.json();
+
+            if (data.status === 'started') {
+                this.activeOperations[data.operation_id] = 'draft';
+                this.showNotification('Draft generation started', 'success');
+            } else {
+                this.hideProgress('draft');
+                this.showNotification('Failed to start draft generation', 'error');
+            }
+        } catch (error) {
+            this.hideProgress('draft');
+            this.showNotification('Draft generation failed: ' + error.message, 'error');
+        }
+    }
+
+    async generateComprehensiveDraft() {
+        if (this.selectedPapers.size === 0) {
+            this.showNotification('Please select at least 1 paper for comprehensive draft generation', 'error');
+            return;
+        }
+
+        const topic = document.getElementById('draftTopic').value.trim();
+        if (!topic) {
+            this.showNotification('Please enter a research topic', 'error');
+            return;
+        }
+
+        const paperFiles = Array.from(this.selectedPapers);
+
+        try {
+            this.showProgress('draft', 'Generating comprehensive draft...');
+
+            const response = await fetch('/api/generate_comprehensive_draft', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    paper_files: paperFiles,
+                    topic: topic
+                })
+            });
+
+            const data = await response.json();
+
+            if (data.status === 'started') {
+                this.activeOperations[data.operation_id] = 'draft';
+                this.showNotification('Comprehensive draft generation started', 'success');
+            } else {
+                this.hideProgress('draft');
+                this.showNotification('Failed to start comprehensive draft generation', 'error');
+            }
+        } catch (error) {
+            this.hideProgress('draft');
+            this.showNotification('Comprehensive draft generation failed: ' + error.message, 'error');
+        }
+    }
+
     async loadDownloadedPapers() {
         try {
             const response = await fetch('/api/get_downloaded_papers');
@@ -421,6 +519,7 @@ class AIResearchAgent {
             this.papers = data.papers || [];
             this.updatePaperSelect();
             this.updatePaperList();
+            this.updateDraftPaperList();
         } catch (error) {
             console.error('Failed to load papers:', error);
         }
@@ -491,9 +590,85 @@ class AIResearchAgent {
 
     updateCompareButton() {
         const compareBtn = document.getElementById('compareBtn');
+        const generateDraftBtn = document.getElementById('generateDraftBtn');
+        const generateComprehensiveBtn = document.getElementById('generateComprehensiveBtn');
+        
+        const hasSelectedPapers = this.selectedPapers.size > 0;
+        
         if (compareBtn) {
             compareBtn.disabled = this.selectedPapers.size < 2;
         }
+        if (generateDraftBtn) {
+            generateDraftBtn.disabled = !hasSelectedPapers;
+        }
+        if (generateComprehensiveBtn) {
+            generateComprehensiveBtn.disabled = !hasSelectedPapers;
+        }
+    }
+
+    updateDraftPaperList() {
+        const draftPaperList = document.getElementById('draftPaperList');
+        if (!draftPaperList) return;
+        
+        draftPaperList.innerHTML = '';
+        
+        // Combine both extracted papers and section papers
+        const allPapers = [...this.papers, ...this.getSectionPapers()];
+        
+        if (allPapers.length === 0) {
+            draftPaperList.innerHTML = '<p style="color: var(--text-muted); text-align: center; padding: 2rem;">No papers available. Please extract text from PDFs first.</p>';
+            return;
+        }
+        
+        allPapers.forEach(paper => {
+            const paperItem = document.createElement('div');
+            paperItem.className = 'paper-item';
+            
+            const isSelected = this.selectedPapers.has(paper.file);
+            
+            paperItem.innerHTML = `
+                <div class="paper-info">
+                    <div class="paper-title">${paper.name}</div>
+                    <div class="paper-meta">
+                        ${paper.size ? `Size: ${(paper.size / 1024).toFixed(1)} KB | ` : ''}
+                        ${paper.modified ? `Modified: ${new Date(paper.modified * 1000).toLocaleDateString()}` : ''}
+                        ${paper.sections ? `Sections: ${paper.sections}` : ''}
+                    </div>
+                </div>
+                <div class="paper-actions">
+                    <input type="checkbox" class="paper-checkbox" 
+                           data-file="${paper.file}" 
+                           ${isSelected ? 'checked' : ''}>
+                </div>
+            `;
+            
+            // Add checkbox event listener
+            const checkbox = paperItem.querySelector('.paper-checkbox');
+            if (checkbox) {
+                checkbox.addEventListener('change', (e) => {
+                    if (e.target.checked) {
+                        this.selectedPapers.add(paper.file);
+                    } else {
+                        this.selectedPapers.delete(paper.file);
+                    }
+                    this.updateCompareButton();
+                });
+            }
+            
+            draftPaperList.appendChild(paperItem);
+        });
+    }
+
+    getSectionPapers() {
+        // Get section analysis papers
+        const sectionPapers = [];
+        try {
+            // This would need to be implemented to fetch section papers
+            // For now, return empty array
+        } catch (error) {
+            console.error('Failed to load section papers:', error);
+        }
+        return sectionPapers;
     }
 
     updateOperationProgress(data) {
@@ -520,6 +695,8 @@ class AIResearchAgent {
             this.displayAnalysisResults(result);
         } else if (operationType === 'compare') {
             this.displayComparisonResults(result);
+        } else if (operationType === 'draft') {
+            this.displayDraftResults(result);
         } else if (operationType === 'search' || operationType === 'extract') {
             // Reload papers after search or extraction
             this.loadPapers();
@@ -671,6 +848,97 @@ class AIResearchAgent {
         
         html += '</div>';
         resultsContainer.innerHTML = html;
+    }
+
+    displayDraftResults(result) {
+        if (result.drafts) {
+            // Comprehensive draft results
+            this.displayComprehensiveDraftResults(result);
+        } else if (result.draft) {
+            // Single draft results
+            this.displaySingleDraftResults(result);
+        }
+    }
+
+    displaySingleDraftResults(result) {
+        const resultsContainer = document.getElementById('draftResults');
+        const comprehensiveResultsContainer = document.getElementById('comprehensiveDraftResults');
+        
+        resultsContainer.style.display = 'block';
+        comprehensiveResultsContainer.style.display = 'none';
+        
+        const draft = result.draft;
+        const confidenceClass = draft.confidence_score > 0.8 ? 'confidence-high' : 
+                               draft.confidence_score > 0.6 ? 'confidence-medium' : 'confidence-low';
+        
+        let html = `
+            <div class="draft-meta">
+                <div class="draft-meta-item">
+                    <i class="fas fa-file-alt"></i>
+                    <span>${draft.title}</span>
+                </div>
+                <div class="draft-meta-item">
+                    <span>Word Count:</span>
+                    <span>${draft.word_count}</span>
+                </div>
+                <div class="draft-meta-item confidence-score ${confidenceClass}">
+                    <span>Confidence:</span>
+                    <span>${(draft.confidence_score * 100).toFixed(1)}%</span>
+                </div>
+            </div>
+        `;
+        
+        resultsContainer.innerHTML = html;
+        document.getElementById('draftContent').textContent = draft.content;
+    }
+
+    displayComprehensiveDraftResults(result) {
+        const resultsContainer = document.getElementById('draftResults');
+        const comprehensiveResultsContainer = document.getElementById('comprehensiveDraftResults');
+        
+        resultsContainer.style.display = 'none';
+        comprehensiveResultsContainer.style.display = 'block';
+        
+        const drafts = result.drafts;
+        let html = '';
+        
+        Object.keys(drafts).forEach(sectionType => {
+            const draft = drafts[sectionType];
+            if (draft.error) {
+                html += `
+                    <div class="draft-section">
+                        <h5><i class="fas fa-exclamation-triangle"></i> ${sectionType.title()}</h5>
+                        <div style="color: var(--error); padding: 1rem; background: rgba(255, 68, 68, 0.1); border-radius: 4px;">
+                            ${draft.error}
+                        </div>
+                    </div>
+                `;
+            } else {
+                const confidenceClass = draft.confidence_score > 0.8 ? 'confidence-high' : 
+                                       draft.confidence_score > 0.6 ? 'confidence-medium' : 'confidence-low';
+                
+                html += `
+                    <div class="draft-section">
+                        <h5>${sectionType.title()}</h5>
+                        <div class="draft-meta">
+                            <div class="draft-meta-item">
+                                <span>Word Count:</span>
+                                <span>${draft.word_count}</span>
+                            </div>
+                            <div class="draft-meta-item confidence-score ${confidenceClass}">
+                                <span>Confidence:</span>
+                                <span>${(draft.confidence_score * 100).toFixed(1)}%</span>
+                            </div>
+                        </div>
+                        <div style="background: var(--bg-tertiary); padding: 1rem; border-radius: 4px; margin-top: 1rem; max-height: 400px; overflow-y: auto; white-space: pre-wrap; font-family: 'Courier New', monospace; font-size: 0.85rem;">
+                            ${draft.content}
+                        </div>
+                    </div>
+                `;
+            }
+        });
+        
+        comprehensiveResultsContainer.innerHTML = html;
     }
 
     displayResults(result) {

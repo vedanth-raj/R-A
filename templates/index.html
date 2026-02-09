@@ -595,6 +595,81 @@
         .tooltip:hover::after {
             opacity: 1;
         }
+        
+        /* Draft Generator Styles */
+        .draft-results, .comprehensive-draft-results {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        
+        .draft-content, .comprehensive-draft-content {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            margin-top: 1rem;
+            max-height: 500px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        .draft-section {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: var(--bg-card);
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+        
+        .draft-section h5 {
+            color: var(--accent-primary);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .draft-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            background: var(--bg-secondary);
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+        
+        .draft-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .confidence-score {
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        .confidence-high {
+            background: rgba(0, 255, 136, 0.2);
+            color: var(--success);
+        }
+        
+        .confidence-medium {
+            background: rgba(255, 170, 0, 0.2);
+            color: var(--warning);
+        }
+        
+        .confidence-low {
+            background: rgba(255, 68, 68, 0.2);
+            color: var(--error);
+        }
     </style>
 </head>
 <body>
@@ -629,6 +704,9 @@
             </button>
             <button class="tab-btn" data-tab="compare">
                 <i class="fas fa-balance-scale"></i> Compare Papers
+            </button>
+            <button class="tab-btn" data-tab="draft">
+                <i class="fas fa-pen-fancy"></i> Generate Draft
             </button>
             <button class="tab-btn" data-tab="results">
                 <i class="fas fa-chart-bar"></i> Results
@@ -817,6 +895,81 @@
             
             <div id="comparisonResults" class="results-container" style="display: none;">
                 <!-- Comparison results will be displayed here -->
+            </div>
+        </div>
+
+        <!-- Draft Generator Tab -->
+        <div id="draft" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <h3 class="card-title">GPT Draft Generator</h3>
+                    <p class="card-description">Generate AI-powered drafts from your research papers</p>
+                </div>
+                
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="draftTopic">Research Topic:</label>
+                        <input type="text" id="draftTopic" class="form-control" placeholder="Enter your research topic (e.g., Machine Learning in Healthcare)">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="draftSectionType">Section Type:</label>
+                        <select id="draftSectionType" class="form-control">
+                            <option value="abstract">Abstract</option>
+                            <option value="introduction">Introduction</option>
+                            <option value="methodology">Methodology</option>
+                            <option value="results">Results</option>
+                            <option value="discussion">Discussion</option>
+                            <option value="references">References</option>
+                        </select>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                        <button id="generateDraftBtn" class="btn btn-primary" disabled>
+                            <i class="fas fa-pen"></i> Generate Single Draft
+                        </button>
+                        
+                        <button id="generateComprehensiveBtn" class="btn btn-secondary" disabled>
+                            <i class="fas fa-file-alt"></i> Generate Comprehensive Draft
+                        </button>
+                    </div>
+                    
+                    <div id="draftProgress" class="progress-container" style="display: none;">
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <div class="progress-text">Generating draft...</div>
+                    </div>
+                    
+                    <!-- Draft Results -->
+                    <div id="draftResults" class="draft-results" style="display: none;">
+                        <h4><i class="fas fa-file-alt"></i> Generated Draft</h4>
+                        <div id="draftContent" class="draft-content"></div>
+                    </div>
+                    
+                    <!-- Comprehensive Draft Results -->
+                    <div id="comprehensiveDraftResults" class="comprehensive-draft-results" style="display: none;">
+                        <h4><i class="fas fa-file-alt"></i> Comprehensive Draft</h4>
+                        <div id="comprehensiveDraftContent" class="comprehensive-draft-content"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Draft Paper Selection -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-folder-open"></i>
+                    </div>
+                    <h3 class="card-title">Select Papers for Draft Generation</h3>
+                </div>
+                
+                <div id="draftPaperList" class="paper-list">
+                    <!-- Papers will be populated here -->
+                </div>
             </div>
         </div>
 
