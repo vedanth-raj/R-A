@@ -1,6 +1,6 @@
 """
-Enhanced GPT Draft Generator with Multiple AI Providers
-Supports OpenAI, Google Gemini, and Mock generation
+Enhanced GPT Draft Generator with Google Gemini AI
+Supports Google Gemini and Mock generation (OpenAI removed)
 """
 
 import os
@@ -43,13 +43,13 @@ class EnhancedGPTDraftGenerator:
         """Initialize the enhanced draft generator.
         
         Args:
-            preferred_provider: Preferred AI provider ("openai", "gemini", "mock")
+            preferred_provider: Preferred AI provider (only "gemini" is used)
         """
         self.logger = logging.getLogger(__name__)
-        self.preferred_provider = preferred_provider
+        self.preferred_provider = "gemini"  # Force Gemini only
         
         # Initialize AI providers
-        self.openai_client = None
+        self.openai_client = None  # Disabled
         self.gemini_client = None
         self.mock_generator = MockDraftGenerator()
         
@@ -172,19 +172,9 @@ Discussion:""",
         }
     
     def _setup_providers(self):
-        """Setup available AI providers."""
+        """Setup available AI providers (Gemini only)."""
         
-        # Setup OpenAI
-        if OPENAI_AVAILABLE:
-            openai_key = os.getenv('OPENAI_API_KEY')
-            if openai_key and openai_key != 'your_openai_api_key_here':
-                try:
-                    self.openai_client = openai.OpenAI(api_key=openai_key)
-                    self.logger.info("OpenAI client initialized successfully")
-                except Exception as e:
-                    self.logger.warning(f"Failed to initialize OpenAI: {e}")
-        
-        # Setup Gemini
+        # Setup Gemini only
         if GEMINI_AVAILABLE:
             gemini_key = os.getenv('GEMINI_API_KEY')
             if gemini_key and gemini_key != 'your_gemini_api_key_here':
@@ -197,25 +187,19 @@ Discussion:""",
                 except Exception as e:
                     self.logger.warning(f"Failed to initialize Gemini: {e}")
         
-        # Determine available providers
+        # Determine available providers (Gemini only, no OpenAI)
         self.available_providers = []
-        if self.openai_client:
-            self.available_providers.append("openai")
         if self.gemini_client:
             self.available_providers.append("gemini")
-        self.available_providers.append("mock")  # Always available
+        self.available_providers.append("mock")  # Always available as fallback
         
         self.logger.info(f"Available AI providers: {self.available_providers}")
     
     def get_best_provider(self) -> str:
-        """Get the best available AI provider."""
-        if self.preferred_provider in self.available_providers:
-            return self.preferred_provider
-        
-        # Priority order: gemini > openai > mock
-        for provider in ["gemini", "openai", "mock"]:
-            if provider in self.available_providers:
-                return provider
+        """Get the best available AI provider (Gemini only)."""
+        # Always prefer Gemini, fallback to mock
+        if "gemini" in self.available_providers:
+            return "gemini"
         
         return "mock"
     
@@ -248,9 +232,7 @@ Discussion:""",
         
         # Generate content
         try:
-            if provider == "openai" and self.openai_client:
-                content = self._generate_with_openai(section_type, summaries, findings, implications, template)
-            elif provider == "gemini" and self.gemini_client:
+            if provider == "gemini" and self.gemini_client:
                 content = self._generate_with_gemini(section_type, summaries, findings, implications, template)
             else:
                 content = self.mock_generator.generate_mock_content(section_type, len(papers_data))
@@ -280,27 +262,6 @@ Discussion:""",
             # Fallback to mock
             return self.generate_section_draft(section_type, papers_data, "mock")
     
-    def _generate_with_openai(self, section_type: str, summaries: str, findings: str, 
-                            implications: str, template: Dict) -> str:
-        """Generate content using OpenAI."""
-        prompt = template['prompt_template'].format(
-            paper_summaries=summaries,
-            paper_findings=findings,
-            paper_implications=implications
-        )
-        
-        response = self.openai_client.chat.completions.create(
-            model="gpt-3.5-turbo",
-            messages=[
-                {"role": "system", "content": "You are an expert academic writer specializing in research papers."},
-                {"role": "user", "content": prompt}
-            ],
-            max_tokens=template['max_tokens'],
-            temperature=template['temperature']
-        )
-        
-        return response.choices[0].message.content.strip()
-    
     def _generate_with_gemini(self, section_type: str, summaries: str, findings: str,
                             implications: str, template: Dict) -> str:
         """Generate content using Google Gemini."""
@@ -326,8 +287,7 @@ Discussion:""",
     def _calculate_confidence_score(self, content: str, provider: str) -> float:
         """Calculate confidence score for generated content."""
         base_scores = {
-            "gemini": 0.85,
-            "openai": 0.80,
+            "gemini": 0.90,  # Increased confidence for Gemini
             "mock": 0.60
         }
         

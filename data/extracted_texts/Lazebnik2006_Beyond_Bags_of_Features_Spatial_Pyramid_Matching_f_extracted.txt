@@ -1,3 +1,23 @@
+==================================================
+METADATA
+==================================================
+
+format: PDF 1.7
+title: Beyond bags of features: spatial pyramid matching for recognizing natural scene categories
+author: Svetlana Lazebnik, Cordelia Schmid, Jean Ponce
+subject: Computer Science [cs]/Computer Vision and Pattern Recognition [cs.CV]
+creator: HAL
+producer: PDFLaTeX
+creationDate: D:20260116044732+01'00'
+modDate: D:20060401092507-08'00'
+page_count: 9
+file_size: 1993311
+file_name: Lazebnik2006_Beyond_Bags_of_Features_Spatial_Pyramid_Matching_f.pdf
+
+==================================================
+FULL TEXT
+==================================================
+
 --- Page 1 ---
 HAL Id: inria-00548585
 https://inria.hal.science/inria-00548585v1
@@ -940,3 +960,8 @@ egory recognition. In Proc. CVPR, 2006.
 features and kernels for classifcation of texture and object
 categories: An in-depth study. Technical Report RR-5737,
 INRIA Rhˆone-Alpes, 2005.
+==================================================
+ABSTRACT
+==================================================
+
+This paper presents a method for recognizing scene cat- egories based on approximate global geometric correspon- dence. This technique works by partitioning the image into increasingly ﬁne sub-regions and computing histograms of local features found inside each sub-region. The result- ing “spatial pyramid” is a simple and computationally efﬁ- cient extension of an orderless bag-of-features image rep- resentation, and it shows signiﬁcantly improved perfor- mance on challenging scene categorization tasks. Speciﬁ- cally, our proposed method exceeds the state of the art on the Caltech-101 database and achieves high accuracy on a large database of ﬁfteen natural scene categories. The spa- tial pyramid framework also offers insights into the success of several recently proposed image descriptions, including Torralba’s “gist” and Lowe’s SIFT descriptors. In this paper, we consider the problem of recognizing the semantic category of an image. For example, we may want to classify a photograph as depicting a scene (forest, street, ofﬁce, etc.) or as containing a certain object of in- terest. For such whole-image categorization tasks, bag-of-

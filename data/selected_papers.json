@@ -1,42 +1,15 @@
 [
   {
-    "paperId": "ce561aa8cc440dc957364b357de5b1167631df83",
-    "title": "Production, use, and fate of all plastics ever made",
+    "paperId": "ed1f4466a0982f3e8de202de01ecceb473d11893",
+    "title": "A Caution Regarding Rules of Thumb for Variance Inflation Factors",
     "authors": [
       {
-        "authorId": "47383913",
-        "name": "R. Geyer"
-      },
-      {
-        "authorId": "2105939",
-        "name": "J. Jambeck"
-      },
-      {
-        "authorId": "34861621",
-        "name": "K. L. Law"
-      }
-    ],
-    "year": 2017,
-    "abstract": "We present the first ever global account of the production, use, and end-of-life fate of all plastics ever made by humankind. Plastics have outgrown most man-made materials and have long been under environmental scrutiny. However, robust global information, particularly about their end-of-life fate, is lacking. By identifying and synthesizing dispersed data on production, use, and end-of-life management of polymer resins, synthetic fibers, and additives, we present the first global analysis of all mass-produced plastics ever manufactured. We estimate that 8300 million metric tons (Mt) as of virgin plastics have been produced to date. As of 2015, approximately 6300 Mt of plastic waste had been generated, around 9% of which had been recycled, 12% was incinerated, and 79% was accumulated in landfills or the natural environment. If current production and waste management trends continue, roughly 12,000 Mt of plastic waste will be in landfills or in the natural environment by 2050.",
-    "citationCount": 13186,
-    "openAccessPdf": {
-      "url": "https://advances.sciencemag.org/content/advances/3/7/e1700782.full.pdf",
-      "status": "GOLD"
-    },
-    "hasOpenAccessPdf": true,
-    "pdfUrl": "https://advances.sciencemag.org/content/advances/3/7/e1700782.full.pdf"
-  },
-  {
-    "paperId": "f265aa15857fcd6fcc5770e46bc65d38c83c49a2",
-    "title": "Kinetics of thermal degradation of char-forming plastics from thermogravimetry. Application to a phenolic plastic",
-    "authors": [
-      {
-        "authorId": "92364016",
-        "name": "H. Friedman"
+        "authorId": "74509087",
+        "name": "Robert M. O’Brien"
       }
     ],
     "year": 2007,
-    "citationCount": 3331,
+    "citationCount": 9863,
     "openAccessPdf": {
       "url": "",
       "status": "CLOSED"
@@ -45,37 +18,80 @@
     "pdfUrl": ""
   },
   {
-    "paperId": "6dd3da125abc33eed90c5b5e329e3a4afe9a1dc8",
-    "title": "An overview of chemical additives present in plastics: Migration, release, fate and environmental impact during their use, disposal and recycling.",
+    "paperId": "50d7f68422d0c0424674f6b235ac23be8300da38",
+    "title": "Guidelines, Criteria, and Rules of Thumb for Evaluating Normed and Standardized Assessment Instruments in Psychology.",
     "authors": [
       {
-        "authorId": "123738940",
-        "name": "J. Hahladakis"
-      },
-      {
-        "authorId": "8162986",
-        "name": "C. Velis"
-      },
-      {
-        "authorId": "145743802",
-        "name": "R. Weber"
-      },
-      {
-        "authorId": "14283197",
-        "name": "E. Iacovidou"
-      },
-      {
-        "authorId": "2257232",
-        "name": "P. Purnell"
+        "authorId": "5191328",
+        "name": "D. Cicchetti"
       }
     ],
-    "year": 2018,
-    "citationCount": 2822,
+    "year": 1994,
+    "citationCount": 8845,
     "openAccessPdf": {
-      "url": "https://doi.org/10.1016/j.jhazmat.2017.10.014",
-      "status": "HYBRID"
+      "url": "",
+      "status": "CLOSED"
     },
     "hasOpenAccessPdf": true,
-    "pdfUrl": "https://doi.org/10.1016/j.jhazmat.2017.10.014"
+    "pdfUrl": ""
+  },
+  {
+    "paperId": "a5d0738e5163cbba4953e12f3bc60651e3607804",
+    "title": "New Effect Size Rules of Thumb",
+    "authors": [
+      {
+        "authorId": "2021871",
+        "name": "S. Sawilowsky"
+      }
+    ],
+    "year": 2009,
+    "citationCount": 2863,
+    "openAccessPdf": {
+      "url": "https://digitalcommons.wayne.edu/cgi/viewcontent.cgi?article=1536&context=jmasm",
+      "status": "BRONZE"
+    },
+    "hasOpenAccessPdf": true,
+    "pdfUrl": "https://digitalcommons.wayne.edu/cgi/viewcontent.cgi?article=1536&context=jmasm"
+  },
+  {
+    "paperId": "a8a0c7f3b092a0e51009c755bc19187519e0129d",
+    "title": "Sample size of 12 per group rule of thumb for a pilot study",
+    "authors": [
+      {
+        "authorId": "6966169",
+        "name": "S. Julious"
+      }
+    ],
+    "year": 2005,
+    "citationCount": 2586,
+    "openAccessPdf": {
+      "url": "",
+      "status": "CLOSED"
+    },
+    "hasOpenAccessPdf": true,
+    "pdfUrl": ""
+  },
+  {
+    "paperId": "81991f3c923b3927164f6b7c86c78e508980f61f",
+    "title": "Understanding Power and Rules of Thumb for Determining Sample Sizes",
+    "authors": [
+      {
+        "authorId": "41230482",
+        "name": "C. R. VanVoorhis"
+      },
+      {
+        "authorId": "40121072",
+        "name": "B. Morgan"
+      }
+    ],
+    "year": 2007,
+    "abstract": "This article addresses the definition of power and its relationship to Type I and Type II errors. We discuss the relationship of sample size and power. Finally, we offer statistical rules of thumb guiding the selection of sample sizes large enough for sufficient power to detecting differences, associations, chi‐square, and factor analyses.",
+    "citationCount": 2022,
+    "openAccessPdf": {
+      "url": "https://www.tqmp.org/RegularArticles/vol03-2/p043/p043.pdf",
+      "status": "GOLD"
+    },
+    "hasOpenAccessPdf": true,
+    "pdfUrl": "https://www.tqmp.org/RegularArticles/vol03-2/p043/p043.pdf"
   }
 ]

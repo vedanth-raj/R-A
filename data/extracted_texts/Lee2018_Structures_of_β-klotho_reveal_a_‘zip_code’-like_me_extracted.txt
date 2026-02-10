@@ -1,3 +1,22 @@
+==================================================
+METADATA
+==================================================
+
+format: PDF 1.5
+title: Structures of β-Klotho reveal a ‘zip code’-like mechanism for endocrine FGF signaling
+author: Sangwon Lee, Jungyuen Choi, Jyotidarsini Mohanty, Leiliane P. Sousa, Francisco Tome, Els Pardon, Jan Steyaert, Mark A. Lemmon, Irit Lax, Joseph Schlessinger
+creator: AH XSL Formatter V6.3 R1 for Linux64 : 6.3.1.23495 (2016/02/03 14:39JST)
+producer: Antenna House PDF Output Library 6.3.752 (Linux64)
+creationDate: D:20190626115718-05'00'
+modDate: D:20190626115718-05'00'
+page_count: 32
+file_size: 2154545
+file_name: Lee2018_Structures_of_β-klotho_reveal_a_‘zip_code’-like_me.pdf
+
+==================================================
+FULL TEXT
+==================================================
+
 --- Page 1 ---
 Structures of β-Klotho reveal a ‘zip code’-like mechanism for 
 endocrine FGF signaling
@@ -1048,3 +1067,8 @@ Author Manuscript
 Author Manuscript
 Author Manuscript
 Author Manuscript
+==================================================
+ABSTRACT
+==================================================
+
+Canonical FGFs activate FGF receptors (FGFR) via paracrine or autocrine mechanisms, in a process requiring cooperation with heparan sulfate proteoglycans that function as co-receptors for FGFR activation1,2. By contrast, endocrine FGFs (FGF 19, 21, and 23) are circulating hormones that regulate critical metabolic processes in a variety of tissues3,4. FGF19 regulates bile acid synthesis and lipogenesis, while FGF21 stimulate insulin sensitivity, energy expenditure and weight loss5. Endocrine FGFs signal through FGFRs in a manner that requires Klothos, which are cell surface proteins with tandem glycosidase domains3,4. Here we describe the crystal structures of free and ligand-bound β-Klotho extracellular regions, revealing the molecular mechanism underlying the specificity of FGF21 towards β-Klotho and demonstrating how FGFR is activated in a Klotho-dependent manner. β-Klotho serves as a primary “Zip code”-like receptor for FGF21 with an FGFR functioning as a catalytic subunit that mediates intracellular signaling. Our structures also show how a sugar cutting enzyme (glycosidase) has evolved to become a specific receptor for hormones that regulate metabolic processes including lowering of blood sugar. Finally, we describe a superior agonistic variant of FGF21 and present structural insights offering development of novel therapeutics for diseases linked to endocrine FGFs. To elucidate the mechanism of action of β-Klotho in cell signaling via FGF21 stimulation we used X-ray crystallography to determine the structure of free and ligand bound

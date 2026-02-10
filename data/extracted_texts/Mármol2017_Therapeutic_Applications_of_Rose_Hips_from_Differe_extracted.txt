@@ -1,0 +1,2195 @@
+==================================================
+METADATA
+==================================================
+
+format: PDF 1.5
+title: Therapeutic Applications of Rose Hips from Different Rosa Species
+author: Inés Mármol, Cristina Sánchez-de-Diego, Nerea Jiménez-Moreno, Carmen Ancín-Azpilicueta and María Jesús Rodríguez-Yoldi
+subject: Rosa species, rose hips, are widespread wild plants that have been traditionally used as medicinal compounds for the treatment of a wide variety of diseases. The therapeutic potential of these plants is based on its antioxidant effects caused by or associated with its phytochemical composition, which includes ascorbic acid, phenolic compounds and healthy fatty acids among others. Over the last few years, medicinal interest in rose hips has increased as a consequence of recent research that has studied its potential application as a treatment for several diseases including skin disorders, hepatotoxicity, renal disturbances, diarrhoea, inflammatory disorders, arthritis, diabetes, hyperlipidaemia, obesity and cancer. In this review, the role of different species of Rosa in the prevention of treatment of various disorders related to oxidative stress, is examined, focusing on new therapeutic approaches from a molecular point of view.
+keywords: Rose hip; oxidative stress; antioxidants; functional food; cancer; arthritis; diabetes; neural disorder; antimicrobial
+creator: LaTeX with hyperref package
+producer: pdfTeX-1.40.15
+creationDate: D:20170525210626+08'00'
+modDate: D:20170525210626+08'00'
+page_count: 37
+file_size: 958086
+file_name: Mármol2017_Therapeutic_Applications_of_Rose_Hips_from_Differe.pdf
+
+==================================================
+FULL TEXT
+==================================================
+
+--- Page 1 ---
+ 
+International Journal of 
+Molecular Sciences
+Review
+Therapeutic Applications of Rose Hips from
+Different Rosa Species
+Inés Mármol 1, Cristina Sánchez-de-Diego 2, Nerea Jiménez-Moreno 3,
+Carmen Ancín-Azpilicueta 3,* and María Jesús Rodríguez-Yoldi 1,*
+1
+Department of Pharmacology and Physiology, University of Zaragoza, Zaragoza 50013, Spain;
+ines.marmol9@gmail.com
+2
+Department of Physiological Sciences II, University of Barcelona, Barcelona 08907, Spain;
+csanchezdg@gmail.com
+3
+Department of Applied Chemistry, Public University of Navarra, Pamplona 31006, Spain;
+nerea.jimenez@unavarra.es
+*
+Correspondence: ancin@unavarra.es (C.A.-A.); mjrodyol@unizar.es (M.J.R.-Y.);
+Tel.: +34-948-169-9596 (C.A.-A.); +34-976-761-649 (M.J.R.-Y.)
+Academic Editors: Lorenza Speranza, José L. Quiles and Sara Franceschelli
+Received: 30 March 2017; Accepted: 18 May 2017; Published: 25 May 2017
+Abstract: Rosa species, rose hips, are widespread wild plants that have been traditionally used as
+medicinal compounds for the treatment of a wide variety of diseases. The therapeutic potential
+of these plants is based on its antioxidant effects caused by or associated with its phytochemical
+composition, which includes ascorbic acid, phenolic compounds and healthy fatty acids among others.
+Over the last few years, medicinal interest in rose hips has increased as a consequence of recent
+research that has studied its potential application as a treatment for several diseases including skin
+disorders, hepatotoxicity, renal disturbances, diarrhoea, inﬂammatory disorders, arthritis, diabetes,
+hyperlipidaemia, obesity and cancer. In this review, the role of different species of Rosa in the
+prevention of treatment of various disorders related to oxidative stress, is examined, focusing on new
+therapeutic approaches from a molecular point of view.
+Keywords: Rose hip; oxidative stress; antioxidants; functional food; cancer; arthritis; diabetes; neural
+disorder; antimicrobial
+1. Methodology
+The present report has adhered to systematic review guidelines. The search of each of the different
+parts in PubMed (http://www.ncbi.nlm.nih.gov/pubmed/) identiﬁed a total of 214 hits from 1976
+to 2017.
+2. Introduction
+2.1. Origin of Oxidation: The Importance of Natural Antioxidants
+Vegetables and fruits are an important source for therapeutic products which can prevent, relieve
+or cure numerous illnesses as they are an important source of phytochemicals and other bioactive
+compounds. Reactive Oxygen Species (ROS) are implicated in a large number of illnesses, especially
+chronic ones. Nitrogenous species and free radicals start chain reactions which can favour the initiation
+and progression of many complications in diseases [1,2]. Oxidative stress may be deﬁned as an
+imbalance between ROS levels in the organism and the capacity of antioxidant mechanisms. A free
+radical is a species which contains one or more unpaired electrons, which makes them very reactive
+as they need another electron to ﬁll the orbital and become more stable. Free radicals are formed in
+Int. J. Mol. Sci. 2017, 18, 1137; doi:10.3390/ijms18061137
+www.mdpi.com/journal/ijms
+
+
+--- Page 2 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+2 of 37
+different ways: (i) many organic molecules (glyceraldehydes, adrenaline, L-dopa, dopamine, cysteine
+etc.) oxidize in the presence of O2 to form the superoxide radical; (ii) many of these radicals in vivo
+are produced by an incomplete transfer of electrons on O2 just before the terminal cytochrome oxidase
+step [3]. The superoxide radical (O2•−), which is very active, is formed when a single electron is
+added to the ground state O2 molecule. Sometimes the presence of ROS in the organism is beneﬁcial
+as they are used in the immune response to kill ingested or extra-cellular bacteria. Unfortunately,
+ROS are not limited to this action and they can also contribute to undesired effects as they induce
+oxidation processes. The term “antioxidant paradox” is often used to refer that ROS are implicated
+in several human diseases but there is no good evidence, in human population, that large doses of
+dietary antioxidants have always preventive or therapeutic effects [4]. In addition, there are some
+environmental factors which contribute to the production of free radicals such as exposure to ultraviolet
+radiation, pollution and cigarette smoke. Nitrogen dioxide, one of the major oxidants in smog, is also
+found in cigarette smoke. Two free radicals have been found in tobacco smoke, the main radical NO•,
+found in tar, is capable of reducing oxygen to the superoxide radical [3].
+The antioxidants family include a series of molecules with low oxidation potential which act
+by donating electrons to deactivate ROS and other free radicals that produce DNA damage and
+consequently can provoke tumorigenesis [3]. Antioxidants scavenge free radicals through different
+mechanisms like Hydrogen Atom Transfer (HAT), Single Electron Transfer followed by Proton Transfer
+(SET or ET-PT) and the Sequential Proton Loss Electron Transfer (SPLET) mechanism. Each one
+of these mechanisms presents different kinetics [5]. When the free radicals are generated in vivo,
+many antioxidants act in order to defend the organism from oxidative damage. In the organism
+there is a ﬁrst line of defence made up of peroxidases and metal chelating proteins which serve
+as a preventive barrier as they inhibit the formation of ROS and free radicals by capturing metal
+ions, reducing hydroperoxides, hydrogen peroxide and quenching superoxide and singlet oxygen [6].
+A second line of defence is formed by vitamin C and vitamin E which scavenge radicals and so prevent
+any propagation reactions. The third line of defence of the organism repairs lipids, proteins, sugars
+and DNA with oxidative damage. This also includes proteases, lipases, DNA repair enzymes and
+transferases [7]. The antioxidants used could be endogenous such as catalases, which transform H2O2
+to O2 and H2O, and superoxide dismutases, which convert superoxide radical (O2•−) to H2O2 and
+O2, or likewise they could be exogenous, coming from one’s diet. Diet is very important as this
+provides the antioxidants that intervene in the second line of defence such as vitamin C and E and
+other antioxidants such as β-carotene, phenols including ﬂavonoids and essential minerals, which
+participate in the formation of the antioxidant enzymes. Natural antioxidants are found, above all, in
+vegetables, herbs, berries, spices, tea, coffee and cocoa. For all these reasons, different epidemiological
+studies have reached the conclusion that consumption of these products, of vegetable origin, are
+associated with a lower risk of suffering chronic diseases as well as with lower mortality [8,9].
+Likewise, antioxidants are a type of additive which is used in the food-processing industry
+with the aim of preventing an oxidizing deterioration of the lipids as well as preventing loss of
+nutrition values and the development of odours in the food. The antioxidants additives allowed
+in food industry may be synthetic or natural, although currently natural antioxidants are more
+readily acceptable than synthetic antioxidants. The most used synthetic antioxidants in the food
+processing industry are: butylhydroxyanisole (BHA), butylhydroxytoluene (BHT), propyl gallate (PG)
+and di-tert-butylhydroquinone (TBHQ), all of which are phenolic synthetic antioxidants. However,
+since the late XX century the use of synthetic antioxidants additives has become restricted because of
+their possible toxic and carcinogenic effects [10]. This question has caught the attention of both the
+scientiﬁc community as well as among the general public, and currently there is a lot of interest
+in developing methods that could provide information and means of isolating both individual
+antioxidants or those present in extracts coming from different natural sources. Thus, among the
+positive list of additives permitted by the EU can be found rosemary extract (E392) and different
+types of tocopherols (E306 an extract rich in tocopherols, E307 α-tocopherol, E308 γ-tocopherol, E309
+
+
+--- Page 3 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+3 of 37
+δ-tocopherol). Given that rose hips are rich in vitamins, especially, vitamin C, as well as phenolic
+compounds, carotenoids, tocopherol, bioﬂavonoids, tannins, volatile oils and pectins [11–15], these
+pseudo-fruits could constitute an alternative source of antioxidants for the food industry as well as
+serving for therapeutic use.
+2.2. Presence of Antioxidants in Rose Hips Coming from Different Varieties of Rosa
+Rose hips are pseudo-fruits from the plants of the Rosa genus in the Rosaceae family. Rosa genus
+contains around 100 species which are widely spread across Europe, the Middle East, Asia and North
+America [16]. In Europe, the most abundant and most studied is the Rosa canina species which is
+a native shrub [17]. The pseudo-fruits from Rosa species have been used both for alimentation and
+for medicinal purposes thanks to their high level content of bioactive compounds. They are known
+to have a high level of antioxidant and antimicrobial action [18]. Their antioxidant activity is due
+to their content in polyphenols, vitamins C, E, B and carotenoids and these compounds may have
+synergistic effects. Rose hips also have an anti-inﬂammatory action, as well as anti-diabetic and
+anticancer effects [19–21].
+2.2.1. Hydrosoluble Antioxidants
+Among the hydrosoluble phytochemicals contained in rose hips, phenolic compounds and
+ascorbic acid stand out [22–25]. The inclusion of ascorbic acid in diet is important as it provides redox
+status and produces health beneﬁts. Harrison [26] found a beneﬁcial impact from this vitamin in
+cognitive decline and Alzheimer´s disease. The concentration of this vitamin in rose hips depends on
+several factors and has a wide range of concentration. Thus, Czyzowska et al. [27] found 1200 mg/L in
+Rosa rugosa and 600 mg/L in Rosa canina. Jiménez et al. [21] found 101 mg of vitamin C/Kg of dry fruit
+in Rosa canina rose hips. This concentration was six times higher than that found by Tumbas et al. [14]
+in rose hips of Rosa canina from Serbia. However, it was lower than those found by Demir et al. [15] in
+Rosa canina, Rosa dumalis and Rosa gallica, from Turkey and from those found by Türkben et al. [28] in
+Rosa canina, also from Turkey. Phenolic compounds are synthesized in plants through the carbohydrates
+and are generally produced as a defence mechanism of the plants against pathogens and as a protection
+against an excess of ultraviolet radiation. These compounds are secondary metabolites of the plants
+and are characterized by at least one aromatic ring with one or more hydroxyl groups attached.
+Ellagic acid showed anti-mutagenic and anti-carcinogenic action in different assays both in vivo and
+in vitro [29]. This compound can act as an antioxidant, and it has also been able to induce apoptosis
+in carcinogenic cells [30]. Quercetin is the most abundant ﬂavonoid that accumulates in superior
+plants where it forms glycosides, such as rutin, with a great variety of sugars [31]. Quercetin and
+its derivative quercetin-3-O-glucuronide, inhibit ROS overproduction making chemoprotection of
+mitochondrial function through antioxidative actions [32]. Tumbas et al. [14] found that Rosa canina
+rose hips from Serbia showed high concentrations of vitamin C, quercetin and ellagic acid. These
+results coincide with those of Hosni et al. [33] who observed that quercetin and ellagic acid were the
+most abundant phenolic compounds in Tunisian rose hips. Fujii and Saito [34] found that, among
+other compounds isolated from Rosa canina rose hips, quercetin was a potent melanogenesis inhibitor
+in B16 mouse melanoma cells. The inhibition of melanogenesis by quercetin was due to the inhibition
+of both tyrosinase activity and of the protein expression. Conceição de Oliveira et al. [35] reported
+that a high intake of quercetin was associated with a lower risk of suffering from diabetes type II.
+Ouerghemmi et al. [36] found that Rosa canina extracts includes two phenolic compounds derivatives
+of kaempferol (kaempferol 3-O-glucoside and kaempferol-7-O-glucoside). Ercisli et al. [13] studied
+the chemical composition of the fruits from Rosa canina, Rosa dumalis subsp. antalyensis, Rosa dumalis
+subsp. boissiere, Rosa villosa, Rosa pulverulenta and Rosa pisiformis. In this study, it was observed that
+the highest total phenolic content corresponded to Rosa canina (96 mg gallic acid equivalents/g dry
+weight) and Rosa pulverulenta (94 mg gallic acid equivalents/g dry weight), whereas the largest content
+of ascorbic acid corresponded to Rosa dumalis subsp. boissiere (943 mg ascorbic acid/100 mL) and to
+
+
+--- Page 4 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+4 of 37
+Rosa pulverulenta (923 mg ascorbic acid/100 mL). The authors of this study concluded that native rose
+genotypes are extremely rich in phenols and ascorbic acid and so could be used as functional food or
+as a food additive. More recently, Demir et al. [15] studied the quantity of phenolic compounds and
+antioxidant activities of ﬁve different rose hip (Rosa L.) species including Rosa canina, Rosa dumalis,
+Rosa gallica, Rosa dumalis subsp. boissiere and Rosa hirtissima grown in Turkey. They found that the
+greatest amount of phenolic compounds corresponded to Rosa dumalis subsp. boissiere (52.94 mg gallic
+acid/g dry weight) and that the rest of them showed very similar concentrations of around 30 mg
+gallic acid/g dry weight. As for the concentration of individual phenolic compounds, those authors
+found a high concentration of catechin, procyanidin B2 and epicatechin gallate in Rosa dumalis subsp
+boissiere. Aladedunye et al. [37] found that the major phenolic compounds of Rosa woodsii fruit extracts
+were gallic acid, catechin and quercetin, which coincides with the results of Abdel-Hameed et al. [38]
+in Rosa damascena extracts. In Figure 1 are shown the chemical formulas of the most important phenolic
+compounds present in rose hips.
+Figure 1. Chemical formulas of hydrosoluble phenolic compounds of rose hips.
+In addition, some studies have been made comparing the concentration of bioactive compounds
+in rose hips with that of other vegetables of interest to alimentation and to the food industry.
+Öztürk et al. [39] compared phenolic acid content in sour cherry juice, rose hips tea, green tea
+
+
+--- Page 5 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+5 of 37
+and tomato and found that rose hip tea contained a greater quantity of phenolic acids than
+the rest of the products. Rose hips contained vanillic acid, p-coumaric acid and ferulic acid in
+important concentrations, while green tea had high concentrations of syringic acid. Denev et al. [40]
+studied the concentration of major polyphenol and anthocyanin contents of fruit extract and the
+antioxidant properties of six fruits: rose hip (Rosa canina), rowanberry (Serbus aucuparia), hawthorn
+(Crataegus monogyna), chokeberry (Aronia melanocarpa), blackcurrant (Ribes nigrum), and blueberry
+(Vaccinium myrtillus). They found that rose hips had chlorogenic acid but in lower concentrations
+than rowanberry and chokeberry, and that the rose fruit showed a high concentration of rutin but
+no anthocyanins were found. As for the antioxidative properties of these six fruits, rose hip extract
+showed the highest antioxidant activity via Oxygen Radical Absorbance Capacity (ORAC), Total
+Peroxyl Radical Trapping Potential (TRAP) and Hydroxyl Radical Averting Capacity (HORAC) assay,
+while blueberry extract was the most potent inhibitor of lipid peroxidation. These results were similar
+to those found by Halvorsen et al. [41] who studied the concentration of total antioxidants by the
+Ferric-Reducing Ability of Plasma (FRAP) assay in different dietary plants (fruits, berries, vegetables,
+cereals, nuts and pulses), ﬁnding that vegetables that contain most antioxidants included members of
+several families, such as Rosaceae (dog rose, sour cherry, blackberry, strawberry, raspberry).
+In some research studies, the composition of other parts of the rose as distinct from the rose
+hips has also been studied. Guimarăes et al. [42] studied the composition of petals, fertilized ﬂowers,
+unripe hips, ripening hips and overripe hips from the Rosa micrantha from Portugal. These authors
+found that fertilized ﬂowers showed the highest concentration of total phenolic compounds (527.07 mg
+GAE/g extract) followed by the petals (424.20 mg GAE/g extract), and that the different hips showed
+much lower concentrations. A similar study was carried out by Barros et al. [43] in which they made
+an evaluation of the antioxidant properties (DPPH radical scavenging effects, reducing power, and
+inhibition of β-carotene, inhibition of lipid peroxidation) of Rosa canina hips seed, petals, ﬂowers and
+galls. They found that galls proved to have the greatest antioxidant activity, ripen hips showed the
+highest content of tocopherols and β-carotene, unripe hips gave the highest levels of ascorbic acid and
+petals had the highest concentration of sugars.
+2.2.2. Lipid-Soluble Antioxidants
+In addition to the hydrosoluble antioxidants, in Rosa species there are also lipid-soluble
+antioxidants such as carotenoids and tocopherols, although these compounds have been less studied
+and knowledge is more limited than in other bioactive substances. The distinct orange to red colour
+of rose hips is formed as a result of various carotenoids. The most abundant of these is β-carotene
+and lycopene, followed by β-cryptoxanthin, rubixanthin, zeaxanthin and lutein [44–46]. Carotenoids
+are very important in the human diet as they act as provitamin A and can prevent certain chronic
+diseases and even cancer [47]. Tocopherols, α-, β-, γ-, and δ-isomers, and tocotrienols have vitamin
+E activity and they are compounds with ability to scavenge free radicals, and even tocopherols can
+be considered as the most important natural antioxidants. Several authors [48–50] have shown that
+these antioxidants have beneﬁcial effects in degenerative diseases such as atherosclerosis, Alzheimer´s
+disease, cardiovascular disease and certain types of cancer. Fromm et al. [51] studied seed oils
+from different Rosaceae species such as dessert and cider apples (Malus domestica Borkh.), quince
+(Cydonia oblonga Mill.) and rose hip (Rosa canina L.). In this study, it was found that qualitative and
+quantitative composition of tocopherols and carotenoids differed signiﬁcantly between different genera
+and also among cultivars of the same species. Total content of tocopherols of the rose seed oils analysed
+ranged from 597.7 mg/kg from one sample of quince to 1099.9 mg/kg of rose hip. Andersson et al. [46]
+studied the concentration of tocopherol and tocotrienol in four different species of Rosa (Rosa dumalis,
+Rosa rubiginosa, Rosa spinosissima, Rosa pimpinellifolia) and only found α- and γ-tocopherol in the ﬂeshy
+parts of the rose hips. Tocopherol content and vitamin E activity varied depending on the date of
+harvesting, species and year, while the fruit ripening had little inﬂuence on this activity. In Figure 2
+the chemical formulas are shown of the most important lipid-soluble compounds present in rose hips.
+
+
+--- Page 6 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+6 of 37
+Figure 2. Chemical formulas of lipid-soluble antioxidants of rose hips.
+2.3. Presence of Other Active Compounds in Rose Hips
+Although most of the time when speaking of the pseudofruits from the different Rosa species,
+reference is made to their content of vitamin C and antioxidants, there are also other important
+bioactive compounds in rose hips. For a long time the residue products from rose hips have been
+used as animal fodder, but nowadays these residue products are gaining in importance as they can
+be used in cosmetics, pharmacology and in food applications as they contain oil with a high degree
+of unsaturated lipids. The quantity of oil contained in the seeds depends on the species and ranges
+from 5 to 18%. In rose hip, seed oil 97% corresponds to linoleic, oleic, palmitic and stearic acid; the
+remaining 3% is made up of 12 minority fatty acids [52]. Grajzer et al. [53] and Kazaz et al. [54] found
+that the content of linoleic acid is approximately 40–56% of seed oil, α-linoleic and its derivatives
+between 20–30% and oleic acid 14–20%. Rose hip seed oil has been used in cosmetics because of
+its therapeutic effect on skin disorders [55]. In addition, Szentmihalyi et al. [56] compared various
+methods to extract oil from rose hips, traditional solvent extraction, by ultrasound and microwave
+sub- and supercritical ﬂuid extraction. Unsaturated fatty acids (oleic, linoleic and linolenic acid) were
+extracted to a maximum of between 35.9–54.7% using microwave and polyunsaturated fatty acid
+(linoleic and linolenic acid) were found between 60% and 90% in the recovered oils.
+Likewise,
+some
+galactolipids
+were
+isolated
+from
+Rosa
+canina
+hips.
+Galactolipids
+(monogalactosyldiacylglycerols and digalactosyldiacylglycerol) are compounds that accumulate
+in the plasma membrane of the plants, and distinguishes them from the lipidic composition of
+the cell membranes of animals and fungi [57]. Most galactolipids possess fatty acids with high
+levels of unsaturation.
+α-linolenic acid can range as high as 90% of the total fatty acids [58].
+Lopes et al. [20] found that some galactolipids had an anti-inﬂammatory action and Maeda et al. [59,60]
+found that these compounds have anti-tumorigenic roles.
+Larsen et al. [61] and Cohen [62]
+isolated the (2S)-1,2-di-O-[(9Z,12Z,15Z)-octadeca-9,12,15-trienoyl]-3-O-β-D-galactopyranosyl glycerol
+from dried and milled fruits of Rosa canina by bioassay-guided fractionation (Figure 3).
+Christensen [63] isolated the galactolypid 1,2-di-O-α-linolenoyl-3-O-β-D-galactopyranosyl-sn-glycerol
+from Rosa canina hips. Hou et al. [64] found that bioactive glyceroglycolipid 1,2-di-O-α-linolenoyl-3-O-
+β-galactopyranosyl-sn-glycerol (dLGG) that was identiﬁed from C. rabens was found in vitro and
+
+
+--- Page 7 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+7 of 37
+in vivo to be a potent nitric oxide (NO) scavenger. dLGG treatment inhibited both mRNA and protein
+expression of inducible NO synthase and cyclooxygenase-2 (COX-2) in murine macrophages and
+inhibited COX-2 gene transcription in 12-O-tetradecanoylphorbol-13-acetate (TPA)-treated B16 cells.
+Figure 3. Chemical formula of monogalactosyldiacylglycerol of rose hips.
+There is also some research work where extracts from rose hips have different pharmaceutical
+actions but the chemical composition of these extracts was not studied. Thus, McCutcheon et al. [65]
+examined a hundred extracts obtained in methanol from plants in order to determine the antiviral
+activity against seven virus. It was found that twelve extracts had antiviral activity at non cytotoxic
+concentrations. The extracts of Rosa nutkunu and Amelunchier alnifoliu, both members of the Rosaceae,
+were found to be very active against an enteric coronavirus. Orhan et al. [66] also found in vivo
+anti-inﬂammatory and antinociceptive activity from aqueous crude extract, ethanol extract and from
+different fractions obtained from these earlier extracts of Rosa canina L. fruits.
+Dogan et al. [67] studied the seed mineral contents of different rose hip species (Rosa canina L.,
+Rosa dumalis subsp. boissiere, Rosa iberica, Rosa heckeliana subsp. vanheurckiana and Rosa pulverulenta).
+Nitrogen, phosphorous and potassium contents of the investigated species varied from 19.039 to
+28.076 ppm (N), from 553 to 1080 ppm (P), and from 1142 to 2945 ppm (K). Nickel, lead, and sulphur
+contents of the investigated species ranged from 13.5 to 190.2 ppm, from 0.35 to 4.35 ppm, from 609.5 to
+1152.5 ppm, respectively. Likewise, other minerals present in lesser concentration were also analysed
+such as sodium, iron, manganese, zinc, copper, magnesium, and calcium. The mineral contents of
+these species ranked from the highest to lowest as N > K > P > S > Mg > Ca > Na > Fe > Zn > Ni > Mn
+> Cu > Pb.
+2.4. Factors Affecting the Concentration of Bioactive Compounds in Rose Hips. Utilization of These Compounds
+in Agro-Food Industry
+Different factors could have an inﬂuence on the content of phytochemicals in rose hips. From the
+results of several studies, it would seem that there is quite a range of variability, especially in
+the concentration of vitamin C and this could be due to the ascorbic acid instability. Dogan and
+Kazankaya [68] found that the variability in the content of vitamin C of rose hips depends on the
+geographical origin of the plant, the species and ecological factors. Roman et al. [25] found that the
+content of vitamin C of rose hips depends on the quantity of light received by the plant and the oxygen
+level of the environment. Likewise, many factors could affect the vitamin C content of rose hips,
+and the fruit freshness level seems to be one of the most important ones. Strålsjö et al. [69] found
+that dried rose hips had less ascorbic acid content than fresh rose hips. More recently, Baiano and
+del Nobile [70] concluded that the quantity of vitamin C in vegetables depends on several factors
+such as the plant variety, soil condition, climate, the length of time since it had been picked and
+storage. Türkben et al. [28] found that quercetin and (+)-catechin were the main phenolic compounds
+in Rosa canina rose hips but their concentrations were very variable depending on the level of ripeness
+of the fruits as well as processing conditions and manipulation techniques. Demir et al. [15] found
+that catechin concentration was notable in different Rosa species from Turkey, and it depended on
+geographical origin and ecological factors (light, temperature, or soil nutrients) just as in the case
+
+
+--- Page 8 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+8 of 37
+of vitamin C. Likewise, they also found a high variability in phenolic acids such as vanillic acid,
+caffeic acid and protocatechuic acid. Cunja et al. [71] found that frost stimulates the formation of
+β-carotene and lycopene in Rosa canina hips but that it reduces the concentration of ascorbic acid
+and some quercetin glycosides. Likewise, they found that antioxidant ability decreased in frostbitten
+rose hips. Similarty, studies carried out in our laboratory have compared nutraceutical compounds
+(vitamin C, neutral phenols and acidic phenols) content of four Rosa species rose hips: Rosa pouzinii,
+Rosa corymbifera, Rosa glauca and Rosa canina coming from different geographical zones of Spain with
+different climatology that can condition fruit characteristics. Results showed a great quantitative
+variability in ascorbic acid and neutral phenols content, and quantitative and qualitative differences in
+acidic phenols content, depending on the species. A great correlation between freshness of the rose
+hips and concentration of neutral polyphenols was found. Signiﬁcant differences were found in the
+acidic phenols content among the studied species [72].
+Because of their rich composition in bioactive compounds, rose hips have meant an important
+source of food and medicine for many cultures and currently they are being used in the development
+of functional foods or to improve the stability and conservation of some foods. Thus, it has been
+observed that the addition of Rosa canina rose hips as a functional ingredient in porcine frankfurters
+acts as a partial substitute for sodium nitrate. This is important since it means that the concentration of
+this additive could be lowered [73]. It has also been observed that the phenolic compounds of rose hip
+are useful for preventing or delaying oxidation in very saturated oils such as canola oil (Brassica sp.).
+Aladedunye et al. [37] studied the composition and antioxidant activity of Rosa woodsii extracts, and
+how this phenolic extract acted on canola oil. On studying the efﬁciency of these phenolic extracts
+in protecting canola oil from thermal deterioration, it was found that after 7 days, the formation of
+lipid hydroperoxides was 2.5 times higher in the control canola oil compared to the fortiﬁed sample
+with Rosa woodsii extract. Romero et al. [74] compared the effect of adding α-tocopherol, α-tocotrienol
+and Moscheta rose (Rosa rubiginosa) shell extract to canola oil at high temperature (180 ◦C) in order
+to determine how it acted on the stability of this saturated fat. From the results, it was found that
+the addition of Rosa rubiginosa shell extract gave great stability to canola oil. Rosa rubiginosa shell
+extract had 825 µg/mL of α-tocopherol. Utrera et al. [75] examined the effect of frozen storage and
+the addition of a phenolic-rich dog rose extracts (Rosa canina L.) on lipid and protein oxidation of beef
+patties. Protein oxidation was determined by measuring tryptophan loss and the formation of speciﬁc
+lysine oxidation products: α-aminoadipic semialdehyde (AAS), α-aminoadipic acid (AAA), and Schiff
+bases. The addition of Rosa canina extract inhibited the formation of AAS, AAA and had an antioxidant
+effect on tryptophan oxidation while it promoted the formation of Schiff bases and incremented the
+hardness of beef patties.
+3. Rose Hip and Disease
+The use of traditional medicine is still deep ingrained in some cultures even today; therefore
+thousands of people rely on the therapeutic potential of plants for treating certain diseases in their daily
+lives [76–79]. Beneﬁts from of this kind of therapy are not unexpected, since natural products have
+always been an ample source of new medical compounds [80]. Due to its phytochemical composition,
+rose hip is an interesting therapeutic option for those disorders which involve oxidative stress and/or
+a pro-inﬂammatory status.
+3.1. Anticancer Activity
+Cancer onset and progression is closely related to the intracellular levels of reactive oxygen species
+(ROS). ROS-induced damage in mitochondrial and nuclear DNA produces mutations responsible for
+tumour apparition, while lesions in other cellular components such as proteins or lipids contribute
+to maintaining cancerous phenotype [81]. Moreover, cancer cells are known for their abnormally
+increased ROS levels, due to the role of these molecules in cell proliferation. In order to avoid oxidative
+stress damage, antioxidant systems of tumour cells are also increased. Consequently, redox balance
+
+
+--- Page 9 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+9 of 37
+in cancer is quite delicate and its disruption triggers cell death. Therefore, many chemotherapy
+strategies are focused on a redox balance rupture [82,83]. Since medicinal plants are a natural source of
+antioxidant compounds, many studies highlight the effectiveness of a wide variety of plants against
+cancer [84].
+The role of rose hip in cancer treatment has been widely tested among a wide variety of cancer
+cell lines, and promising results have been obtained in most cases. As the antitumor potential of rose
+hip is supposed to be a consequence of its phytochemical composition, which may vary attending to
+the factors described above, quite different results have been obtained by researchers from distinct
+regions even when they work with the very same rose variety.
+The anticancer properties of Rosa canina have been evaluated in various cancer cell lines as shown
+in Table 1 [14,21,85]. All groups found signiﬁcant decreases in cell viability after incubating these
+cancer cell lines with whole rose hip extract or with puriﬁed fractions of its most relevant components
+(vitamin C and neutral and/or acid phenolic compounds). This antiproliferative effect may be related
+to the antioxidant properties of these extracts. According to Jiménez et al. [21] the incubation of
+Caco-2 cell line with rose hip fractions resulted in a dramatic decrease in ROS levels. Furthermore, the
+fractions with the highest antioxidant activity—namely neutral and acid phenolic compounds—were
+also the ones with the greatest antiproliferative effect. Moreover, Guimarães et al. [85] proved
+that antiproliferative effects of Rosa canina extracts were mainly due to their phenolic content, as
+non-anthocyanin phenolic compounds enriched extracts showed greater antioxidant activity and
+provided higher GI50 values than anthocyanins enriched extracts. Some tumours present a reactive
+oxygen-driven phenotype, which means they use the ROS produced by the Warburg phenomenon as
+signalling molecules. Patients suffering from these glycolytic tumours, which usually tend to have a
+poor prognosis, are the most likely candidates to beneﬁt from antioxidant therapy [85,86].
+However, Tumbas et al. [14] and Guimarães et al. [85] also noticed that incubation of some rose
+hip extracts with breast adenocarcinoma (MCF-7) led to an increase in cell viability. They suggest that
+their content in isoﬂavone phytoestrogens may stimulate the growth of oestrogen-dependent cells like
+MCF-7 are [87]. So in conclusion, the therapeutic use of Rosa canina may be limited to glycolytic cancer
+and should be avoided in oestrogen-dependent tumours in order not to promote cancer growth.
+Anticancer activity of rose hip is not always linked to its antioxidant properties. Antiproliferative
+effects of extracts from Rosa canina leaves were observed on myeloblastic leukaemia cell model
+(HL60 cells) and to a lesser extent on myelomonocytic leukaemia model (U937 cells), alone or combined
+with other plant extracts [88]. Incubation with plant extracts resulted in an upregulation of vitamin D
+receptor and retinoid X receptor, accompanied by an increase in the transcriptional activity of this
+receptor complex. Results from Zhamanbayeva et al. [87] suggest that some phytochemicals contained
+in Rosa canina could mimic the mechanism of action of 1,25-Dihydroxyvitamin D3 analogues tested in
+clinical trials against myeloid leukaemia; these compounds show an intense differentiation-inducing
+activity [89,90].
+Table 1. Anticancer activity of some Rosa species related to their antioxidant activity.
+Rose Species
+Cancer Cell Line
+Reference
+Rosa canina
+Cervix epithelioid carcinoma (HeLa)
+Tumbas et al. [14]
+Colon carcinoma (HT-29)
+Rosa canina
+Non-small cell lung cancer (NCI-H460)
+Guimarães et al. [85]
+Colon carcinoma (HCT-15)
+Hepatocellular carcinoma (HepG2)
+Rosa canina
+Colon carcinoma (Caco-2)
+Jiménez et al. [21]
+Lee et al. [91] found that Rosa rugosa extracts inhibited human prostate cancer cell line LNCaP
+growth due to its anti-histone acetyltransferase activity. Androgen receptor (AR) is a ligand-dependent
+transcription factor which acts as a key molecule for prostate cancer proliferation. Histone acetylation
+regulates the transcription of AR-related genes [92], so many anti-prostate cancer drugs are designed to
+
+
+--- Page 10 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+10 of 37
+interrupt this process [93]. By inhibiting histone acetyltransferase activity, Rosa rugosa extracts repressed
+the androgen receptor-mediated transcription and as a consequence induced cell death. Moreover,
+co-administration of Rosa rugosa extracts and ﬂutamide—an androgen receptor antagonist commonly
+used in prostate cancer chemotherapy— resulted in a higher transcription blocking. This synergy
+effect demonstrates that Rosa rugosa extracts may have a promising future in therapy alone or as an
+adjuvant [91]. Nevertheless, it is still not clear if this anti-histone acetylation activity is due to the
+action of a particular compound, as yet unidentiﬁed, or if it is a result of the combination of various
+phytochemical compounds. Further research in this ﬁeld is required.
+Rosa roxburghii is another traditional medicinal plant with antitumor properties.
+Firstly,
+Liu et al. [94] observed that, in combination with Fagopyrum cymosum, extracts from Rosa roxburghii
+induced intrinsic apoptosis on human oesophageal squamous carcinoma (CaEs-17), human gastric
+carcinoma (SGC-7901) and pulmonary carcinoma (A549). Then, Chen et al. [95] found that crude
+polysaccharides extracted from Rosa roxburghii induced strong cytotoxicity on epithelial ovarian cancer
+A2780 cell line and reduced cell migration, revealing the potential therapeutic use of Rosa roxburghii
+for the treatment of metastatic ovarian cancer. Regarding the underlying mechanism of action,
+Chen et al. observed that incubation with crude polysaccharides led to a decreased expression
+of matrix metalloprotease-9 (MMP-9). MMP-9 is a proteolytic enzyme upregulated in certain tumours,
+including ovarian cancer, and it is associated with poor prognosis due to its capacity in degrading
+some components of the extracellular matrix and hence in promoting metastasis [96]. Although the
+mechanism by which crude polysaccharides from Rosa roxburghii reduce MMP-9 expression remains
+unknown, other studies using polysaccharides extracted from Inonotus obliquus revealed that the
+transcription of MMP-9 was disrupted via RNA transcription factors, as NF-κB signalling pathway
+was inhibited [97].
+3.2. Rheumatoid Arthritis
+Rheumatoid arthritis (RA) is a chronic systemic disease that affects 22.7% of the adult US
+population. This condition can strike people of all ages and sexes, but it is most commonly seen
+between the ages of 20 and 50, and the prevalence is higher in women (23.9%) than in men (18.6%) [98].
+RA is a systemic inﬂammatory disease that usually affects the lining of the joints (synovial
+membrane), leading to erosions of the cartilage and deformity of bone and joints. In some cases,
+joint inﬂammation can be accompanied by generalized systemic symptoms, as well as inﬂammatory
+involvement of non-articular organs. Nowadays, the causes of RA remain unknown, and several
+etiologic mechanisms have been proposed. Although it seems clear that autoimmune disorders play
+an important role in this disease, other endocrine, metabolic and nutritional factors can also contribute
+to this pathology [99,100].
+Nowadays, there is no effective therapy for RA. Different combinations of non-steroidal
+anti-inﬂammatory drugs (NSAIDs), disease-modifying anti-rheumatic drugs (DMARDs) and biologic
+agents are used for the treatment of symptoms. However, new drugs are needed since some patients do
+not respond successfully and the traditional treatments cause serious side effects in others. As a result,
+in recent years, different researchers have focused their interest in the study of traditional treatments
+for RA with the aim of discovering new active compounds present in natural plant extract that could
+constitute the base for some new drugs for RA treatment (Table 2).
+Rose hip, and in particular dog rose (Rosa canina L., Rosaceae) have traditionally been used
+for the prevention and therapy of RA [101]. In particular, rose hip powder has been shown to
+reduce symptoms associated with rheumatoid inﬂammation in clinical trials [62,102–104]. This effect
+is related to its high content in anti-inﬂammatory molecules, such as the galactolipid GOPO
+(1,2-di-O-α-linolenoyl-3-O-β-D-galactopyranosyl-sn-glycerol) [60], which can reduce chemotaxis
+of peripheral blood polymorphonuclear leukocytes, neutrophils and monocytes, as well as
+diminish the levels of C-reactive protein (CRP), a protein produced in the liver in response to
+inﬂammation [102,105]. Moreover, rose hips have been shown to reduce the production of several key
+
+
+--- Page 11 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+11 of 37
+pro-inﬂammatory cytokines (TNF-α, IL-1β, IL-6, (IFN)-γ, IL-12) and chemokines CCL5 (RANTES),
+IP-10 (CXCL10) [106–108].
+On the other hand, several fatty acids present in rose hips, such as triterpenoic acids, ursolic acid,
+oleanolic acid and betulinic acid among others, have been shown to inhibit cyclooxygenase (COX)
+1 and 2 activity. COX expression facilitates the invasion of synovial ﬁbroblasts in joints of RA patients
+and the accumulation of advanced glycation end products. The inhibition of COX contributes towards
+reducing inﬂammation in RA patients, and can be responsible for a part of the clinically observed
+effect [109,110].
+The inﬂammatory process triggered by RA has been also associated with an increased
+generation of reactive oxygen and nitrogen species (ROS/RNS), which contribute to tissue damage.
+In consequence, antioxidant nutrients such as vitamin C, vitamin E, carotenoids, polyphenols and
+antioxidant enzymes could play a signiﬁcant role in the protection against the damaging effects of
+ROS/RNS produced in RA [100]. It has been shown that lipophilic extracts and polyphenols from rose
+hips reduce the production of ROS and inhibit NO release from macrophages [107,111]. Moreover,
+total ﬂavonoids from rose hips protect against cell apoptosis, DNA and mitochondrial H2O2-induced
+damage as well as amyloid beta peptide-induced oxidative injury [21,112,113].
+Another alteration commonly found in RA patients consists of a dysregulation of Nuclear
+Factor (NF-κB) signaling pathway. NF-κB regulates a vast variety of biological processes including
+immunity, inﬂammation, and apoptosis. In RA, the imbalanced production of pro-inﬂammatory
+mediators and oxidative damage promote a chronic activation of NF-κB pathway, which results in
+inﬂammation, hyperplasia and tissue destruction [114]. As a result, the inhibition of NF-κB constitutes
+a potential target for RA. In this context, several members from the Rosa spp. have shown inhibitory
+actions on NF-κB related inﬂammatory responses. For instance, phytosterols present in Rosa spp.,
+such as, β-sitosterol, attenuates the phosphorylation of NF-κB in TNF-α-stimulated human endothelial
+cells [115]. Phenolic compounds, such as gallic acid, re-establishes the association of IκBα with NF-κB,
+hampering the capacity of NF-κB to bind DNA [116], while astragalin and tormentic acid inhibit IkBα
+phosphorylation and degradation as well as NF-κB nuclear translocation [111,117].
+Besides inﬂammation, RA patients suffer from abnormal bone destruction caused by an abnormal
+activation of osteoclast. Osteoclast differentiation is dependent on cytokines and membrane-bound
+factors expressed by T cells. Receptor activator of NF-κB ligand (RANKL) is one of the major
+osteoclastogenic cytokines.
+When the ligand binds to RANK, IκBα kinase (IKK), NF-κB, and
+nuclear factor of activated T cells, cytoplasm 1 (NFATc1) are sequentially activated, leading to
+osteoclastogenesis [118]. Aqueous extract of rose hip has been found to inhibit the activation of
+NF-κB mediated by RANKL and slow down the RANKL-induced osteoclastogenesis, and hence it
+could constitute a bioactive molecule against bone destruction in RA [119].
+Consequently, thanks to its composition in bioactive molecules, different members of Rosa genus
+have proved to have analgesic and anti-inﬂammatory actions in different pain and inﬂammatory
+animal models of RA [120].
+
+
+--- Page 12 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+12 of 37
+Table 2. Bioactive compounds of Rosa spp. and their mechanisms of action in rheumatoid arthritis.
+Activity
+Active Compound
+Mechanism of Action
+References
+Anti-inﬂammatory
+GOPO (1,2-di-O-α-linolenoyl-3-O-β-D-
+galactopyranosyl-sn-glycerol)
+Reduction in peripheral blood polymorphonuclear
+leukocytes, neutrophils and monocytes migration
+Reduction in the levels of C-reactive protein (CRP)
+Larsen et al. [61]
+Winther et al. [105]
+Kharazmi et al. [102]
+Fatty acids (triterpenoic acids, ursolic
+acid, oleanolic acid and betulinic acid)
+Inhibition of COX-1 and COX-2
+Jäger et al. [109]
+Wenzing et al. [110]
+Reduction in pro-inﬂammatory cytokines (TNF-α,
+IL-1β, IL-6, (IFN)-γ, IL-12) and chemokines CCL5
+(RANTES), IP-10 (CXCL10) production
+Yan et al. [106]
+Schwager et al. [107,108]
+Inhibition of NF-κB related
+inﬂammatory response
+Phytosterols
+β-sitosterol
+Attenuation of NF-κB phosphorylation
+Whang et al. [115]
+Gallic acid
+Reestablishment IκBα and NF-κB association
+Choi et al. [116]
+Astragalin and tormentic acid
+Inhibition of IkBα phosphorylation and degradation
+An et al. [117]
+Cheng et al. [120]
+Antioxidant
+Antioxidants (vitamin C, vitamin E,
+carotenoids, polyphenols and
+antioxidant enzymes)
+Reduction of ROS production
+Kirkeskov et al. [101]
+Schwager et al. [107]
+Jimenez et al. [21]
+Inhibition of NO release from macrophages
+Kirkeskov et al. [101]
+Schwager et al. [107]
+Kim et al. [111]
+Protection against cell apoptosis, DNA and
+mitochondrial H2O2-induced damage and amyloid β
+peptide-induced oxidative injury
+Choi et al. [112]
+Liu et al. [113]
+Aqueous extract
+Inhibition of RANKL-induced osteoclastogenesis
+Cheng et al. [120]
+
+
+--- Page 13 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+13 of 37
+3.3. Osteoporosis
+Osteoporosis is a common disease characterized by a decrease in bone mass and strength, as well
+as an alteration of bone microarchitecture. The main consequence of this disease is an increase in the
+risk of developing bone fractures especially of the hip and vertebrae [121].
+In bone, ROS play a dual role. Under physiological conditions, the production of ROS by
+osteoclasts facilitates destruction of calciﬁed tissue, assisting in bone remodelling. Additionally, in
+bone fractures, the interaction between collagen strand and the mineral phase generates large amounts
+of ROS which may facilitate bone healing [122]. However, an enhanced osteoclastic activity may
+increase the superoxide anion generation and inhibit superoxide dismutase and glutathione peroxidase
+activities, triggering oxidative stress [123]. This abnormal increase of oxidants can over-activate
+different proteolytic enzymes, such as neutrophil elastases or metal proteinases, promoting the
+oxidative damage of bone extracellular matrix, with a consequent alteration of cell metabolism and
+viability [122]. Therefore, antioxidant supplementation can contribute to restoring Bone Mineral
+Density (BMD) by regulating the levels of oxidative stress.
+In a ovariectomized rat model of
+post-menopausal osteoporosis, antioxidants contained in blueberries reduced femoral mRNA levels of
+alkaline phosphatase, collagen type I, tartrate-resistant acid phosphatase as well as the levels of serum
+mRNA of osteocalcin. This treatment also reduced loss of whole-body BMD and prevented the loss of
+tibial and femoral BMD [124]. Extracts of Rosa spp. has a similar phytochemical proﬁle to blueberries,
+characterized by a high content in antioxidants and consequently, they could also play an important
+role in preventing osteoporosis [125].
+On the other hand, antioxidants play a key role in the regulation of osteoblast differentiation.
+For instance, ascorbic acid (AA), is a cofactor required for hydroxylation and secretion of procollagen,
+and for the formation of the stable-triple-helical collagen, molecule needed for the correct growing
+and maturation of both connective and bone tissue [126]. Moreover, AA can potentially bind putative
+antioxidant-responsive elements (ARE) contained in many of osteoblastic and osteocitic genes, such as
+osterix, and induce their expression, stimulating Bone Marrow Mesenchymal Stem Cells (BMMSC) to
+differentiate into osteoblast [127]. However, no study has yet showed this activity by Rosa spp. extracts.
+Several studies have demonstrated that natural antioxidant supplementation including
+polyphenols reduce bone loss caused by oxidative stress [128]. As a result, Rosa canina, thanks
+to its high content in antioxidants, constitute a potential treatment for osteoporosis by reducing the
+damage caused by an excess of ROS in bone tissue, and by increasing bone formation through the
+synthesis of collagen matrix and the stimulation osteoblast differentiation [124,125].
+3.4. Diabetes
+Diabetes mellitus is a group of physiological dysfunctions characterized by hyperglycemia
+resulting directly from inadequate insulin secretion, insulin resistance, or excessive glucagon secretion.
+Diabetes mellitus has been classiﬁed in two types: Type 1 diabetes (T1D)—an autoimmune disorder
+that provoke the destruction of pancreatic β-cells and Type 2 diabetes (T2D)—an alteration in glucose
+regulation due to a combination of dysfunctional pancreatic β cells and insulin resistance [129].
+Nowadays, diabetes mellitus is the most common endocrine disorder and its incidence is rising year
+by year [130].
+Several studies have demonstrated that the overproduction of ROS has a key role in the severity
+of diabetes complications. In diabetic patients, hyperglycemia induces overproduction of superoxide
+by the mitochondrial electron-transport chain, which increases hexosamine pathway ﬂux, enhances
+the formation of advanced glycosylation end products and activates protein kinase C. Moreover, ROS
+also enhance nitric oxide generation favoring peroxynitrite, a strong oxidant which damages DNA.
+DNA damage activates the nuclear enzyme poly(ADP-ribose) polymerase, and consequently reduces
+the levels of NAD+, a subtract for poly(ADP-ribose) polymerase. Depletion of NAD+ slows the rate of
+glycolysis, electron transport, and ATP formation, and produces an ADP-ribosylation of the GAPDH.
+These processes result in acute endothelial dysfunction that also contributes to the development of
+
+
+--- Page 14 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+14 of 37
+diabetic complications [131]. Several antidiabetic drugs, as well as the natural antioxidant vitamin E,
+have been administrated in medical practices. However, prevention of secondary complications turned
+out to be insufﬁcient, and in some cases, side effects associated with the treatment prevented their use.
+In consequence, new therapeutic approaches are needed [130] [132]. In this context rose hip, due to its
+high content in antioxidants, could constitute a potential adjuvant therapy for diabetes mellitus.
+One of the main causes of diabetes mellitus is the deﬁciency of pancreatic β-cell viability and
+performance. Rosa canina extract with the concentration of 0.001 mg/mL signiﬁcantly increased
+proliferation of βTC6 cell line compared with control cells.
+These results were supported by
+Orhan et al. [133], who found that R-H2O fraction of Rosa canina fruits reduced blood glucose
+level signiﬁcantly in streptozotocin (STZ)-induced diabetic rats (50–62%) and demonstrated the
+hypoglycemic effect of Rosa canina in an animal model of diabetes mellitus. Moreover, histopathological
+studies of organs from STZ-induced diabetic rats revealed that low doses of Rosa canina extract
+(250 mg/kg body weight) signiﬁcantly increased the number of islets in comparison with diabetic
+rats of the control group and improved the histology of necrotic islets of pancreas [134]. This effect
+was not associated with the phenolic content Rosa canina—which is mainly contained in ethanol and
+methanol extracts—but with different bioactive compounds such as vitamin B and C, carotene, organic
+acids, ﬂavonoids, tannins, monosaccharides, oligosaccharides, and pectins contained in the polar
+extract [135]. For their part, Can et al. [136] demonstrated that the aqueous and ethanol extracts of
+Rosa canina fruits had no hypoglycemic activity in normal rabbits. However, despite the potential of
+rose hip extract on improvement of cell proliferation, it does not avoid DNA damage and consequently
+it is not able to prevent the reduction of β-cell viability associated with the glucotoxicity seen in
+diabetes mellitus type 2 [137].
+In diabetes, hyperglycaemia is also associated with more glycogenesis and less glycogen
+production, so reduction of glucose uptake in liver could ameliorate the complications of diabetes.
+Rose hip extract was not able to modify glucose uptake in the hepatic cell line HepG2. Nevertheless,
+in high fat diet models, rose hip extracts down regulated the hepatic lipogenic program, resulting in
+a reduction of >50% of the hepatic lipids, and a consequent improvement in insulin sensibility and
+glucose toleration, as well as a reduction of plasma cholesterol levels. The mechanisms underlying
+these effects remain unknown and further investigations are needed [46].
+Another therapeutic approach for diabetes type 2 consists in delaying the production or absorption
+of glucose by inhibiting carbohydrate hydrolysing enzymes such as α-amylase and α-glucosidase to
+decrease postprandial hyperglycaemia [138]. In vitro models of glucose absorption revealed that rose
+hip extracts were not able to alter glucose diffusion [137]. Nevertheless, rose hip extracts, and garlic
+acid contained in them among other molecules, can inhibit both enzymes. The inhibition of α-amylase
+is lower than the repression on α-glucosidase activity. As a result, sugars can be degraded into smaller
+carbohydrates passing through gastrointestinal tract without undesirable microbial fermentation,
+but, as α-glucosidase activity is highly repressed, rapid glucose release to bloodstream is prevented,
+contributing to the regulation of blood sugar level [9]. The molecules responsible for these effects have
+not been identiﬁed and further studies are needed in this ﬁeld.
+3.5. Hyperlipidaemia
+Hyperlipidaemia is a condition consisting of elevated plasma cholesterol and/or triglyceride
+levels. Hyperlipidaemia is associated with an increased risk of cardiovascular disease (CVD), high
+risk of developing premature coronary artery disease (CAD), hypercoagulability, hyperinsulinemia,
+insulin resistance, and glucose intolerance pancreatitis [139].
+Niominya et al. [140] demonstrated that 80% aqueous acetone extracts from the fruit
+(50 mg/kg/day and seeds (12.5 and 25 mg/kg/day) of Rosa canina signiﬁcantly reduced plasma
+triglyceride (TG) and free fatty acid (FFA) levels after 14 days of treatment in mice. The main bioactive
+compound of this extract is trans-tiliroside, whose administration signiﬁcantly reduced liver TG
+levels, and tended to diminish FFA levels, but not signiﬁcantly. Niominya et al. also found that
+
+
+--- Page 15 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+15 of 37
+trans-tiliroside increased the expression of peroxisome proliferator-activated receptor α (PPAR-α)
+mRNA levels in liver tissue 24 h after single oral administration [140]. PPAR-α is a transcription factor
+that induce the expression of PPAR-acyl-CoA oxidase gene and therefore lead to reduced FA substrate
+for TG synthesis [141]. Although more profound studies should be made, these results suggest that the
+anti-lypidemic effect of Rosa canina could be based on its capacity to promote the lipid metabolism [140].
+These results were also conﬁrmed by Taghizadeh et al. (2016) who found that the administration
+of Rosa canina extract in STZ-induced diabetic rats at a dose of 250 mg/kg body weight signiﬁcantly
+decreased the levels of serum triglycerides whereas serum cholesterol, low-density lipoprotein, and
+high-density lipoprotein levels were not modiﬁed [134].
+On the other hand, GC-MS analysis of seed oil from several species of rose hip revealed a high
+content in polyunsaturated fatty acid ω-3 and ω-6 (45.38–54.58% linoleic acid (ω-6), 13.67–24.75%
+alpha linolenic acid (ω-3), 20.83% oleic acid (ω-9), 12.97% palmitic acid, 8.54% stearic acid, and 1.99%
+arachidonic acid [142]. The results obtained revealed that the oil from the seeds of rose hip contains
+polyunsaturated fatty acids ω-3 and ω-6 which decrease TG levels. The mechanisms underlying this
+reduction of plasma TG levels are complex. On the one hand, polyunsaturated fatty acid, such as
+the ones contained in rose hip extracts, prevent the binding of the LXR/RR heterodimer to the
+regulatory regions LXREs contained in SREBP-1c promoter, and consequently, reduce the expression of
+SREBP-1c [143]. SREBP-1c is a transcription factor with a key role in the control of hepatic lipogenesis.
+Suppression of SREBP-1c expression results in a reduction of acetyl-CoA carboxylase and FA synthase,
+resulting in a decrease in FA synthesis. Moreover, polyunsaturated fatty acids decrease the activity of
+key enzymes in TG biosynthesis, such as phosphatidic acid phosphohydrolase or diacylglycerol (DG)
+acyltransferase that catalyses phosphatidate to DG and DG to TG, respectively. Secondary to a decrease
+in TG synthesis, polyunsaturated fatty acid can also inhibit the synthesis and release of decrease
+hepatic very low-density lipoprotein (VLDL)-TG. On the other hand, polyunsaturated fatty acids can
+suppress the expression of hepatic lipase and Apo CIII and increase Apo CII and VLDL-receptor [144].
+3.6. Obesity
+Obesity rates have experienced such a great increase over these last years that it is now considered
+to be global epidemic. Changes in diet and lifestyle are the major causes for this increase in incidence
+and the consequences of obesity include a wide range of disorders, from diabetes to cancer [145–147].
+In this context, prevention of obesity would contribute towards avoiding all its related diseases, with
+a resulting improvement in the quality-of-life for many thousands of people worldwide. Obesity
+can be basically classiﬁed as an inﬂammatory process, since adipocytes dysfunction results in an
+increased production of pro-inﬂammatory cytokines [148]. Due to the anti-inﬂammatory properties of
+some phytochemicals contained in medicinal plants, it is reasonable to suppose that they could play a
+therapeutic role in obesity [117,149].
+Focusing on the potential benefits of rose hip for obesity prevention, Ninomiya et al. [140] reported the
+anti-obesity properties of trans-tiliroside (kaempferol 3-O-(6′′-p-coumaroyl)-β-glucoside), a glycosidic
+ﬂavonoid contained in Rosa canina. Administration of rose hip extracts of trans-tiliroside alone to rat
+models resulted in a reduction in overweight and liver fat accumulation. Furthermore, lipid metabolism
+was found to increase after trans-tiliroside administration, since peroxisome proliferator-activated
+receptor α (PPARα) was overexpressed. PPARα decreases lipid levels, as its activation promotes fatty
+acids oxidation, and the use of PPARα agonists ameliorate obesity-related side effects [150].
+Nagatomo et al. [151] delved into the effect of Rosa canina trans-tiliroside in obesity. They observed that
+both Rosa canina extract and trans-tiliroside were able to prevent lipid accumulation in differentiated
+adipocytes cell model. On mouse models, both conditions led to a decrease in body weight. Finally,
+they found a signiﬁcant decrease in PPARγ expression after Rosa canina extract administration. As
+PPARα, PPARγ is implicated in lipid homeostasis, as well as being involved in adipogenesis and in
+insulin sensitivity control [150]. Taken together with the previous discovers of Ninomiya et al. [140],
+
+
+--- Page 16 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+16 of 37
+results from Nagatomo et al. [151] show that trans-tiliroside anti-obese effects are related to an increase
+in lipid metabolism linked to a decrease in adipogenesis.
+Arising from these ﬁndings, Nagamoto et al. [152] investigated the effects of daily intake of
+rose hip extracts on pre-obese volunteers. They observed that this supplementation contributed
+to reducing the levels of abdominal visceral fat without any undesirable side effects. Thus, they
+conﬁrmed the previous ﬁndings in animal models and proposed Rosa canina as a promising candidate
+for anti-obese therapies.
+3.7. Renal Disturbances
+Acute kidney injury (AKI) is a disorder characterized by a disruption of regular kidney
+function that causes renal failure. Since two of the major causes of AKI are oxidative stress and
+inﬂammation [153], the previously described antioxidant and anti-inﬂammatory properties of rose hip
+make it an interesting therapeutic option for AKI. Using a rat model, Ashtiyani et al. [154] investigated
+the effect of Rosa canina oral administration in AKI induction, and observed a decrease in oxidative
+stress that correlated well with the observed reduction of renal damage.
+Similar results were obtained by Zhao et al. [155] using ﬂavonoids extracted from Rosa laevigata.
+In this particular case, they observed that incubation with Rosa laevigata ﬂavonoids reduced ROS levels
+in renal tubular duct epithelial cells from rat (NRK-52E), which correlated with a protective effect on
+kidney injury. This decrease in ROS levels seems to be related to an increase in certain redox enzymes
+including superoxide dismutase or glutathione peroxidase. Moreover, anti-inﬂammatory properties of
+ﬂavonoids were also involved in attenuation of AKI, since incubation with them resulted in a decrease
+in the expression of NF-κB related genes. Finally, they tested the effect of Rosa laevigata ﬂavonoids on
+rat models and conﬁrmed their nephroprotective effect.
+Diabetic nephropathy (DN) is one of the most common diabetes-associated injuries and it is related
+to an overproduction of reactive oxygen species [156]. Encouraged by this fact, Zhou et al. [157] studied
+the effect of Rosa laevigata administration to diabetic rats. Treatment with Rosa laevigata reduced reactive
+oxygen species levels via increasing superoxide dismutase levels-like Zhao et al. [155] observed-,
+which eventually resulted in an ameliorative effect from renal injury. Once again, the expression
+of NF-κB related genes decreased after incubation with Rosa laevigata, showing unambiguously the
+anti-inﬂammatory potential of this plant.
+Calcium oxalate nephrolithiasis is a polygenic disorder whose incidence is rising worldwide every day.
+Kidney stones are usually removed using extracorporeal shock wave lithotripsy, although this technique
+may involve undesirable side effects. Currently, there is an important lack of drugs for the prevention
+and treatment of this disease. Researchers have consequently focused on developing prevention
+strategies in order to avoid calcium oxalate stones formation [158,159]. Tayeﬁ-Nasrabadi et al. [160]
+used a nephrolithiasic rat model in order to test the effect of Rosa canina extracts on calcium oxalate
+stones formation. They observed a decrease in calcium oxalate content in treated rats as well as a drop
+in number of calcium oxalate calculi. This effect is supposed to be result of the antioxidant activity of
+Rosa canina, since they found a signiﬁcant reduction in lipid peroxidation in kidney, one of the main
+risk factor for nephrolithiasis. In conclusion, all data collected by Tayeﬁ-Nasrabadi et al. [160] show
+the potential therapeutic role of Rosa canina in prevention and even treatment of nephrolithiasis.
+3.8. Hepatotoxicity
+Liver plays a key role in metabolism, detoxiﬁcation and energy storage in animals. Due to its
+functions, this organ is highly exposed to multiple xenobiotics and suffers from high levels of oxidative
+stress, which can cause deleterious effects to its function [161]. Despite its importance, hepatic diseases
+are lacking in effective treatments nowadays, and herbal medicines are one of the main options for
+prevention and therapy [162].
+
+
+--- Page 17 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+17 of 37
+Many hepatic injuries are characterized by lipid peroxidation, generation of free radicals and
+reduction of the activity of antioxidant enzymes. In clinic, this hepatic injury is turned into increased
+serum levels of ALT, AST and ALP proteins and reduction of ALB and TB serum protein levels.
+In vivo studies revealed that treatment with the fruit extract of Rosa canina at 500 and 750 mg/kg
+doses restored the levels of these marker enzymes in a model of hepatic injury induced by CCl4.
+Moreover, Rosa canina extracts attenuated the histopathological alteration produced by this compound.
+It is thought that the mechanism of action of Rosa canina in liver diseases is based on its content in
+antioxidants and phenolic compounds which can reduce the peroxidation of unsaturated fatty acids
+induced by CCl4, preventing the damage of cell membranes [163].
+3.9. Neuroprotective Activity
+Alzheimer is an age-related neurodegenerative disease inﬂuenced by genetic as well as
+environmental factors which mainly affects the elderly population in developed countries. Its onset is
+characterized by progressive memory loss accompanied by several changes in behaviour and cognition.
+With regard to the molecular insights into the pathogenesis of Alzheimer, one of the best characterized
+abnormalities from Alzheimer is the extracellular accumulation of amyloid β and the formation of
+neuroﬁbrillary tangles composed by high amounts of hyperphosphorylated tau protein; this eventually
+leads to on neural loss and gliosis [164]. ROS imbalance is supposed to play a relevant role in
+Alzheimer development, since abnormal mitochondrial function and consequent oxidative stress have
+been observed in Alzheimer disease. In this context, antioxidant therapy may be a promising tool for
+treating this disorder [165].
+At this moment, Rosa damascena is one of the most promising medicinal plants for Alzheimer
+treatment. Esfandiary et al. [166] supplemented Alzheimer-induced rats with Rosa damascena extracts
+and they found an improvement in spatial and long-term memory. The antioxidant properties of
+ﬂavonoids content in these rose hips are the most likely elements responsible for their neuroprotective
+effect, as they are supposed to inhibit the synthesis of amyloid β. Concretely, the ﬂavonoid myricetin
+has shown the most relevant anti-Alzheimer potential, since it is able to avoid amyloid β formation
+and has certain tau-antagonist activity. Moreover, its antioxidant properties seem to act as a protection
+against neuronal damage [167,168].
+In quite a similar way, oxidative stress is linked to other neurodegenerative diseases such as
+epilepsy. The fact that lipid peroxidation has shown to have increased in epileptic patients, whereas
+vitamins A and C plasma levels were found to be signiﬁcantly decreased, leads researchers to suppose
+that antioxidant therapy may be helpful [169]. In fact, ﬂavonoid supplementation has been conﬁrmed
+as a potential therapeutic tool for epileptogenesis due to its intrinsic antioxidant properties previously
+discussed. In addition, some ﬂavonoids are able to bind the GABAA-Cl channel complex, acting as
+anticonvulsive agents [170].
+The anticonvulsant and neuroprotective effects from Rosa damascena were resumed by
+Homayoun et al. [171] using a rat model. Rosa damascena extracts administration ameliorated convulsions and
+also reduced the formation of dark neurons, consequently improving memory impairments. Dark neurons
+are commonly observed in brain-related diseases, and their apparition seems to be linked to oxidative
+stress [172], so the neuroprotective effect of Rosa damascena may be caused by its antioxidant activity.
+Aromatherapy has been proposed as adjuvant therapy for the management of psychiatric
+disorders including anxiety or depression.
+Beneﬁts of aromatherapy are due to the chemical
+composition of essential oils, which contain volatile organic compounds capable of stimulating
+different central nerve system areas. This stimulation leads to a release of neurotransmitters, for
+example serotonin, responsible for the observed pro-relaxing effects [173]. Along these lines, relaxing
+properties of Rosa damascena oil have been reported [174] and consequently might have a promising
+future in psychiatric disorders treatment.
+Mostly of the depression-induced brain damages are related to an overproduction of ROS in the
+brain that triggers cell death. Therefore, high antioxidant content of rose hip makes it a potential and
+
+
+--- Page 18 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+18 of 37
+powerful help for treatment of depression. Nazıro˘glu et al. [175] found that Rosa damascena inhalation
+reduced lipid peroxidation levels in depressed rat cerebral cortex, proving the potential of rose hip in
+the management of depression.
+3.10. Skin Disorders and Aging
+One of the most common skin disorders is atopic dermatitis (AD), a chronic inﬂammatory disorder
+that mainly affects children. Treatments for skin lesions associated with this disease are focused on a
+suppressed inﬂammatory response, but most therapies are just temporal because of the side effects
+associated to long time exposure [176]. In order to improve quality-of-life for thousands of infants
+worldwide, new anti-AD drugs are needed, in order to ﬁnd a deﬁnitive solution to this problem
+without deleterious effects.
+Topical application of extracts from Rosa multiﬂora root extracts improved AD-like injury in
+mice [177]. Anti-AD activity of Rosa multiﬂora seems to be related to its anti-inﬂammatory properties,
+since application of extracts reduced mRNA levels of inﬂammatory mediators cyclooxygenase 2
+(COX-2) and inducible Nitric Oxide Synthase (iNOS). Moreover, rose hip treatment avoided allergic
+response derived from AD by decreasing blood eosinophil ratio and plasmatic IgE levels. Finally,
+Rosa multiﬂora showed an interesting regulatory effect of Th2-immune response, as serum levels of Th2
+were signiﬁcantly decreased after treatment. Nowadays, the most effective anti-AD drugs are those
+focused on suppressing Th2-polarized immune system [176], so these ﬁndings suggest a promising
+future for Rosa multiﬂora in atopic dermatitis treatment. Of the different components that can be found
+in Rosa multiﬂora roots, the most likely candidate to act against AD is the condensed tannin RM-3.
+RM-3 is the most abundant phytochemical in Rosa multiﬂora root extract, and Park et al. [177] proved
+that this isolated tannin reproduced the effects previously observed for the whole extract.
+Skin aging is due to the majority contribution of two factors: on the one hand, chronic aging
+associated with time, and on the other hand, the commonly so called photoaging caused by UV
+exposition. The combination of both conditions results in a loss of functionality of skin barrier and
+in the acquisition of unsightly features such as dryness, wrinkles and spots [178]. The previously
+discussed antioxidant and anti-inﬂammatory properties of rose hip make it a promising aid in reducing
+these skin aging signs.
+Fuji et al. [34] investigated the effect of quercetin isolated from Rosa canina on melanogenesis in
+B16 mouse melanoma cells. Melanin is responsible for the pigmentation of human skin, hair and eyes,
+but its excessive biosynthesis leads to skin disorders like age spots or melanoma [179]. The key enzyme
+in this process is tyrosinase, and quercetin from Rosa canina was found to be capable of inhibiting
+its activity and consequently reduced melanin content of mouse melanoma cells. Interestingly, this
+reduction in melanin content was not related to a decrease in cell viability, a key point for their potential
+application in the cosmetic industry. Later, the oral administration of rose hip extracts to brown guinea
+pigs decreased skin pigmentation, proving their melanogenesis inhibitor effects in vivo and suggesting
+the potential use of Rosa canina as a skin-lightening agent in cosmetic [180].
+Phetcharat et al. [181] tested the activity of a commercially available Rosa canina powder upon
+aging-related effects. They carried out a randomized, double-blind controlled clinical trial on healthy
+middle-aged male and female volunteers and studied the effect of rose hip powder on (1) skin wrinkles
+and (2) red blood cells longevity. Regarding the ﬁrst part of their study, rose hip powder reduced the
+depths of crow’s-feet wrinkles, increased moisture content of forehead and improved skin elasticity.
+On the other hand, Rosa canina powder reduced red cell membrane disintegration and, as a result,
+increased cell longevity. The anti-aging effects of Rosa canina are related to its antioxidant properties, as
+certain phytochemicals are able to scavenge reactive oxygen species produced by UV-radiation and so
+reduce skin damage. Vitamin C might have a dual role in skin protection since as well as its antioxidant
+effect; it is directly involved in skin and collagen formation. Moreover, the anti-inﬂammatory effect
+of some components of Rosa canina is also related to protection from UV-induced inﬂammation and
+
+
+--- Page 19 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+19 of 37
+damage. Finally, antioxidant compounds and poly-unsaturated fatty acids are the major contributors
+to Rosa canina effects on increasing red cell longevity, as both prevent cell membrane damage.
+Part of the anti-aging effect of rose hip is due to its activity as PPAR-α agonist. PPAR-α is involved in
+inﬂammatory processes, since its activation leads to an inhibition of pro-inﬂammatory genes expression
+like matrix metalloproteases (MMP). The normal function of MMP has been described earlier, which
+consists of degrading components of extracellular matrix [96]. Consequently, MMPs also play a key
+role in photoaging, whose synthesis is increased after UV exposure [182]. Results from Jeon et al. [183]
+agreed with this hypothesis: they observed that Rosa multiﬂora extracts act as PPAR-α agonist which
+induced a decrease in MPP expression levels, ameliorating photoaging-related effects on murine skin.
+Oxidative stress is not the only thing responsible for skin damage, as psychological stress induces
+deleterious effects on skin barrier, as well. Some of the reported effects are a delay in skin barrier function
+recovery, an increase in the number and activity of natural killer cells and an increase in the release
+of pro-inﬂammatory cytokines such as TNF-α or IL-β [184]. Evidences of the anxiolytic effect of rose
+hip have been previously discussed [174], but these data provide a new perspective on the beneﬁcial
+effect of Rosa species for skin health. Relaxing properties of Rosa damascena oil inhalation resulted in a
+decrease in transepidermial water loss, a common skin damage feature induced by chronic stress [185].
+3.11. Diarrhoeal
+Diarrhoea is deﬁned as a situation in which an adult daily stool exceeds 200 g and contains 60–95%
+water [186] and it constitutes one of the leading causes of morbidity and mortality in developing
+countries [187], where people still rely on healing practices and medicinal plants. As a result, despite
+the advances of Modern Medicine, the World Health Organization encouraged studies for the treatment
+and prevention of diarrheal diseases depending on traditional medical practices.
+In vivo studies showed that the methanol extract Rosa canina had a signiﬁcant antidiarrhoeal
+activity mediated by an antisecretory mechanism that induce a ﬂuid accumulation comparable to
+that obtained with the standard drug, diphenoxylate. Furthermore, Rosa canina extract signiﬁcantly
+reduced intestinal transit, thereby increasing the absorption of water and electrolytes [188].
+The molecular mechanism underlying the antidiarrheal activity of Rosa canina extract could be
+based on the inhibition of acetylcholine and histamine through some secondary metabolites present in
+the leaf extract, such as ﬂavonoids [187–190], and saponins [188].
+Although further studies are needed to identify the active principle responsible for the anti-diarrhoeal
+activity of Rosa canina, its use could constitute a potential therapy for this intestinal alteration.
+3.12. Anti-Ulcerogenic Effect
+Peptic ulcer disease is an increasing incidence disorder that presents epigastric pain among other
+common symptoms such as bloating or nausea. It is considered to be a multifactorial disorder which
+ﬁnally derives in a loss of the protective mucosal barrier. Although there are various risk factors
+associated with the onset of ulcer disease, most of the cases are caused by Helicobacter pylori infection
+and so treatment is focused on antibiotic therapy [189].
+Anti-ulcerogenic effect from Rosa canina extracts was first discovered by Gürbüz et al. [190]. By
+inducing ulcerogenesis on rat models, they observed that Rosa canina were able to totally prevent ulcer
+formation. However, they did not propose any mechanism of action that explains the observed effects.
+Lattanzio et al. [191] went deeper in their studies and observed that treatment with Rosa canina prevented
+gastric mucosa erosion and avoided haemorrhagic ulcer formation. They propose that the antioxidant
+activity of rose hip extracts—which was conserved even at gastric acid pH—was responsible for the
+results obtained, since lipid peroxidation and ROS production are highly involved in gastric damage.
+3.13. Antimicrobial Effect
+Infectious diseases have a great impact on world health and the worrying and increasing rates
+of antibiotic resistance intensify pharmaceutical industry research for new drugs in order to solve
+
+
+--- Page 20 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+20 of 37
+this emergency situation [192]. In this context, plant phenolic compounds are an interesting source of
+new antibiotics, especially against Gram-positive bacteria. Regarding their mechanism of action, due
+the wide variety of structures they possess, each compound interacts with a different cell component.
+Some of the best characterized phenolic-induced antibacterial effects include increase of membrane
+permeabilisation, nutrients deprivation and extracellular enzymes inhibition [193].
+The antibacterial effect of some rose hip species was roughly investigated in Gram positive and
+Gram negative bacteria strains [192–196], as shown in Tables 3–5. Interestingly, these tests conﬁrmed
+the presence of antimicrobial compounds in different parts of the plant, as they investigated the
+effects of ﬂowers [193], seeds [194] and fruits [193,195]. Results from Olech et al. [195] focus on the
+correlation between antioxidant capacity from rose hip extracts—due to their phenolic content—and
+their antibacterial potential. The mechanism of action they propose is an energy deprivation caused by
+a hyperacidiﬁcation of plasma membrane interface that disrupts H+-ATPase.
+Table 3. Antibacterial effect of some Rosa species displayed as mean diameter of inhibition zone.
+Rosa Species
+Bacteria Strain
+Mean Diameter of Inhibition Zone (mm)
+Reference
+R. multiﬂora
+E. coli
+9.0
+Frey et al. [196]
+S. typhimurium
+8.1
+R. nutkana
+S. aureus
+15.4
+Yi et al. [193]
+MRSA
+17
+E. faecalis
+18
+B. subtilis
+8
+R. woodsii
+S. aureus
+10
+MRSA
+9.8
+E. faecalis
+9
+R. psiocarpa
+S. aureus
+9.4
+MRSA
+7.4
+E. faecalis
+8.2
+Table 4. Antibacterial effect of some Rosa species displayed as minimal inhibitory concentration (MIC).
+Rosa Species
+Bacteria Strain
+MIC (mg/mL)
+Reference
+R. canina
+E. coli 8110
+0.1
+Kumarasamy et al. [194]
+R. rugosa
+S. epidermis
+1.25
+Olech et al. [195]
+S. aureus
+1.25
+B. subtilis
+1.25
+M. luteus
+0.625
+E. coli
+1.25
+K. pneumoniae
+1.25
+P. aeruginosa
+1.25
+P. mirabilis
+1.25
+Table 5. Antibacterial effect of some Rosa species displayed as percentage of growth inhibition.
+Rosa Species
+Bacteria Strain
+% Inhibition
+Reference
+R. damascena
+P. aeruginosa
+80.49
+Talib et al. [192]
+E. coli
+60.69
+S. typhimurium
+100.82
+B. cereus
+101.09
+MRSA
+95.75
+Other authors advocate the existence of single antimicrobial agents rather than a combination of
+distinct compounds. In this line, Miyasaki et al. [197] highlight the antibacterial role of ellagic acid from
+Rosa rugosa, a phenolic compound with a moderate effect against Acinetobacter baumanii. Ellagic acid is
+supposed to downregulate polyphosphatase kinase 1 (PPK1) gene expression as well as its activity,
+an enzyme with a crucial role in virulence [198]. The adjunctive use of rose hip-derived compounds
+is also interesting in order to potentiate the activity of existing drugs. Accordingly, tellimagrandin I
+extracted from Rosa canina enhanced the effect of the β-lactam antibiotic oxacillin against multi-drug
+resistant Staphylococcus aureus [199]. This phytochemical is able to inhibit penicillin binding protein 2′
+(PBP2), a bacterial enzyme responsible to resistance to β-lactam antibiotics.
+
+
+--- Page 21 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+21 of 37
+The role of Helicobacter pylori in peptic ulcer disease onset has been mentioned earlier [189] and
+the anti-ulcerogenic potential of Rosa canina, but the beneﬁts from rose hip in ulcer treatment might go
+further. Results from Horváth et al. [200] showed that some carotenoids from Rosa canina had certain
+anti-Helicobacter pylori activity. They observed that one of the most abundant carotenoid was lycopene,
+whose antioxidant activity is a key factor in Helicobacter pylori eradication [201]. As ROS scavenger,
+lycopene prevents oxidative stress-induced DNA damage in infected gastric cells and consequently
+inhibits apoptosis [2]. These facts put together with the previous ﬁndings of Gürbüz et al. [187] and
+Lattanzio et al. [191] suggest that Rosa canina may be a powerful tool not only in ulcer treatment but also
+in its prevention, as rose hip extracts might reduce Helicobacter pylori burden before damage apparition.
+Urinary tract infections (UTIs) are a set of disorders characterized by a high burden of one or
+more bacteria strain and even fungi in any part of the genitourinary tract. When not treated correctly,
+UTIs can promote other diseases such as pyelonephritis, especially if infectious bacteria contain urease.
+Urease normal function consists of urea hydrolysis to ammonium and carbon dioxide. This results
+in pH alkalization that promotes calcium crystals and magnesium ammonium phosphates stones
+formation [202,203]. Urease inhibitors are as a result an interesting drug approach to UTIs management.
+Bai et al. [204] reported the urease inhibitory effect of Rosa indica extracts as well as their
+antimicrobial effect displayed against ﬁve bacteria strain commonly found in UTIs. The authors
+did not delve into the concrete phytochemical that performs this inhibition, but the anti-urease activity
+of certain phenolic compounds has been well demonstrated [205]. Therefore, phenolic content of Rosa
+indica are the most likely urease inhibitor agents. Moreover, results from Bai et al. [204] might also be
+included within the previous section of “Renal disturbances”, since by preventing from crystals and
+stones formation they indirectly avoid nephrolithiasis or other kidney injuries.
+Gut microbiome is a complex variety of microorganisms, mainly bacteria, that colonizes the
+digestive tract and establishes a symbiotic relationship with the human body. Antibiotics intake or
+dietary changes affect microbiome composition and might lead to a situation of dysbiosis. Dysbiosis is
+characterized by an increase in potentially harmful bacteria accompanied by a decrease in protective
+microorganisms, and it is considered to be one of the main causes of intestinal disorders such as
+inﬂammatory bowel disease or colorectal cancer [206]. An ideal antibiotic would only affect pathogenic
+bacteria without disturbing normal colonic ﬂora, but pharmacologic industry has not reached that
+stage yet. However, traditional medicine might be closer to that point than might be expected.
+Rosa rugosa has been proven to inhibit the growth of pathogenic bacteria but did not alter
+biﬁdobacteria or lactobacilli growth [207]. The antimicrobial effect of phenolic compounds mentioned
+above [208] seems to be selective, since Kamijo et al. [207] observed that tannins from Rosa rugosa only
+inhibited pathogenic bacteria growth, suggesting Rosa rugosa as a promising prebiotic.
+The antiviral effect of rose hip has been less investigated, but some interesting research has also
+been performed in this ﬁeld. In 1995, the protective effect of Rosa nutkana extracts against bovine
+coronavirus was reported [65]. No further information about the anti-coronavirus effect of Rosa nutkana
+has been added up to the present, although it directed other researchers to evaluate the antiviral
+potential of Rose gender members.
+Certain phytochemicals from Rosa rugosa showed anti-hepatitis C virus (HCV) activity by
+inhibiting its capacity to invade hepatocytes. Tellimagrandin, previously mentioned because of
+its enhancing effect of β-lactam antibiotics action, was able to bind two envelope proteins responsible
+for HCV invasive capacity [209]. The HCV invasion inhibition shown by tellimagrandin must be
+conﬁrmed in vivo, but at this moment is a promising drug for hepatitis treatment. These ﬁndings
+bring a new point of view to our previous statements about hepatotoxicity, since the antiviral effect of
+rose hip would indirectly give protection from hepatic injury.
+But undoubtedly, one of the greatest viral epidemics of our time is the Acquired Immune
+Deﬁciency Syndrome or AIDS. In 2013, approximately 35 million people were infected with human
+immunodeﬁciency virus type 1 (HIV-1) and HIV-related deaths were around 1.5 million. Although
+pharmacological progress has greatly improved the quality-of-life of these patients, we are still quite
+
+
+--- Page 22 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+22 of 37
+far from AIDS eradication [210]. Current drugs inhibit distinct enzymes from the replicative life cycle
+of HIV in order to improve treatment efﬁcacy. As a result, antiretroviral therapies are a combination
+of two or three drugs including nucleoside reverse transcriptase inhibitors, non-nucleoside reverse
+transcriptase inhibitors, protease inhibitors, chemokine receptor 5 (CCR5) antagonists and/or fusion
+inhibitors. However, therapy does not completely eradicate HIV and virus mutations are an additional
+complication [211]. In conclusion, there is an urgent need to develop new HIV drugs that could reduce
+the global burden of this disease.
+Rosa rugose has been investigated as a source of new anti-HIV agents. A polysaccharide-peptide
+complex and a polymer comprised of acteoside and acteoside derivatives showed strong inhibitory
+effect upon viral retrotranscriptase [212]. These ﬁndings demonstrate the therapeutic potential of rose
+hip in HIV eradication.
+The anti-mycotic effect of rose hip has also been evaluated and most relevant results are shown in
+Tables 6–8. More profound studies proved that this effect may be related to ursane-type triterpene
+glucosides content of Rose gender members [213].
+Table 6. Anti-mycotic effect of some Rosa species displayed as mean diameter of inhibition zone.
+Rosa Species
+Yeast Strain
+Mean Diameter of Inhibition Zone (mm)
+Reference
+R. nutkana
+C. albicans
+25
+Yi et al. [197]
+R. woodsii
+22.8
+R. pisocarpa
+10
+Table 7. Anti-mycotic effect of some Rosa species displayed as minimal inhibitory concentration (MIC).
+Rosa Species
+Yeast Strain
+MIC (mg/mL)
+Reference
+R. rugosa
+C. albicans
+0.156
+Olech et al. [195]
+C. parapsilosis
+0.156
+Table 8. Anti-mycotic effect of some Rosa species displayed as percentage of growth inhibition.
+Rosa Species
+Yeast Strain
+% Inhibition
+Reference
+R. damascena
+C. albicans
+98.87
+Talib et al. [192]
+A. niger
+30.72
+4. Conclusions
+Reactive oxygen species as well as nitrogen reactive species, have a key function as signalling
+molecules, regulating a wide variety of cellular processes. However, an imbalance between ROS and
+NOS levels and the antioxidant defence system leads to oxidative stress, which induces cell damage
+and is the main cause of different pathologies. As a result, maintaining redox balance is essential
+for the correct functioning of the whole organism. When ROS levels overcome the endogenous
+defences, mainly constituted by peroxidases and metal chelating proteins, dietary intake of exogenous
+antioxidants is a promising strategy for prevention and treatment6 of these ROS-dependent diseases.
+In this review, Rosa genus has been presented as a natural source of antioxidants with a potential
+use in disease prevention and treatment. Rosa genus stands out for its high content in polyphenols
+(such as garlic acid, catechin and quercetin), vitamins C, E, B and carotenoids (β-carotenoid, lycopene
+β-cryptozanthin, rubizanthin, zeazanthin and lutein), which have an antioxidant synergy effect.
+The concentration of all these bioactive molecules depend on different factors such as the variety of
+Rosa, part of the plant, type of fertilization, date of harvesting, geographical origin, among others.
+Nevertheless, rose hip showed higher antioxidative properties than other well-known antioxidant
+fruits as rowanberry (S. aucuparia), hawthorn (C. monogyna), chokeberry (A. melanocarpa), blackcurrant
+(R. nigrum), and blueberry (V. myrtillus). In addition, besides its antioxidants molecules, Rosa genus is
+rich in other bioactive compounds such as unsaturated fatty acids or galactolipids, which have been
+proven to ameliorate different types of disease. Considering the high content of bioactive molecules
+
+
+--- Page 23 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+23 of 37
+contained in Rosa genus, rose hip has an interesting potential for the treatment of different disorders
+related to oxidative stress or pro-inﬂammatory status.
+Galactolipids contained in rose hip contributed to NO scavenging, playing an anti-tumour role.
+Methanol extracts and antioxidants from this plant also proved to have an antitproliferative activity
+in different cell lines through the disruption of ROS balance. Other mechanisms of rose hip action in
+cancer includes inhibition of transcription activity and reduction of cell migration.
+In bone diseases, such as AR, rose hip displays a beneﬁcial anti-inﬂammatory effect by reducing
+peripheral blood polymorphonuclear leucocytes, neutrophils and monocytes migration, demising the
+CRP levels, inhibiting of COX-1 and -2, reducing pro-inﬂammatory cytokines and chemokines and
+inhibiting the activation of NF-κB activation. Moreover, rose hips also play a beneﬁcial an antioxidant
+role and reduce bone loss through the inhibition of osteoclastogenesis. Furthermore, in osteoporosis,
+antioxidants reduce loss of whole-body BMD and ascorbic acid contributes to osteoblast differentiation.
+In diabetes, antioxidants and vitamin E contained in rose hip extract could ameliorate the
+secondary complications of this disease. Rosa canina has also been proven to increase proliferation
+of β-pancreatic cells and increase the number of pancreatic islets in vivo. Other beneﬁts from rose
+hip extracts are due to its ability to inhibit α-amilases and α-glucosidades, which reduce the glucose
+blood levels in a similar way to α-glucosidase inhibitors currently used in diabetes type II treatment.
+Moreover, rose hips extracts decreased the levels of serum triglycerides and hepatic lipids whereas
+serum cholesterol, low-density lipoprotein, and high-density lipoprotein levels were not modiﬁed.
+Finally, trans-tiliroside contained in Rosa canina increased the expression of PPARα and reduced the
+levels of PPARγ resulting in an increase of lipid metabolism linked to a decrease in adipogenesis, and
+hence a reduction of abdominal visceral fat in pre-obese people.
+Due to its high content in anti-oxidative molecules, rose hip extracts have demonstrated a
+protective effect in other disorders associated with a disruption in redox balance such as AKI, DN,
+hepatotoxicity or peptic ulcer disease. Vitamins A and C, together with other ﬂavonoids of Rosa
+damascena ameliorate convulsions in epilepsy. Moreover, ﬂavonoid contained in Rosa damascena extracts,
+especially the ﬂavonoid myricetin, avoid amyloid β formation and hence they can be neuroprotective
+in Alzheimer. Finally, antioxidants and essential oils found in Rosa damascena proved its potential in
+depression managing. Rose hip extracts have also proved to have anti-inﬂammatory activity, and
+hence they could constitute a potential therapy in diseases associated with an enhanced inﬂammatory
+response, such as AD or skin aging.
+Methanol extract Rosa canina had a signiﬁcant antidiarrheal activity mediated by an antisecretory
+mechanism that reduce intestinal transit thereby increasing the absorption of water and electrolytes
+and inducing ﬂuid accumulation [186].
+Finally, phenols contained in rose hip extracts have an antibacterial activity, being able to increase
+membrane permeabilisation, nutrient deprivation and extracellular enzyme inhibition. Antiviral and
+antifungal properties of Rosa spp. have also been reported.
+Our present research has underlined the promising future of rose hip as a functional food, given
+its potential therapeutic role against a wide variety of diseases. The phytochemical composition of the
+different members of the Rose gender might promote the eradication of some of the most pressing
+world epidemics, as well as improve the quality-of-life of even healthy people. Moreover, single
+bioactive compounds of rose hip constitute a great source for new drugs which might overcome
+resistance-derived problems in some current drugs or even treat incurable diseases. However, it is
+important to notice that most of the researches that we have reviewed herein have been realized on
+cell culture. Therefore, the results obtained must be further conﬁrmed in vivo. (Table 9) In this line,
+the most promising future for Rosa spp. in therapy lies in those disorders that have been tested using
+animal models or even human volunteers, e.g., acute kidney injury. The clinical application of Rosa
+gender members might be closer in these cases.
+
+
+--- Page 24 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+24 of 37
+Table 9. Main active compounds of Rosa spp. extracts and their application in human diseases.
+Phytochemical
+Disease of Application
+Mechanism of Action
+References
+Ascorbic acid
+Cancer
+Anti-inﬂammatory
+Antioxidant
+Jiménez et al. [21]
+Aging
+Antioxidant and anti-inﬂammatory effect
+Contribution to skin and collagen formation
+Phetcharat et al. [181]
+Arthritis rheumatoid
+Inhibition of NO release from macrophages
+Kirkeskov et al. [101]
+Kim et al. [111]
+Schwager et al. [108]
+Osteoporosis
+Stimulation osteoblast differentiation and matrix synthesis
+Devareddy et al. [124]
+Adom et al. [125]
+Polysaccharides
+Cancer
+Induction of cytotoxicity in reduction of cancer metastasis by reducing the levels of
+matrix metalloprotease-9 (MMP-9)
+Guo et al. [96]
+Lee et al. [97]
+Polysaccharide-peptide complex and
+other polymers
+Retroviral infection
+Inhibition of viral retrotranscriptase
+Fu et al. [212]
+Myricetin
+Alzheimer
+Inhibition of amyloid β formation and tau-antagonist activity
+Semwal et al. [167]
+DeToma et al. [168]
+Quercetin
+Age spots
+Inhibition of tyrosinase
+Fujii et al. [180]
+Gallic acid
+Arthritis Rheumatoid
+Reestablishment IκBα and NF-κB association
+Choi et al. [116]
+Diabetes
+Inhibition of α-amylase and α-glucosidase
+Ghadyale et al. [138]
+Ellagic acid
+Cancer
+Anti-mutagenic and anti-carcinogenic effect
+Festa et al. [29]
+Whitley et al. [30]
+Bacterial infections
+Downregulation of polyphosphatase kinase 1 (PPK1)
+Sarabhai et al. [198]
+Tellimagrandin I
+Bacterial infections
+Inhibition of penicillin binding protein 2′ (PBP2) and enhancement of
+β-lactam antibiotics effect
+Shiota et al. [199]
+1,25-Dihydroxyvitamin D3 analogues
+Acute myeloid leukemia
+Induction of differentiation
+Zhamanbayeva et al. [88]
+Corcoran et al. [89]
+Baurska et al. [90]
+Tannin RM-3
+Atopic dermatitis
+Anti-inﬂammatory activity (reduction of the levels of cyclooxygenase 2 mediators
+and inducible nitric oxide synthase)
+Suppression Th2-polarized immune system
+Wang et al. [176]
+Park et al. [177]
+
+
+--- Page 25 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+25 of 37
+Table 9. Cont.
+Phytochemical
+Disease of Application
+Mechanism of Action
+References
+Unidentiﬁed phenols
+Bacterial infections
+Membrane permeabilisation, extracellular enzymes inhibition, nutrient and
+energy deprivation by an hyperacidiﬁcation of plasma membrane
+interface that disrupts H+-ATPase
+Olech et al. [195]
+Dysbiosis
+Speciﬁc inhibition of pathogenic bacteria growth
+Kamijo et al. [207]
+Prostate cancer
+Anti-histone acetyltransferase activity
+Lee et al. [91]
+Takayama et al. [92]
+Urinary tract infections (UTIs)
+and pyelonephritis
+Urease inhibitor
+Hassan et al. [205]
+Bai et al. [204]
+Isoﬂavonoid phytoestrogen
+Cancer
+Stimulation of growing oestrogen dependent cells
+Uifălean et al. [87]
+Flavonoids
+Obesity
+Reduction of PPARγ expression, and prevention of lipid accumulation
+Ninomiya et al. [140]
+Nagatomo et al. [151]
+Epilepsy
+Reduction of lipid peroxidation and anticonvulsive effect
+Diniz et al. [170]
+Homayoun et al. [171]
+Uttara et al. [172]
+Triterpenoic acids, ursolic acid, oleanolic
+acid and betulinic acid
+Arthritis Reumatoid
+Inhibition of COX-1 and COX-2
+Jäger et al. [109]
+Wenzing et al. [110]
+Lycopene and other carotenes
+Bacterial infections
+Anti-H. pylori activity
+Horváth et al. [200]
+trans-Tiliroside
+Hyperlipidaemia
+Reduction of reduced plasma and liver triglyceride free fatty acid (FFA) levels.
+Induction of peroxisome proliferator-activated receptor α (PPAR-α) expression
+Ninomiya et al. [140]
+Polyunsaturated fatty acid ω-3, 6 and 9
+Hyperlipidaemia
+Reduction of TG synthesis, reduction of the expression of hepatic very
+low-density lipoprotein (VLDL)-TG, hepatic lipase and Apo CIII and
+increase Apo CII and VLDL-receptor
+Adkins et al. [144]
+Galactolipids
+GOPO (1,2-di-O-α-linolenoyl-3-O-β-D-
+galactopyranosyl-sn-glycerol)
+Arthritis Rheumatoid
+Reduction in peripheral blood polymorphonuclear leukocytes,
+neutrophils and monocytes migration
+Reduction in the levels of C-reactive protein (CRP)
+Larsen et al. [61]
+Kharazmi et al. [102]
+Whinter et al. [105]
+Unidentiﬁed compounds from whole extract
+Arthritis rheumatoid
+Inhibition of RANKL-induced osteoclastogenesis
+Cheng et al. [120]
+Diabetes
+Hypoglycemic effect and induction of β-cell proliferation
+Taghizadeh et al. [134]
+Fattahi et al. [137]
+Acute kidney injury
+Diabetic nephropathy
+Anti-inﬂammatory effect
+Reduction of ROS levels
+Zhao et al. [155]
+Zhou et al. [157]
+Peptic ulcer
+Antioxidant effect
+Nazıro˘glu et al. [175]
+Depression
+Antioxidant effect
+Nazıro˘glu et al. [175]
+Antiviral
+Inhibition of viral invasion capacity
+McCutcheon et al. [65]
+
+
+--- Page 26 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+26 of 37
+Table 9. Cont.
+Phytochemical
+Disease of Application
+Mechanism of Action
+References
+Unidentiﬁed components from fruit extract
+Hepatic injuries
+Reduction of peroxidation of unsaturated fatty acids
+Carlo et al. [187]
+Meli et al. [188]
+Unidentiﬁed components from root extract
+Atopic dermatitis
+Anti-inﬂammatory (reduction of cyclooxygenase 2 inducible nitric
+oxide synthase levels)
+Suppression Th2-polarized immune system
+Park et al. [177]
+Unidentiﬁed components from leaf extract
+Diarrhoeal
+Anti-secretory activity, inhibition of acetylcholine and histamine activity
+Carlo et al. [187]
+Meli et al. [188]
+Rao et al. [186]
+Unidentiﬁed components from rose powder
+Wrinkles
+Antioxidant effect: scavenging of reactive oxygen species produced by
+UV-radiation and decrease of matrix metalloprotease proteins levels
+Phetcharat et al. [181]
+Jeo et al. [183]
+
+
+--- Page 27 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+27 of 37
+Acknowledgments: The work of this group was supported by projects from the Ministerio de Ciencia e Innovación
+(SAF2016-75441-R), funding from the Gobierno de Aragón/European Regional Development Fund (ERDF)
+(A-32), and Proyect Interreg Sudoe REDVALUE (SOE1/PI/E0123) Co-ﬁnanced at 65% by the European Regional
+Development Fund. We are also grateful for the ﬁnancing of CIBERobn (CB06/03/1012) from the Instituto Carlos
+III (Spain).
+Author Contributions: Inés Mármol, Cristina Sánchez-de-Diego and Nerea Jiménez-Moreno have contributed
+equally to this work.
+All of them have participated in the literature research and prepared the draft.
+Carmen Ancín-Azpilicueta and María Jesús Rodriguez-Yoldi supervised the work and draft and prepared
+the ﬁnal version.
+Conﬂicts of Interest: The authors declare no conﬂict of interest.
+References
+1.
+Gutteridge, J.M.; Halliwell, B. Free radicals and antioxidants in the year 2000. A historical look to the future.
+Ann. N. Y. Acad. Sci. 2000, 899, 136–147. [CrossRef] [PubMed]
+2.
+Yao, Y.; Cheng, X.; Wang, L.; Wang, S.; Ren, G. A determination of potential alpha-glucosidase inhibitors
+from azuki beans (Vigna angularis). Int. J. Mol. Sci. 2011, 12, 6445–6451. [CrossRef] [PubMed]
+3.
+Willcox, J.K.; Ash, S.L.; Catignani, G.L. Antioxidants and prevention of chronic disease. Crit. Rev. Food
+Sci. Nutr. 2004, 44, 275–295. [CrossRef] [PubMed]
+4.
+Punchard, N.A.; Kelly, F.J. Free Radicals: A Practical Approach; IRL Press at Oxford University Press: Oxford,
+UK, 1996.
+5.
+Zhou, K.; Laux, J.J.; Yu, L. Comparison of swiss red wheat grain and fractions for their antioxidant properties.
+J. Agric. Food Chem. 2004, 52, 1118–1123. [CrossRef] [PubMed]
+6.
+Charles, D.J. Antioxidant Properties of Spices, Herbs and Other Sources; Springer: New York, NY, USA, 2013.
+7.
+Okuda, T. Systematics and health effects of chemically distinct tannins in medicinal plants. Phytochemistry
+2005, 66, 2012–2031. [CrossRef] [PubMed]
+8.
+Eberhardt, M.V.; Lee, C.Y.; Liu, R.H. Antioxidant activity of fresh apples. Nature 2000, 405, 903–904. [PubMed]
+9.
+Ganesan, K.; Kumar, K.S.; Rao, P.S. Comparative assessment of antioxidant activity in three edible species of
+green seaweed, enteromorpha from okha, northwest coast of India. Innov. Food Sci. Emerg. Technol. 2011, 12,
+73–78. [CrossRef]
+10.
+Kaur, C.; Kapoor, H.C. Antioxidants in fruits and vegetables—The millennium’s health. Int. J. Food Sci. Technol.
+2001, 36, 703–725. [CrossRef]
+11.
+Roberts, A.; Debener, T.; Gudin, S. Encyclopedia of Rose Science; Academic Press: Cambridge, MA, USA, 2003.
+12.
+Uggla, M.; Gustavsson, K.E.; Olsson, M.E.; Nybom, H. Changes in colour and sugar content in rose hips
+(Rosa dumalis L. and Rosa rubiginosa L.) during ripening. J. Hortic. Sci. Biotechnol. 2005, 80, 204–208. [CrossRef]
+13.
+Ercisli, S.; Orhan, E.; Esitken, A. Fatty acid composition of Rosa species seeds in turkey. Chem. Nat. Compd.
+2007, 43, 605–606. [CrossRef]
+14.
+Tumbas, V.T.; Canadanovic-Brunet, J.M.; Cetojevic-Simin, D.D.; Cetkovic, G.S.; Ethilas, S.M.; Gille, L. Effect
+of rosehip (Rosa canina L.) phytochemicals on stable free radicals and human cancer cells. J. Sci. Food Agric.
+2012, 92, 1273–1281. [CrossRef] [PubMed]
+15.
+Demir, N.; Yildiz, O.; Alpaslan, M.; Hayaloglu, A. Evaluation of volatiles, phenolic compounds and
+antioxidant activities of rose hip (Rosa L.) fruits in turkey. LWT Food Sci.Technol. 2014, 57, 126–133. [CrossRef]
+16.
+Nilsson, O.R. Flora of Turkey and the East Aegean Islands; University Press: Edinburgh, UK, 1997.
+17.
+Wissemann, V.; Gallenmüller, F.; Ritz, C.; Steinbrecher, T.; Speck, T. Inheritance of growth form and
+mechanical characters in reciprocal polyploid hybrids of rosa section caninae—implications for the ecological
+niche differentiation and radiation process of hybrid offspring. Trees 2006, 20, 340–347. [CrossRef]
+18.
+Özkan, G.; Sagdiç, O.; Baydar, N.; Baydar, N. Note: Antioxidant and antibacterial activities of Rosa damascena
+ﬂower extracts. Food Sci. Tech. Int. 2004, 10, 277–281. [CrossRef]
+19.
+De la Iglesia, R.; Milagro, F.I.; Campion, J.; Boque, N.; Martinez, J.A. Healthy properties of proanthocyanidins.
+Biofactors 2010, 36, 159–168. [CrossRef] [PubMed]
+20.
+Lopes, G.; Daletos, G.; Proksch, P.; Andrade, P.B.; Valentao, P. Anti-inﬂammatory potential of monogalactosyl
+diacylglycerols and a monoacylglycerol from the edible brown seaweed fucus Spiralis linnaeus. Mar. Drugs
+2014, 12, 1406–1418. [CrossRef] [PubMed]
+
+
+--- Page 28 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+28 of 37
+21.
+Jimenez, S.; Gascon, S.; Luquin, A.; Laguna, M.; Ancin-Azpilicueta, C.; Rodriguez-Yoldi, M.J. Rosa canina
+extracts have antiproliferative and antioxidant effects on Caco-2 human colon cancer. PLoS ONE 2016, 11,
+e0159136. [CrossRef] [PubMed]
+22.
+Demir, F.; Özcan, M. Chemical and technological properties of rose (Rosa canina L.) fruits grown wild in
+Turkey. J. Food Eng. 2001, 47, 333–336. [CrossRef]
+23.
+Olsson, M.E.; Andersson, S.; Werlemark, G.; Uggla, M.; Gustavsson, K.E. Carotenoids and phenolic in rose
+hips. Acta Hort. 2005, 490, 249–253. [CrossRef]
+24.
+Adamczak, A.; Buchwald, W.; Zieli´nski, J.; Mielcarek, S. Flavonoid and organic acid content in rose hips
+(Rosa L., sect. Caninae dc. Em. Christ.). Acta Biol. Cracov. Ser. Bot. 2012, 54, 105–112.
+25.
+Roman, I.; Stanila, A.; Stanila, S. Bioactive compounds and antioxidant activity of Rosa canina L. Biotypes
+from spontaneous ﬂora of Transylvania. Chem. Cent. J. 2013, 7, 73. [CrossRef] [PubMed]
+26.
+Harrison, F.E. A critical review of vitamin c for the prevention of age-related cognitive decline and
+Alzheimer’s disease. J. Alzheimers Dis. 2012, 29, 711–726. [PubMed]
+27.
+Czyzowska, A.; Klewicka, E.; Pogorzelski, E.; Nowak, A. Polyphenols, vitamin C and antioxidant activity in
+wines from Rosa canina L. and Rosa rugosa thunb. J. Food Comp. Anal. 2015, 39, 62–68. [CrossRef]
+28.
+Türkben, C.; Uylaser, V.; Incedayi, B.; Çelikkol, I. Effects of different maturity periods and processes on
+nutritional components of rose hip (Rosa canina L.). J. Food Agric. Environ. 2010, 8, 26–30.
+29.
+Festa, F.; Aglitti, T.; Duranti, G.; Ricordy, R.; Perticone, P.; Cozzi, R. Strong antioxidant activity of ellagic acid
+in mammalian cells in vitro revealed by the comet assay. Anticancer Res. 2001, 21, 3903–3908. [PubMed]
+30.
+Whitley, A.C.; Stoner, G.D.; Darby, M.V.; Walle, T. Intestinal epithelial cell accumulation of the cancer
+preventive polyphenol ellagic acid—extensive binding to protein and DNA. Biochem. Pharmacol. 2003, 66,
+907–915. [CrossRef]
+31.
+Schieber, A.; Berardini, N.; Carle, R. Identiﬁcation of ﬂavonol and xanthone glycosides from mango
+(Mangifera indica L. Cv.“Tommy Atkins”) peels by high-performance liquid chromatography-electrospray
+ionization mass spectrometry. J. Agric. Food Chem. 2003, 51, 5006–5011. [CrossRef] [PubMed]
+32.
+Guo, X.D.;
+Zhang, D.Y.;
+Gao, X.J.;
+Parry, J.;
+Liu, K.;
+Liu, B.L.;
+Wang, M. Quercetin and
+quercetin-3-O-glucuronide are equally effective in ameliorating endothelial insulin resistance through
+inhibition of reactive oxygen species-associated inﬂammation. Mol. Nutr. Food Res. 2013, 57, 1037–1045.
+[CrossRef] [PubMed]
+33.
+Hosni, K.; Chrif, R.; Zahed, N.; Abid, I.; Medfei, W.; Sebei, H.; Brahim, N.B. Fatty acid and phenolic
+constituents of leaves, ﬂowers and fruits of tunisian dog rose (Rosa canina L.). Riv. Ital. Sostanze Gr. 2010, 87,
+117–123.
+34.
+Fujii, T.; Saito, M. Inhibitory effect of quercetin isolated from rose hip (Rosa canina L.) against melanogenesis
+by mouse melanoma cells. Biosci. Biotechnol. Biochem. 2009, 73, 1989–1993. [CrossRef] [PubMed]
+35.
+Conceição de Oliveira, M.; Sichieri, R.; Sanchez Moura, A. Weight loss associated with a daily intake of three
+apples or three pears among overweight women. Nutrition 2003, 19, 253–256. [CrossRef]
+36.
+Ouerghemmi, S.; Sebei, H.; Siracusa, L.; Ruberto, G.; Saija, A.; Cimino, F.; Cristani, M. Comparative study of
+phenolic composition and antioxidant activity of leaf extracts from three wild Rosa species grown in different
+tunisia regions: Rosa canina L., Rosa moschata Herrm. And Rosa sempervirens L. Ind. Crops Prod. 2016, 94,
+167–177. [CrossRef]
+37.
+Aladedunye, F.; Kersting, H.J.; Matthäus, B. Phenolic extract from wild rose hip with seed: Composition,
+antioxidant activity, and performance in canola oil. Eur. J. Lipid Sci. Technol. 2014, 116, 1025–1034. [CrossRef]
+38.
+Abdel-Hameed, E.-S.S.; Bazaid, S.A.; Shohayeb, M.M. Total phenolics and antioxidant activity of defatted
+fresh taif rose, Saudi Arabia. Br. J. Pharmacol. 2012, 2, 129–140. [CrossRef]
+39.
+Öztürk, N.; Tuncel, M.; Tuncel, N. Determination of phenolic acids by a modiﬁed HPLC: Its application to
+various plant materials. J. Liq. Chromatogr. Relat. Technol. 2007, 30, 587–596. [CrossRef]
+40.
+Denev, P.; Kratchanova, M.; Ciz, M.; Lojek, A.; Vasicek, O.; Nedelcheva, P.; Blazheva, D.; Toshkova, R.;
+Gardeva, E.; Yossifova, L.; et al. Biological activities of selected polyphenol-rich fruits related to immunity
+and gastrointestinal health. Food Chem. 2014, 157, 37–44. [CrossRef] [PubMed]
+41.
+Halvorsen, B.L.; Holte, K.; Myhrstad, M.C.; Barikmo, I.; Hvattum, E.; Remberg, S.F.; Wold, A.B.; Haffner, K.;
+Baugerod, H.; Andersen, L.F.; et al. A systematic screening of total antioxidants in dietary plants. J. Nutr.
+2002, 132, 461–471. [PubMed]
+
+
+--- Page 29 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+29 of 37
+42.
+Guimarães, R.; Barros, L.; Carvalho, A.M.; Ferreira, I.C. Studies on chemical constituents and bioactivity
+of Rosa micrantha: An alternative antioxidants source for food, pharmaceutical, or cosmetic applications.
+J. Agric. Food Chem. 2010, 58, 6277–6284. [CrossRef] [PubMed]
+43.
+Barros, L.; Carvalho, A.M.; Ferreira, I.C. Exotic fruits as a source of important phytochemicals: Improving
+the traditional use of Rosa canina fruits in portugal. Food Res. Int. 2011, 44, 2233–2236. [CrossRef]
+44.
+Hodisan, T.; Socaciu, C.; Ropan, I.; Neamtu, G. Carotenoid composition of Rosa canina fruits determined by
+thin-layer chromatography and high-performance liquid chromatography. J. Pharm. Biomed. Anal. 1997, 16,
+521–528. [CrossRef]
+45.
+Hornero-Mendez, D.; Minguez-Mosquera, M.I. Carotenoid pigments in Rosa mosqueta hips, an alternative
+carotenoid source for foods. J. Agric. Food Chem. 2000, 48, 825–828. [CrossRef] [PubMed]
+46.
+Andersson, U.; Henriksson, E.; Ström, K.; Alenfall, J.; Göransson, O.; Holm, C. Rose hip exerts antidiabetic
+effects via a mechanism involving downregulation of the hepatic lipogenic program. Am. J. Physiol.
+Endocrinol. Metab. 2011, 300, E111–E121. [CrossRef] [PubMed]
+47.
+Mayne, S.T. β-carotene, carotenoids, and disease prevention in humans. FASEB J. 1996, 10, 690–701.
+[PubMed]
+48.
+Woodson, K.; Stewart, C.; Barrett, M.; Bhat, N.K.; Virtamo, J.; Taylor, P.R.; Albanes, D. Effect of vitamin
+intervention on the relationship between GSTM1, smoking, and lung cancer risk among male smokers.
+Cancer Epidemiol. Biomark. Prev. 1999, 8, 965–970.
+49.
+Chan, J.M.; Stampfer, M.J.; Ma, J.; Rimm, E.B.; Willett, W.C.; Giovannucci, E.L. Supplemental vitamin E
+intake and prostate cancer risk in a large cohort of men in the united states. Cancer Epidemiol. Biomark. Prev.
+1999, 8, 893–899.
+50.
+Stone, W.L.; Papas, A.M. Tocopherols and the etiology of colon cancer. J. Nat. Cancer Inst. 1997, 89, 1006–1014.
+[CrossRef] [PubMed]
+51.
+Fromm, M.; Bayha, S.; Kammerer, D.R.; Carle, R. Identiﬁcation and quantitation of carotenoids and
+tocopherols in seed oils recovered from different Rosaceae species. J. Agric. Food Chem. 2012, 60, 10733–10742.
+[CrossRef] [PubMed]
+52.
+Nowak, R. Fatty acids composition in fruits of wild rose species. Acta Soc. Bot. Pol. 2005, 74, 3. [CrossRef]
+53.
+Grajzer, M.; Prescha, A.; Korzonek, K.; Wojakowska, A.; Dziadas, M.; Kulma, A.; Grajeta, H. Characteristics
+of rose hip (Rosa canina L.) cold-pressed oil and its oxidative stability studied by the differential scanning
+calorimetry method. Food Chem. 2015, 188, 459–466. [CrossRef] [PubMed]
+54.
+Kazaz, S.; Baydar, H.; Erbas, S. Variations in chemical compositions of Rosa damascena Mill. And Rosa canina L.
+fruits. Czech. J. Food Sci. Vol. 2009, 27, 178–184.
+55.
+Franco, D.; Pinelo, M.; Sineiro, J.; Núñez, M.J. Processing of Rosa rubiginosa: Extraction of oil and antioxidant
+substances. Bioresource Technol. 2007, 98, 3506–3512. [CrossRef] [PubMed]
+56.
+Szentmihályi, K.; Vinkler, P.; Lakatos, B.; Illés, V.; Then, M. Rose hip (Rosa canina L.) oil obtained from waste
+hip seeds by different extraction methods. Bioresource Technol. 2002, 82, 195–201. [CrossRef]
+57.
+Gaude, N.; Tippmann, H.; Flemetakis, E.; Katinakis, P.; Udvardi, M.; Dormann, P. The galactolipid
+digalactosyldiacylglycerol accumulates in the peribacteroid membrane of nitrogen-ﬁxing nodules of soybean
+and lotus. J. Biol. Chem. 2004, 279, 34624–34630. [CrossRef] [PubMed]
+58.
+Somerville, C.J.B.; Jaworski, J.G.; Ohlrogge, J.B. Lipids; American Society of Plant Physiologists: Rockville,
+MD, USA, 2000.
+59.
+Maeda, N.; Hada, T.; Yoshida, H.; Mizushina, Y. Inhibitory effect on replicative DNA polymerases, human
+cancer cell proliferation, and in vivo anti-tumor activity by glycolipids from spinach. Curr. Med. Chem. 2007,
+14, 955–967. [CrossRef] [PubMed]
+60.
+Maeda, N.; Kokai, Y.; Hada, T.; Yoshida, H.; Mizushina, Y. Oral administration of monogalactosyl
+diacylglycerol from spinach inhibits colon tumor growth in mice. Exp. Ther. Med. 2013, 5, 17–22. [PubMed]
+61.
+Larsen, E.; Kharazmi, A.; Christensen, L.P.; Christensen, S.B. An antiinﬂammatory galactolipid from rose hip
+(Rosa canina) that inhibits chemotaxis of human peripheral blood neutrophils in vitro. J. Nat. Prod. 2003, 66,
+994–995. [CrossRef] [PubMed]
+62.
+Cohen, M. Rosehip—An evidence based herbal medicine for inﬂammation and arthritis. Aust. Fam. Physician
+2012, 41, 495–498. [PubMed]
+63.
+Christensen, L.P. Galactolipids as potential health promoting compounds in vegetable foods. Recent Pat.
+Food Nutr. Agric. 2009, 1, 50–58. [CrossRef] [PubMed]
+
+
+--- Page 30 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+30 of 37
+64.
+Hou, C.-C.; Chen, Y.-P.; Wu, J.-H.; Huang, C.-C.; Wang, S.-Y.; Yang, N.-S.; Shyur, L.-F. A galactolipid possesses
+novel cancer chemopreventive effects by suppressing inﬂammatory mediators and mouse B16 melanoma.
+Cancer Res. 2007, 67, 6907–6915. [CrossRef] [PubMed]
+65.
+McCutcheon, A.; Roberts, T.; Gibbons, E.; Ellis, S.; Babiuk, L.; Hancock, R.; Towers, G. Antiviral screening of
+british columbian medicinal plants. J. Ethnopharmacol. 1995, 49, 101–110. [CrossRef]
+66.
+Orhan, D.D.; Hartevio˘glu, A.; Küpeli, E.; Yesilada, E. In vivo anti-inﬂammatory and antinociceptive activity
+of the crude extract and fractions from Rosa canina L. Fruits. J. Ethnopharmacol. 2007, 112, 394–400. [CrossRef]
+[PubMed]
+67.
+Dogan, A.; Celik, F.; Gundogdu, M.; Kazankaya, A.; Gazioglu Sensoy, R. Changes in seed mineral matter
+contents of rose hip species grown naturally in Turkey. Acta Hortic. 2015. [CrossRef]
+68.
+Dogan, A.; Kazankaya, A. Fruit properties of Rose hip species grown in lake Van Basin (Eastern Anatolia
+Region). Asian J. Plant. Sci. 2006, 5, 120–122.
+69.
+Strålsjö, L.; Alklint, C.; Olsson, M.E.; Sjöholm, I. Total folate content and retention in rosehips (Rosa ssp.)
+after drying. J. Agric. Food Chem. 2003, 51, 4291–4295. [CrossRef] [PubMed]
+70.
+Baiano, A.; Del Nobile, M.A. Antioxidant compounds from vegetable matrices: Biosynthesis, occurrence,
+and extraction systems. Crit. Rev. Food. Sci. Nutr. 2016, 56, 2053–2068. [CrossRef] [PubMed]
+71.
+Cunja, V.; Mikulic-Petkovsek, M.; Zupan, A.; Stampar, F.; Schmitzer, V. Frost decreases content of sugars,
+ascorbic acid and some quercetin glycosides but stimulates selected carotenes in Rosa canina hips. J. Plant.
+Physiol. 2015, 178, 55–63. [CrossRef] [PubMed]
+72.
+Jiménez, S.; Jiménez-Moreno, N.; Luquin, A.; Laguna, M.; Rodríguez-Yoldi, M.J.; Ancín-Azpilicueta, C.
+Chemical composition of rosehips from different Rosa species: An alternative source of antioxidants for food
+industry. Food Add. Contam. Part A 2017. [CrossRef] [PubMed]
+73.
+Vossen, E.; Utrera, M.; de Smet, S.; Morcuende, D.; Estévez, M. Dog rose (Rosa canina L.) as a functional
+ingredient in porcine frankfurters without added sodium ascorbate and sodium nitrite. Meat Sci. 2012, 92,
+451–457. [CrossRef] [PubMed]
+74.
+Romero, N.; Robert, P.; Masson, L.; Ortiz, J.; González, K.; Tapia, K.; Dobaganes, C. Effect of α-tocopherol,
+α-tocotrienol and Rosa mosqueta shell extract on the performance of antioxidant-stripped canola oil
+(Brassica sp.) at high temperature. Food Chem. 2007, 104, 383–389. [CrossRef]
+75.
+Utrera, M.; Morcuende, D.; Ganhão, R.; Estévez, M. Role of phenolics extracting from Rosa canina L. on meat
+protein oxidation during frozen storage and beef patties processing. Food Bioprocess. Tech. 2015, 8, 854–864.
+[CrossRef]
+76.
+Zizka, A.; Thiombiano, A.; Dressler, S.; Nacoulma, B.M.; Ouédraogo, A.; Ouédraogo, I.; Ouédraogo, O.;
+Zizka, G.; Hahn, K.; Schmidt, M. Traditional plant use in burkina faso (West Africa): A national-scale analysis
+with focus on traditional medicine. J. Ethnobiol. Ethnomed. 2015, 11, 9. [CrossRef] [PubMed]
+77.
+Oliver, S.J. The role of traditional medicine practice in primary health care within aboriginal australia:
+A review of the literature. J. Ethnobiol. Ethnomed. 2013, 9, 46. [CrossRef] [PubMed]
+78.
+Nejatbakhsh, F.; Shirbeigi, L.; Rahimi, R.; Abolhassani, H. Review of local herbal compounds found in
+the iranian traditional medicine known to optimise male fertility. Andrologia 2016, 48, 850–859. [CrossRef]
+[PubMed]
+79.
+Deb, L.; Laishram, S.; Khumukcham, N.; Ningthoukhongjam, D.; Nameirakpam, S.S.; Dey, A.;
+Moirangthem, D.S.; Talukdar, N.C.; Ningthoukhongjam, T.R. Past, present and perspectives of manipur
+traditional medicine: A major health care system available for rural population in the North-East India.
+J. Ethnopharmacol. 2015, 169, 387–400. [CrossRef] [PubMed]
+80.
+De Fátima, Â.; Silva Terra, B.; Moreira da Silva, C.; Leite da Silva, D.; Pereira Araujo, D.; da Silva Neto, L.;
+Anderson Nascimento de Aquino, R. From nature to market: Examples of natural products that became
+drugs. Recent Pat. Biotechnol. 2014, 8, 76–88. [CrossRef] [PubMed]
+81.
+Thanan, R.; Oikawa, S.; Hiraku, Y.; Ohnishi, S.; Ma, N.; Pinlaor, S.; Yongvanit, P.; Kawanishi, S.; Murata, M.
+Oxidative stress and its signiﬁcant roles in neurodegenerative diseases and cancer. Int. J. Mol. Sci. 2014, 16,
+193–217. [CrossRef] [PubMed]
+82.
+Barrera, G. Oxidative stress and lipid peroxidation products in cancer progression and therapy. ISRN Oncol.
+2012, 2012, 1–21. [CrossRef] [PubMed]
+83.
+Gupta, R.K.; Patel, A.K.; Shah, N.; Chaudhary, A.; Jha, U.; Yadav, U.C. Oxidative stress and antioxidants in
+disease and cancer. Asian Pac. Cancer Prev. 2014, 15, 4405–4409. [CrossRef]
+
+
+--- Page 31 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+31 of 37
+84.
+Roleira, F.M.; Tavares-da-Silva, E.J.; Varela, C.L.; Costa, S.C.; Silva, T.; Garrido, J.; Borges, F. Plant derived and
+dietary phenolic antioxidants: Anticancer properties. Food Chem. 2015, 183, 235–258. [CrossRef] [PubMed]
+85.
+Guimarães, R.; Barros, L.; Calhelha, R.C.; Carvalho, A.M.; Queiroz, M.J.R.; Ferreira, I.C. Bioactivity of different
+enriched phenolic extracts of wild fruits from northeastern portugal: A comparative study. Plant. Foods
+Hum. Nutr. 2014, 69, 37–42. [CrossRef] [PubMed]
+86.
+Bonner, M.Y.; Arbiser, J.L. The antioxidant paradox: What are antioxidants and how should they be used in
+a therapeutic context for cancer. Future Med. Chem. 2014, 6, 1413–1422. [CrossRef] [PubMed]
+87.
+Uifălean, A.; Schneider, S.; Gierok, P.; Ionescu, C.; Iuga, C.A.; Lalk, M. The impact of soy isoﬂavones on
+MCF-7 and MDA-MB-231 breast cancer cells using a global metabolomic approach. Int. J. Mol. Sci. 2016, 17,
+1443. [CrossRef] [PubMed]
+88.
+Zhamanbayeva, G.T.; Aralbayeva, A.N.; Murzakhmetova, M.K.; Tuleukhanov, S.T.; Danilenko, M.
+Cooperative antiproliferative and differentiation-enhancing activity of medicinal plant extracts in acute
+myeloid leukemia cells. Biomed. Pharmacother. 2016, 82, 80–89. [CrossRef] [PubMed]
+89.
+Corcoran, A.; Nadkarni, S.; Yasuda, K.; Sakaki, T.; Brown, G.; Kutner, A.; Marcinkowska, E. Biological
+evaluation of double point modiﬁed analogues of 1,25-dihydroxyvitamin D2 as potential anti-leukemic
+agents. Int. J. Mol. Sci. 2016, 17, 91. [CrossRef] [PubMed]
+90.
+Baurska, H.; Kiełbi´nski, M.; Biecek, P.; Haus, O.; Ja´zwiec, B.; Kutner, A.; Marcinkowska, E. Monocytic
+differentiation induced by side-chain modiﬁed analogs of vitamin D in ex vivo cells from patients with acute
+myeloid leukemia. Leuk. Res. 2014, 38, 638–647. [CrossRef] [PubMed]
+91.
+Lee, Y.-H.; Jung, M.G.; Kang, H.B.; Choi, K.-C.; Haam, S.; Jun, W.; Kim, Y.-J.; Cho, H.Y.; Yoon, H.-G.
+Effect of anti-histone acetyltransferase activity from Rosa rugosa thunb. (Rosaceae) extracts on androgen
+receptor-mediated transcriptional regulation. J. Ethnopharmacol. 2008, 118, 412–417. [CrossRef] [PubMed]
+92.
+Takayama, K.i.; Inoue, S. Transcriptional network of androgen receptor in prostate cancer progression.
+Int. J. Urol. 2013, 20, 756–768. [CrossRef] [PubMed]
+93.
+Li, L.-C.; Carroll, P.R.; Dahiya, R. Epigenetic changes in prostate cancer: Implication for diagnosis and
+treatment. J. Natl. Cancer Inst. 2005, 97, 103–115. [CrossRef] [PubMed]
+94.
+Liu, W.; Li, S.-Y.; Huang, X.-E.; Cui, J.-J.; Zhao, T.; Zhang, H. Inhibition of tumor growth in vitro by a
+combination of extracts from Rosa roxburghii Tratt and fagopyrum cymosum. Asian Pac. J. Cancer Prev. 2012, 13,
+2409–2414. [CrossRef] [PubMed]
+95.
+Chen, Y.; Liu, Z.-J.; Liu, J.; Liu, L.-K.; Zhang, E.-S.; Li, W.-L. Inhibition of metastasis and invasion of ovarian
+cancer cells by crude polysaccharides from Rosa roxburghii Tratt in vitro. J. Cancer Prev. 2013, 15, 10351–10354.
+[CrossRef]
+96.
+Guo, F.; Tian, J.; Cui, M.; Fang, M.; Yang, L. Downregulation of Matrix Metalloproteinase 9 by small
+interfering rna inhibits the tumor growth of ovarian epithelial carcinoma in vitro and in vivo. Mol. Med. Rep.
+2015, 12, 753–759. [PubMed]
+97.
+Lee, K.R.; Lee, J.S.; Kim, Y.R.; Song, I.G.; Hong, E.K. Polysaccharide from inonotus obliquus inhibits migration
+and invasion in B16-F10 cells by suppressing MMP-2 and MMP-9 via downregulation of NF-κB signaling
+pathway. Oncol. Rep. 2014, 31, 2447–2453. [CrossRef] [PubMed]
+98.
+Barbour, K.E. Prevalence of doctor-diagnosed arthritis at state and county levels—United States, 2014.
+MMWR Morb. Mortal. Wkly. Rep. 2016, 65, 489–494. [CrossRef] [PubMed]
+99.
+Bennett, J.C. The infectious etiology of rheumatoid arthritis. Arthritis Rheum. 1978, 21, 531–538. [CrossRef]
+[PubMed]
+100. Brooks, P.M. The burden of musculoskeletal disease: A global perspective. Clin. Rheumatol. 2006, 25, 778–781.
+[CrossRef] [PubMed]
+101. Kirkeskov, B.; Christensen, R.; Bügel, S.; Bliddal, H.; Danneskiold-Samsøe, B.; Christensen, L.P.; Andersen, J.R.
+The effects of rose hip (Rosa canina) on plasma antioxidative activity and c-reactive protein in patients with
+rheumatoid arthritis and normal controls: A prospective cohort study. Phytomedicine 2011, 18, 953–958.
+[CrossRef] [PubMed]
+102. Kharazmi, A.; Winther, K. Rose hip inhibits chemotaxis and chemiluminescence of human peripheral blood
+neutrophils in vitro and reduces certain inﬂammatory parameters in vivo. Inﬂammopharmacology 1999, 7,
+377–386. [CrossRef] [PubMed]
+
+
+--- Page 32 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+32 of 37
+103. Warholm, O.; Skaar, S.; Hedman, E.; Mølmen, H.M.; Eik, L. The effects of a standardized herbal remedy made
+from a subtype of Rosa canina in patients with osteoarthritis: A double-blind, randomized, placebo-controlled
+clinical trial. Curr. Ther. Res. 2003, 64, 21–31. [CrossRef]
+104. Rein, E.; Kharazmi, A.; Winther, K. A herbal remedy, hyben vital (stand. Powder of a subspecies of Rosa
+canina fruits), reduces pain and improves general wellbeing in patients with osteoarthritis—a double-blind,
+placebo-controlled, randomised trial. Phytomedicine 2004, 11, 383–391. [CrossRef] [PubMed]
+105. Winther, K.; Rein, E.; Kharazmi, A. The anti-inﬂammatory properties of rose-hip. Inﬂammopharmacology 1999,
+7, 63–68. [CrossRef] [PubMed]
+106. Yan, M.; Zhu, Y.; Zhang, H.-J.; Jiao, W.-H.; Han, B.-N.; Liu, Z.-X.; Qiu, F.; Chen, W.-S.; Lin, H.-W.
+Anti-Inﬂammatory secondary metabolites from the leaves of Rosa laevigata. Bioorg. Med. Chem. 2013,
+21, 3290–3297. [CrossRef] [PubMed]
+107. Schwager, J.; Hoeller, U.; Wolfram, S.; Richard, N. Rose hip and its constituent galactolipids confer cartilage
+protection by modulating cytokine, and chemokine expression. BMC Complement. Altern. Med. 2011, 11, 105.
+[CrossRef] [PubMed]
+108. Schwager, J.; Richard, N.; Schoop, R.; Wolfram, S. A novel rose hip preparation with enhanced
+anti-inﬂammatory and chondroprotective effects. Mediators Inﬂamm. 2014, 2014, 1–10. [CrossRef] [PubMed]
+109. Jäger, A.K.; Eldeen, I.M.; van Staden, J. COX-1 and-2 activity of rose hip. Phytother. Res. 2007, 21, 1251–1252.
+[CrossRef] [PubMed]
+110. Wenzig, E.; Widowitz, U.; Kunert, O.; Chrubasik, S.; Bucar, F.; Knauder, E.; Bauer, R. Phytochemical
+composition and in vitro pharmacological activity of two rose hip (Rosa canina L.) preparations. Phytomedicine
+2008, 15, 826–835. [CrossRef] [PubMed]
+111. Kim, M.-S.; Kim, S.-H. Inhibitory effect of astragalin on expression of lipopolysaccharide-induced
+inﬂammatory mediators through NF-κB in macrophages. Arch. Pharm. Res. 2011, 34, 2101–2107. [CrossRef]
+[PubMed]
+112. Choi, S.J.; Kim, M.J.; Heo, H.J.; Kim, H.K.; Hong, B.; Kim, C.-J.; Kim, B.-G.; Shin, D.H. Protective effect of Rosa
+laevigata against amyloid β peptide-induced oxidative stress. Amyloid 2006, 13, 6–12. [CrossRef] [PubMed]
+113. Liu, M.; Xu, Y.; Han, X.; Liang, C.; Yin, L.; Xu, L.; Qi, Y.; Zhao, Y.; Peng, J.; Sun, C. Potent effects of
+ﬂavonoid-rich extract from Rosa laevigata michx fruit against hydrogen peroxide-induced damage in PC12
+cells via attenuation of oxidative stress, inﬂammation and apoptosis. Molecules 2014, 19, 11816–11832.
+[CrossRef] [PubMed]
+114. Makarov, S.S. NF-κβ in rheumatoid arthritis: A pivotal regulator of inﬂammation, hyperplasia, and tissue
+destruction. Arthritis Res.Ther. 2001, 3, 200. [CrossRef] [PubMed]
+115. Whang, W.K.; Park, H.S.; Ham, I.; Oh, M.; Namkoong, H.; Kim, H.K.; Hwang, D.W.; Hur, S.Y.; Kim, T.E.;
+Park, Y.G. Methyl gallate and chemicals structurally related to methyl gallate protect human umbilical vein
+endothelial cells from oxidative stress. Exp. Mol. Med. 2005, 37, 343. [CrossRef] [PubMed]
+116. Choi, K.C.; Lee, Y.H.; Jung, M.G.; Kwon, S.H.; Kim, M.J.; Jun, W.J.; Lee, J.; Lee, J.M.; Yoon, H.G. Gallic acid
+suppresses lipopolysaccharide-induced nuclear factor-kappab signaling by preventing rela acetylation in
+A549 lung cancer cells. Mol. Cancer Res. 2009, 7, 2011–2021. [CrossRef] [PubMed]
+117. An, H.-J.; Kim, I.-T.; Park, H.-J.; Kim, H.-M.; Choi, J.-H.; Lee, K.-T. Tormentic acid, a triterpenoid saponin,
+isolated from Rosa rugosa, inhibited LPS-induced INOS, COX-2, and TNF-α expression through inactivation
+of the nuclear factor-κB pathway in raw 264.7 macrophages. Int. Immunopharmacol. 2011, 11, 504–510.
+[CrossRef] [PubMed]
+118. Sato, K.; Takayanagi, H. Osteoclasts, rheumatoid arthritis, and osteoimmunology. Curr. Opin. Rheumatol.
+2006, 18, 419–426. [CrossRef] [PubMed]
+119. Kurt, A.; Bjoern, F.; Bernd, W.; Eduardo, M. Rose hip special extract FB9440 inhibited osteoclastogenesis via
+NF-κB pathway. Planta Med. 2013, 79. [CrossRef]
+120. Cheng, B.C.Y.; Fu, X.-Q.; Guo, H.; Li, T.; Wu, Z.-Z.; Chan, K.; Yu, Z.-L. The genus Rosa and arthritis: Overview
+on pharmacological perspectives. Pharmacol. Res. 2016, 114, 219–234. [CrossRef] [PubMed]
+121. Bernabei, R.; Martone, A.M.; Ortolani, E.; Landi, F.; Marzetti, E. Screening, diagnosis and treatment of
+osteoporosis: A brief review. Clin. Cases Miner. Bone Metab. 2014, 11, 201–207. [CrossRef] [PubMed]
+122. Banﬁ, G.; Iorio, E.L.; Corsi, M.M. Oxidative stress, free radicals and bone remodeling. Clin. Chem. Lab. Med.
+2008, 46, 1550–1555. [CrossRef] [PubMed]
+
+
+--- Page 33 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+33 of 37
+123. Sheweita, S.; Khoshhal, K. Calcium metabolism and oxidative stress in bone fractures: Role of antioxidants.
+Curr. Drug Metab. 2007, 8, 519–525. [CrossRef] [PubMed]
+124. Devareddy, L.; Hooshmand, S.; Collins, J.K.; Lucas, E.A.; Chai, S.C.; Arjmandi, B.H. Blueberry prevents
+bone loss in ovariectomized rat model of postmenopausal osteoporosis. J. Nutr. Biochem. 2008, 19, 694–699.
+[CrossRef] [PubMed]
+125. Adom, K.K.; Sorrells, M.E.; Liu, R.H. Phytochemical proﬁles and antioxidant activity of wheat varieties.
+J. Agric. Food Chem. 2003, 51, 7825–7834. [CrossRef] [PubMed]
+126. Peterkofsky, B. Ascorbate requirement for hydroxylation and secretion of procollagen: Relationship to
+inhibition of collagen synthesis in scurvy. Am. J. Clin. Nutr. 1991, 54, 1135S–1140S. [PubMed]
+127. Xing, W.; Singgih, A.; Kapoor, A.; Alarcon, C.M.; Baylink, D.J.; Mohan, S. Nuclear Factor-E2-Related Factor-1
+mediates ascorbic acid induction of osterix expression via interaction with antioxidant-responsive element
+in bone cells. J. Biol. Chem. 2007, 282, 22052–22061. [CrossRef] [PubMed]
+128. Hubert, P.A.; Lee, S.G.; Lee, S.-K.; Chun, O.K. Dietary polyphenols, berries, and age-related bone loss:
+A review based on human, animal, and cell studies. Antioxidants 2014, 3, 144–158. [CrossRef] [PubMed]
+129. Blair, M. Diabetes mellitus review. Urol. Nurs. 2016, 36, 27–36. [PubMed]
+130. Gojka, R. WHO Global report on diabetes: A summary. Int. J. Noncommun. Dis. 2016, 1, 3–8.
+131. Ceriello, A. New insights on oxidative stress and diabetic complications may lead to a “causal” antioxidant
+therapy. Diabetes Care 2003, 26, 1589–1596. [CrossRef] [PubMed]
+132. Westphal, S.A.; Palumbo, P.J. Insulin and oral hypoglycemic agents should not be used in combination in the
+treatment of type 2 diabetes. Arch. Intern. Med. 2003, 163, 1783–1785. [CrossRef] [PubMed]
+133. Orhan, N.; Aslan, M.; Hosbas, S.; Deliorman, O.D. Antidiabetic effect and antioxidant potential of Rosa canina
+fruits. Pharmacogn. Mag. 2009, 5, 309. [CrossRef]
+134. Taghizadeh, M.; Rashidi, A.A.; Taherian, A.A.; Vakili, Z.; Sajad Sajadian, M.; Ghardashi, M. Antidiabetic and
+antihyperlipidemic effects of ethanol extract of Rosa canina L. Fruit on diabetic rats: An experimental study
+with histopathological evaluations. J. Evid. Based Complement. Altern. Med. 2016, 21, NP25–NP30. [CrossRef]
+[PubMed]
+135. Sagdullaev, B.; Sagdullaev, S.S.; Aripov, K.N. Aqueous extraction of the fruit of Rosa canina. Chem. Nat. Compd.
+1997, 33, 449–452. [CrossRef]
+136. Can, A.; Akev, N.; Sütlüpinar, N. Effect of rose hips on blood glucose level. Acta Pharm. Turc. 1992, 34, 17–22.
+137. Fattahi, A.; Niyazi, F.; Shahbazi, B.; Farzaei, M.H.; Bahrami, G. Antidiabetic mechanisms of Rosa canina fruits.
+J. Evid. Based Complement. Altern. Med. 2017, 22, 127–133. [CrossRef] [PubMed]
+138. Ghadyale, V.; Takalikar, S.; Haldavnekar, V.; Arvindekar, A. Effective control of postprandial glucose level
+through inhibition of intestinal alpha glucosidase by Cymbopogon martinii (roxb.). J. Evid. Based Complement.
+Altern. Med. 2011, 2012, 1–6. [CrossRef] [PubMed]
+139. Patel, D.; Kumar, R.; Laloo, D.; Hemalatha, S. Diabetes mellitus: An overview on its pharmacological aspects
+and reported medicinal plants having antidiabetic activity. Asian Pac. J. Trop. Biomed. 2012, 2, 411–420.
+[CrossRef]
+140. Ninomiya, K.; Matsuda, H.; Kubo, M.; Morikawa, T.; Nishida, N.; Yoshikawa, M. Potent anti-obese principle
+from Rosa canina: Structural requirements and mode of action of trans-tiliroside. Bioorg. Med. Chem. Lett.
+2007, 17, 3059–3064. [CrossRef] [PubMed]
+141. Harris, W.S.; Miller, M.; Tighe, A.P.; Davidson, M.H.; Schaefer, E.J. Omega-3 fatty acids and coronary heart
+disease risk: Clinical and mechanistic perspectives. Atherosclerosis 2008, 197, 12–24. [CrossRef] [PubMed]
+142. Raiciu, A.D.; Popescu, M.; Ivopol, G.C.; Bordei, N.; Alexandru, G.; Crisan, I.; Manea, S.; Dima, S.O.
+Therapeutic applications of vegetable oils and GC-MS evaluation of ω-3, ω-6 and ω-9 amounts in six
+oleaginous plants. Rev. Chim. 2016, 67, 2449–2453.
+143. Yoshikawa, T.; Shimano, H.; Yahagi, N.; Ide, T.; Amemiya-Kudo, M.; Matsuzaka, T.; Nakakuki, M.; Tomita, S.;
+Okazaki, H.; Tamura, Y. Polyunsaturated fatty acids suppress Sterol Regulatory Element-Binding Protein 1C
+promoter activity by inhibition of liver x receptor (LXR) binding to lxr response elements. J. Biol. Chem. 2002,
+277, 1705–1711. [CrossRef] [PubMed]
+144. Adkins, Y.; Kelley, D.S. Mechanisms underlying the cardioprotective effects of ω-3 polyunsaturated fatty
+acids. J. Nutr. Biochem. 2010, 21, 781–792. [CrossRef] [PubMed]
+145. Morgen, C.S.; Sørensen, T.I. Obesity: Global trends in the prevalence of overweight and obesity. Nat. Rev.
+Endocrinol. 2014, 10, 513–514. [CrossRef] [PubMed]
+
+
+--- Page 34 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+34 of 37
+146. Nam, S.Y. Obesity-related digestive diseases and their pathophysiology. Gut Liver 2017, 11, 323–334.
+[CrossRef] [PubMed]
+147. Lastra, G.; Sowers, J.R. Obesity and cardiovascular disease: Role of adipose tissue, inﬂammation, and the
+renin-angiotensin-aldosterone system. Horm. Mol. Biol. Clin. Investig. 2013, 15, 49–57. [CrossRef] [PubMed]
+148. Wensveen, F.M.; Valenti´c, S.; Šestan, M.; Turk Wensveen, T.; Poli´c, B. The “big bang” in obese fat: Events
+initiating obesity—induced adipose tissue inﬂammation. Eur. J. Immunol. 2015, 45, 2446–2456. [CrossRef]
+[PubMed]
+149. Connaughton, R.M.; McMorrow, A.M.; McGillicuddy, F.C.; Lithander, F.E.; Roche, H.M. Impact of
+anti-inﬂammatory nutrients on obesity-associated metabolic-inﬂammation from childhood through to
+adulthood. Proc. Nutr. Soc. 2016, 75, 115–124. [CrossRef] [PubMed]
+150. Grygiel-Gorniak, B. Peroxisome proliferator-activated receptors and their ligands: Nutritional and clinical
+implications—A review. Nutr. J. 2014, 13, 17. [CrossRef] [PubMed]
+151. Nagatomo, A.; Nishida, N.; Matsuura, Y.; Shibata, N. Rosehip extract inhibits lipid accumulation in
+white adipose tissue by suppressing the expression of Peroxisome Proliferator-Activated Receptor Gamma.
+Prev. Nutr. Food Sci. 2013, 18, 85–91. [CrossRef] [PubMed]
+152. Nagatomo, A.; Nishida, N.; Fukuhara, I.; Noro, A.; Kozai, Y.; Sato, H.; Matsuura, Y. Daily intake
+of rosehip extract decreases abdominal visceral fat in preobese subjects: A randomized, double-blind,
+placebo-controlled clinical trial. Diabetes Metab. Syndr. Obes. 2015, 8, 147. [CrossRef] [PubMed]
+153. Zuk, A.; Bonventre, J.V. Acute kidney injury. Annu. Rev. Med. 2016, 67, 293–307. [CrossRef] [PubMed]
+154. Ashtiyani, S.C.; Najaﬁ, H.; Jalalvandi, S.; Hosseinei, F. Protective effects of Rosa canina L fruit extracts on
+renal disturbances induced by reperfusion injury in rats. Iran. J. Kidney Dis. 2013, 7, 290.
+155. Zhao, L.; Xu, L.; Tao, X.; Han, X.; Yin, L.; Qi, Y.; Peng, J. Protective effect of the total ﬂavonoids from
+Rosa laevigata michx fruit on renal ischemia-reperfusion injury through suppression of oxidative stress and
+inﬂammation. Molecules 2016, 21, 952. [CrossRef] [PubMed]
+156. Kashihara, N.; Haruna, Y.; K Kondeti, V.; S Kanwar, Y. Oxidative stress in diabetic nephropathy.
+Curr. Med. Chem. 2010, 17, 4256–4269. [CrossRef] [PubMed]
+157. Zhou, Y.; Liao, Q.; Luo, Y.; Qing, Z.; Zhang, Q.; He, G. Renal protective effect of Rosa laevigata michx. By the
+inhibition of oxidative stress in streptozotocin-induced diabetic rats. Mol. Med. Rep. 2012, 5, 1548–1554.
+[PubMed]
+158. Sakhaee, K. Recent advances in the pathophysiology of nephrolithiasis. Kidney Int. 2009, 75, 585–595.
+[CrossRef] [PubMed]
+159. Tracy, C.R.; Pearle, M.S. Update on the medical management of stone disease. Curr. Opin. Urol. 2009, 19,
+200–204. [CrossRef] [PubMed]
+160. Tayeﬁ-Nasrabadi, H.; Sadigh-Eteghad, S.; Aghdam, Z. The effects of the hydroalcohol extract of Rosa canina l.
+Fruit on experimentally nephrolithiasic wistar rats. Phytother. Res. 2012, 26, 78–85. [CrossRef] [PubMed]
+161. Kale, I.; Khan, M.A.; Irfan, Y.; Veerana, G.A. Hepatoprotective potential of ethanolic and aqueous extract of
+ﬂowers of Sesbania grandiﬂora (linn) induced by ccl4. Asian Pac. J. Trop. Biomed. 2012, 2, S670–S679. [CrossRef]
+162. Pareek, A.; Godavarthi, A.; Issarani, R.; Nagori, B.P. Antioxidant and hepatoprotective activity of Fagonia
+schweinfurthii (Hadidi) hadidi extract in carbon tetrachloride induced hepatotoxicity in HEPG2 cell line and
+rats. J. Ethnopharmacol. 2013, 150, 973–981. [CrossRef] [PubMed]
+163. Sadeghi, H.; Hosseinzadeh, S.; Touri, M.A.; Ghavamzadeh, M.; Barmak, M.J. Hepatoprotective effect of Rosa
+canina fruit extract against carbon tetrachloride induced hepatotoxicity in rat. Avicenna J. Phytomed. 2016, 6,
+181. [PubMed]
+164. Ringman, J.M.; Goate, A.; Masters, C.L.; Cairns, N.J.; Danek, A.; Graff-Radford, N.; Ghetti, B.; Morris, J.C.;
+Network, D.I.A. Genetic heterogeneity in alzheimer disease and implications for treatment strategies.
+Curr. Neurol. Neurosci. Rep. 2014, 14, 1–9. [CrossRef] [PubMed]
+165. Yan, M.H.; Wang, X.; Zhu, X. Mitochondrial defects and oxidative stress in alzheimer disease and parkinson
+disease. Free Radic. Biol. Med. 2013, 62, 90–101. [CrossRef] [PubMed]
+166. Esfandiary, E.; Karimipour, M.; Mardani, M.; Ghanadian, M.; Alaei, H.A.; Mohammadnejad, D.;
+Esmaeili, A. Neuroprotective effects of Rosa damascena extract on learning and memory in a rat model
+of amyloid-β-induced alzheimer’s disease. Adv. Biomed. Res. 2015, 4, 131. [PubMed]
+167. Semwal, D.K.; Semwal, R.B.; Combrinck, S.; Viljoen, A. Myricetin: A dietary molecule with diverse biological
+activities. Nutrients 2016, 8, 90. [CrossRef] [PubMed]
+
+
+--- Page 35 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+35 of 37
+168. DeToma, A.S.; Choi, J.S.; Braymer, J.J.; Lim, M.H. Myricetin: A naturally occurring regulator of Metal-Induced
+Amyloid-β aggregation and neurotoxicity. ChemBioChem 2011, 12, 1198–1201. [CrossRef] [PubMed]
+169. Aguiar, C.C.T.; Almeida, A.B.; Araújo, P.V.P.; de Abreu, R.N.D.C.; Chaves, E.M.C.; de Vale, O.C.; Macêdo, D.S.;
+Woods, D.J.; de Franca Fonteles, M.M.; Vasconcelos, S.M.M. Oxidative stress and epilepsy: Literature review.
+Oxid. Med. Cell. Longev. 2012, 2012. [CrossRef] [PubMed]
+170. Diniz, T.C.; Silva, J.C.; de Lima-Saraiva, S.R.G.; de Almeida Ribeiro, F.P.R.; Pacheco, A.G.M.; de Freitas, R.M.;
+Quintans-Júnior, L.J.; de Souza Siqueira Quintans, J.; Mendes, R.L.; da Silva Almeida, J.R.G. The role of
+ﬂavonoids on oxidative stress in epilepsy. Oxid. Med. Cell. Longev. 2015, 2015, 1–9. [CrossRef] [PubMed]
+171. Homayoun, M.; Seghatoleslam, M.; Pourzaki, M.; Shaﬁeian, R.; Hosseini, M.; Bideskan, A.E. Anticonvulsant
+and neuroprotective effects of Rosa damascena hydro-alcoholic extract on rat hippocampus. Avicenna J.
+Phytomed. 2015, 5, 260. [PubMed]
+172. Uttara, B.; Singh, A.V.; Zamboni, P.; Mahajan, R. Oxidative stress and neurodegenerative diseases: A review of
+upstream and downstream antioxidant therapeutic options. Curr. Neuropharmacol. 2009, 7, 65–74. [CrossRef]
+[PubMed]
+173. Sánchez-Vidaña, D.I.; Ngai, S.P.-C.; He, W.; Chow, J.K.-W.; Lau, B.W.-M.; Tsang, H.W.-H. The effectiveness of
+aromatherapy for depressive symptoms: A systematic review. J. Evid. Based Complement. Altern. Med. 2017,
+2017, 1–21. [CrossRef] [PubMed]
+174. Hongratanaworakit, T. Relaxing effect of rose oil on humans. Nat. Prod. Commun. 2009, 4, 291–296. [PubMed]
+175. Nazıro˘glu, M.; Kozlu, S.; Yorgancıgil, E.; U˘guz, A.C.; Karaku¸s, K. Rose oil (from Rosa damascena Mill.) vapor
+attenuates depression-induced oxidative toxicity in rat brain. J. Nat. Med. 2013, 67, 152–158. [CrossRef]
+[PubMed]
+176. Wang, D.; Beck, L.A. Immunologic targets in atopic dermatitis and emerging therapies: An update. Am. J.
+Clin. Dermatol. 2016, 17, 425–443. [CrossRef] [PubMed]
+177. Park, K.H.; Jeong, M.S.; Park, K.J.; Choi, Y.W.; Seo, S.J.; Lee, M.W. Topical application of Rosa multiﬂora root
+extract improves atopic dermatitis-like skin lesions induced by mite antigen in NC/NGA mice. Biol. Pharm.
+Bull. 2014, 37, 178–183. [CrossRef] [PubMed]
+178. Rittié, L.; Fisher, G.J. Natural and sun-induced aging of human skin. Cold Spring Harb. Perspect. Med. 2015, 5,
+a015370. [CrossRef] [PubMed]
+179. Pillaiyar, T.; Manickam, M.; Namasivayam, V. Skin whitening agents: Medicinal chemistry perspective of
+tyrosinase inhibitors. J. Enzyme Inhib. Med. Chem. 2017, 32, 403–425. [CrossRef] [PubMed]
+180. Fujii, T.; Ikeda, K.; Saito, M. Inhibitory effect of rose hip (Rosa canina L.) on melanogenesis in mouse melanoma
+cells and on pigmentation in brown guinea pigs. Biosci. Biotechnol. Biochem. 2011, 75, 489–495. [CrossRef]
+[PubMed]
+181. Phetcharat, L.; Wongsuphasawat, K.; Winther, K. The effectiveness of a standardized rose hip powder,
+containing seeds and shells of Rosa canina, on cell longevity, skin wrinkles, moisture, and elasticity.
+Clin. Interv. Aging 2015, 10, 1849. [PubMed]
+182. Kim, J.K.; Mun, S.; Kim, M.S.; Kim, M.B.; Sa, B.K.; Hwang, J.K. 5,7-dimethoxyﬂavone, an activator of
+PPARα/γ, inhibits uvb-induced mmp expression in human skin ﬁbroblast cells. Exp. Dermatol. 2012, 21,
+211–216. [CrossRef] [PubMed]
+183. Jeon, H.; Kim, D.H.; Nho, Y.-H.; Park, J.-E.; Kim, S.-N.; Choi, E.H. A mixture of extracts of kochia scoparia
+and Rosa multiﬂora with PPARα/γ dual agonistic effects prevents photoaging in hairless mice. Int. J. Mol. Sci.
+2016, 17, 1919. [CrossRef] [PubMed]
+184. Altemus, M.; Rao, B.; Dhabhar, F.S.; Ding, W.; Granstein, R.D. Stress-induced changes in skin barrier function
+in healthy women. J. Investig. Dermatol. 2001, 117, 309–317. [CrossRef] [PubMed]
+185. Fukada, M.; Kano, E.; Miyoshi, M.; Komaki, R.; Watanabe, T. Effect of “rose essential oil” inhalation on
+stress-induced skin-barrier disruption in rats and humans. Chem. Sens. 2012, 37, 347–356. [CrossRef]
+[PubMed]
+186. Malfertheiner, P.; Chan, F.K.; McColl, K.E. Peptic ulcer disease. Lancet 2009, 374, 1449–1461. [CrossRef]
+187. Gürbüz, I.; Üstün, O.; Yesilada, E.; Sezik, E.; Kutsal, O. Anti-Ulcerogenic activity of some plants used as folk
+remedy in Turkey. J. Ethnopharmacol. 2003, 88, 93–97. [CrossRef]
+188. Rao, A.; Gurﬁnkel, D. The bioactivity of saponins: Triterpenoid and steroidal glycosides. Drug Metabol.
+Drug Interact. 2000, 17, 211–236. [CrossRef] [PubMed]
+
+
+--- Page 36 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+36 of 37
+189. Carlo, G.D.; Mascolo, N.; Izzo, A.A.; Capasso, F. Effects of quercetin on the gastrointestinal tract in rats and
+mice. Phytother. Res. 1994, 8, 42–45. [CrossRef]
+190. Meli, R.; Di Carlo, G.; Capasso, F. Inhibitory action of quercetin on intestinal transit in mice. Phytother. Res.
+1990, 4, 201–202. [CrossRef]
+191. Lattanzio, F.; Greco, E.; Carretta, D.; Cervellati, R.; Govoni, P.; Speroni, E. In vivo anti-inﬂammatory effect of
+Rosa canina L. extract. J. Ethnopharmacol. 2011, 137, 880–885. [CrossRef] [PubMed]
+192. Talib, W.H.; Mahasneh, A.M. Antimicrobial, cytotoxicity and phytochemical screening of jordanian plants
+used in traditional medicine. Molecules 2010, 15, 1811–1824. [CrossRef] [PubMed]
+193. Yi, O.; Jovel, E.M.; Towers, G.N.; Wahbe, T.R.; Cho, D. Antioxidant and antimicrobial activities of native
+Rosa sp. from British Columbia, Canada. Int. J. Food Sci. Nutr. 2007, 58, 178–189. [CrossRef] [PubMed]
+194. Kumarasamy, Y.; Cox, P.J.; Jaspars, M.; Nahar, L.; Sarker, S.D. Screening seeds of scottish plants for
+antibacterial activity. J. Ethnopharmacol. 2002, 83, 73–77. [CrossRef]
+195. Olech, M.; Nowak, R.; Pecio, Ł.; Ło´s, R.; Malm, A.; Rzymowska, J.; Oleszek, W. Multidirectional
+characterisation of chemical composition and health-promoting potential of Rosa rugosa hips. Nat. Prod. Res.
+2016, 31, 667–671. [CrossRef] [PubMed]
+196. Frey, F.M.; Meyers, R. Antibacterial activity of traditional medicinal plants used by haudenosaunee peoples
+of New York state. BMC Complement. Altern. Med. 2010, 10, 64. [CrossRef] [PubMed]
+197. Miyasaki, Y.; Rabenstein, J.D.; Rhea, J.; Crouch, M.L.; Mocek, U.M.; Kittell, P.E.; Morgan, M.A.; Nichols, W.S.;
+Van Benschoten, M.M.; Hardy, W.D.; et al. Isolation and characterization of antimicrobial compounds in
+plant extracts against multidrug-resistant acinetobacter baumannii. PLoS ONE 2013, 8, e61594. [CrossRef]
+[PubMed]
+198. Sarabhai, S.; Harjai, K.; Sharma, P.; Capalash, N. Ellagic acid derivatives from Terminalia chebula retz.
+Increase the susceptibility of pseudomonas aeruginosa to stress by inhibiting polyphosphate kinase. J. Appl.
+Microbiol. 2015, 118, 817–825. [CrossRef] [PubMed]
+199. Shiota, S.; Shimizu, M.; Sugiyama, J.; Morita, Y.; Mizushima, T.; Tsuchiya, T. Mechanisms of action of corilagin
+and tellimagrandin I that remarkably potentiate the activity of β-lactams against methicillin-resistant
+staphylococcus aureus. Microbiol. Immunol. 2004, 48, 67–73. [CrossRef] [PubMed]
+200. Horváth, G.; Molnár, P.; Radó-Turcsi, E.; Deli, J.; Kawase, M.; Satoh, K.; Tanaka, T.; Tani, S.; Sakagami, H.;
+Gyémánt, N. Carotenoid composition and in vitro pharmacological activity of rose hips. Acta Biochim. Pol.
+2012, 59, 129–132. [PubMed]
+201. Jang, S.H.; Lim, J.W.; Morio, T.; Kim, H. Lycopene inhibits helicobacter pylori-induced ATM/ATR-dependent
+DNA damage response in gastric epithelial ags cells. Free Radic. Biol. Med. 2012, 52, 607–615. [CrossRef]
+[PubMed]
+202. Flores-Mireles, A.L.; Walker, J.N.; Caparon, M.; Hultgren, S.J. Urinary tract infections: Epidemiology,
+mechanisms of infection and treatment options. Nat. Rev. Microbiol. 2015, 13, 269–284. [CrossRef] [PubMed]
+203. Miano, R.; Germani, S.; Vespasiani, G. Stones and urinary tract infections. Urol Int. 2007, 79, 32–36. [CrossRef]
+[PubMed]
+204. Bai, S.; Bharti, P.; Seasotiya, L.; Malik, A.; Dalal, S. In vitro screening and evaluation of some indian medicinal
+plants for their potential to inhibit jack bean and bacterial ureases causing urinary infections. Pharm. Biol.
+2015, 53, 326–333. [CrossRef] [PubMed]
+205. Hassan, S.T.; Žemliˇcka, M. Plant-derived urease inhibitors as alternative chemotherapeutic agents. Arch. Phar.
+2016, 349, 507–522. [CrossRef] [PubMed]
+206. Mármol, I.; Sánchez-de-Diego, C.; Pradilla Dieste, A.; Cerrada, E.; Rodriguez Yoldi, M.J. Colorectal carcinoma:
+A general overview and future perspectives in colorectal cancer. Int. J. Mol. Sci. 2017, 18, 197. [CrossRef]
+[PubMed]
+207. Kamijo, M.; Kanazawa, T.; Funaki, M.; Nishizawa, M.; Yamagishi, T. Effects of Rosa rugosa petals on intestinal
+bacteria. Biosci. Biotechnol. Biochem. 2008, 72, 773–777. [CrossRef] [PubMed]
+208. Puupponen-Pimiä, R.;
+Nohynek, L.;
+Alakomi, H.-L.;
+Oksman-Caldentey, K.-M. Bioactive berry
+compounds—Novel tools against human pathogens. Appl. Microbiol. Biotechnol. 2005, 67, 8–18. [CrossRef]
+[PubMed]
+209. Tamura, S.; Yang, G.-M.; Yasueda, N.; Matsuura, Y.; Komoda, Y.; Murakami, N. Tellimagrandin I, HCV
+invasion inhibitor from Rosae rugosae Flos. Bioorg. Med. Chem. Lett. 2010, 20, 1598–1600. [CrossRef] [PubMed]
+
+
+--- Page 37 ---
+Int. J. Mol. Sci. 2017, 18, 1137
+37 of 37
+210. Granich, R.; Gupta, S.; Hersh, B.; Williams, B.; Montaner, J.; Young, B.; Zuniga, J.M. Trends in aids deaths,
+new infections and art coverage in the top 30 countries with the highest aids mortality burden; 1990–2013.
+PLoS ONE 2015, 10, e0131353. [CrossRef] [PubMed]
+211. Pau, A.K.; George, J.M. Antiretroviral therapy: Current drugs. Infect. Dis. Clin. North. Am. 2014, 28, 371–402.
+[CrossRef] [PubMed]
+212. Fu, M.; Ng, T.; Jiang, Y.; Pi, Z.; Liu, Z.; Li, L.; Liu, F. Compounds from rose (Rosa rugosa) ﬂowers with
+human immunodeﬁciency virus type 1 reverse transcriptase inhibitory activity. J. Pharm. Pharmacol. 2006, 58,
+1275–1280. [CrossRef] [PubMed]
+213. Yuan, J.-Q.; Yang, X.-Z.; Miao, J.-H.; Tang, C.-P.; Ke, C.-Q.; Zhang, J.-B.; Ma, X.-J.; Ye, Y. New triterpene
+glucosides from the roots of Rosa laevigata Michx. Molecules 2008, 13, 2229–2237. [CrossRef] [PubMed]
+© 2017 by the authors. Licensee MDPI, Basel, Switzerland. This article is an open access
+article distributed under the terms and conditions of the Creative Commons Attribution
+(CC BY) license (http://creativecommons.org/licenses/by/4.0/).
+==================================================
+ABSTRACT
+==================================================
+
+medicinal compounds for the treatment of a wide variety of diseases. The therapeutic potential of these plants is based on its antioxidant effects caused by or associated with its phytochemical composition, which includes ascorbic acid, phenolic compounds and healthy fatty acids among others. Over the last few years, medicinal interest in rose hips has increased as a consequence of recent research that has studied its potential application as a treatment for several diseases including skin disorders, hepatotoxicity, renal disturbances, diarrhoea, inﬂammatory disorders, arthritis, diabetes, hyperlipidaemia, obesity and cancer. In this review, the role of different species of Rosa in the prevention of treatment of various disorders related to oxidative stress, is examined, focusing on new therapeutic approaches from a molecular point of view.

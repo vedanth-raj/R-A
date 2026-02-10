@@ -1,24 +1,26 @@
 """
 GPT-based automated drafting module for research paper sections.
 Generates structured drafts for Abstract, Methods, and Results sections.
+Now uses Google Gemini API exclusively.
 """
 
 import json
 import logging
 import re
+import os
 from pathlib import Path
 from typing import Dict, List, Optional, Any, Tuple
 from dataclasses import dataclass
 from datetime import datetime
 from collections import defaultdict
 
-# Optional OpenAI import
+# Import Gemini
 try:
-    import openai
-    OPENAI_AVAILABLE = True
+    import google.genai as genai
+    from google.genai import types
+    GEMINI_AVAILABLE = True
 except ImportError:
-    OPENAI_AVAILABLE = False
-    openai = None
+    GEMINI_AVAILABLE = False
 
 
 @dataclass
@@ -39,29 +41,36 @@ class DraftSection:
 
 class GPTDraftGenerator:
     """
-    Generates automated drafts for research paper sections using GPT models.
+    Generates automated drafts for research paper sections using Gemini AI.
     Integrates findings from multiple papers to create coherent sections.
     """
     
-    def __init__(self, api_key: Optional[str] = None, model: str = "gpt-3.5-turbo"):
+    def __init__(self, api_key: Optional[str] = None, model: str = "gemini-2.5-flash"):
         """
-        Initialize the GPT draft generator.
+        Initialize the draft generator with Gemini.
         
         Args:
-            api_key (Optional[str]): OpenAI API key
-            model (str): GPT model to use
+            api_key (Optional[str]): Gemini API key
+            model (str): Gemini model to use
         """
         self.logger = logging.getLogger(__name__)
         self.model = model
         self.client = None
         
-        if api_key and OPENAI_AVAILABLE:
-            openai.api_key = api_key
-            self.client = openai
-        elif api_key and not OPENAI_AVAILABLE:
-            self.logger.warning("OpenAI library not installed. Using mock generation.")
+        # Get API key from parameter or environment
+        if not api_key:
+            api_key = os.getenv('GEMINI_API_KEY')
+        
+        if api_key and GEMINI_AVAILABLE:
+            try:
+                self.client = genai.Client(api_key=api_key)
+                self.logger.info("Gemini client initialized successfully")
+            except Exception as e:
+                self.logger.warning(f"Failed to initialize Gemini: {e}. Using mock generation.")
+        elif api_key and not GEMINI_AVAILABLE:
+            self.logger.warning("Gemini library not installed. Using mock generation.")
         else:
-            self.logger.warning("No OpenAI API key provided. Using mock generation.")
+            self.logger.warning("No Gemini API key provided. Using mock generation.")
         
         # Section-specific prompts and templates
         self.section_templates = {
@@ -407,7 +416,7 @@ Future research should focus on longitudinal studies and standardized methodolog
     
     def _generate_with_gpt(self, section_type: str, prompt_input: str, template: Dict[str, Any]) -> str:
         """
-        Generate content using GPT model.
+        Generate content using Gemini model.
         
         Args:
             section_type (str): Section type
@@ -424,20 +433,19 @@ Future research should focus on longitudinal studies and standardized methodolog
                 paper_implications=prompt_input
             )
             
-            response = self.client.chat.completions.create(
+            response = self.client.models.generate_content(
                 model=self.model,
-                messages=[
-                    {"role": "system", "content": "You are an expert academic writer specializing in research papers."},
-                    {"role": "user", "content": prompt}
-                ],
-                max_tokens=template['max_tokens'],
-                temperature=template['temperature']
+                contents=prompt,
+                config=types.GenerateContentConfig(
+                    temperature=template['temperature'],
+                    max_output_tokens=template['max_tokens']
+                )
             )
             
-            return response.choices[0].message.content.strip()
+            return response.text.strip()
             
         except Exception as e:
-            self.logger.error(f"Error generating content with GPT: {e}")
+            self.logger.error(f"Error generating content with Gemini: {e}")
             raise
     
     def generate_complete_draft(self, papers_data: Dict[str, Any], 

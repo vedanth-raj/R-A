@@ -277,7 +277,6 @@ Generated on: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
 
 **AI Providers Available:**
 - Gemini: {'✅ Available' if self.draft_generator.gemini_client else '❌ Not Available'}
-- OpenAI: {'✅ Available' if self.draft_generator.openai_client else '❌ Not Available'}
 - Mock: {'✅ Always Available' if 'mock' in self.draft_generator.available_providers else '❌ Not Available'}
 
 **Data Status:**
@@ -561,7 +560,7 @@ Generated on: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
             gr.HTML("""
             <div style="text-align: center; padding: 2rem; margin-top: 2rem; border-top: 1px solid #e1e5e9;">
                 <p>🤖 <strong>AI Research Agent</strong> - Advanced Academic Content Generation System</p>
-                <p>Powered by Google Gemini AI & OpenAI GPT | APA 7th Edition Compliant</p>
+                <p>Powered by Google Gemini AI | APA 7th Edition Compliant</p>
             </div>
             """)
         

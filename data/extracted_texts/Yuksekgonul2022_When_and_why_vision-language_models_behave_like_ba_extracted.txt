@@ -1,3 +1,20 @@
+==================================================
+METADATA
+==================================================
+
+format: PDF 1.5
+creator: LaTeX with hyperref
+producer: pdfTeX-1.40.21
+creationDate: D:20230327005335Z
+modDate: D:20230327005335Z
+page_count: 20
+file_size: 1702294
+file_name: Yuksekgonul2022_When_and_why_vision-language_models_behave_like_ba.pdf
+
+==================================================
+FULL TEXT
+==================================================
+
 --- Page 1 ---
 Published as a conference paper at ICLR 2023
 WHEN AND WHY VISION-LANGUAGE MODELS BE-
@@ -1920,3 +1937,8 @@ mining in contrastive pretraining. Furthermore, note that Radford et al. (2021) 
 the batch size, while we only used a single gpu with N = 1024. Similarly, we expect to gain further
 improvements from larger batch sizes.
 20
+==================================================
+ABSTRACT
+==================================================
+
+Despite the use of large vision and language models (VLMs) in many downstream applications, it is unclear how well they encode the compositional relationships between objects and attributes. Here, we create the Attribution, Relation, and Order (ARO) benchmark to systematically evaluate the ability of VLMs to understand different types of relationships, attributes, and order information. ARO consists of Visual Genome Attribution, to test the understanding of objects’ properties; Visual Genome Relation, to test for relational understanding; and COCO-Order & Flickr30k-Order, to test for order sensitivity in VLMs. ARO is orders of magnitude larger than previous benchmarks of compositionality, with more than 50,000 test cases. We present the settings in which state-of-the-art VLMs behave like bags-

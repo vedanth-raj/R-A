@@ -302,7 +302,16 @@ class WebInterface:
             complete_draft = self.draft_generator.generate_complete_draft(topic, papers_for_draft)
             
             if complete_draft:
-                return {"success": True, "drafts": complete_draft}
+                # Format drafts with metadata for frontend
+                formatted_drafts = {}
+                for section_name, content in complete_draft.items():
+                    formatted_drafts[section_name] = {
+                        'content': content,
+                        'word_count': len(content.split()) if content else 0,
+                        'confidence_score': 0.85  # Default confidence
+                    }
+                
+                return {"success": True, "drafts": formatted_drafts}
             else:
                 return {"success": False, "error": "Failed to generate comprehensive draft"}
             
@@ -526,12 +535,19 @@ def extract_selected_paper():
                 with open(output_file, 'w', encoding='utf-8') as f:
                     f.write(result['full_text'])
                 
+                # Get preview of extracted text (first 1000 characters)
+                text_preview = result['full_text'][:1000] + "..." if len(result['full_text']) > 1000 else result['full_text']
+                
                 active_operations[operation_id] = {
                     "status": "completed",
                     "progress": 100,
                     "result": {
                         "success": True,
                         "extracted_file": str(output_file),
+                        "extracted_text": result['full_text'],  # Full text for display
+                        "text_preview": text_preview,
+                        "word_count": len(result['full_text'].split()),
+                        "char_count": len(result['full_text']),
                         "metadata": result['metadata']
                     }
                 }
@@ -544,6 +560,10 @@ def extract_selected_paper():
                     'result': {
                         "success": True,
                         "extracted_file": str(output_file),
+                        "extracted_text": result['full_text'],  # Full text for display
+                        "text_preview": text_preview,
+                        "word_count": len(result['full_text'].split()),
+                        "char_count": len(result['full_text']),
                         "metadata": result['metadata']
                     }
                 })

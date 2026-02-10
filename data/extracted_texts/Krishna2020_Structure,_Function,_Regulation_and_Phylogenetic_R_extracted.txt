@@ -1,3 +1,24 @@
+==================================================
+METADATA
+==================================================
+
+format: PDF 1.5
+title: Structure, Function, Regulation and Phylogenetic Relationship of ZIP Family Transporters of Plants
+author: Stanislaus Antony Ceasar
+subject: Zinc (Zn) is an essential micronutrient for plants and humans.
+keywords: ZIP transporters, homology modeling, transcription factor, functional characterization, genetic modification
+creator: LaTeX with hyperref package
+producer: pdfTeX-1.40.15
+creationDate: D:20200525223524+05'30'
+modDate: D:20200525223524+05'30'
+page_count: 18
+file_size: 3551499
+file_name: Krishna2020_Structure,_Function,_Regulation_and_Phylogenetic_R.pdf
+
+==================================================
+FULL TEXT
+==================================================
+
 --- Page 1 ---
 ORIGINAL RESEARCH
 published: 27 May 2020

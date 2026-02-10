@@ -9,6 +9,19 @@ import sys
 import subprocess
 from pathlib import Path
 
+# Fix Windows console encoding for Unicode characters
+try:
+    from utils.encoding_fix import fix_console_encoding
+    fix_console_encoding()
+except ImportError:
+    # Fallback if utils module not available
+    if sys.platform == 'win32':
+        try:
+            sys.stdout.reconfigure(encoding='utf-8')
+        except AttributeError:
+            import codecs
+            sys.stdout = codecs.getwriter('utf-8')(sys.stdout.buffer, 'strict')
+
 def check_dependencies():
     """Check if required dependencies are installed"""
     required_packages = ['flask', 'flask_socketio', 'psutil']

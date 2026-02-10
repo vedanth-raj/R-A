@@ -1,3 +1,19 @@
+==================================================
+METADATA
+==================================================
+
+format: PDF 1.4
+creator: XPP
+creationDate: D:20091110163526Z
+modDate: D:20091110163526Z
+page_count: 5
+file_size: 363304
+file_name: Schloss2009_Introducing_mothur_Open-Source,_Platform-Independe.pdf
+
+==================================================
+FULL TEXT
+==================================================
+
 --- Page 1 ---
 APPLIED AND ENVIRONMENTAL MICROBIOLOGY, Dec. 2009, p. 7537–7541
 Vol. 75, No. 23

@@ -1,0 +1,2161 @@
+==================================================
+METADATA
+==================================================
+
+format: PDF 1.6
+author: NASA_CASI
+creator: Microsoft® Office Word 2007
+producer: www.adlibsoftware.com:EXS3700-Windows 2003:TNG
+creationDate: D:20100922052204-04'00'
+modDate: D:20101007132506-04'00'
+page_count: 34
+file_size: 7002760
+file_name: Tucker1979_Red_and_photographic_infrared_linear_combinations.pdf
+
+==================================================
+FULL TEXT
+==================================================
+
+--- Page 1 ---
+General Disclaimer 
+One or more of the Following Statements may affect this Document 
+ 
+ This document has been reproduced from the best copy furnished by the 
+organizational source. It is being released in the interest of making available as 
+much information as possible. 
+ 
+ This document may contain data, which exceeds the sheet parameters. It was 
+furnished in this condition by the organizational source and is the best copy 
+available. 
+ 
+ This document may contain tone-on-tone or color graphs, charts and/or pictures, 
+which have been reproduced in black and white. 
+ 
+ This document is paginated as submitted by the original source. 
+ 
+ Portions of this document are not fully legible due to the historical nature of some 
+of the material. However, it is the best reproduction available from the original 
+submission. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Produced by the NASA Center for Aerospace Information (CASI) 
+
+
+--- Page 2 ---
+N 16
+iw%SA
+Technical Memorandum 79620
+Red and Photographic Infrared Linear
+Combinations for Monitoring Veqetation
+Compton J. Tucker 
+1
+(NASA-TM-79(X) 
+FED AND FH 17T r G g 4PHIC 
+N78-32525
+i 
+INFRARFI) LINEAR CCMFINATTCNS FCF MCNITCRING
+VEGETATIO4 (NASA) 
+37 F HC 4C?/*F A01
+CSCL 0eF 
+Unclas
+G3/41 
+31096
+t
+MAY 1978
+National Aeronautics and
+Space Administration
+Goddard Space Flight Center
+Greenbelt, Maryland 20771
+9
+^ J
+
+
+--- Page 3 ---
+I M79020
+R.'D AND 1'11Of0(;RAI'IIIC INFRARED LINEAR COMB [NATIONS FOR
+MONITORING VEGETATION
+Compton ! 'Picker
+Farth Resources Branch
+May 1975
+NASA/Goddard Space Flight Center
+Greenbelt, Maryland 20771
+
+
+--- Page 4 ---
+t
+> 
+y1 
+CONTENTS
+Page
+AB:. "RACT .......................................................... 
+A 
+s
+i
+iN I'RODUCTION ..................................................... 
+1 
+j
+i
+PREVIOUS WORK ........... ......................... .............. 
+1
+BASIC PRO"ERTIES OF THE IR AND RED RADIANCES WI"I I I RESPECT TO
+GREEN VEGETATION ............................... ................. 
+h
+DF.SCRIPTIONOF RESEARCH UNDERTAKEN ............................. 
+9
+METHODS AND ANALYSIS ............................................. 
+9
+EXPERIMENTAL RESULTS ............................................. 
+10
+PIIENOLOGICAI. CONSIDERATIONS ..................................... 
+' !
+EVAL UATION OF DIFFERENT I  BANDWIDTHS ............... 
+........ 24
+CONCLUSIONS ....................................................... 
+26
+REFERENC!:S .................. ..................................... 
+26
+TABLES
+Table
+I 
+Statistical Summary of the Biophysical Characteristics of the Sample Plots.
+A Statistical Description of the Vegetation Canopy Characieristics for (A)
+The Thirty-Five 1/4 N1 2 Semple Plots of Blue Grama Sampled in June 1972,
+(B) The Forty 1/4 M 2 Sample Plots of Blue Grama Sampled in September
+1971, and (C) The Eighteen 1/4 M 2 Sample Plots of Blue Grama Sampled
+in October, 1972 . ............................................... 
+I1
+2 C oe fficients of Uetennination for the Simple Regressions Between the Nine
+Green and Red Radiance Variables and the Canopy Variables for (A) 35
+Plots of Blue Grama Grass Sampled in June, 1972; (B) 40 Plots of Brie
+Grama Grass Sampled in September, 1971. DI = Green - {Zed, SUM =
+Green + Red, VI = DIF/SUM, TVI = SQRT (VI } 0.5). 
+13
+iii
+
+
+--- Page 5 ---
+TABLES (Continued)
+Table 
+PE
+3 Coefficients of Determination for the Simple Regressions Between the NIJ._
+Red and IR Radiance Variables and the Canopy  Variables for (A) 35 Plots
+,A Blue Gran ►a Grass Sat npleJ in June, 1972; (B) 40 Plots of Btic Gran:a
+Gra. i Sampled in September, 1971 , and (C) 18 Plots of Blue Granta Grass
+Sampled in October, 1972. DIF = IR - RFD, SUM = IR + RED, VI = DIF/
+SUM, TVI - SQRT (V1 + 0.5) ....................................... 
+14
+_ 4 Correlation Maxrix Between the Sampled Plot Variables for (A) 351 /4 m2
+Plots of Blue Grama Grass Sampled in June, 1972, (B) 40 1/4 m 2 Plots of
+Blue Grama Gass Sampled in September, 1971, and (C) 18 1/4 in  Plots of
+Blue Grama g rass Sampled in October, 1972 . .......................... 
+22
+Coefficients of Determination for the Simple Regressions Between the Nine
+Radiance Variables and Six Canopy Variables for the 33 Plots of Blue Grarta
+Grass Sampled with the 0.70 - 1.60 µin grating in June, 1972. (A) is for the
+0.75 - 0 .80 µm bandwidth, ( B) is for the 0.80 - 0 .90 pill bandwidth, anti (C)
+is for the 0.75 - 0. 40 µ ►n bandwidth. ...... ...... 
+I ... I ............. 
+25
+ILLUSTRATIONS
+figure 
+Page
+Spectral retlectancc s for d ►y soil, wet soil, and asymptotic green reflect-
+ance. The dry soil and wet soil curves are the average of five. bare soil plots
+measured when dry and Het, respectively. The asymptotic green reflect-
+ance curve is from a plot o f blue grama grass having a total dry biomass
+of 530 g/m2 . .................... ............................... 
+5
+Radiance plotted against total wet biomass for the (a) 0.63 -- 0.69 and
+(b) 0.75 - 0 .80 µ ►n intervals for the June data. Similar results were ob-
+tained for total dry biomass, leaf water content, total wet biomass, and
+total chlorophyll content for this sampling time. The total wet biomass
+was predominantly green and contained little dead vegetation (Table 1). .....
+3 
+Comparisons between tl:e green radiance (0.52 - 0.60 µ ►n) and the green/
+red radiance ratio. Refcr to Tables 2 and 3 for the r2 values associated
+with this portion of the analysis and Figures 4c, 5c and 6c for comparisons
+to the it/red ratio for the same data sets . ............................. 
+15
+r^
+
+
+--- Page 6 ---
+1LLUS'1 RA"f IONS (Continued )
+FigureN;tge
+4 
+The nine radiance variables plotted against the total wet biomass for the 35
+plots sampled in .tune, 1 1472. (A) red radwii.e, (14) it radiance. ((•) it/red
+ratio, (D) square root of the it/red ratio, (I = ) it-red radiance difference, (F)
+ir+ red radiance suns, ((,) vegetation index. (11) sum/difference, and (1)
+transformed vegetation index. Refer to Table 3 for the r2 values between
+the nine radiance variables and the other five plot variables.
+.r 5 The nine radiance variables plotted against the total dry biomass for the 40
+Olots sampled in September. 1`)71. (A) red radiance, (B) it radiance ((') ir/
+red ratio, (D) square root of the it/rnd ratio. (1:) it-red radiance difference,
+(F) it + red radiance sum, (G) vegetat i on index, ( 11) suns/difference, and (1)
+transformed vegetation index. Refer to Table 3 for the r 2 values between
+the nine radiance variables and the other five plot variables . ............... 
+IS
+6 The nine radiance variables plotted against the leaf water ^ ontent for the
+40 plots sampled in September, 197 1. (A) red radiance (13) it radiance,
+(C) it/red ratio, (D) square root of the ir;'red ratio. (I') it-red difference,
+(F) it + red radiance suns, (G) vegetation index, (1I) sum/difference. and
+(1) transformed vegetation index. Refer to Table 3 for the r' values be-
+tween the nine radiance variables and the other five plot variables. .......... 
+1`^
+7 The nine radiance variables plotted against the total wet biomass for the
+IK plots sampled in October. 1072. (A) red radiance, (R) it radiance, (C)
+it/red ratio. (D) square root of the it/red ratio, (E) tr-red radiance differ-
+ence, (F) it + red radiance sum. (G) vegetation index, (11) sum/difference,
+and (1) transformed vegetation index. Refer to Table 3 for the r = values
+between the nine radiam:e variables and the ether five plot variables. ........ 20
+V
+{
+(
+
+
+--- Page 7 ---
+Ri.L),".":1: Hi()TO(;RAPFiI(' INFRARED LINEAR COMBINATIONS
+FOR MONITORING VEGETATION
+Compton J. Tucker
+Earth Resources Branch
+ABSTRACT
+In 
+collected spectrometer data were used to evaluate and quantify
+the relationships between the various linear combinations of red and photo-
+graphic infrared radiances and experimental plot biomass, Ieaf water content,
+Mid chlorophyll content. The radiance variables evaluated included the red
+end photographic infrared (ir) ►alliance and the linear combinations of the ir/
+red ratio, the square root of the it/red ratio, the it-red difference, the vegetation
+index, and the transformed vegetation index. In addition, the corresponding
+green and red linear combinations were evaluated for comparilive purposes.
+Three data sets were used from June, September, and October sampling period,.
+Regression analysis showed the increased utility of the it and ►ed linear
+combinations vis-a-vis the same green and red linear combinations. The red
+and it linear combinations had 7% and 14% greater regression significant than
+the green and red linear combinations for the June and September sampling
+periods, respectively.
+The VI, TVI, and square root of the it/red ratio were the most significant
+followed closely by the it/red ratio. Less than 6% difference separated the
+highest and lowest of these four it and red linear combinations. The use of
+these linear combinations was shown to be sensitive primarily to the green
+v ►
+
+
+--- Page 8 ---
+ICa) area or green leaf hioniass. As much, t here linear con ►hinationm of tht, red
+and 1 1hotographic it radiances can he employed to monitor tilt, photosynthetically
+active hiomamm of plant canopies,
+vu
+
+
+--- Page 9 ---
+RED AND PIIOTOGRAPHIC INFRARED LINEAR COMBINATIONS
+FOR MONITORING VEGETATION
+INTRODUCTION
+The use of photographic infrared (ir) and red linear combinations for monitoring
+vegetation biomass and physiological status have recently become common in the remote
+sensing community. Accompanying tlus increased usage, however, has been a lack of
+detailed analyses concerning limitations of these data and their applicat,.m(s) to vegetation
+monitoring. Quantitative information regarding the various it and red linear combinations
+and the constraints involved in the use of these methods will enable more advantageous
+application of these techniques. It will also prevent over-ambitious use of these techniques
+when other methods would be more applicable. I will examine ground-collected grass
+canopy spectra in an . ttempt to quantify the relationship between the it and red linear
+combinations and properties of plant canopies.
+PREVIOUS WORK
+The use of near infrared/red ratio method for estimating biomass or leaf area index
+was first reported by Jordan (1969) who used a radiance ratio of 0.800/0.675 pill to
+derive the leaf area index for forest canopies in a tropical rain forest. This application
+of the it/red ratio used the transmitted light at these wavelengths which was sensed on
+the forest floor (Jo rdan, 069). Subsequent work was reported by Pearson and Miller
+(1972) who developed a hand-held spectral radiometer for estimating grass canopy biomass.
+The instrumentation aspect of the hand-held radiometer is described in Pearson et al.
+(1976).
+
+
+--- Page 10 ---
+Colwell 0973 and 1974) presented a detailed study of bidirectional spectral reflect-
+Mice of pass canopies. lie concluded that the it/red ratio was effective in somewhat
+normalizing the effect of soil background reflectance variation(s) and was useful for
+estimating biomass. Colwell also cautioned that the ir!red ratios may worsen angular
+effects rather than alleviate them under certain conditions. Smith and Oliver (1974)
+, corroborated several of Colwell's ( 1 973 and 1974) conclusions using it stochastic
+,anopy model vers e.... Colwell's use of Suits' (1972) deterministic canopy model.
+"Ilse it/red ratio method has been applied to Landsat image analysis of range biomass
+by Reuse et al. ( 1973 and 1974). C'arneggie et al. ( 1974), Johnson ( 1976), and Maxwell
+(1976), among others.
+Carneggie et al. (1974) used it ratio of Landsat MSS7;MSS5 and found that the
+ratio curves, piotted as a function of time, peaked during the period of greatest forage
+production. 'lltereafter, the curves fell off signalling the period of drying following the
+maximum green period for their California study site. Once the curves had leveled off,
+Carneggie et al. (1974) concluded that all annual vegetation had dried.
+Rouse et al. 11973 and 1974) analyzed Landsat MSS data and developed what
+they referred to as the vegetation index (V1) and transformed vegetation index (TVI).
+They found that although a simple ratio of MSS7/MSS5 could be used as it
+of relative greenness, location and cycle deviations would introduce a large error component.
+Me difference of the MSS7-MSS5 radiance values, normalized over the suns of MSS7 +
+MSS5, was used as an Index value and was christened the V1.
+
+
+--- Page 11 ---
+VI = MSS7 - MSS5
+MSS7 + MSS5 
+(1)
+To avoid working with w.gative ratio values and the possibility that the variances
+of the ratio would be prolx)rtiomil to the mean values (i.e. 
+a Possion distribution)
+Fi
+the constant of 0.5 was added ant square-root transformation was applied to the VI.
+rvi = VI -
++0- 5 
+(2)
+Vie VI and TVi were then applied to [.andsat data. MSS bands 6 and 7 were both
+evaluated as the near infrared band. Rouse et al. (1974) reached several conclusions.
+Among them were: ( 1) that [Andsat VI and TV[ methods could lx used to monitor
+rangelands and wheat crops; (2) the close relationship between g reen biomass and TVI
+should allow researchers to follow crop development as ground cover, biomass, and leaf
+area indices increase; and (3) phonological inferences :ol.ild possibly be gleaned for certain
+crops or range types and used to monitor these types of vegetation (Rouse et al. 1974).
+Johnston (1976) and Maxwell (1(,76) also analyzed Landsat imagery using ratio
+methods. They concluded that the ratio of MSS6/MSS5 was slightly more statistically
+significant than MSS7/MSS5 and that both ratios were useful in monitoring green biomass.
+An explanation of the apparent greater utility of MSS6 vs MSS7 for rangeland biomass
+estimation in low biomass situations based upon soil-gyeen vegetation spectral contrasts
+has been proposed by Tucker and Miller (1977).
+Other researchers have also used the VI for Landsat analyses. Blair and Baumgardner
+(1977) monitored several hardwood forest sites using Landsat imagery. They used the VI,
+which they refer to as the "band ratio parameter," and hound that the gro-enwave effect
+could be monitored for these vegetation types using Landsat imagery.
+3
+
+
+--- Page 12 ---
+Asnlcy and Rea (1975) reported how L mdsat MSS5 and %ISS7 data were used to
+depict plhenolokical change. 'They also uwd the VI and found that it increased with
+foliage development and decreased with senescence. PIC VI w:rPs found .o reduce in-
+fluencing multiplicative effects such as solar elevation differences between overpasses
+(Ashley and Rea 1975).
+In addition to the above reviewed l.andsat analyses. Kauth and Thomas (1976)
+arid Richardson and Wiegand (1 177) have proposed L.andsat vegetational analytical
+methods using, at least in part, it and red linear combinations.
+Richardson and Wicgand (1977) have proposed a departure from the soil background
+line with the perpendicular ,!getation index (PVI):
+PVI = v1 -
+(Red  Soil - Red veg)' r OR Soil - I R veg )2 (3)
+where:
+Red S,,il = soil background red reflectance or radiant,.-
+Red veg 
+= vegetation back g7ound red retleztance or radiance
+IR"Al 
+= soil background it reflectance or radiance
+1R Ve2 
+= vegetation background it retlectance or radiance
+Kauth and Thomas (1976) have developed a technique for transforming Landsat M';S
+information in foie-dimension data space using the four MSS bands. from this, a soil
+brightness index (SBI) and green vegetation index (C.VI) were calculated as follows:
+S111 = 0.43*MSS4 + 0.63*MSS5 + 0.5 1)*MSS6 + 0.26*MSS7 
+(4)
+and
+(;Vl = -0.29*MSS4 - 0.56*MSS5 + 0.60*MSS6 + 0.49*MSS7 
+(5)
+4
+
+
+--- Page 13 ---
+Note that all the Slil independent variable .06ficients are positive while the GVI in-
+dependent 
+7ASS4 and %ISS5 are negative. The SBI eitabiishes the data space
+of soils and the G %71 departs from it, in a negative or absorptive fashion with \ISS4 and
+MSS5, approxim"►tely the same coefficients for MSSO for both models, and a lossitive
+departure for MSS7. This aim) follows from Figure I.
+Deering (1 Q78), in a recent and comprehensive analysis of Landsat rangeland biomass
+monitoring has reported that the VI and TAI approaches hr evaluated were slightly
+more significant with respect to green biomass than the PVI of Wiegand and Richardson
+(1977) and the GVI of Kautli and Thomas (1970). In addition, Deering ( 1978) reported
+9 
+that the denominator of the V1 and TVI (i.e., MSS5 + MSS6 or MSS5 + MSS7) were
+highly correlated (r > 0.05) to Kauth and Thomas' 11976) sail brightness index (Still.
+W 
+—
+.e;
+40 
+GREEN VEGETATION PLOT 20074
+(TCTAL DRY Sit—MASS = 530 g/m2)
+^ 
+1
+30 
+DRY SOIL PLOT
+SAME SOIL.
+w 
+ONLY WET
+UA
+►0
+0 35 OAC 0 45 0.60 0.56 0 80 0 66 0 70 0 75 0 80 0 86 0.90 0 96 
+00
+WAVELENGTH (pm)
+Figure I . Spectral retlectances for dry soil, wet sail, anL
+asymptotic green • flectance. The dry soil and wet soil
+curves are the average of five bare soil plots measured when
+dry and wet, respectively. The asymptotic green reflectance
+curve is from a plot of blue grama grass having a total dry
+biomass of 530 g/m2.
+
+
+--- Page 14 ---
+ma; -itv of jr and red linear combination work have used Landsat data.
+!"Memasu (1974), however, rcpx,its on a ground-bawd reflectance study of crop types
+where various ratios were investigated. Wheat, sorghum, and soybean plots were moni-
+toted periodically during the growing s.asem using a spectrom.ter. Kanemasu (1974) co n-
+eluded the 0.545/0.655 pm wavebands provided useful information regardless of crop
+type. For all crops studied, the green/red ratio closely followed crop growth and develop-
+ment and appeared to be inore desirable than the near-infrared reflectance as an index
+of growth. The grc:­/rca ratio will be evaluated in this paper also.
+Recent work by Nalepka et al. (1977) and Tucker et al. (1975) have used it and red
+Jjta to forecast winter wheat yields and monitor agricultural crop vigor and condiU,)n,
+respectively. Nalepka et al. (1977) evaluated various green measures using Landsat data
+and cop.-e-eded that most are useful but stress that no new information is created. Tucker
+, 19/5 1, monitored several crop types using a hand-held radiometer.
+BASIC PRQUIU ILS OF ' HL IR AN12 R RADIANCES %VIFI KESPECT TO GRFEN
+V I-,G ETA I ION
+It is perhaps prudent to briefly review the basic properties of the 1r and red radiances
+with respect to green vegetation before embarking on a 'Aaded analysis of the various
+linear combinations.
+Me red radiance exhibits the nonlinear inverse relationship between integrated
+spectral radiance an(! green biomass while the near infrared component exhibits a non-
+linear direct relationship.
+6
+
+
+--- Page 15 ---
+The relationship betwe-vii the 0.03 - 0.69 pm radiance and green hioniass results from
+strong spectral absorption of incident radiation by the chlorophyll,. It is apparent that a
+spectral radiance asymptote is mo:e quickly reached for the 0.0 - 0.09 pin red radiance
+than the 0.75 - 0.P0 um near infnncd radmace 01gure 2) (Gausman et al , 1976. Tucker
+1977x).
+The 0.0 - O.he1 pin radiance is inversely proportion.il to the amount of chlorophyll
+present in the plant canopy and thus is sensitive to green or photosynthetically active veget-
+ation pr wnt.
+17te 0.75 - 0.90 pnf radiance is sensitive to green or photosynthetically active vegeta-
+tion and, to a lesser extent, the dead or noriphowsynlhetically active vegetation (Colwell,
+1974: Tucker, 1977b and 1978).
+The relationship between the 0.75 - OM pin infrared radiance and biomass results
+from the lack of appreciabl e spectral absorption in the 0.74 - 1.10 pin region and the higli
+Oegree of mtra- and interleaf scattering fit
+ plant canopy. In the absence of spectra!
+absorption, p! -.)ortionally more incident spe-ual radiance escapes from the canopy than is
+absorbed. Thus the spectral radiance in the 0.74 - 1.10 pin region is said to be en:fanced or
+increased over the level t)!' radiance of the background material.
+Discrimination of vegetation hioniass is strongly dependent upon the soil surface-veg-
+etation spectral reflectance or radiance contrast (C:olwe11. 1974). For this reason, softie
+wavelengths are I'm sup .• rior to others I'm discrimination of green vegetation biomass
+(Figure I).
+7
+
+
+--- Page 16 ---
+v
+-+ o
+b
+O
+^/ y M
+v
+^ j Q
+^ ^ C
+^ OU
+O V ^V
+^ C K
+^ P ^
+\.O a.
+cl
+N •.r
+~ E
+S O
+o^ tn
+v
+3 0 _o
+0,2  «•
+H .^ 3
+_c
+`^ ^ ro O
+a
+^ U
+°' y F
+O d13 
+E
+^ bU
+b
+'a @ C
+^ ^ E
+E 51
+^' N
+.4
+^ n ^
+- 
+- 
+o
+_ 
+w
+x; 
+O 
+*
+LO
+N 
+°E
+0 
+a.
+O
+w
+• 
+N 
+O (/)
+^ 
+w Q
+v 
+^ Z
+• 
+v 
+o O
+X 
+co
+w
+0 
+7
+• 
+C► 
+W
+• 
+VO 
+N
+0 
+LU
+• 
+O 
+O ^
+• 
+• 
+tl II 
+^ Ur
+O }
+c—'4 Q
+• 
+^ 
+•  
+D
+• 
+^ 
+O
+O O O O O O O O O O
+M 
+O 
+Oi 
+co 
+h 
+w L 
+V
+30Ndi0VH HI
+0r
+co
+m0
+co
+C)
+kohfi
+o 7
+co
+O
+u u
+0 
+0 
+0 
+0 
+0
+I^ 
+(D 
+LO 
+1 
+M 
+N
+30NVICIVH 03U
+---, o
+W
+0
+14
+O E
+m 1^1
+It
+0N? U)
+O Q
+co
+0 9
+o co
+o 
+11ZJ
+N w
+om ^
+r }
+Nr 0
+0w
+0
+0
+8
+
+
+--- Page 17 ---
+I hr Vxecn region, by contrast, has a lower soil-seen vegt •tation rellrctance c nnast
+(Figtire 1). 'p his results front
+ fact that the chlorophvlls are slightly absorptive in the
+t!reen region (extinction coefficients ~ 10) while much more absorptive in the red region
+(extinction coefficients of — 40 - 90) (Salisbury and Iles., 14119). The re•Litionship
+F 
+between the green radiance and green biomass is similar to the same relationship between
+the red radiance and green biomass (I-igure `a and .t).
+DESCRIP" IO N O F RUSFARCH UND RTAKFN
+The x^ ii k reported herein will examine )!round -collected in -sit t spectrometer data
+and evaluate the green/red ratio method ul haneinasu ( 1074) and contrast that with
+the it/red ratio methods) to dcteriune which are superior for the June, SeptenAter.
+.uid Oclollet data uts. The utility of the %arious green vegetation measures usin)t the
+drffetent it and red linear combinations will also be evaluated.
+MI: HODS AND ANALYSIS
+The data used in this evaluation haw all heen previously described and w ill not he
+redescribed in this report. The .tune anc: Septemher data sets are described in 'Tucker
+and Maxweli ( 1970) while t ltc October data is described in Tinker ( 19781.
+he narrow handwidiIt radiance curves ((1.005 Nit bandwidth) were ninterically
+ii-coated to approximate three bandwidths: 0.5' 
+0.00 pin for the grecrt, 0.03 
+0.69
+pin fur the red: and 0.75 
+0.80 pin in the photographic intiared, fhe radiance comes
+resulted front the product of the spectral reflectance and spectral irradiance curves (sec
+Tucker, 14770.
+
+
+--- Page 18 ---
+.4
+Regression analyses identical to Tucker 1 1977) were performed. The various grass
+canopy variables (Table 1) were regressed against the following it and red and green and red
+radiance variables:
+I .
+red radiance (0.63 - 0.69 pin)
+2.
+it radiance (0.75 - 0.80 µm 1
+3.
+Wired
+4.
+SQRT (ir/red)
+5.
+it - red
+6.
+it + red
+7.
+Or - red)/(ir + red)
+8.
+(ir+ red)/(ir - red)
+9,
+(ir - red)/(ir + red) + 0.5
+red radiance (0.63 - 0.69 µm)
+green radiance (0.52 - 0.60 µm)
+green/red
+SQR C (green/red)
+green - red
+green + red
+(green - red)/(green + red)
+(green + red)/(green - red)
+(green - red)/(green + red) + 0.5
+LAPF RIM ENTA L RESULTS
+The nine spectral variables involving the it-red data and the green-red data were
+regressed against the six canopy variables measured for the June and September data and
+the four canopy variables measured for the October data. This resulted in 288 separate
+comparisons which defies concise presentation. The results of this analysis will be presented
+for the canopy variables total dry biomass and leaf water content.
+The linear combinations of the it and red data were regressed against the six canopy
+variables as were the -,ame green and red linear combinations. Without exception, the it-red
+linear combinations were snore significant in an regression context (Tables 2 and 3, Figure 3).
+This supports the majority of Landsat analyses which have used it and red data instead
+of green and red data for vegetational analyses. In addition, these results show that the it/red
+10
+
+
+--- Page 19 ---
+c 
+^,
+.goo
+goL
+r LA
+O N
+y
+^ C
+N4 C' t
+lid
+v ^ _
+NL7U
+Q r^
+4 D t`
+ON N
+.^
+6.
+. 0 CQ
+6.
+V i_ G
+Lt N
+1 
+b
+U ^' E
+G. f•-' Q^ y
+Q O O
+Ln 
+LL.
++^ u
+.^+ O O C
+O u c, ;^
+u 
+^
+4.
+^t 
+c
+u7 v
+N
+c ...
+ro 4
+C
+td
+^
+ON
+^ ^
+er
+v1
+^O
+M
+CA
+M
+00
+^O
+rla
+O
+M
+000
+^
+r
+.rM
+M
+^-
+O^
+in a
+c
+r„
+o
+._
+J
+I.
+O^
+M
+^
+M
+V1
+O
+OQ
+rJ
+V1
+O
+^
+d
+d
+00
+M
+d
+vi
+O
+0
+M
+N
+d
+oo
+O
+oc
+O
+oyu
+^^
+'^
+M
+~
+cy
+C
+1
+1
+^
+1
+1
+1
+VZ
+^
+^f
+..
+N
+N
+rpp+
+ O
+^)
+kn
+LA
+^
+ca
+c^
+E
+ro
+E
+E
+o
+a
+i
+^
+E
+^. E
+E
+-E
+E
+3 E
+v
+In
+V
+"'JJJDOD
+O
+H
+^
+b
+3
+D
+0
+D
+
+
+--- Page 20 ---
+o ^
+11
+^
+.^
+r!
+M
+M
+^
+ti
+6►
+.^
+ei
+^
+P^
+UO
+M
+r
+,n
+^
+r.
+C ._
+`d 
+O
+t%1
+c
+G O
+'--
+00
+—
+Oa
+._o
+p
+r-
+O
+r-
+C
+00
+OD
+O
+v
+1,
+^0
+..;
+00
+v
+'^
+000
+00
+U
+O
+O
+0
+,.,
+^
+rO)
+o
+0
+00
+o
+0\
+00
+r^+1
+^
+M
+00
+~l
+NG
+^,
+o0
+.M.
+^0J^
+N
+^'J
+N
+..+
+C/I Q
+...
+C
+—
+o
+_.
+u
+V
+N
+Q^
+00
+r!
+00
+O^
+r+1
+ell
+M
+r!
+Ct
+'7O
+C !
+O
+r`
+O
+O
+`'^
+N
+'A
+r—
+v i
+O
+00
+r~
+rJ
+.>
+M
+'^
+o
+en
+III
+r
+CA
+M
+r^
+r-
+O\
+Vi
+Ji
+vf
+/^
+tV
+E
+^
+C 1
+^
+^
+^
+yr
+C~ .^.
+ACV
+^C'i
+Di'J
+^N
+N
+O
+V
+....
+L
+.fJ
+.p ^
+A ^
+17 
+G;
+G F
+►. 
+E
+f OU
+J
+^^
+^
+^L`
+y
+_
+^+ 00
+::
+°
+0"
+°
+3
+Q
+^
+to
+p'
+.°+
+w
+^
+A
+3
+F,
+^i
+0
+.+
+0
++-'
+^....
+p
+J
+^
+^
+as
+3
+^
+D
+^
+--^
+U
+U 3
+G
+.-a
+J
+1
+
+
+--- Page 21 ---
+;N,&
+M .8
+2 E
+v G
+.. c
+v-
+CA _
+L
+av
+v
+L^
+a m ,^
+b o0
+d ,n +
+c "O ^
+a`
+N
+Y C r- f-
+6!
+3 ^
+c
+if
+JE
+1 N
+^ ^ v
+OG
+E C
+C L
+r r h
+^ J 11
+C m .,
+ca n 'D
+O a
+J
+y M v
+0
+n
+c`" ts,
+L
+^ e _
+a
+J
+c>
+00f-xao gr
+M 
+^Ot+iCM
+^+h—
+COOCOC
+000000
+iL
+op
+a0 00 r^ .Y`
+^
+C O C O C C
+O C C O o 0
+'V
+^,,^
+OM StM M^C
+•f ^Dr r^10
+c
+oo r- x so v r-
+c00000
+cam, 
+^c 
+o rn
+0oo000
+S
+in ao x 0\ ^ a
+rJ 
+M r o
+0o r- oo r- M o0
+M r•! vi M 0 M
+v:
+000000
+   
+0 0 0 0 o 0
+r! 
+r! vl^r Z
+O nor MN00
+...,
+of ^? ^t '7 N M
+M
+tri 
+N
+^
+O O e 0 0 0
+0 0 0 0 o C
+F'- ^•
+! in c Vl so 00
+t70 r r ! 0
+t- 30 ac v r-
+cn -- SD ff) O try
+^',' ^
+000000
+000000
+V
+'v
+Q^
+N in 'o in ,o ao
+v •C r 
+0%
+.)0 t-- xx d;r-
+M^NC 
+I!
+61
+O O o 0 0 0
+0 0 0 0 0 0
+V
+C
+Os N N tt 00M
+A 
+D` c x
+y
+r- r- 0C r CA x
+r! 
+-7 Q
+J
+000000
+o00o0o
+00 O 
+rJ rJ
+Vi Q 
+- ^D
+Sr
+00 w S 00 M O^
+1t r! r et C M
+0 0 0 0 cc
+O O O C O O
+O
+r,
+a 
+v 
+E >.
+I I
+;
+^
+a M .. 
+E
+u
+o 
+a
+0 0 0 
+a
+.0
+.^
+c
+coo 
+m^ °
+ca ca ^^
+C 
+C
+^
+C c
+3^3 
+0v
+3C 
+^u
+y
+A :a .. "^ :v
+y iv r. L O c
+o a :, 
+0
+0 0
+13
+
+
+--- Page 22 ---
+cE^
+O v ^
+^ a vs
+A ai
+^. C
+G ti
+11
+4, N
+^cgym°
+.^ p ac
+ro O CL
+j m
+^ fJ
+y c
+'0 S =
+J
+J ^ C
+c
+r•^
+- GC
+y N
+^ 1r
+w O V
+c m
+r1 H Vl
+y O O
+N
+00 v
+40, o C..1
+u>^F-
+pp v1 •! r! r v,
+M 
+co) 
+C` M
+O Q O
+O j
+O A Q O 
+00
+D 
+00 
+v,
+O O O O
+E-
+000000
+00000c
+0000
+-tr 
+00
+f ! M
+C^ ON C^ 00 J"i r-
+885888
+0000
+r•
+O C O 0 0 0
+0 0 0 0 0 0
+C O O O
+N
+C` 30 f! ^^ f
+^ rJ 
+rJ r
+8 8
+00 30 a, T H 00
+Z It
+ ^c ^
+00
+V 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+O O O O
+00121
+)
+003080
+^^
+0 0 0 0 0 0
+O O O O O=
+O C C O
+;!.
+C^.c0C,v O
+^ k, viv'^ON
+oc r O1C
+00 x C. 00 14 a,
+000000
+00 ,q 
+v,
+000000
+f! fl rJ wt
+oo00
+W
+OG
+a
+0^, M r J O kn Z
+00 00 of C , v) 00
+ M kn
+V) M 00 W)
+O o O M
+O 8 O O
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0
+r-
+Cm
+rn x
+x 00 O^ o0 In oo
+Wl 
+-
+O O O O
+Y
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0
+Z '!t Ni W+ O oc
+!t r ! 00 ^O 00 r J
+N 
+M OC
+rJa
+3000-x 30 r00
+O tnA1^0rokn
+r-r r r
+-"
+000000
+CO 0000
+O000
+Q
+00 O O f ! r + ^
+rte, v-, O ^ r- C
+r IC. 00 IG
+.r
+00 o0 Q; x M C
+fJ r ^t O r+i
+z z .0 z
+OG
+0 0 0 0 0 0
+0 0 0 0 0 0
+O O O O
+tr
+^'
+D
+P!
+F C C O
+.
+C C 
+O t
+E E C -'
+a u
+p 
+0 0 
+G
+F)
+0 0 0 •^ 
+G
+`
+O O O C-0
+mCnJ^.. O C`
+^
+m^iUm C F
+y
+Om ^
+o
+>^
+c
+v ^' y y 3 t
+^
+v ^' ^ v 3 ,^
+o
+v 
+^, .^'.
+^
+:,
+3a 
+^ ^u
+^
+3a3u
+0 0 a^ ^- 
+O
+-,
+O O v ^' 
+C
+O O y G
+14
+
+
+--- Page 23 ---
+• •V •r 1.
+•rI. rI.A•
+• \ 
+• 
+• •• ••
+Tor" •• 1 •wr••t w-1
+e•
+•• 
+`.. 
+•
+.> L 
+_ L_1_ L^__1 • 1^^
+, 
+.° 
+o 
+^x 
+1e+
+ll•t •AT•• COMIt MI 4 n.
+T_T.^- T-r- r T T - ^..-
+s'
+• • f
+• ,t
+i
+AT
+•
+TOT" 011. 911W1. 191.1')
+.r 
+T ...^ ^ .. T 
+r- T 
+T
+• ewt. ..
+VU..••.1 W
+t
+• 
+M
+e 
+M 
+^ 
+1.1 
+V•
+101" 0.160 0040"
+..
+1• 
+,
+• 
+t
+•
+nr + 
+•
+•
+, 
+a•• 
+,ls 
+^r 
+„r 
+rw
+TOTAL ••T •10r••• 4 1
+... ...r_T_.1
+, ..rw.epr... 
+•
+a•
+•
+, 
+. 
+•w 
+r
+1EM V•ll•C„N11-11V-
+Figure 3. Comparisons between the green radiance (0.52 - 0.60 µm) and the green/red
+radiance ratio. Refer to Tables 2 and 3 for the r2 values associated with this portion of the
+analysis and Figures 4c, 5c and 6c for comparisons to the it/red ratio for the same data sets.
+15 
+ORIGINAL PAGE 15
+-OZ EOOR QUALITY
+
+
+--- Page 24 ---
+ratio, the Aluare rout of chic it/red ratio, the VI, and TVI are sensitive to the photosyntheti-
+cally active biomass or the green leaf area present in the grass canopy. This is evident from
+the June d.,ta where — 8Wr of the canopy was green or alive and only — 2017r) was standing
+dead vegetation (Table 1). For this data set, the dry brown biomass canopy variable had the
+lowest r'- when regressed against any of the nine it and red radiance variables evaluated (Table.
+3; Figure 4).
+The September data, comprised of-52% live and — 48% dead vegetation (Table 1),
+ilso showed the lowest r2 values for the dry brown biomass canopy variable when regressed
+against any of the nine it and red radiance variables (Table 3; Figures 5 and 6).
+This confirms quantitatively that the it/red ratio, the square root of the it/red ratio,
+the it-red difference, the V1, and the TVI are primarily sensitive to the green leaf material
+or photosynthetically active biomass present in the plant canopy.
+The it-red difference, TVI, V1, square root of the it/red ratio, and it/red showed the
+greatest regression significance for the June and September data sets (Table 3). The it-red
+difference can be excluded from further consideration because it will not compensate for
+different irradiational conditions.
+A 4% range existed between the it/red ratio, the square root of the it/red ratio, V1, and
+TVI for the June data in terms of explaining greater regression variability. A 6% range
+existed for the September Ieaf water content variable and the it/red, square root of the it/red,
+VI, and TVI regressions, respectively (Table 3).
+16
+
+
+--- Page 25 ---
+17
+c 1lilC OR Qu 
+—
+;r
+r
+tort wr •r•ruN,♦^ 
+rc •Y .. r •rut... N r9 
+tart •• • •rot•N rN'r
+^rr 
+r 
+- • 
+• 
+• 
+• 
+• 
+r •r
+. s .^ 
+^ •r err .
+•
+f0•M wr •rOt•••N^'1 
+rOrr w r •earl•►• I••rr 
+10rY w• •r+rr••• ^^
+• 
+r•
+a 
+i'
+Ob
+_IA; 
+Tir. . 
+^..__m _.l_ r 
+u^_... 
+.• 
+.
+ 
+• 
+lr 
+tar 
+ro
+r. . +r r .r,rr.... 
+TCI•, •'1 r •r•yyr p w.l
+tart wl r•aY•N br>•'/
+Figure 4. The nine radiance variables plotted against the total wet hiomass for the 35 plots
+sampled in June, 1972. (A) red radiance, (13) it radiance, (C) it/red ratio, (I)) square root of
+the it/red ratio,(E) it-red radiancedifference,(F) it + red radiance sum, (G) vegetation index,
+(11) sum/difference, and (1) transformed vegetation index. Refer to Table 3 for the r'- values
+between tho nine radiance variables and the ether five plot variables.
+
+
+--- Page 26 ---
+.ptY Wt fM11•N y+VI
+•
+•
+• 
+• .••
+tOtM O•. •..fWN 1• r'.
+rr 
+1
+r 
+-
+laid
+.••
+.rL t • 
+i•
+•
+.• 
+.__1 _i.-j
+• 
+w 
+^
+tulN p•. •.Ir••• ^••f1
+•r
+trl
+• 
+^ r 
+rt^ 
+u 
+.r 
+a
+toy" M. ••fr••• 0."
+•r --r .._T_- i 
+. 
+-T
+• 
+an 
+•
+•r
+•
+• 
+f
+•r 
+^
+t r-YT T_- i
+or
+•
+r
+•
+•
+"r
+•
+.r • —.L.L_. _l 
+1 
+h 
+._L.--^
+totY u•• •uw.•• i•r^
+'r 
+r - •---T^ T^—T
+•
+•
+F 
+fff
+.01•. p•r bOr••• o ^
+Figure S. fhe nine radiance variables plotted against the total dry biomass for the 44 plots
+sampled in September, 1971. (A) red radiance, (B) it radiance, (C) it/red ratio, (D) square
+root of the it/red ratio, (E) it-red radiance difference, (F) it + red radiance stilt). (G) veget-
+ation index, (11) sum/difference, and (1) transformed vegetation index. Refer to Table 3 for
+the r'- values between the nine radiance variables ant] the other five plot variables.
+18
+pVJGTNAL PAGE I9
+OF pooR QU ALITY
+
+
+--- Page 27 ---
+it
+Y pC 1^
+01.
+t.
+i 
+^•
+' 
+I
+•
+UN NI•• [Ow•l•T 10. 1
+t
+•
+1 
+1 
+J 
+1
+rr 
+^
+\1Y ••11 r yr, ►.'1
+r•
+'
+r-1 -_T
+, 
+Mesr•^^ ^ 
+•
+•
+•
+•
+•
+rr 
+• 
+•
+i
+i
+jam• 
+J
+Law ►..111 C.ObT••T » ..I
+/.. •• r l. .. 11.r 1µ•Y
+010-^. .^
+' 
+• •
+o
+•1
+•
+^ 
+i•
+^^i 1• • 
+I 
+I 
+L
+llM •111• COIIf/.T 1•.'1
+Ir 
+T-- T--T--f'-r---r_'^
+r
+I
+bI
+b 
+1./ 
+A
+r•1 bamp CO.T••I WI••I
+•
+•
+M
+re 
+rn
+11Y /•tf• CO•TI MI ,•+rl
+Figure h. The nine radiance variables plotted against the leaf water content for the 40 plots
+sampled in 5eptemher, 1071. (A) red radiance, ($) it radiance, (C) it/red ratio, (D) square
+root of the it/red ratio, (E) it-red radiance difference, (F) it + red radiance sum, (G) veget-
+ation index, (H) sum/difference, and (1) transformed vegetation index. Refer to Tahle 3 for
+tine r2 values between the nine radiance variables and the other five plot va:' ahles.
+I O
+
+
+--- Page 28 ---
+f.w•rpwr.•
+•
+am
+to 
+or.
+..
+%
+•
+f
+•
+i
+1
+1
+= 1_J
+M^
+. .. M. NWr..f I. w 1
+IOM ut . ..MM416 W-)
+.1' Y•a^Y.N N « I
+r r— I--r r— 
+T- . 
+»( r_ T _Y _t__r__^ .
+a.
+/gr...rpW..
+° r 
+r.. 
+r 
+,rp
+Y M/ MOWM M ^'I 
+TOTµ wt •)OWN W ^'I 
+tOtY Nl .wn.M ^t
+• ♦ 
+• 
+• 
+•
+• 
+I 
+— t 
+t .- 
+—^ 
+o p ..._1_ I.—. 1 I 
+I _L l_ L—_l -_J
+a, 
+a 
+r 
+.• 
+x 
+.^ 
+u 
+,A
+.Ot.. Yt, •u.Wf. It «
+1o1N, tl.T •IIMMN y.vl 
+ro Ma M 1 NOIM.• W+•'1
+Figure 7. The nine radiance variables plotted against the total wet biomass for the 18 plots
+sampled in Octuhgr, 197 1.. (A) red radiance. (B) it radiance, (C) it/reu ratio, (U) square root
+of the it/red ratio, (E) it-red radiance difference, (F) it + red radiance sum, (G) vegetation
+index, (H) sum/difference, and (1) transformed vegetation index. Refer to Table 3 for the
+r2 values between the ninr radiance variables and the other five plot variables.
+10
+
+
+--- Page 29 ---
+.p
+.i
+The October d. ►ta demonstrated conclusiveh t hat the var..., ►S green vegetation measures
+do not have a ►)plicability to dormant vegetation (Table 3; Figure 7).
+The l ►so of' the square root transformation for the it/red ratio INalepka et al., 1977) and
+TVI (Rouse et al., 1973 and 1974) needs to be examined. Rouse et al. (1973 and 1974)
+suggest that (tic distribution of the VI is Possion while Nalepka et al, ( 1 977) suggest that the
+square root of it/red ratio is more linear. The data analysis for th,, June data shows the same
+fun gi tional relationship(s) between the total wet bionic s and it/red ratio and square root of
+the it/red ratio with the sanie asymptotic nature for both plots, resp:,ctively. The asymptotic
+properties of the it/red ratio, square root of the it/red ratio, VI, and TVI are very sir.:ilar as
+are the respective degrees of regression significance (Table 3: Figure 4).
+PIIF.NOLO(;I('AI. CONSIDFRATIONS
+Thi! spectral manifestations of grass canopy phonology can be inferred from the three
+sampling periods used 1'or this study. Phenological development resulted in the gradual
+accumulation of more standing vegetation in the grass canopy. By September there were
+a pproxintately equal amounts of standing live and dead vegetation. The October data was
+composed entirely of standing dead vegetation.
+Spectral manifesta , ions of grass canopy phonology can be seen by comparing the various
+radiance variables for the three sampling periods. The June analysis results were more signifi-
+cant in a regression sense, showed the most nonlinearity, and had the highest degree of inter-
+correlation between the six canopy variables ("fables 3 and 4). Canopy composition at this
+time was —80% green vegetation and only " 30%: dead vegetation (Table 1).
+,I
+9
+
+
+--- Page 30 ---
+a
+V, f1
+-r
+J ^'
+7 C
+^ 4
+O r
+N
+C .r
+G ^"
+fE E
+l M C
+w N
+o b
+L
+'v
+O•^
+O L
+L y O
+3 ^ c
+L -`
+^ — L
+f~d 
+^
+b
+L ^ J
+O 
+^
+y G
+00 r G 000
+0* 00000 W,0
+c
+a o•: of as o, O
+00 ljo 00 r 00 0
+F^
+00000-
+00000-
+sL
+b
+8^80^
+r°00t8
+n3
+--O--O --
+0000-
+5 
+`n
+E
+O ^ 0v0 O
+0000 ON OTC O
+000-
+coo-
+C• m
+^j E
+°o, o, o°,
+oOO o 0
+m
+c
+0
+G E
+o 0
+0 0
+Fc 00
+N N
+_
+r
+y N
+0 o
+r'
+g
+°
+c O
+J
+b c.
+s^ v ^ 3 U
+^
+3^ ^ 
+3
+3
+^U a `^
+«b
+ca
+V7
+p
+Q
+^- E- l^ ^^F-
+m
+HF- ^D.^U
+22
+
+
+--- Page 31 ---
+^. c
+^ C
+O C
+a.
+G
+3 ''c
+vvO
+p 
+j^, N
+Q Z A
+.^^ O
+C m
+v 
+F—'
+GI ^
+3 N
+«. O
+o
+? M W! O
+(71, 0
+C G C:
+C O^ O
+0 0 -
+Q
+Q
+0c
+^. 
+C
+O
+p
+L.
+O
+i
+°
+3 ^ 3 c
+V
+^"
+O
+O
+a^
+23
+
+
+--- Page 32 ---
+The September analysis results were less significant in a regression sense than the J umc
+ttsults, were linear. and had a lower degree of canopy variable intercorrelation than tlik•
+June results( Table 3 and 4). Canopy composition at this time was-52",' green vegetation
+and --48 ' dead vegetation (Table I ).
+The October analysis results demonstrated t he need for sufficient chlorophyll absorp-
+tion, to occur for the it/red ratio and related transformation% to work. By this sampling
+time, canopy composition had simplified again and all the standing crop was standingdead
+vegetation. Associated with this phenological condition were direct linear relationships be-
+tween tx-)tlt the red and it radiances and each of the four canopy variables sampled at this
+time. The regression results were not significant, except I -or three radiance variables, and
+there was  higher degree of Canopy variable intercorrelation IIimi was the ease for the
+Setiternber data (Tables ; and 4).
+It should be noted that the "chlorophyll" determination for the Octobe ► ,.milllinp
+period does not present in vivo chlorophyll a h b. It is thought to represent chlorophyll
+decomposition products for this sampling period.
+EVALUATION OF DIf FEREMU IK BANDWll) H IS
+Another asl• ect of the study was to evaluate the influence of it bandwidth upon ratio
+technique applications for estimating the various canopy variables for the .lime data. In
+addition to the orilanal it handwidtIt of 0.75 - 0.80 {ant, the balldwidtllS of 0.80 - 0.90
+and 0.75 - 0.90 /gy m were evaluated. No differences were found in regression significance
+among the three it bandwidths for the .tune data (Table 5),
+,4
+
+
+--- Page 33 ---
+r,
+a E
+A ^
+'= o
+A ^
+0
+CJ.
+O v^
+C t`
+A 0
+C.^
+x a.t
+N^'
+v ^
+v ^
+C ^ ^V
+A r` t7
+c i
+C C
+a WO
+^ c i
+'J ^ 1n
+^ ^ r
+y ^ v
+v^
+pp ^ U
+C O '^
+^ t ^
+v 3 •3
+v ^
+a ar
+N ^ ^
+.+ b a
+w Q
+-C, V
+o ^ o0
+A V
+c 
+a,
+p o
+a ^ O
+M
+'uw y 3
+r J C^ r 4 M ID ID
+— Q` f J M V1 in
+— 00 — M 
+10
+>
+O+ o0 ON ON NC cc
+O, 00 O, C+ in co
+O 00 O+ Ok 
+00
+E"
+OOOOGO
+006000
+000000
+LL
+Q
+-• ••• ••• •— O N
+— oc O 
+00 Dr
+M ^p t! 00 r J v,
+O100n\00 cl w
+00
+oc
+000000
+000000
+0000700
+N Q\ M M O r
+r J C^ M M 00
+N CN 
+M ON ^c
+...>
+a 00 0. a Z 00
+s o0 O^ C` v,
+0• oo T C; ^O 0c
+000000
+00o0000
+000000
+0 0
+0 
+0 0
+oo
+0 ^^
+_f
+^`, 
+1
+0 0 0 0
+—
+0 0
+^. — — r 
+I!
+t/1
+0 0 0 0 0 0
+0 0 n 0 0 0
+0 00 0 0 0
+,y
+-t M M M r-- —
+Q M M rr, r- —
+r 1 r J rr+ 
+O^
+^+ Q
+c% a^ C; C\ r 
+C`
+C, ON C^ C, NO ON
+as C^ 0: 
+00 ON
+0 0 0 0 0 C
+0 0 0 0 0 0
+O O p 0 0 0
+CG
+C"
+m0ccr,--t C
+CAC
+rvtC- O r Q
+rt
+00 f- 00 N r l a^
+00 00 u0 00 rJ C^
+O( 
+00 OP C, C,
+^.;
+0000 00
+000000
+000000
+G
+L17
+- 
+00 Cl M W) V1
+rJ Os c4 M r- V,
+rd 
+CA M In in
+co O` 00 IC OC
+011 30 C, Ch ^D 00
+O` 00 C, ON 110 ac
+^
+O O O O O U
+O O O O C C' ^
+0 0 0 0 0 0
+Q` r- ON 00 M C`
+r- Y1 r` in M 00
+oc Ic 00 110 M 00
+rJ 4.
+N r- n r•- ^ r
+r- r r r`
+t ^ h• r- lO r-
+`
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+G
+00 O O N rJ ^-
+00 p O r J hJ
+00 O C N CL I --
+,_, Lys
+00 00 C` co M a,
+00 00 ^:N 00 M ON
+00 00 ON 00 M rJ
+C1C
+O O O O O C
+0 0 0 0 0 0
+0 0 0 0 0 0
+C
+y A '1 ^-
+rZ
+3 
+y b
+y b b
+0 
+CL
+>
+El C
+«. y 3
+3G3
+p
+oI j
+,. 
+C 
+O
+, 
+«. 
+a 
+3
+-
+x u
+v,
+,, 
+y c C G
+v ^^ .. v 3
+^^^
+c
+Vim `"
+o
+m`-
+-M
+id id
+_
+cd w 
+M
+_
+b d 
+A
+1
+
+
+--- Page 34 ---
+CONCLUSIONS
+1. The it/red ratio and related irand red linear combinations were found to be superior
+to the green/red ratio and related green and red linear comhuu►tions for monitoring; vegetation.
+2. Thw it/red ratio, syuare root (4 the it/red ratio, it-red difference, VI, and TVI are
+sensitive to the amount of photosynthetically active vegetation present in the plant canopy.
+All were found to be very similar for estimating the photosynthetically active biomass.
+3. The asymptotic properties of the it/red ratio, square root of the it/red ratio, it-red
+difference, V1, and TVI were very similar for high green biomass situations. The square root
+transformation did not result in a more linear situation.
+4. The accumulation of standing dead vegetation in the canopy had a linearizing effect
+upon the various green vegetation measures.
+5. The regression significance for the different it bandwidths of 0.75 - 0.80, 0.80 -
+0.90 and 0.75 - 0.90 pin were evaluated and I'ound to he extremely similar when used with
+the red radiance or used in the various Linear combinations.
+REFERENCES
+Ashley, M.D. and J. Rea. 1975. Seasonal vegetation dil'ferences from FR I S imagery.
+PURS 41(6): 713-719.
+Blair. B.O. and M.F. Baumgardner. 1977. Detection of the green and brown wave in hard-
+wood canopy covers using multidate n ►ultispectral data from Landsat-1. Agron. J.
+69:808-811.
+. 
+26
+==================================================
+ABSTRACT
+==================================================
+
+A Statistical Description of the Vegetation Canopy Characieristics for (A) The Thirty-Five 1/4 N1 2 Semple Plots of Blue Grama Sampled in June 1972, (B) The Forty 1/4 M 2 Sample Plots of Blue Grama Sampled in September 1971, and (C) The Eighteen 1/4 M 2 Sample Plots of Blue Grama Sampled in October, 1972 . ............................................... I1 2 C oe fficients of Uetennination for the Simple Regressions Between the Nine Green and Red Radiance Variables and the Canopy Variables for (A) 35 Plots of Blue Grama Grass Sampled in June, 1972; (B) 40 Plots of Brie

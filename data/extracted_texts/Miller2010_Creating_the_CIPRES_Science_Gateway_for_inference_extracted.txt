@@ -1,3 +1,22 @@
+==================================================
+METADATA
+==================================================
+
+format: PDF 1.6
+title: Microsoft Word - sc_2010_fin_rev4.docx
+author: Administrator
+creator: PScript5.dll Version 5.2.2
+producer: Acrobat Distiller 9.3.3 (Windows)
+creationDate: D:20101101091109-07'00'
+modDate: D:20101116130351-08'00'
+page_count: 7
+file_size: 62787
+file_name: Miller2010_Creating_the_CIPRES_Science_Gateway_for_inference.pdf
+
+==================================================
+FULL TEXT
+==================================================
+
 --- Page 1 ---
 Creating the CIPRES Science Gateway for Inference of 
 Large Phylogenetic Trees

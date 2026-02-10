@@ -2,8 +2,13 @@ import argparse
 import json
 import logging
 import sys
+import os
 from pathlib import Path
 from typing import List
+
+# Fix Windows console encoding for Unicode characters
+from utils.encoding_fix import fix_console_encoding, safe_print
+fix_console_encoding()
 
 from config import (
     DEFAULT_MAX_PAPERS,
@@ -67,6 +72,11 @@ def main():
         default=0.3,
         metavar="FACTOR",
         help="Diversity factor (0.0-1.0) when using --randomize. Higher = more variety (default: 0.3)"
+    )
+    parser.add_argument(
+        "--generate-draft",
+        action="store_true",
+        help="Generate lengthy APA-formatted draft after paper retrieval"
     )
     
     args = parser.parse_args()
@@ -134,9 +144,45 @@ def main():
         save_metadata(selected_papers, METADATA_FILE)
         print(f"Metadata saved to {METADATA_FILE}\n")
         
+        # Step 5: Generate draft if requested
+        if args.generate_draft:
+            print(f"{'='*60}")
+            print("Generating Lengthy APA-Formatted Draft...")
+            print(f"{'='*60}\n")
+            
+            from lengthy_draft_generator import LengthyDraftGenerator
+            
+            draft_generator = LengthyDraftGenerator()
+            
+            # Prepare paper data
+            papers_data = []
+            for paper in selected_papers:
+                papers_data.append({
+                    'title': paper.title,
+                    'authors': [author.name for author in (paper.authors or [])],
+                    'year': paper.year or 'n.d.',
+                    'doi': paper.paperId  # Use paperId as DOI
+                })
+            
+            # Generate draft
+            draft_output = Path(PAPERS_DIR) / "generated_draft.txt"
+            draft = draft_generator.generate_complete_draft(topic, papers_data, str(draft_output))
+            
+            print(f"\n✅ Draft generated successfully!")
+            print(f"   Saved to: {draft_output}")
+            print(f"\n   Word counts:")
+            for section, content in draft.items():
+                word_count = len(content.split())
+                print(f"     - {section.title()}: {word_count} words")
+            
+            total_words = sum(len(content.split()) for content in draft.values())
+            print(f"     - Total: {total_words} words\n")
+        
         # Summary
         print(f"{'='*60}")
         print("Milestone 1 Complete – Ready for text extraction.")
+        if args.generate_draft:
+            print("Draft Generation Complete – Ready for review.")
         print(f"{'='*60}")
         print(f"\nSummary:")
         print(f"  - Papers selected: {len(selected_papers)}")
@@ -149,8 +195,10 @@ def main():
             pdf_status = "[PDF]" if paper.has_open_pdf() else "[No PDF]"
             year = paper.year or "N/A"
             citations = paper.citationCount or 0
-            print(f"  {i}. {paper.title[:60]}...")
-            print(f"     ({year}, {citations} citations, {pdf_status})")
+            # Use safe_print for Unicode characters
+            title_preview = paper.title[:60]
+            safe_print(f"  {i}. {title_preview}...")
+            safe_print(f"     ({year}, {citations} citations, {pdf_status})")
         
     except KeyboardInterrupt:
         print("\n\nOperation cancelled by user.")

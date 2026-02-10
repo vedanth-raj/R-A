@@ -838,7 +838,7 @@ All documentation has been generated with version control and timestamps.
             gr.HTML("""
             <div style="text-align: center; padding: 2rem; margin-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.6);">
                 <p>🤖 <strong>AI Research Agent - Lab Pulse Edition</strong></p>
-                <p>Powered by Google Gemini AI & OpenAI GPT | APA 7th Edition Compliant | Real-Time Quality Assessment Matrix</p>
+                <p>Powered by Google Gemini AI | APA 7th Edition Compliant | Real-Time Quality Assessment Matrix</p>
             </div>
             """)
             

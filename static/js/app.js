@@ -273,9 +273,6 @@ class AIResearchAgent {
                     <button class="btn btn-sm btn-primary" onclick="window.downloadPaper('${paper.filename}')">
                         <i class="fas fa-download"></i> Download
                     </button>
-                    <button class="btn btn-sm btn-secondary" onclick="window.extractPaper('${paper.file}')">
-                        <i class="fas fa-file-export"></i> Extract
-                    </button>
                 </div>
             `;
             
@@ -321,9 +318,6 @@ class AIResearchAgent {
                 <div class="paper-actions">
                     <button class="btn btn-sm btn-primary" onclick="window.downloadPaper('${paper.file}')">
                         <i class="fas fa-download"></i> Download
-                    </button>
-                    <button class="btn btn-sm btn-secondary" onclick="window.extractPaper('${paper.file}')">
-                        <i class="fas fa-file-export"></i> Extract
                     </button>
                 </div>
             `;
@@ -728,8 +722,18 @@ class AIResearchAgent {
             this.displayComparisonResults(result);
         } else if (operationType === 'draft') {
             this.displayDraftResults(result);
-        } else if (operationType === 'search' || operationType === 'extract') {
-            // Reload papers after search or extraction
+        } else if (operationType === 'extract') {
+            // Show extracted text if available
+            if (result.extracted_text) {
+                this.displayExtractedText(result);
+            }
+            // Reload papers after extraction
+            this.loadPapers();
+            this.loadDownloadedPapers();
+            this.loadSearchResults();
+            this.loadPapersDirectory();
+        } else if (operationType === 'search') {
+            // Reload papers after search
             this.loadPapers();
             this.loadDownloadedPapers();
             this.loadSearchResults();
@@ -895,14 +899,22 @@ class AIResearchAgent {
         const resultsContainer = document.getElementById('draftResults');
         const comprehensiveResultsContainer = document.getElementById('comprehensiveDraftResults');
         
+        if (!resultsContainer) {
+            console.error('draftResults element not found');
+            return;
+        }
+        
         resultsContainer.style.display = 'block';
-        comprehensiveResultsContainer.style.display = 'none';
+        if (comprehensiveResultsContainer) {
+            comprehensiveResultsContainer.style.display = 'none';
+        }
         
         const draft = result.draft;
         const confidenceClass = draft.confidence_score > 0.8 ? 'confidence-high' : 
                                draft.confidence_score > 0.6 ? 'confidence-medium' : 'confidence-low';
         
         let html = `
+            <h4><i class="fas fa-file-alt"></i> Generated Draft</h4>
             <div class="draft-meta">
                 <div class="draft-meta-item">
                     <i class="fas fa-file-alt"></i>
@@ -917,28 +929,40 @@ class AIResearchAgent {
                     <span>${(draft.confidence_score * 100).toFixed(1)}%</span>
                 </div>
             </div>
+            <div class="draft-content" style="background: var(--bg-card); padding: 1.5rem; border-radius: 8px; margin-top: 1rem; white-space: pre-wrap; line-height: 1.8; max-height: 600px; overflow-y: auto;">
+                ${draft.content}
+            </div>
         `;
         
         resultsContainer.innerHTML = html;
-        document.getElementById('draftContent').textContent = draft.content;
     }
 
     displayComprehensiveDraftResults(result) {
         const resultsContainer = document.getElementById('draftResults');
         const comprehensiveResultsContainer = document.getElementById('comprehensiveDraftResults');
         
-        resultsContainer.style.display = 'none';
+        if (!comprehensiveResultsContainer) {
+            console.error('comprehensiveDraftResults element not found');
+            return;
+        }
+        
+        if (resultsContainer) {
+            resultsContainer.style.display = 'none';
+        }
         comprehensiveResultsContainer.style.display = 'block';
         
         const drafts = result.drafts;
-        let html = '';
+        let html = '<h4><i class="fas fa-file-alt"></i> Comprehensive Draft</h4>';
+        
+        // Helper function to capitalize section names
+        const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
         
         Object.keys(drafts).forEach(sectionType => {
             const draft = drafts[sectionType];
             if (draft.error) {
                 html += `
                     <div class="draft-section">
-                        <h5><i class="fas fa-exclamation-triangle"></i> ${sectionType.title()}</h5>
+                        <h5><i class="fas fa-exclamation-triangle"></i> ${capitalize(sectionType)}</h5>
                         <div style="color: var(--error); padding: 1rem; background: rgba(255, 68, 68, 0.1); border-radius: 4px;">
                             ${draft.error}
                         </div>
@@ -950,7 +974,7 @@ class AIResearchAgent {
                 
                 html += `
                     <div class="draft-section">
-                        <h5>${sectionType.title()}</h5>
+                        <h5>${capitalize(sectionType)}</h5>
                         <div class="draft-meta">
                             <div class="draft-meta-item">
                                 <span>Word Count:</span>
@@ -961,7 +985,7 @@ class AIResearchAgent {
                                 <span>${(draft.confidence_score * 100).toFixed(1)}%</span>
                             </div>
                         </div>
-                        <div style="background: var(--bg-tertiary); padding: 1rem; border-radius: 4px; margin-top: 1rem; max-height: 400px; overflow-y: auto; white-space: pre-wrap; font-family: 'Courier New', monospace; font-size: 0.85rem;">
+                        <div style="background: var(--bg-tertiary); padding: 1.5rem; border-radius: 8px; margin-top: 1rem; max-height: 500px; overflow-y: auto; white-space: pre-wrap; line-height: 1.8; font-size: 0.95rem; color: var(--text-primary);">
                             ${draft.content}
                         </div>
                     </div>
@@ -970,6 +994,81 @@ class AIResearchAgent {
         });
         
         comprehensiveResultsContainer.innerHTML = html;
+    }
+
+    displayExtractedText(result) {
+        // Create or get extracted text container
+        let extractedTextContainer = document.getElementById('extractedTextResults');
+        
+        if (!extractedTextContainer) {
+            // Create container if it doesn't exist
+            const extractTab = document.getElementById('extract');
+            if (!extractTab) return;
+            
+            extractedTextContainer = document.createElement('div');
+            extractedTextContainer.id = 'extractedTextResults';
+            extractedTextContainer.className = 'card';
+            extractedTextContainer.style.marginTop = '2rem';
+            extractTab.appendChild(extractedTextContainer);
+        }
+        
+        extractedTextContainer.style.display = 'block';
+        
+        const wordCount = result.word_count || 0;
+        const charCount = result.char_count || 0;
+        const extractedText = result.extracted_text || '';
+        
+        extractedTextContainer.innerHTML = `
+            <div class="card-header">
+                <div class="card-icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <h3 class="card-title">Extracted Text</h3>
+            </div>
+            
+            <div class="stats-grid" style="margin-bottom: 1.5rem;">
+                <div class="stat-card">
+                    <div class="stat-value">${wordCount.toLocaleString()}</div>
+                    <div class="stat-label">Words</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">${charCount.toLocaleString()}</div>
+                    <div class="stat-label">Characters</div>
+                </div>
+            </div>
+            
+            <div style="margin-bottom: 1rem; display: flex; justify-content: flex-end;">
+                <button id="copyExtractedTextBtn" class="btn btn-primary" style="display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-copy"></i> Copy Text
+                </button>
+            </div>
+            
+            <div id="extractedTextContent" style="background: var(--bg-card); padding: 1.5rem; border-radius: 8px; max-height: 500px; overflow-y: auto; white-space: pre-wrap; line-height: 1.8; font-size: 0.9rem; color: var(--text-primary); border: 1px solid var(--border);">
+                ${extractedText}
+            </div>
+        `;
+        
+        // Add copy button functionality
+        const copyBtn = document.getElementById('copyExtractedTextBtn');
+        if (copyBtn) {
+            copyBtn.addEventListener('click', () => {
+                navigator.clipboard.writeText(extractedText).then(() => {
+                    copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                    copyBtn.style.background = 'var(--success)';
+                    
+                    setTimeout(() => {
+                        copyBtn.innerHTML = '<i class="fas fa-copy"></i> Copy Text';
+                        copyBtn.style.background = '';
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Failed to copy text:', err);
+                    this.showNotification('Failed to copy text', 'error');
+                });
+            });
+        }
+        
+        // Scroll to extracted text
+        extractedTextContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 
     displayResults(result) {
@@ -997,22 +1096,37 @@ ${JSON.stringify(result, null, 2)}
         const progressFill = document.getElementById(`${type}ProgressFill`);
         const progressText = document.getElementById(`${type}ProgressText`);
         
+        if (!progressContainer) {
+            console.warn(`Progress container ${type}Progress not found`);
+            return;
+        }
+        
         progressContainer.style.display = 'block';
-        progressFill.style.width = '0%';
-        progressText.textContent = message;
+        if (progressFill) {
+            progressFill.style.width = '0%';
+        }
+        if (progressText) {
+            progressText.textContent = message;
+        }
     }
 
     updateProgress(type, progress, message) {
         const progressFill = document.getElementById(`${type}ProgressFill`);
         const progressText = document.getElementById(`${type}ProgressText`);
         
-        progressFill.style.width = `${progress}%`;
-        progressText.textContent = message;
+        if (progressFill) {
+            progressFill.style.width = `${progress}%`;
+        }
+        if (progressText) {
+            progressText.textContent = message;
+        }
     }
 
     hideProgress(type) {
         const progressContainer = document.getElementById(`${type}Progress`);
-        progressContainer.style.display = 'none';
+        if (progressContainer) {
+            progressContainer.style.display = 'none';
+        }
     }
 
     showNotification(message, type = 'info') {

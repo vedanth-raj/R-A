@@ -1,3 +1,21 @@
+==================================================
+METADATA
+==================================================
+
+format: PDF 1.2
+title: arXiv:hep-th/9905111v3  1 Oct 1999
+creator: dvips(k) 5.86 Copyright 1999 Radical Eye Software
+producer: GPL Ghostscript SVN PRE-RELEASE 8.62
+creationDate: D:20080201042608-05'00'
+modDate: D:20080201042608-05'00'
+page_count: 261
+file_size: 1900691
+file_name: Aharony1999_Large_N_Field_Theories,_String_Theory_and_Gravity.pdf
+
+==================================================
+FULL TEXT
+==================================================
+
 --- Page 1 ---
 arXiv:hep-th/9905111v3  1 Oct 1999
 February 1, 2008
@@ -13584,3 +13602,8 @@ hep-th/9902088.
 [756] D. Bak and S.-J. Rey, “Cosmic holography,” hep-th/9902173.
 [757] N. Kaloper and A. Linde, “Cosmology vs. holography,” hep-th/9904120.
 260
+==================================================
+ABSTRACT
+==================================================
+
+We review the holographic correspondence between ﬁeld theories and string/M theory, focusing on the relation between compactiﬁcations of string/M theory on Anti-de Sitter spaces and conformal ﬁeld theories. We review the background for this correspondence and discuss its motivations and the evidence for its correctness. We describe the main

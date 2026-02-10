@@ -18,6 +18,18 @@ import json
 import logging
 from datetime import datetime
 
+# Fix Windows console encoding for Unicode characters
+try:
+    from utils.encoding_fix import fix_console_encoding
+    fix_console_encoding()
+except ImportError:
+    if sys.platform == 'win32':
+        try:
+            sys.stdout.reconfigure(encoding='utf-8')
+        except AttributeError:
+            import codecs
+            sys.stdout = codecs.getwriter('utf-8')(sys.stdout.buffer, 'strict')
+
 # Import all modules
 from paper_retrieval.text_extractor import PDFTextExtractor
 from section_extractor import SectionWiseExtractor

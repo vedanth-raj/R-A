@@ -7,6 +7,10 @@ from typing import List, Optional
 import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
+import urllib3
+
+# Disable SSL warnings for development (corporate networks/proxies)
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 from config import (
     SEMANTIC_SCHOLAR_SEARCH_ENDPOINT,
@@ -97,13 +101,14 @@ class SemanticScholarSearcher:
                 time.sleep(sleep_time)
         
         try:
-            # Make the request
+            # Make the request (SSL verification disabled for development)
             request_start_time = time.time()
             response = self.session.get(
                 SEMANTIC_SCHOLAR_SEARCH_ENDPOINT,
                 params=params,
                 headers=self.headers,
-                timeout=30
+                timeout=30,
+                verify=False  # Disable SSL verification for corporate networks/proxies
             )
             response.raise_for_status()
             

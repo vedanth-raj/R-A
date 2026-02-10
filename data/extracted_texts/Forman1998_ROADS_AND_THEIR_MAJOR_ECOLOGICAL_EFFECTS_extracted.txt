@@ -1,3 +1,22 @@
+==================================================
+METADATA
+==================================================
+
+format: PDF 1.6
+title: Europa XXI 28 (2015), Selected fragments of road corridors as environmental barriers
+author: Jerzy Solon
+creator: Adobe InDesign CS6 (Windows)
+producer: Adobe PDF Library 10.0.1
+creationDate: D:20160316143716+01'00'
+modDate: D:20160415153156+02'00'
+page_count: 26
+file_size: 3873822
+file_name: Forman1998_ROADS_AND_THEIR_MAJOR_ECOLOGICAL_EFFECTS.pdf
+
+==================================================
+FULL TEXT
+==================================================
+
 --- Page 1 ---
 EUROPA XXI 
 Vol. 28, 2015, pp. 91-116
@@ -1292,3 +1311,8 @@ Tyburski Ł., Czerniak A., Kaczmarek A., Kanas K., Górna M., 2012. Zdarzenia dr
 zwierzyny w okresie zimowym. Prace Komisji Nauk Rolniczych i Komisji Nauk Leśnych PTPN, 
 vol. 103, pp. 103–111.
 http://rcin.org.pl
+==================================================
+ABSTRACT
+==================================================
+
+effects include fragmentation of ecosystems and barriers to populations of many animal species. Specific objectives include the following: (a) to determine fragmentation of forest areas in the gminas which are traversed by selected transports routes and to define the role of these routes for an increasing landscape fragmentation; (b) to determine the number of traffic incidents involving animals by road categories, seasons, time of the day or night and distance from forest. For the detailed analyses six research areas were selected through which the selected road sections run: (a) A1 on section Pruszcz Gdański–Grudziądz (operational since 2008) and DK91; (b) A4 on section Wrocław–Opole (operational since 2003) and DK94; (c) DK8 on section Kudowa Zdrój–Wrocław; (d) DK8 on section Augustów–Budzisko; (e) DK17 on section Garwolin–Kurów; (f) S8 on section Radzymin–Wyszków. Data on traffic incidents which involved animals cover the years 2006–2012 and originate from the SEWIK

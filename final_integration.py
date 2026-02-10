@@ -348,7 +348,7 @@ This research paper was generated using the AI Research Agent with the following
 ## About AI Research Agent
 
 The AI Research Agent is an advanced system for automated research paper generation, featuring:
-- Multi-provider AI integration (Google Gemini, OpenAI)
+- Google Gemini AI integration
 - Automated quality assessment and revision
 - APA 7th edition reference formatting
 - Comprehensive workflow automation
