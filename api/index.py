@@ -117,10 +117,6 @@ def health():
     """Health check endpoint"""
     return jsonify({'status': 'healthy', 'timestamp': datetime.now().isoformat()})
 
-# Vercel serverless function handler
-def handler(request):
-    with app.request_context(request.environ):
-        return app.full_dispatch_request()
-
+# For Vercel serverless deployment
 if __name__ == '__main__':
     app.run(debug=True)
