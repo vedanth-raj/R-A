@@ -14,7 +14,7 @@ from datetime import datetime
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 # Import our modules
-from paper_retrieval.searcher import PaperSearcher
+from paper_retrieval.searcher import SemanticScholarSearcher
 from lengthy_draft_generator import LengthyDraftGenerator
 from ai_conversation_engine import AIConversationEngine
 
@@ -25,7 +25,7 @@ app.config['SECRET_KEY'] = 'ai_research_agent_vercel_2024'
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max
 
 # Initialize components
-searcher = PaperSearcher()
+searcher = SemanticScholarSearcher()
 draft_generator = LengthyDraftGenerator()
 
 # Session-based storage
