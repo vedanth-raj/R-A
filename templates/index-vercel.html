@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Research Agent</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔬 AI Research Agent</h1>
+            <p>Intelligent Research Paper Analysis & Draft Generation</p>
+        </header>
+
+        <main>
+            <section class="search-section">
+                <h2>Search Papers</h2>
+                <form id="searchForm">
+                    <input type="text" id="searchQuery" placeholder="Enter research topic..." required>
+                    <input type="number" id="maxResults" value="10" min="1" max="50">
+                    <button type="submit">Search</button>
+                </form>
+                <div id="searchResults"></div>
+            </section>
+
+            <section class="draft-section">
+                <h2>Generate Draft</h2>
+                <textarea id="customInstructions" placeholder="Custom instructions (optional)..."></textarea>
+                <button id="generateDraftBtn">Generate Draft</button>
+                <div id="draftOutput"></div>
+            </section>
+
+            <section class="chat-section">
+                <h2>AI Assistant</h2>
+                <div id="chatMessages"></div>
+                <form id="chatForm">
+                    <input type="text" id="chatInput" placeholder="Ask a question..." required>
+                    <button type="submit">Send</button>
+                </form>
+            </section>
+        </main>
+
+        <div id="loadingIndicator" style="display:none;">Loading...</div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app-vercel.js') }}"></script>
+</body>
+</html>
