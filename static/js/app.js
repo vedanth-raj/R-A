@@ -8,6 +8,7 @@ class AIResearchAgent {
         this.papers = [];
         this.selectedPapers = new Set();
         this.activeOperations = {};
+        this.currentDraft = null; // Store current draft for corrections
         
         this.init();
     }
@@ -108,6 +109,35 @@ class AIResearchAgent {
                 const analyzeBtn = document.getElementById('analyzeBtn');
                 if (analyzeBtn) {
                     analyzeBtn.disabled = !e.target.value;
+                }
+            });
+        }
+        
+        // AI Conversation Mode
+        const useAIConversation = document.getElementById('useAIConversation');
+        if (useAIConversation) {
+            useAIConversation.addEventListener('change', (e) => {
+                const aiChatInterface = document.getElementById('aiChatInterface');
+                if (aiChatInterface) {
+                    aiChatInterface.style.display = e.target.checked ? 'block' : 'none';
+                }
+            });
+        }
+        
+        // AI Chat Send Button
+        const aiChatSendBtn = document.getElementById('aiChatSendBtn');
+        if (aiChatSendBtn) {
+            aiChatSendBtn.addEventListener('click', () => {
+                this.sendAIMessage();
+            });
+        }
+        
+        // AI Chat Input Enter Key
+        const aiChatInput = document.getElementById('aiChatInput');
+        if (aiChatInput) {
+            aiChatInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    this.sendAIMessage();
                 }
             });
         }
@@ -450,35 +480,153 @@ class AIResearchAgent {
 
         const sectionType = document.getElementById('draftSectionType').value;
         const paperFiles = Array.from(this.selectedPapers);
+        const customInstructions = document.getElementById('customInstructions').value.trim();
+        const useAIConversation = document.getElementById('useAIConversation').checked;
 
         try {
             this.showProgress('draft', 'Generating draft...');
 
-            const response = await fetch('/api/generate_draft', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    paper_files: paperFiles,
-                    section_type: sectionType,
-                    topic: topic
-                })
-            });
+            // Check if using conversational AI mode
+            if (useAIConversation) {
+                // Load paper data for context
+                const papersData = await this.loadPapersData(paperFiles);
+                
+                const response = await fetch('/api/ai_generate_conversational', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        section_type: sectionType,
+                        topic: topic,
+                        papers: papersData,
+                        instruction: customInstructions
+                    })
+                });
 
-            const data = await response.json();
+                const data = await response.json();
 
-            if (data.status === 'started') {
-                this.activeOperations[data.operation_id] = 'draft';
-                this.showNotification('Draft generation started', 'success');
+                if (data.status === 'started') {
+                    this.activeOperations[data.operation_id] = 'draft';
+                    this.showNotification('AI is working on your draft...', 'success');
+                } else {
+                    this.hideProgress('draft');
+                    this.showNotification('Failed to start AI generation', 'error');
+                }
+            } else if (customInstructions) {
+                // Use custom instructions endpoint
+                const response = await fetch('/api/generate_with_instructions', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        paper_files: paperFiles,
+                        section_type: sectionType,
+                        topic: topic,
+                        custom_instructions: customInstructions
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.status === 'started') {
+                    this.activeOperations[data.operation_id] = 'draft';
+                    this.showNotification('Draft generation with custom instructions started', 'success');
+                } else {
+                    this.hideProgress('draft');
+                    this.showNotification('Failed to start draft generation', 'error');
+                }
             } else {
-                this.hideProgress('draft');
-                this.showNotification('Failed to start draft generation', 'error');
+                // Use standard endpoint
+                const response = await fetch('/api/generate_draft', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        paper_files: paperFiles,
+                        section_type: sectionType,
+                        topic: topic
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.status === 'started') {
+                    this.activeOperations[data.operation_id] = 'draft';
+                    this.showNotification('Draft generation started', 'success');
+                } else {
+                    this.hideProgress('draft');
+                    this.showNotification('Failed to start draft generation', 'error');
+                }
             }
         } catch (error) {
             this.hideProgress('draft');
             this.showNotification('Draft generation failed: ' + error.message, 'error');
         }
+    }
+    
+    async loadPapersData(paperFiles) {
+        // Helper to load paper data for AI context
+        const papersData = [];
+        for (const file of paperFiles) {
+            papersData.push({
+                title: file.split('/').pop().replace('_extracted.txt', ''),
+                file: file
+            });
+        }
+        return papersData;
+    }
+    
+    async sendAIMessage() {
+        const input = document.getElementById('aiChatInput');
+        const message = input.value.trim();
+        
+        if (!message) return;
+        
+        const topic = document.getElementById('draftTopic').value.trim();
+        const paperFiles = Array.from(this.selectedPapers);
+        
+        // Add user message to chat
+        this.addChatMessage(message, 'user');
+        input.value = '';
+        
+        try {
+            // Load paper data
+            const papersData = await this.loadPapersData(paperFiles);
+            
+            const response = await fetch('/api/ai_chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    message: message,
+                    topic: topic,
+                    papers: papersData
+                })
+            });
+            
+            const data = await response.json();
+            
+            if (data.success) {
+                this.addChatMessage(data.response, 'ai');
+            } else {
+                this.addChatMessage('Sorry, I encountered an error: ' + data.error, 'ai');
+            }
+        } catch (error) {
+            this.addChatMessage('Sorry, I encountered an error: ' + error.message, 'ai');
+        }
+    }
+    
+    addChatMessage(message, role) {
+        const messagesContainer = document.getElementById('aiChatMessages');
+        const messageDiv = document.createElement('div');
+        messageDiv.className = role === 'user' ? 'user-message' : 'ai-message';
+        messageDiv.textContent = message;
+        messagesContainer.appendChild(messageDiv);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
     }
 
     async generateComprehensiveDraft() {
@@ -494,10 +642,13 @@ class AIResearchAgent {
         }
 
         const paperFiles = Array.from(this.selectedPapers);
+        const customInstructions = document.getElementById('customInstructions').value.trim();
 
         try {
             this.showProgress('draft', 'Generating comprehensive draft...');
 
+            // Note: For comprehensive drafts, custom instructions apply to all sections
+            // In future, could add per-section instructions
             const response = await fetch('/api/generate_comprehensive_draft', {
                 method: 'POST',
                 headers: {
@@ -505,7 +656,8 @@ class AIResearchAgent {
                 },
                 body: JSON.stringify({
                     paper_files: paperFiles,
-                    topic: topic
+                    topic: topic,
+                    custom_instructions: customInstructions || null
                 })
             });
 
@@ -722,6 +874,8 @@ class AIResearchAgent {
             this.displayComparisonResults(result);
         } else if (operationType === 'draft') {
             this.displayDraftResults(result);
+        } else if (operationType === 'correction' || operationType === 'improvement') {
+            this.displayCorrectionResults(result);
         } else if (operationType === 'extract') {
             // Show extracted text if available
             if (result.extracted_text) {
@@ -910,11 +1064,31 @@ class AIResearchAgent {
         }
         
         const draft = result.draft;
+        
+        // Debug logging
+        console.log('Draft result:', draft);
+        console.log('Draft content length:', draft.content ? draft.content.length : 0);
+        
         const confidenceClass = draft.confidence_score > 0.8 ? 'confidence-high' : 
                                draft.confidence_score > 0.6 ? 'confidence-medium' : 'confidence-low';
         
         let html = `
             <h4><i class="fas fa-file-alt"></i> Generated Draft</h4>
+        `;
+        
+        // Show AI explanation if available
+        if (draft.ai_explanation) {
+            html += `
+                <div class="ai-explanation">
+                    <div class="ai-explanation-title">
+                        <i class="fas fa-robot"></i> AI's Approach
+                    </div>
+                    <div>${this.escapeHtml(draft.ai_explanation)}</div>
+                </div>
+            `;
+        }
+        
+        html += `
             <div class="draft-meta">
                 <div class="draft-meta-item">
                     <i class="fas fa-file-alt"></i>
@@ -929,12 +1103,47 @@ class AIResearchAgent {
                     <span>${(draft.confidence_score * 100).toFixed(1)}%</span>
                 </div>
             </div>
-            <div class="draft-content" style="background: var(--bg-card); padding: 1.5rem; border-radius: 8px; margin-top: 1rem; white-space: pre-wrap; line-height: 1.8; max-height: 600px; overflow-y: auto;">
-                ${draft.content}
+            
+            <div style="margin: 1rem 0;">
+                <h5 style="color: var(--accent-primary); margin-bottom: 0.5rem;">
+                    <i class="fas fa-file-text"></i> Draft Content
+                </h5>
+            </div>
+            
+            <div class="draft-content" id="currentDraftContent" style="background: var(--bg-card); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border); white-space: pre-wrap; line-height: 1.8; max-height: 600px; overflow-y: auto; font-size: 1rem; color: var(--text-primary);">
+                ${this.escapeHtml(draft.content || 'No content generated')}
+            </div>
+            
+            <!-- Correction Section -->
+            <div id="correctionSection" style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border);">
+                <h5 style="color: var(--accent-primary); margin-bottom: 1rem;">
+                    <i class="fas fa-edit"></i> Improve with AI
+                </h5>
+                <div class="form-group">
+                    <label for="correctionInstructions">Tell AI what to improve:</label>
+                    <textarea id="correctionInstructions" class="form-control" rows="3" placeholder="Tell the AI what to fix or improve (e.g., 'Make it more concise', 'Add more technical details', 'Improve the flow')"></textarea>
+                </div>
+                <button id="correctDraftBtn" class="btn btn-primary">
+                    <i class="fas fa-magic"></i> Improve Draft with AI
+                </button>
             </div>
         `;
         
         resultsContainer.innerHTML = html;
+        
+        // Store current draft data for correction
+        this.currentDraft = {
+            content: draft.content,
+            section_type: draft.section_type
+        };
+        
+        // Add event listener for correction button
+        const correctBtn = document.getElementById('correctDraftBtn');
+        if (correctBtn) {
+            correctBtn.addEventListener('click', () => {
+                this.correctDraft();
+            });
+        }
     }
 
     displayComprehensiveDraftResults(result) {
@@ -994,6 +1203,140 @@ class AIResearchAgent {
         });
         
         comprehensiveResultsContainer.innerHTML = html;
+    }
+
+    async correctDraft() {
+        const correctionInstructions = document.getElementById('correctionInstructions').value.trim();
+        
+        if (!correctionInstructions) {
+            this.showNotification('Please enter improvement instructions', 'error');
+            return;
+        }
+        
+        if (!this.currentDraft) {
+            this.showNotification('No draft available to improve', 'error');
+            return;
+        }
+        
+        const useAIConversation = document.getElementById('useAIConversation').checked;
+        
+        try {
+            this.showProgress('draft', 'AI is improving your draft...');
+            
+            if (useAIConversation) {
+                // Use conversational AI improvement
+                const response = await fetch('/api/ai_improve_draft', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        draft_content: this.currentDraft.content,
+                        improvement_request: correctionInstructions
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.status === 'started') {
+                    this.activeOperations[data.operation_id] = 'improvement';
+                    this.showNotification('AI is working on improvements...', 'success');
+                } else {
+                    this.hideProgress('draft');
+                    this.showNotification('Failed to start improvement', 'error');
+                }
+            } else {
+                // Use standard correction
+                const response = await fetch('/api/correct_draft', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        draft_content: this.currentDraft.content,
+                        correction_instructions: correctionInstructions,
+                        section_type: this.currentDraft.section_type
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.status === 'started') {
+                    this.activeOperations[data.operation_id] = 'correction';
+                    this.showNotification('AI correction started', 'success');
+                } else {
+                    this.hideProgress('draft');
+                    this.showNotification('Failed to start correction', 'error');
+                }
+            }
+        } catch (error) {
+            this.hideProgress('draft');
+            this.showNotification('Improvement failed: ' + error.message, 'error');
+        }
+    }
+
+    displayCorrectionResults(result) {
+        // Update the draft content with corrected version
+        const draftContentElement = document.getElementById('currentDraftContent');
+        
+        const correctedContent = result.improved_content || result.corrected_content;
+        const aiExplanation = result.ai_explanation;
+        
+        console.log('Correction result:', result);
+        console.log('Corrected content length:', correctedContent ? correctedContent.length : 0);
+        
+        if (draftContentElement && correctedContent) {
+            // Show AI explanation if available
+            if (aiExplanation) {
+                // Check if explanation already exists
+                let explanationDiv = draftContentElement.previousElementSibling;
+                if (!explanationDiv || !explanationDiv.classList.contains('ai-explanation')) {
+                    explanationDiv = document.createElement('div');
+                    explanationDiv.className = 'ai-explanation';
+                    draftContentElement.parentNode.insertBefore(explanationDiv, draftContentElement);
+                }
+                
+                explanationDiv.innerHTML = `
+                    <div class="ai-explanation-title">
+                        <i class="fas fa-robot"></i> AI's Improvements
+                    </div>
+                    <div>${this.escapeHtml(aiExplanation)}</div>
+                `;
+            }
+            
+            // Update the displayed content with proper escaping
+            draftContentElement.textContent = correctedContent;
+            
+            // Update stored draft
+            this.currentDraft.content = correctedContent;
+            
+            // Show success message with word count change
+            const wordCountChange = result.word_count - result.original_word_count;
+            const changeText = wordCountChange > 0 ? `+${wordCountChange}` : wordCountChange;
+            
+            this.showNotification(
+                `Draft improved successfully! Word count: ${result.original_word_count} → ${result.word_count} (${changeText})`,
+                'success'
+            );
+            
+            // Clear correction instructions
+            const correctionTextarea = document.getElementById('correctionInstructions');
+            if (correctionTextarea) {
+                correctionTextarea.value = '';
+            }
+            
+            // Scroll to the updated content
+            draftContentElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+            console.error('Failed to display improved draft - element or content missing');
+            this.showNotification('Failed to display improved draft', 'error');
+        }
+    }
+    
+    escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
     }
 
     displayExtractedText(result) {
@@ -1186,6 +1529,14 @@ document.head.appendChild(style);
 // Initialize the application
 document.addEventListener('DOMContentLoaded', () => {
     window.aiResearchAgent = new AIResearchAgent();
+    
+    // Clear session on page unload (close/refresh)
+    window.addEventListener('beforeunload', () => {
+        // Use sendBeacon for reliable cleanup on page close
+        const clearUrl = '/api/clear_session';
+        const data = new Blob([JSON.stringify({})], { type: 'application/json' });
+        navigator.sendBeacon(clearUrl, data);
+    });
 });
 
 // Global window functions for paper actions

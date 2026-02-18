@@ -116,7 +116,18 @@ class SemanticScholarSearcher:
             if SEMANTIC_SCHOLAR_API_KEY:
                 self.last_request_time = time.time()
             
-            data = response.json()
+            # Check if response has content
+            if not response.text or response.text.strip() == '':
+                logger.error("API returned empty response")
+                return SemanticScholarSearchResponse(total=0, offset=offset, data=[])
+            
+            # Try to parse JSON
+            try:
+                data = response.json()
+            except ValueError as json_error:
+                logger.error(f"Failed to parse JSON response: {json_error}")
+                logger.error(f"Response text (first 500 chars): {response.text[:500]}")
+                return SemanticScholarSearchResponse(total=0, offset=offset, data=[])
             
             # Parse response into models
             papers = []

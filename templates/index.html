@@ -670,6 +670,45 @@
             background: rgba(255, 68, 68, 0.2);
             color: var(--error);
         }
+        
+        /* AI Chat Styles */
+        .ai-message, .user-message {
+            padding: 0.75rem;
+            margin-bottom: 0.75rem;
+            border-radius: 8px;
+            line-height: 1.6;
+        }
+        
+        .ai-message {
+            background: rgba(0, 212, 255, 0.1);
+            border-left: 3px solid var(--accent-primary);
+            color: var(--text-primary);
+        }
+        
+        .user-message {
+            background: rgba(0, 255, 136, 0.1);
+            border-left: 3px solid var(--success);
+            color: var(--text-primary);
+            text-align: right;
+        }
+        
+        .ai-explanation {
+            background: rgba(255, 170, 0, 0.1);
+            border-left: 3px solid var(--warning);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 6px;
+            color: var(--text-primary);
+        }
+        
+        .ai-explanation-title {
+            color: var(--warning);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
     </style>
 </head>
 <body>
@@ -927,6 +966,46 @@
                         </select>
                     </div>
                     
+                    <!-- Custom Instructions -->
+                    <div class="form-group">
+                        <label for="customInstructions">
+                            <i class="fas fa-magic"></i> Custom Instructions (Optional):
+                        </label>
+                        <textarea id="customInstructions" class="form-control" rows="3" placeholder="Add specific instructions for the AI (e.g., 'Focus on recent studies from 2020-2024', 'Include more statistical analysis', 'Use simple language')"></textarea>
+                        <small style="color: var(--text-muted); display: block; margin-top: 0.5rem;">
+                            💡 Tip: Be specific about what you want the AI to focus on or change
+                        </small>
+                    </div>
+                    
+                    <!-- AI Conversation Mode -->
+                    <div class="form-group">
+                        <label style="display: flex; align-items: center; gap: 0.5rem;">
+                            <input type="checkbox" id="useAIConversation" style="width: auto;">
+                            <span><i class="fas fa-comments"></i> Use Conversational AI Mode (Like Gemini)</span>
+                        </label>
+                        <small style="color: var(--text-muted); display: block; margin-top: 0.5rem;">
+                            ✨ AI will chat with you naturally and explain its approach
+                        </small>
+                    </div>
+                    
+                    <!-- AI Chat Interface (Hidden by default) -->
+                    <div id="aiChatInterface" style="display: none; margin-bottom: 1.5rem; padding: 1rem; background: var(--bg-tertiary); border-radius: 8px; border: 1px solid var(--accent-primary);">
+                        <h5 style="color: var(--accent-primary); margin-bottom: 1rem;">
+                            <i class="fas fa-robot"></i> Chat with AI Assistant
+                        </h5>
+                        <div id="aiChatMessages" style="max-height: 300px; overflow-y: auto; margin-bottom: 1rem; padding: 1rem; background: var(--bg-card); border-radius: 6px;">
+                            <div class="ai-message" style="color: var(--text-secondary); font-style: italic;">
+                                👋 Hi! I'm your AI writing assistant. Ask me anything about your draft or tell me what you'd like to focus on!
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <input type="text" id="aiChatInput" class="form-control" placeholder="Type your message to AI..." style="flex: 1;">
+                            <button id="aiChatSendBtn" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i> Send
+                            </button>
+                        </div>
+                    </div>
+                    
                     <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
                         <button id="generateDraftBtn" class="btn btn-primary" disabled>
                             <i class="fas fa-pen"></i> Generate Single Draft
@@ -948,6 +1027,20 @@
                     <div id="draftResults" class="draft-results" style="display: none;">
                         <h4><i class="fas fa-file-alt"></i> Generated Draft</h4>
                         <div id="draftContent" class="draft-content"></div>
+                        
+                        <!-- Correction Section -->
+                        <div id="correctionSection" style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border);">
+                            <h5 style="color: var(--accent-primary); margin-bottom: 1rem;">
+                                <i class="fas fa-edit"></i> Correct with AI
+                            </h5>
+                            <div class="form-group">
+                                <label for="correctionInstructions">Correction Instructions:</label>
+                                <textarea id="correctionInstructions" class="form-control" rows="3" placeholder="Tell the AI what to fix or improve (e.g., 'Make it more concise', 'Add more technical details', 'Improve the flow')"></textarea>
+                            </div>
+                            <button id="correctDraftBtn" class="btn btn-primary">
+                                <i class="fas fa-magic"></i> Apply AI Corrections
+                            </button>
+                        </div>
                     </div>
                     
                     <!-- Comprehensive Draft Results -->

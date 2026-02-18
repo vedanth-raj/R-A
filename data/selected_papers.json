@@ -1,97 +1,136 @@
 [
   {
-    "paperId": "ed1f4466a0982f3e8de202de01ecceb473d11893",
-    "title": "A Caution Regarding Rules of Thumb for Variance Inflation Factors",
+    "paperId": "3647d6d0f151dc05626449ee09cc7bce55be497e",
+    "title": "MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications",
     "authors": [
       {
-        "authorId": "74509087",
-        "name": "Robert M. O’Brien"
-      }
-    ],
-    "year": 2007,
-    "citationCount": 9863,
-    "openAccessPdf": {
-      "url": "",
-      "status": "CLOSED"
-    },
-    "hasOpenAccessPdf": true,
-    "pdfUrl": ""
-  },
-  {
-    "paperId": "50d7f68422d0c0424674f6b235ac23be8300da38",
-    "title": "Guidelines, Criteria, and Rules of Thumb for Evaluating Normed and Standardized Assessment Instruments in Psychology.",
-    "authors": [
-      {
-        "authorId": "5191328",
-        "name": "D. Cicchetti"
-      }
-    ],
-    "year": 1994,
-    "citationCount": 8845,
-    "openAccessPdf": {
-      "url": "",
-      "status": "CLOSED"
-    },
-    "hasOpenAccessPdf": true,
-    "pdfUrl": ""
-  },
-  {
-    "paperId": "a5d0738e5163cbba4953e12f3bc60651e3607804",
-    "title": "New Effect Size Rules of Thumb",
-    "authors": [
-      {
-        "authorId": "2021871",
-        "name": "S. Sawilowsky"
-      }
-    ],
-    "year": 2009,
-    "citationCount": 2863,
-    "openAccessPdf": {
-      "url": "https://digitalcommons.wayne.edu/cgi/viewcontent.cgi?article=1536&context=jmasm",
-      "status": "BRONZE"
-    },
-    "hasOpenAccessPdf": true,
-    "pdfUrl": "https://digitalcommons.wayne.edu/cgi/viewcontent.cgi?article=1536&context=jmasm"
-  },
-  {
-    "paperId": "a8a0c7f3b092a0e51009c755bc19187519e0129d",
-    "title": "Sample size of 12 per group rule of thumb for a pilot study",
-    "authors": [
-      {
-        "authorId": "6966169",
-        "name": "S. Julious"
-      }
-    ],
-    "year": 2005,
-    "citationCount": 2586,
-    "openAccessPdf": {
-      "url": "",
-      "status": "CLOSED"
-    },
-    "hasOpenAccessPdf": true,
-    "pdfUrl": ""
-  },
-  {
-    "paperId": "81991f3c923b3927164f6b7c86c78e508980f61f",
-    "title": "Understanding Power and Rules of Thumb for Determining Sample Sizes",
-    "authors": [
-      {
-        "authorId": "41230482",
-        "name": "C. R. VanVoorhis"
+        "authorId": "144727050",
+        "name": "Andrew G. Howard"
       },
       {
-        "authorId": "40121072",
-        "name": "B. Morgan"
+        "authorId": "2717876",
+        "name": "Menglong Zhu"
+      },
+      {
+        "name": "Bo Chen"
+      },
+      {
+        "authorId": "2741985",
+        "name": "Dmitry Kalenichenko"
+      },
+      {
+        "authorId": "2108301072",
+        "name": "Weijun Wang"
+      },
+      {
+        "authorId": "47447630",
+        "name": "Tobias Weyand"
+      },
+      {
+        "authorId": "2612392",
+        "name": "M. Andreetto"
+      },
+      {
+        "authorId": "2595180",
+        "name": "Hartwig Adam"
       }
     ],
-    "year": 2007,
-    "abstract": "This article addresses the definition of power and its relationship to Type I and Type II errors. We discuss the relationship of sample size and power. Finally, we offer statistical rules of thumb guiding the selection of sample sizes large enough for sufficient power to detecting differences, associations, chi‐square, and factor analyses.",
-    "citationCount": 2022,
+    "year": 2017,
+    "abstract": "We present a class of efficient models called MobileNets for mobile and embedded vision applications. MobileNets are based on a streamlined architecture that uses depth-wise separable convolutions to build light weight deep neural networks. We introduce two simple global hyper-parameters that efficiently trade off between latency and accuracy. These hyper-parameters allow the model builder to choose the right sized model for their application based on the constraints of the problem. We present extensive experiments on resource and accuracy tradeoffs and show strong performance compared to other popular models on ImageNet classification. We then demonstrate the effectiveness of MobileNets across a wide range of applications and use cases including object detection, finegrain classification, face attributes and large scale geo-localization.",
+    "citationCount": 23880,
     "openAccessPdf": {
-      "url": "https://www.tqmp.org/RegularArticles/vol03-2/p043/p043.pdf",
+      "url": ""
+    },
+    "hasOpenAccessPdf": true,
+    "pdfUrl": ""
+  },
+  {
+    "paperId": "1227f2fefc26f204d2ce07b005aedd7d74e6e72a",
+    "title": "Rayyan—a web and mobile app for systematic reviews",
+    "authors": [
+      {
+        "authorId": "2168047",
+        "name": "M. Ouzzani"
+      },
+      {
+        "authorId": "40596127",
+        "name": "Hossam M. Hammady"
+      },
+      {
+        "authorId": "51479457",
+        "name": "Z. Fedorowicz"
+      },
+      {
+        "authorId": "145188857",
+        "name": "A. Elmagarmid"
+      }
+    ],
+    "year": 2016,
+    "abstract": "BackgroundSynthesis of multiple randomized controlled trials (RCTs) in a systematic review can summarize the effects of individual outcomes and provide numerical answers about the effectiveness of interventions. Filtering of searches is time consuming, and no single method fulfills the principal requirements of speed with accuracy. Automation of systematic reviews is driven by a necessity to expedite the availability of current best evidence for policy and clinical decision-making.We developed Rayyan (http://rayyan.qcri.org), a free web and mobile app, that helps expedite the initial screening of abstracts and titles using a process of semi-automation while incorporating a high level of usability. For the beta testing phase, we used two published Cochrane reviews in which included studies had been selected manually. Their searches, with 1030 records and 273 records, were uploaded to Rayyan. Different features of Rayyan were tested using these two reviews. We also conducted a survey of Rayyan’s users and collected feedback through a built-in feature.ResultsPilot testing of Rayyan focused on usability, accuracy against manual methods, and the added value of the prediction feature. The “taster” review (273 records) allowed a quick overview of Rayyan for early comments on usability. The second review (1030 records) required several iterations to identify the previously identified 11 trials. The “suggestions” and “hints,” based on the “prediction model,” appeared as testing progressed beyond five included studies. Post rollout user experiences and a reflexive response by the developers enabled real-time modifications and improvements. The survey respondents reported 40% average time savings when using Rayyan compared to others tools, with 34% of the respondents reporting more than 50% time savings. In addition, around 75% of the respondents mentioned that screening and labeling studies as well as collaborating on reviews to be the two most important features of Rayyan.As of November 2016, Rayyan users exceed 2000 from over 60 countries conducting hundreds of reviews totaling more than 1.6M citations. Feedback from users, obtained mostly through the app web site and a recent survey, has highlighted the ease in exploration of searches, the time saved, and simplicity in sharing and comparing include-exclude decisions. The strongest features of the app, identified and reported in user feedback, were its ability to help in screening and collaboration as well as the time savings it affords to users.ConclusionsRayyan is responsive and intuitive in use with significant potential to lighten the load of reviewers.",
+    "citationCount": 18165,
+    "openAccessPdf": {
+      "url": "https://systematicreviewsjournal.biomedcentral.com/track/pdf/10.1186/s13643-016-0384-4",
       "status": "GOLD"
     },
     "hasOpenAccessPdf": true,
-    "pdfUrl": "https://www.tqmp.org/RegularArticles/vol03-2/p043/p043.pdf"
+    "pdfUrl": "https://systematicreviewsjournal.biomedcentral.com/track/pdf/10.1186/s13643-016-0384-4"
+  },
+  {
+    "paperId": "c8a04d0cbb9f70e86800b11b594c9a05d7b6bac0",
+    "title": "Real-Time Obstacle Avoidance for Manipulators and Mobile Robots",
+    "authors": [
+      {
+        "authorId": "1717425",
+        "name": "O. Khatib"
+      }
+    ],
+    "year": 1985,
+    "citationCount": 10116,
+    "openAccessPdf": {
+      "url": "",
+      "status": "CLOSED"
+    },
+    "hasOpenAccessPdf": true,
+    "pdfUrl": ""
+  },
+  {
+    "paperId": "2ccc619c085ab2beb6a288e8d35c1e39195cd965",
+    "title": "Microwave Mobile Communications",
+    "authors": [
+      {
+        "authorId": "51088806",
+        "name": "W. C. Jakes"
+      }
+    ],
+    "year": 1974,
+    "citationCount": 8798,
+    "openAccessPdf": {
+      "url": "",
+      "status": "CLOSED"
+    },
+    "hasOpenAccessPdf": true,
+    "pdfUrl": ""
+  },
+  {
+    "paperId": "d611f303ebab48a9cb9e265ba42c538be9f198ba",
+    "title": "Highly dynamic Destination-Sequenced Distance-Vector routing (DSDV) for mobile computers",
+    "authors": [
+      {
+        "authorId": "144304363",
+        "name": "C. Perkins"
+      },
+      {
+        "authorId": "7522146",
+        "name": "P. Bhagwat"
+      }
+    ],
+    "year": 1994,
+    "citationCount": 8741,
+    "openAccessPdf": {
+      "url": "https://dl.acm.org/doi/pdf/10.1145/190809.190336",
+      "status": "BRONZE"
+    },
+    "hasOpenAccessPdf": true,
+    "pdfUrl": "https://dl.acm.org/doi/pdf/10.1145/190809.190336"
   }
 ]

@@ -344,7 +344,7 @@ class ContentReviewer:
         try:
             if provider == "gemini" and self.gemini_client:
                 response = self.gemini_client.models.generate_content(
-                    model="gemini-2.5-flash",
+                    model="gemini-2.5-flash",  # Latest stable model
                     contents=prompt,
                     config=types.GenerateContentConfig(
                         temperature=0.3,
@@ -443,7 +443,7 @@ class ContentReviewer:
         try:
             if provider == "gemini" and self.gemini_client:
                 response = self.gemini_client.models.generate_content(
-                    model="gemini-2.5-flash",
+                    model="gemini-2.5-flash",  # Latest stable model
                     contents=prompt,
                     config=types.GenerateContentConfig(
                         temperature=0.4,

@@ -33,13 +33,15 @@ class LengthyDraftGenerator:
         """Setup Gemini AI client."""
         if GEMINI_AVAILABLE:
             gemini_key = os.getenv('GEMINI_API_KEY')
-            if gemini_key and gemini_key != 'AIzaSyCZo1m9jpPHseH_0C6hKLGvJiqLDs2ajKM':
+            if gemini_key:
                 try:
                     self.gemini_client = genai.Client(api_key=gemini_key)
-                    self.gemini_model = "gemini-2.0-flash-thinking-exp-01-21"  # Updated to working model
+                    self.gemini_model = "gemini-2.5-flash"  # Latest stable model
                     self.logger.info("Gemini client initialized for lengthy draft generation")
                 except Exception as e:
                     self.logger.warning(f"Failed to initialize Gemini: {e}")
+            else:
+                self.logger.warning("No Gemini API key found in environment")
     
     def generate_lengthy_abstract(self, topic: str, papers: List[Dict]) -> str:
         """Generate a lengthy abstract (300-400 words)."""
@@ -63,7 +65,7 @@ Make it comprehensive, detailed, and publication-ready."""
                     contents=prompt,
                     config=types.GenerateContentConfig(
                         temperature=0.7,
-                        max_output_tokens=500
+                        max_output_tokens=600  # Reduced from 500 for faster generation
                     )
                 )
                 return response.text.strip()
@@ -74,21 +76,21 @@ Make it comprehensive, detailed, and publication-ready."""
         return self._template_abstract(topic, len(papers))
     
     def generate_lengthy_introduction(self, topic: str, papers: List[Dict]) -> str:
-        """Generate a lengthy introduction (800-1000 words)."""
-        prompt = f"""Write a comprehensive academic introduction (800-1000 words) for a systematic review on "{topic}" that analyzed {len(papers)} research papers.
+        """Generate a lengthy introduction (600-800 words)."""
+        prompt = f"""Write a comprehensive academic introduction (600-800 words) for a systematic review on "{topic}" that analyzed {len(papers)} research papers.
 
-The introduction should include:
-1. Opening paragraph: Broad context and significance of the topic (150 words)
-2. Theoretical foundations: Key theories and frameworks in the field (200 words)
-3. Current state of research: What is known and what gaps exist (200 words)
-4. Research problem: Specific gaps this review addresses (150 words)
-5. Review objectives: Clear statement of aims and research questions (100 words)
-6. Significance: Why this review matters for theory and practice (100 words)
-7. Paper structure: Overview of remaining sections (100 words)
+Structure:
+1. Opening: Broad context and significance (100 words)
+2. Theoretical foundations: Key theories and frameworks (150 words)
+3. Current research state: What is known and gaps (150 words)
+4. Research problem: Specific gaps this review addresses (100 words)
+5. Review objectives: Clear aims and research questions (80 words)
+6. Significance: Why this review matters (80 words)
+7. Paper structure: Overview of sections (40 words)
 
-Use formal academic language with proper transitions between paragraphs.
-Include references to general concepts (use placeholder citations like "Smith et al., 2023").
-Make it comprehensive, scholarly, and engaging."""
+Use formal academic language with proper transitions.
+Include placeholder citations like "Smith et al., 2023".
+Make it comprehensive and engaging."""
 
         if self.gemini_client:
             try:
@@ -97,7 +99,7 @@ Make it comprehensive, scholarly, and engaging."""
                     contents=prompt,
                     config=types.GenerateContentConfig(
                         temperature=0.7,
-                        max_output_tokens=1200
+                        max_output_tokens=1000  # Reduced from 1200 for faster generation
                     )
                 )
                 return response.text.strip()
@@ -107,17 +109,17 @@ Make it comprehensive, scholarly, and engaging."""
         return self._template_introduction(topic, len(papers))
     
     def generate_lengthy_methods(self, topic: str, papers: List[Dict]) -> str:
-        """Generate a lengthy methods section (700-900 words)."""
-        prompt = f"""Write a comprehensive methods section (700-900 words) for a systematic review on "{topic}" that analyzed {len(papers)} research papers.
+        """Generate a lengthy methods section (500-700 words)."""
+        prompt = f"""Write a comprehensive methods section (500-700 words) for a systematic review on "{topic}" that analyzed {len(papers)} research papers.
 
-The methods section should include:
-1. Overview: Brief introduction to systematic review methodology (100 words)
-2. Search Strategy: Databases, keywords, date ranges, search process (150 words)
-3. Selection Criteria: Inclusion/exclusion criteria with rationale (150 words)
-4. Screening Process: How papers were screened and selected (100 words)
-5. Data Extraction: What information was extracted and how (150 words)
-6. Quality Assessment: How study quality was evaluated (100 words)
-7. Data Synthesis: How findings were synthesized and analyzed (150 words)
+Structure:
+1. Overview: Brief introduction to methodology (80 words)
+2. Search Strategy: Databases, keywords, date ranges (120 words)
+3. Selection Criteria: Inclusion/exclusion criteria (120 words)
+4. Screening Process: How papers were screened (80 words)
+5. Data Extraction: Information extracted (120 words)
+6. Quality Assessment: How quality was evaluated (80 words)
+7. Data Synthesis: How findings were analyzed (100 words)
 
 Use past tense, be specific and detailed, follow PRISMA guidelines.
 Make it replicable and methodologically rigorous."""
@@ -129,7 +131,7 @@ Make it replicable and methodologically rigorous."""
                     contents=prompt,
                     config=types.GenerateContentConfig(
                         temperature=0.6,
-                        max_output_tokens=1100
+                        max_output_tokens=900  # Reduced from 1100 for faster generation
                     )
                 )
                 return response.text.strip()
@@ -139,19 +141,18 @@ Make it replicable and methodologically rigorous."""
         return self._template_methods(topic, len(papers))
     
     def generate_lengthy_results(self, topic: str, papers: List[Dict]) -> str:
-        """Generate a lengthy results section (900-1200 words)."""
-        prompt = f"""Write a comprehensive results section (900-1200 words) for a systematic review on "{topic}" that analyzed {len(papers)} research papers.
+        """Generate a lengthy results section (600-800 words)."""
+        prompt = f"""Write a comprehensive results section (600-800 words) for a systematic review on "{topic}" that analyzed {len(papers)} research papers.
 
-The results section should include:
-1. Study Selection: Overview of search results and selection process (150 words)
-2. Study Characteristics: Description of included studies (200 words)
-3. Key Finding Theme 1: First major finding with supporting evidence (250 words)
-4. Key Finding Theme 2: Second major finding with supporting evidence (250 words)
-5. Key Finding Theme 3: Third major finding with supporting evidence (250 words)
-6. Quality Assessment Results: Summary of methodological quality (100 words)
+Structure:
+1. Study Selection: Overview of search and selection (120 words)
+2. Study Characteristics: Description of included studies (150 words)
+3. Key Finding Theme 1: First major finding (180 words)
+4. Key Finding Theme 2: Second major finding (180 words)
+5. Key Finding Theme 3: Third major finding (180 words)
 
 Use past tense, present findings objectively without interpretation.
-Include specific details, patterns, and statistical information where appropriate.
+Include specific details and patterns.
 Organize by themes, not by individual papers."""
 
         if self.gemini_client:
@@ -161,7 +162,7 @@ Organize by themes, not by individual papers."""
                     contents=prompt,
                     config=types.GenerateContentConfig(
                         temperature=0.6,
-                        max_output_tokens=1400
+                        max_output_tokens=1000  # Reduced from 1400 for faster generation
                     )
                 )
                 return response.text.strip()
@@ -171,17 +172,16 @@ Organize by themes, not by individual papers."""
         return self._template_results(topic, len(papers))
     
     def generate_lengthy_discussion(self, topic: str, papers: List[Dict]) -> str:
-        """Generate a lengthy discussion section (900-1200 words)."""
-        prompt = f"""Write a comprehensive discussion section (900-1200 words) for a systematic review on "{topic}" that analyzed {len(papers)} research papers.
+        """Generate a lengthy discussion section (600-800 words)."""
+        prompt = f"""Write a comprehensive discussion section (600-800 words) for a systematic review on "{topic}" that analyzed {len(papers)} research papers.
 
-The discussion section should include:
-1. Summary of Main Findings: Brief recap of key results (150 words)
-2. Interpretation: What the findings mean and why they matter (250 words)
-3. Comparison with Literature: How findings relate to existing research (200 words)
-4. Theoretical Implications: Contributions to theory (200 words)
-5. Practical Implications: Applications for practice and policy (200 words)
-6. Limitations: Acknowledge review limitations (150 words)
-7. Future Research: Specific directions for future studies (150 words)
+Structure:
+1. Summary of Main Findings: Brief recap (100 words)
+2. Interpretation: What findings mean and why they matter (180 words)
+3. Comparison with Literature: Relation to existing research (140 words)
+4. Theoretical Implications: Contributions to theory (140 words)
+5. Practical Implications: Applications for practice (140 words)
+6. Limitations: Review limitations (100 words)
 
 Use present tense for interpretations, integrate findings with broader literature.
 Be critical, insightful, and forward-looking."""
@@ -193,7 +193,7 @@ Be critical, insightful, and forward-looking."""
                     contents=prompt,
                     config=types.GenerateContentConfig(
                         temperature=0.7,
-                        max_output_tokens=1400
+                        max_output_tokens=1000  # Reduced from 1400 for faster generation
                     )
                 )
                 return response.text.strip()
@@ -398,3 +398,129 @@ if __name__ == "__main__":
     print(f"Total sections: {len(draft)}")
     for section, content in draft.items():
         print(f"  - {section}: {len(content.split())} words")
+
+    def generate_with_custom_instructions(self, section_type: str, topic: str, papers: List[Dict], custom_instructions: str) -> str:
+        """Generate draft section with custom user instructions."""
+        base_prompt = self._get_base_prompt(section_type, topic, papers)
+        
+        # Add custom instructions - keep it concise
+        enhanced_prompt = f"""{base_prompt}
+
+USER INSTRUCTIONS: {custom_instructions}
+
+Incorporate these instructions while maintaining quality."""
+
+        if self.gemini_client:
+            try:
+                import time
+                start_time = time.time()
+                
+                self.logger.info(f"Starting generation for {section_type} with custom instructions")
+                
+                response = self.gemini_client.models.generate_content(
+                    model=self.gemini_model,
+                    contents=enhanced_prompt,
+                    config=types.GenerateContentConfig(
+                        temperature=0.7,
+                        max_output_tokens=600,
+                        timeout=30  # 30 second timeout
+                    )
+                )
+                
+                elapsed = time.time() - start_time
+                self.logger.info(f"Generation completed in {elapsed:.2f} seconds")
+                
+                return response.text.strip()
+            except TimeoutError as e:
+                self.logger.error(f"Generation timed out after 30 seconds: {e}")
+                return f"Generation timed out. Please try again with simpler instructions or a shorter section."
+            except Exception as e:
+                self.logger.error(f"Gemini generation with custom instructions failed: {e}")
+                return f"Error generating {section_type}: {str(e)}"
+        
+        return f"Gemini not available. Cannot generate {section_type} with custom instructions."
+    
+    def correct_draft_with_ai(self, draft_content: str, correction_instructions: str, section_type: str = "section") -> str:
+        """Use AI to correct/improve draft based on user feedback."""
+        prompt = f"""You are an expert academic editor. Review and improve the following {section_type} based on the user's correction instructions.
+
+ORIGINAL CONTENT:
+{draft_content[:2000]}  
+
+USER'S CORRECTION INSTRUCTIONS:
+{correction_instructions}
+
+Please provide the corrected version that:
+1. Addresses all the user's correction instructions
+2. Maintains academic quality and formal tone
+3. Keeps proper APA formatting
+4. Preserves the original structure unless instructed otherwise
+5. Improves clarity and coherence
+
+Return ONLY the corrected content, no explanations."""
+
+        if self.gemini_client:
+            try:
+                response = self.gemini_client.models.generate_content(
+                    model=self.gemini_model,
+                    contents=prompt,
+                    config=types.GenerateContentConfig(
+                        temperature=0.7,
+                        max_output_tokens=1200  # Reduced from 1500 for faster generation
+                    )
+                )
+                return response.text.strip()
+            except Exception as e:
+                self.logger.error(f"AI correction failed: {e}")
+                return f"Error correcting draft: {str(e)}"
+        
+        return "Gemini not available. Cannot perform AI correction."
+    
+    def generate_comprehensive_with_instructions(self, topic: str, papers: List[Dict], instructions_per_section: Dict[str, str]) -> Dict[str, str]:
+        """Generate comprehensive draft with custom instructions for each section."""
+        self.logger.info(f"Generating comprehensive draft with custom instructions for: {topic}")
+        
+        draft = {}
+        sections = ['abstract', 'introduction', 'methods', 'results', 'discussion', 'references']
+        
+        for section in sections:
+            if section in instructions_per_section and instructions_per_section[section]:
+                # Generate with custom instructions
+                self.logger.info(f"Generating {section} with custom instructions")
+                draft[section] = self.generate_with_custom_instructions(
+                    section, topic, papers, instructions_per_section[section]
+                )
+            else:
+                # Generate normally
+                self.logger.info(f"Generating {section} normally")
+                if section == 'abstract':
+                    draft[section] = self.generate_lengthy_abstract(topic, papers)
+                elif section == 'introduction':
+                    draft[section] = self.generate_lengthy_introduction(topic, papers)
+                elif section == 'methods':
+                    draft[section] = self.generate_lengthy_methods(topic, papers)
+                elif section == 'results':
+                    draft[section] = self.generate_lengthy_results(topic, papers)
+                elif section == 'discussion':
+                    draft[section] = self.generate_lengthy_discussion(topic, papers)
+                elif section == 'references':
+                    draft[section] = self.generate_apa_references(papers)
+        
+        return draft
+    
+    def _get_base_prompt(self, section_type: str, topic: str, papers: List[Dict]) -> str:
+        """Get base prompt for a section type."""
+        if section_type == 'abstract':
+            return f"""Write a concise academic abstract (250-350 words) for a review on "{topic}" analyzing {len(papers)} papers."""
+        elif section_type == 'introduction':
+            return f"""Write an introduction (500-700 words) for a review on "{topic}"."""
+        elif section_type == 'methods':
+            return f"""Write a methods section (400-600 words) for a review on "{topic}" analyzing {len(papers)} papers."""
+        elif section_type == 'methodology':
+            return f"""Write a methods section (400-600 words) for a review on "{topic}" analyzing {len(papers)} papers."""
+        elif section_type == 'results':
+            return f"""Write a results section (500-700 words) for a review on "{topic}"."""
+        elif section_type == 'discussion':
+            return f"""Write a discussion (500-700 words) for a review on "{topic}"."""
+        else:
+            return f"""Write a {section_type} section for a review on "{topic}"."""

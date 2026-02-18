@@ -182,7 +182,7 @@ Discussion:""",
                     import google.genai as genai
                     from google.genai import types
                     self.gemini_client = genai.Client(api_key=gemini_key)
-                    self.gemini_model = "gemini-2.5-flash"
+                    self.gemini_model = "gemini-2.5-flash"  # Latest stable model
                     self.logger.info("Gemini client initialized successfully")
                 except Exception as e:
                     self.logger.warning(f"Failed to initialize Gemini: {e}")

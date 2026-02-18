@@ -23,16 +23,21 @@ from section_extractor import SectionWiseExtractor
 from section_analyzer import SectionAnalyzer
 from advanced_text_processor import AdvancedTextProcessor
 from lengthy_draft_generator import LengthyDraftGenerator
+from ai_conversation_engine import AIConversationEngine
 from error_handler import handle_error, safe_execute
 from performance_monitor import monitor_performance
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'ai_research_agent_secret_key_2024'
+app.config['SESSION_TYPE'] = 'filesystem'
+app.config['PERMANENT_SESSION_LIFETIME'] = 3600  # 1 hour session timeout
 socketio = SocketIO(app, cors_allowed_origins="*")
 
 # Global variables for tracking operations
 active_operations = {}
 operation_results = {}
+# Session-based search results storage
+session_search_results = {}
 
 class WebInterface:
     """Main web interface class"""
@@ -43,8 +48,9 @@ class WebInterface:
         self.section_analyzer = SectionAnalyzer()
         self.text_processor = AdvancedTextProcessor()
         self.draft_generator = LengthyDraftGenerator()
+        self.ai_conversation = AIConversationEngine()  # New conversational AI
         
-    def search_papers(self, query, max_papers=5, year_start=None, year_end=None):
+    def search_papers(self, query, max_papers=5, year_start=None, year_end=None, session_id=None):
         """Search for papers with optimized performance"""
         try:
             import subprocess
@@ -63,6 +69,25 @@ class WebInterface:
             )
             
             if result.returncode == 0:
+                # Store search results for this session
+                if session_id:
+                    # Get the newly downloaded papers
+                    papers_dir = Path("data/papers")
+                    if papers_dir.exists():
+                        papers = []
+                        for file_path in papers_dir.glob("*.pdf"):
+                            paper_name = file_path.stem
+                            papers.append({
+                                "name": paper_name,
+                                "file": str(file_path),
+                                "size": file_path.stat().st_size,
+                                "modified": file_path.stat().st_mtime,
+                                "filename": file_path.name
+                            })
+                        # Store only papers from this search (sorted by modified time, take most recent)
+                        recent_papers = sorted(papers, key=lambda x: x["modified"], reverse=True)[:max_papers]
+                        session_search_results[session_id] = recent_papers
+                
                 return {"success": True, "message": "Search completed successfully"}
             else:
                 return {"success": False, "error": result.stderr}
@@ -131,12 +156,15 @@ class WebInterface:
         except Exception as e:
             return {"papers": [], "error": str(e)}
     
-    def get_search_results(self):
-        """Get recent search results"""
+    def get_search_results(self, session_id=None):
+        """Get recent search results for the current session"""
         try:
-            # This would typically read from a database or recent search cache
-            # For now, we'll return the downloaded papers as search results
-            return self.get_downloaded_papers()
+            # Return session-specific search results
+            if session_id and session_id in session_search_results:
+                return {"papers": session_search_results[session_id]}
+            else:
+                # Return empty for new sessions
+                return {"papers": []}
         except Exception as e:
             return {"papers": [], "error": str(e)}
     
@@ -152,6 +180,13 @@ class WebInterface:
             
             # Advanced text analysis
             text_analysis = self.text_processor.process_text_comprehensive(content)
+            
+            # Convert text_analysis to JSON-serializable format
+            if text_analysis:
+                # Convert quality_metrics dataclass to dict
+                if 'quality_metrics' in text_analysis and hasattr(text_analysis['quality_metrics'], '__dict__'):
+                    from dataclasses import asdict
+                    text_analysis['quality_metrics'] = asdict(text_analysis['quality_metrics'])
             
             # Section analysis
             section_data = {
@@ -324,6 +359,9 @@ web_interface = WebInterface()
 @app.route('/')
 def index():
     """Main page"""
+    # Initialize session if not exists
+    if 'session_id' not in session:
+        session['session_id'] = f"session_{int(time.time())}_{os.urandom(4).hex()}"
     return render_template('index.html')
 
 @app.route('/api/search_papers', methods=['POST'])
@@ -334,6 +372,12 @@ def search_papers():
     max_papers = data.get('max_papers', 5)
     year_start = data.get('year_start')
     year_end = data.get('year_end')
+    
+    # Get or create session ID
+    session_id = session.get('session_id')
+    if not session_id:
+        session_id = f"session_{int(time.time())}_{os.urandom(4).hex()}"
+        session['session_id'] = session_id
     
     operation_id = f"search_{int(time.time())}"
     active_operations[operation_id] = {"status": "running", "progress": 0}
@@ -347,7 +391,7 @@ def search_papers():
                 'progress': 10
             })
             
-            result = web_interface.search_papers(query, max_papers, year_start, year_end)
+            result = web_interface.search_papers(query, max_papers, year_start, year_end, session_id)
             
             if result["success"]:
                 active_operations[operation_id] = {
@@ -496,8 +540,215 @@ def get_downloaded_papers():
 @app.route('/api/get_search_results')
 def get_search_results():
     """Get search results API endpoint"""
-    result = web_interface.get_search_results()
+    session_id = session.get('session_id')
+    result = web_interface.get_search_results(session_id)
     return jsonify(result)
+
+@app.route('/api/clear_session', methods=['POST'])
+def clear_session():
+    """Clear session data"""
+    session_id = session.get('session_id')
+    if session_id and session_id in session_search_results:
+        del session_search_results[session_id]
+    session.clear()
+    return jsonify({"success": True, "message": "Session cleared"})
+
+@app.route('/api/ai_chat', methods=['POST'])
+def ai_chat():
+    """Chat with AI about draft generation"""
+    data = request.json
+    message = data.get('message', '')
+    topic = data.get('topic', '')
+    papers_data = data.get('papers', [])
+    
+    if not message:
+        return jsonify({"success": False, "error": "Message required"})
+    
+    try:
+        # Set context if provided
+        if topic and papers_data:
+            web_interface.ai_conversation.set_context(topic, papers_data)
+        
+        # Get AI response
+        ai_response = web_interface.ai_conversation.chat(message)
+        
+        return jsonify({
+            "success": True,
+            "response": ai_response,
+            "conversation_summary": web_interface.ai_conversation.get_conversation_summary()
+        })
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)})
+
+@app.route('/api/ai_generate_conversational', methods=['POST'])
+def ai_generate_conversational():
+    """Generate draft with conversational AI"""
+    data = request.json
+    section_type = data.get('section_type', 'abstract')
+    topic = data.get('topic', '')
+    papers_data = data.get('papers', [])
+    instruction = data.get('instruction', '')
+    
+    operation_id = f"ai_gen_{int(time.time())}"
+    active_operations[operation_id] = {"status": "running", "progress": 0}
+    
+    def run_conversational_generation():
+        try:
+            socketio.emit('operation_update', {
+                'operation_id': operation_id,
+                'status': 'running',
+                'message': 'AI is thinking about your request...',
+                'progress': 20
+            })
+            
+            # Set context
+            web_interface.ai_conversation.set_context(topic, papers_data)
+            
+            socketio.emit('operation_update', {
+                'operation_id': operation_id,
+                'status': 'running',
+                'message': 'Generating draft with AI conversation...',
+                'progress': 50
+            })
+            
+            # Generate with conversation
+            content, explanation = web_interface.ai_conversation.generate_with_conversation(
+                section_type, instruction
+            )
+            
+            result = {
+                "success": True,
+                "draft": {
+                    "section_type": section_type,
+                    "title": f"{section_type.title()} Section",
+                    "content": content,
+                    "word_count": len(content.split()),
+                    "confidence_score": 0.9,
+                    "ai_explanation": explanation
+                }
+            }
+            
+            active_operations[operation_id] = {
+                "status": "completed",
+                "progress": 100,
+                "result": result
+            }
+            
+            socketio.emit('operation_update', {
+                'operation_id': operation_id,
+                'status': 'completed',
+                'message': 'Draft generated successfully!',
+                'progress': 100,
+                'result': result
+            })
+            
+        except Exception as e:
+            active_operations[operation_id] = {
+                "status": "error",
+                "error": str(e)
+            }
+            socketio.emit('operation_update', {
+                'operation_id': operation_id,
+                'status': 'error',
+                'message': f'Generation failed: {str(e)}',
+                'error': str(e)
+            })
+    
+    thread = threading.Thread(target=run_conversational_generation)
+    thread.daemon = True
+    thread.start()
+    
+    return jsonify({"operation_id": operation_id, "status": "started"})
+
+@app.route('/api/ai_improve_draft', methods=['POST'])
+def ai_improve_draft():
+    """Improve draft with conversational AI"""
+    data = request.json
+    draft_content = data.get('draft_content', '')
+    improvement_request = data.get('improvement_request', '')
+    
+    if not draft_content or not improvement_request:
+        return jsonify({"success": False, "error": "Draft content and improvement request required"})
+    
+    operation_id = f"ai_improve_{int(time.time())}"
+    active_operations[operation_id] = {"status": "running", "progress": 0}
+    
+    def run_improvement():
+        try:
+            socketio.emit('operation_update', {
+                'operation_id': operation_id,
+                'status': 'running',
+                'message': 'AI is analyzing your feedback...',
+                'progress': 30
+            })
+            
+            # Improve with conversation
+            improved_content, explanation = web_interface.ai_conversation.improve_draft(
+                draft_content, improvement_request
+            )
+            
+            result = {
+                "success": True,
+                "improved_content": improved_content,
+                "ai_explanation": explanation,
+                "word_count": len(improved_content.split()),
+                "original_word_count": len(draft_content.split())
+            }
+            
+            active_operations[operation_id] = {
+                "status": "completed",
+                "progress": 100,
+                "result": result
+            }
+            
+            socketio.emit('operation_update', {
+                'operation_id': operation_id,
+                'status': 'completed',
+                'message': 'Draft improved successfully!',
+                'progress': 100,
+                'result': result
+            })
+            
+        except Exception as e:
+            active_operations[operation_id] = {
+                "status": "error",
+                "error": str(e)
+            }
+            socketio.emit('operation_update', {
+                'operation_id': operation_id,
+                'status': 'error',
+                'message': f'Improvement failed: {str(e)}',
+                'error': str(e)
+            })
+    
+    thread = threading.Thread(target=run_improvement)
+    thread.daemon = True
+    thread.start()
+    
+    return jsonify({"operation_id": operation_id, "status": "started"})
+
+@app.route('/api/ai_ask_clarification', methods=['POST'])
+def ai_ask_clarification():
+    """AI asks for clarification"""
+    data = request.json
+    section_type = data.get('section_type', 'abstract')
+    topic = data.get('topic', '')
+    papers_data = data.get('papers', [])
+    
+    try:
+        # Set context
+        if topic and papers_data:
+            web_interface.ai_conversation.set_context(topic, papers_data)
+        
+        # Get clarification question
+        question = web_interface.ai_conversation.ask_clarification(section_type)
+        
+        return jsonify({
+            "success": True,
+            "question": question
+        })
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)})
 
 @app.route('/api/extract_selected_paper', methods=['POST'])
 def extract_selected_paper():
@@ -969,6 +1220,206 @@ def operation_status(operation_id):
     else:
         return jsonify({"error": "Operation not found"}), 404
 
+@app.route('/api/correct_draft', methods=['POST'])
+def correct_draft():
+    """Correct draft using AI based on user instructions"""
+    data = request.json
+    draft_content = data.get('draft_content', '')
+    correction_instructions = data.get('correction_instructions', '')
+    section_type = data.get('section_type', 'section')
+    
+    if not draft_content or not correction_instructions:
+        return jsonify({"success": False, "error": "Draft content and correction instructions required"})
+    
+    operation_id = f"correct_{int(time.time())}"
+    active_operations[operation_id] = {"status": "running", "progress": 0}
+    
+    def run_correction():
+        try:
+            socketio.emit('operation_update', {
+                'operation_id': operation_id,
+                'status': 'running',
+                'message': f'Correcting {section_type} with AI...',
+                'progress': 30
+            })
+            
+            # Use AI to correct the draft
+            corrected_content = web_interface.draft_generator.correct_draft_with_ai(
+                draft_content, correction_instructions, section_type
+            )
+            
+            result = {
+                "success": True,
+                "corrected_content": corrected_content,
+                "word_count": len(corrected_content.split()),
+                "original_word_count": len(draft_content.split())
+            }
+            
+            active_operations[operation_id] = {
+                "status": "completed",
+                "progress": 100,
+                "result": result
+            }
+            
+            socketio.emit('operation_update', {
+                'operation_id': operation_id,
+                'status': 'completed',
+                'message': 'Draft corrected successfully',
+                'progress': 100,
+                'result': result
+            })
+            
+        except Exception as e:
+            active_operations[operation_id] = {
+                "status": "error",
+                "error": str(e)
+            }
+            socketio.emit('operation_update', {
+                'operation_id': operation_id,
+                'status': 'error',
+                'message': f'Correction failed: {str(e)}',
+                'error': str(e)
+            })
+    
+    thread = threading.Thread(target=run_correction)
+    thread.daemon = True
+    thread.start()
+    
+    return jsonify({"operation_id": operation_id, "status": "started"})
+
+@app.route('/api/generate_with_instructions', methods=['POST'])
+def generate_with_instructions():
+    """Generate draft with custom user instructions"""
+    data = request.json
+    paper_files = data.get('paper_files', [])
+    section_type = data.get('section_type', 'abstract')
+    topic = data.get('topic', 'Research Paper')
+    custom_instructions = data.get('custom_instructions', '')
+    
+    if not paper_files:
+        return jsonify({"success": False, "error": "No papers selected"})
+    
+    operation_id = f"generate_custom_{int(time.time())}"
+    active_operations[operation_id] = {"status": "running", "progress": 0}
+    
+    def run_custom_generation():
+        import signal
+        
+        def timeout_handler(signum, frame):
+            raise TimeoutError("Generation took too long")
+        
+        try:
+            # Set 60 second timeout for entire operation
+            if hasattr(signal, 'SIGALRM'):
+                signal.signal(signal.SIGALRM, timeout_handler)
+                signal.alarm(60)
+            
+            socketio.emit('operation_update', {
+                'operation_id': operation_id,
+                'status': 'running',
+                'message': f'Generating {section_type} with your custom instructions...',
+                'progress': 20
+            })
+            
+            # Load paper data
+            papers_data = []
+            for paper_file in paper_files:
+                try:
+                    with open(paper_file, 'r', encoding='utf-8') as f:
+                        content = f.read()[:5000]  # Limit content to 5000 chars
+                        papers_data.append({
+                            'title': Path(paper_file).stem.replace('_extracted', ''),
+                            'content': content,
+                            'sections': []
+                        })
+                except Exception as e:
+                    print(f"Error loading paper {paper_file}: {e}")
+                    continue
+            
+            if not papers_data:
+                raise Exception("No valid paper data loaded")
+            
+            socketio.emit('operation_update', {
+                'operation_id': operation_id,
+                'status': 'running',
+                'message': 'Processing with AI...',
+                'progress': 50
+            })
+            
+            # Generate with custom instructions
+            draft_content = web_interface.draft_generator.generate_with_custom_instructions(
+                section_type, topic, papers_data, custom_instructions
+            )
+            
+            # Cancel alarm
+            if hasattr(signal, 'SIGALRM'):
+                signal.alarm(0)
+            
+            result = {
+                "success": True,
+                "draft": {
+                    "section_type": section_type,
+                    "title": f"{section_type.title()} Section",
+                    "content": draft_content,
+                    "word_count": len(draft_content.split()),
+                    "confidence_score": 0.85,
+                    "custom_instructions_used": custom_instructions
+                }
+            }
+            
+            active_operations[operation_id] = {
+                "status": "completed",
+                "progress": 100,
+                "result": result
+            }
+            
+            socketio.emit('operation_update', {
+                'operation_id': operation_id,
+                'status': 'completed',
+                'message': 'Draft generated with your instructions',
+                'progress': 100,
+                'result': result
+            })
+            
+        except TimeoutError as e:
+            if hasattr(signal, 'SIGALRM'):
+                signal.alarm(0)
+            active_operations[operation_id] = {
+                "status": "error",
+                "error": "Generation timed out after 60 seconds"
+            }
+            socketio.emit('operation_update', {
+                'operation_id': operation_id,
+                'status': 'error',
+                'message': 'Generation timed out. Please try simpler instructions.',
+                'error': str(e)
+            })
+        except Exception as e:
+            if hasattr(signal, 'SIGALRM'):
+                signal.alarm(0)
+            active_operations[operation_id] = {
+                "status": "error",
+                "error": str(e)
+            }
+            socketio.emit('operation_update', {
+                'operation_id': operation_id,
+                'status': 'error',
+                'message': f'Generation failed: {str(e)}',
+                'error': str(e)
+            })
+    
+    thread = threading.Thread(target=run_custom_generation)
+    thread.daemon = True
+    thread.start()
+    
+    return jsonify({"operation_id": operation_id, "status": "started"})
+    
+    thread = threading.Thread(target=run_custom_generation)
+    thread.daemon = True
+    thread.start()
+    
+    return jsonify({"operation_id": operation_id, "status": "started"})
+
 @socketio.on('connect')
 def handle_connect():
     """Handle client connection"""
@@ -977,7 +1428,13 @@ def handle_connect():
 @socketio.on('disconnect')
 def handle_disconnect():
     """Handle client disconnection"""
-    print('Client disconnected')
+    # Clean up session search results
+    session_id = session.get('session_id')
+    if session_id and session_id in session_search_results:
+        del session_search_results[session_id]
+        print(f'Client disconnected - cleaned up session: {session_id}')
+    else:
+        print('Client disconnected')
 
 if __name__ == '__main__':
     # Create necessary directories
