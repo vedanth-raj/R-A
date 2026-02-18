@@ -83,12 +83,18 @@ class PerformanceMonitor:
     
     def setup_logging(self):
         """Setup performance monitoring logging."""
-        handler = logging.FileHandler('performance_monitor.log', encoding='utf-8')
-        formatter = logging.Formatter(
-            '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-        )
-        handler.setFormatter(formatter)
-        self.logger.addHandler(handler)
+        import os
+        try:
+            log_file = '/tmp/performance_monitor.log' if os.environ.get('VERCEL') else 'performance_monitor.log'
+            handler = logging.FileHandler(log_file, encoding='utf-8')
+            formatter = logging.Formatter(
+                '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+            )
+            handler.setFormatter(formatter)
+            self.logger.addHandler(handler)
+        except (OSError, PermissionError):
+            # Skip file logging on read-only filesystems
+            pass
         self.logger.setLevel(logging.INFO)
     
     def start_monitoring(self):

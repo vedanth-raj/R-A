@@ -91,7 +91,12 @@ class ErrorHandler:
     def __init__(self, log_file: str = "text_extraction_errors.log"):
         """Initialize the error handler."""
         self.error_log: List[ErrorInfo] = []
-        self.log_file = log_file
+        # Use /tmp for Vercel compatibility (writable directory)
+        import os
+        if os.environ.get('VERCEL'):
+            self.log_file = f"/tmp/{log_file}"
+        else:
+            self.log_file = log_file
         self.setup_logging()
         
         # Recovery strategies
@@ -113,13 +118,18 @@ class ErrorHandler:
         # Clear existing handlers
         self.logger.handlers.clear()
         
-        # File handler for all logs
-        file_handler = logging.FileHandler(self.log_file, encoding='utf-8')
-        file_handler.setLevel(logging.DEBUG)
-        file_formatter = logging.Formatter(
-            '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-        )
-        file_handler.setFormatter(file_formatter)
+        # File handler for all logs (only if writable)
+        try:
+            file_handler = logging.FileHandler(self.log_file, encoding='utf-8')
+            file_handler.setLevel(logging.DEBUG)
+            file_formatter = logging.Formatter(
+                '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+            )
+            file_handler.setFormatter(file_formatter)
+            self.logger.addHandler(file_handler)
+        except (OSError, PermissionError):
+            # Skip file logging if filesystem is read-only (e.g., Vercel)
+            pass
         
         # Console handler for errors and above
         console_handler = logging.StreamHandler(sys.stdout)
@@ -129,7 +139,6 @@ class ErrorHandler:
         )
         console_handler.setFormatter(console_formatter)
         
-        self.logger.addHandler(file_handler)
         self.logger.addHandler(console_handler)
     
     def handle_error(self, exception: Exception, context: Dict[str, Any] = None) -> ErrorInfo:
