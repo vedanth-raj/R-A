@@ -1584,20 +1584,27 @@ ${JSON.stringify(result, null, 2)}
         try {
             this.showNotification(`Generating ${pdfType} PDF...`, 'info');
             
+            // Extract draft text - handle both string and object formats
+            let draftText = this.currentDraft;
+            if (typeof this.currentDraft === 'object' && this.currentDraft.content) {
+                draftText = this.currentDraft.content;
+            }
+            
             const response = await fetch('/api/download_draft_pdf', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    draft_text: this.currentDraft,
+                    draft_text: draftText,
                     pdf_type: pdfType,
                     title: 'Research Draft - AI Generated'
                 })
             });
             
             if (!response.ok) {
-                throw new Error('Failed to generate PDF');
+                const errorData = await response.json();
+                throw new Error(errorData.error || 'Failed to generate PDF');
             }
             
             // Get the blob and create download link

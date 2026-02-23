@@ -1431,7 +1431,10 @@ def download_draft_pdf():
         pdf_type = data.get('pdf_type', 'comprehensive')  # 'comprehensive' or 'topic_wise'
         title = data.get('title', 'Research Draft')
         
+        print(f"PDF Download Request - Type: {pdf_type}, Text Length: {len(draft_text) if draft_text else 0}")
+        
         if not draft_text:
+            print("Error: No draft text provided")
             return jsonify({"success": False, "error": "No draft text provided"}), 400
         
         # Create output directory
@@ -1442,6 +1445,8 @@ def download_draft_pdf():
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         filename = f"{pdf_type}_draft_{timestamp}.pdf"
         output_path = output_dir / filename
+        
+        print(f"Generating PDF: {output_path}")
         
         # Generate PDF
         generator = DraftPDFGenerator()
@@ -1464,6 +1469,8 @@ def download_draft_pdf():
             )
         else:
             return jsonify({"success": False, "error": "Invalid PDF type"}), 400
+        
+        print(f"PDF generated successfully: {output_path}")
         
         # Return file for download
         return send_file(
