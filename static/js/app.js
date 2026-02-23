@@ -1089,6 +1089,16 @@ class AIResearchAgent {
         
         let html = `
             <h4><i class="fas fa-file-alt"></i> Generated Draft</h4>
+            
+            <!-- PDF Download Buttons -->
+            <div class="pdf-download-section" style="margin-bottom: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                <button id="downloadComprehensivePdfBtn" class="btn btn-success">
+                    <i class="fas fa-file-pdf"></i> Download Comprehensive PDF
+                </button>
+                <button id="downloadTopicWisePdfBtn" class="btn btn-info">
+                    <i class="fas fa-file-pdf"></i> Download Topic-Wise PDF
+                </button>
+            </div>
         `;
         
         // Show AI explanation if available
@@ -1159,6 +1169,21 @@ class AIResearchAgent {
                 this.correctDraft();
             });
         }
+        
+        // Add event listeners for PDF download buttons
+        const downloadComprehensivePdfBtn = document.getElementById('downloadComprehensivePdfBtn');
+        if (downloadComprehensivePdfBtn) {
+            downloadComprehensivePdfBtn.addEventListener('click', () => {
+                this.downloadDraftPDF('comprehensive');
+            });
+        }
+        
+        const downloadTopicWisePdfBtn = document.getElementById('downloadTopicWisePdfBtn');
+        if (downloadTopicWisePdfBtn) {
+            downloadTopicWisePdfBtn.addEventListener('click', () => {
+                this.downloadDraftPDF('topic_wise');
+            });
+        }
     }
 
     displayComprehensiveDraftResults(result) {
@@ -1176,7 +1201,19 @@ class AIResearchAgent {
         comprehensiveResultsContainer.style.display = 'block';
         
         const drafts = result.drafts;
-        let html = '<h4><i class="fas fa-file-alt"></i> Comprehensive Draft</h4>';
+        let html = `
+            <h4><i class="fas fa-file-alt"></i> Comprehensive Draft</h4>
+            
+            <!-- PDF Download Buttons -->
+            <div class="pdf-download-section" style="margin-bottom: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                <button id="downloadComprehensivePdfBtn" class="btn btn-success">
+                    <i class="fas fa-file-pdf"></i> Download Comprehensive PDF
+                </button>
+                <button id="downloadTopicWisePdfBtn" class="btn btn-info">
+                    <i class="fas fa-file-pdf"></i> Download Topic-Wise PDF
+                </button>
+            </div>
+        `;
         
         // Helper function to capitalize section names
         const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
@@ -1218,6 +1255,31 @@ class AIResearchAgent {
         });
         
         comprehensiveResultsContainer.innerHTML = html;
+        
+        // Store combined draft for PDF download
+        let combinedDraft = '';
+        Object.keys(drafts).forEach(sectionType => {
+            const draft = drafts[sectionType];
+            if (!draft.error) {
+                combinedDraft += `\n\n## ${sectionType.toUpperCase()}\n\n${draft.content}`;
+            }
+        });
+        this.currentDraft = combinedDraft;
+        
+        // Add event listeners for PDF download buttons
+        const downloadComprehensivePdfBtn = document.getElementById('downloadComprehensivePdfBtn');
+        if (downloadComprehensivePdfBtn) {
+            downloadComprehensivePdfBtn.addEventListener('click', () => {
+                this.downloadDraftPDF('comprehensive');
+            });
+        }
+        
+        const downloadTopicWisePdfBtn = document.getElementById('downloadTopicWisePdfBtn');
+        if (downloadTopicWisePdfBtn) {
+            downloadTopicWisePdfBtn.addEventListener('click', () => {
+                this.downloadDraftPDF('topic_wise');
+            });
+        }
     }
 
     async correctDraft() {
