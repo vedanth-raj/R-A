@@ -1420,6 +1420,107 @@ def generate_with_instructions():
     
     return jsonify({"operation_id": operation_id, "status": "started"})
 
+@app.route('/api/download_draft_pdf', methods=['POST'])
+def download_draft_pdf():
+    """Download generated draft as PDF"""
+    try:
+        from pdf_generator import DraftPDFGenerator
+        
+        data = request.get_json()
+        draft_text = data.get('draft_text', '')
+        pdf_type = data.get('pdf_type', 'comprehensive')  # 'comprehensive' or 'topic_wise'
+        title = data.get('title', 'Research Draft')
+        
+        if not draft_text:
+            return jsonify({"success": False, "error": "No draft text provided"}), 400
+        
+        # Create output directory
+        output_dir = Path("data/generated_pdfs")
+        output_dir.mkdir(parents=True, exist_ok=True)
+        
+        # Generate filename
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        filename = f"{pdf_type}_draft_{timestamp}.pdf"
+        output_path = output_dir / filename
+        
+        # Generate PDF
+        generator = DraftPDFGenerator()
+        
+        if pdf_type == "comprehensive":
+            generator.generate_comprehensive_pdf(
+                draft_text,
+                str(output_path),
+                title=title,
+                metadata={'generated_at': datetime.now().isoformat()}
+            )
+        elif pdf_type == "topic_wise":
+            # Parse sections from draft
+            sections = generator._parse_draft_sections(draft_text)
+            topics_dict = {s['title']: s['content'] for s in sections}
+            generator.generate_topic_wise_pdf(
+                topics_dict,
+                str(output_path),
+                title=title
+            )
+        else:
+            return jsonify({"success": False, "error": "Invalid PDF type"}), 400
+        
+        # Return file for download
+        return send_file(
+            str(output_path),
+            as_attachment=True,
+            download_name=filename,
+            mimetype='application/pdf'
+        )
+        
+    except Exception as e:
+        print(f"Error generating PDF: {str(e)}")
+        traceback.print_exc()
+        return jsonify({"success": False, "error": str(e)}), 500
+
+@app.route('/api/download_papers_pdf', methods=['POST'])
+def download_papers_pdf():
+    """Download selected papers analysis as PDF"""
+    try:
+        from pdf_generator import DraftPDFGenerator
+        
+        data = request.get_json()
+        papers_data = data.get('papers', [])
+        pdf_type = data.get('pdf_type', 'comprehensive')
+        
+        if not papers_data:
+            return jsonify({"success": False, "error": "No papers provided"}), 400
+        
+        # Create output directory
+        output_dir = Path("data/generated_pdfs")
+        output_dir.mkdir(parents=True, exist_ok=True)
+        
+        # Generate filename
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        filename = f"papers_{pdf_type}_{timestamp}.pdf"
+        output_path = output_dir / filename
+        
+        # Generate PDF
+        generator = DraftPDFGenerator()
+        generator.generate_from_papers(
+            papers_data,
+            str(output_path),
+            draft_type=pdf_type
+        )
+        
+        # Return file for download
+        return send_file(
+            str(output_path),
+            as_attachment=True,
+            download_name=filename,
+            mimetype='application/pdf'
+        )
+        
+    except Exception as e:
+        print(f"Error generating papers PDF: {str(e)}")
+        traceback.print_exc()
+        return jsonify({"success": False, "error": str(e)}), 500
+
 @socketio.on('connect')
 def handle_connect():
     """Handle client connection"""
@@ -1433,6 +1534,7 @@ def handle_disconnect():
     if session_id and session_id in session_search_results:
         del session_search_results[session_id]
         print(f'Client disconnected - cleaned up session: {session_id}')
+
     else:
         print('Client disconnected')
 

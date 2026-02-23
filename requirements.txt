@@ -38,3 +38,5 @@ python-dotenv>=1.0.0
 # Performance monitoring
 psutil>=5.9.0
 
+# PDF generation
+reportlab>=4.0.0

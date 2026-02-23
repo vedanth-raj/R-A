@@ -45,3 +45,7 @@ ENV/
 # Logs
 *.log
 
+# Ngrok
+ngrok.exe
+ngrok.zip
+ngrok/

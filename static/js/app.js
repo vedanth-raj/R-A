@@ -141,6 +141,21 @@ class AIResearchAgent {
                 }
             });
         }
+        
+        // PDF Download buttons
+        const downloadComprehensivePdfBtn = document.getElementById('downloadComprehensivePdfBtn');
+        if (downloadComprehensivePdfBtn) {
+            downloadComprehensivePdfBtn.addEventListener('click', () => {
+                this.downloadDraftPDF('comprehensive');
+            });
+        }
+        
+        const downloadTopicWisePdfBtn = document.getElementById('downloadTopicWisePdfBtn');
+        if (downloadTopicWisePdfBtn) {
+            downloadTopicWisePdfBtn.addEventListener('click', () => {
+                this.downloadDraftPDF('topic_wise');
+            });
+        }
     }
 
     setupSocketListeners() {
@@ -1496,6 +1511,50 @@ ${JSON.stringify(result, null, 2)}
                 document.body.removeChild(notification);
             }, 300);
         }, 5000);
+    }
+    
+    async downloadDraftPDF(pdfType) {
+        if (!this.currentDraft) {
+            this.showNotification('No draft available to download', 'error');
+            return;
+        }
+        
+        try {
+            this.showNotification(`Generating ${pdfType} PDF...`, 'info');
+            
+            const response = await fetch('/api/download_draft_pdf', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    draft_text: this.currentDraft,
+                    pdf_type: pdfType,
+                    title: 'Research Draft - AI Generated'
+                })
+            });
+            
+            if (!response.ok) {
+                throw new Error('Failed to generate PDF');
+            }
+            
+            // Get the blob and create download link
+            const blob = await response.blob();
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${pdfType}_draft_${new Date().getTime()}.pdf`;
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+            
+            this.showNotification(`${pdfType} PDF downloaded successfully!`, 'success');
+            
+        } catch (error) {
+            console.error('Error downloading PDF:', error);
+            this.showNotification('Failed to download PDF: ' + error.message, 'error');
+        }
     }
 }
 
