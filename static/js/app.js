@@ -1,4 +1,4 @@
-// AI Research Agent - Frontend JavaScript
+// LitWise AI - Frontend JavaScript
 // Dark-themed interactive web interface
 
 class AIResearchAgent {
@@ -161,7 +161,7 @@ class AIResearchAgent {
     setupSocketListeners() {
         this.socket.on('connect', () => {
             console.log('Connected to server');
-            this.showNotification('Connected to AI Research Agent', 'success');
+            this.showNotification('Connected to LitWise AI', 'success');
         });
 
         this.socket.on('operation_update', (data) => {

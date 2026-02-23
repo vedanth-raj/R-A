@@ -1,6 +1,6 @@
 @echo off
 echo ============================================================
-echo Restarting AI Research Agent
+echo Restarting LitWise AI
 echo ============================================================
 echo.
 

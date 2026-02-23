@@ -1,6 +1,6 @@
-# AI System to Automatically Review and Summarize Research Papers
+# LitWise AI - Intelligent Research Assistant
 
-## Milestone 1: Paper Search and Retrieval ✅
+## Automated Research Paper Review and Summarization System
 
 This milestone implements automated paper search, selection, and PDF download functionality using the Semantic Scholar API.
 

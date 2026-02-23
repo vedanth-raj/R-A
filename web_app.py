@@ -1,5 +1,5 @@
 """
-Flask Web Application for AI Research Agent
+Flask Web Application for LitWise AI
 Dark-themed interactive web interface for the research paper analysis tool
 """
 
@@ -28,7 +28,7 @@ from error_handler import handle_error, safe_execute
 from performance_monitor import monitor_performance
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'ai_research_agent_secret_key_2024'
+app.config['SECRET_KEY'] = 'litwise_ai_secret_key_2024'
 app.config['SESSION_TYPE'] = 'filesystem'
 app.config['PERMANENT_SESSION_LIFETIME'] = 3600  # 1 hour session timeout
 socketio = SocketIO(app, cors_allowed_origins="*")
@@ -1551,7 +1551,7 @@ if __name__ == '__main__':
     os.makedirs('static/css', exist_ok=True)
     os.makedirs('static/js', exist_ok=True)
     
-    print("🚀 Starting AI Research Agent Web Interface...")
+    print("🚀 Starting LitWise AI Web Interface...")
     print("📱 Open your browser and go to: http://localhost:5000")
     print("🌙 Dark-themed interface ready!")
     
