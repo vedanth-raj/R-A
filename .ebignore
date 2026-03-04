@@ -1,0 +1,18 @@
+# Don't upload these to AWS
+.git/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.log
+.env
+.vscode/
+.idea/
+ngrok.exe
+ngrok.zip
+ngrok/
+*.bat
+*.md
+documentation/
+.cursor/
+.ebextensions/

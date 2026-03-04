@@ -1,0 +1,786 @@
+--- Page 1 ---
+The University of Manchester Research
+Phosphorus-Doped MoS2 Nanosheets Supported on
+Carbon Cloths as Efficient Hydrogen-Generation
+Electrocatalysts
+DOI:
+10.1002/cctc.201701680
+Document Version
+Accepted author manuscript
+Link to publication record in Manchester Research Explorer
+Citation for published version (APA):
+Bian, L., Gao, W., Sun, J., Han, M., Li, F., Gao, Z., Shu, L., Han, N., Yang, Z. X., Song, A., Qu, Y., & Ho, J. C.
+(2018). Phosphorus-Doped MoS2 Nanosheets Supported on Carbon Cloths as Efficient Hydrogen-Generation
+Electrocatalysts. ChemCatChem, 10(7), 1571-1577. https://doi.org/10.1002/cctc.201701680
+Published in:
+ChemCatChem
+Citing this paper
+Please note that where the full-text provided on Manchester Research Explorer is the Author Accepted Manuscript
+or Proof version this may differ from the final Published version. If citing, it is advised that you check and use the
+publisher's definitive version.
+General rights
+Copyright and moral rights for the publications made accessible in the Research Explorer are retained by the
+authors and/or other copyright owners and it is a condition of accessing publications that users recognise and
+abide by the legal requirements associated with these rights.
+Takedown policy
+If you believe that this document breaches copyright please refer to the University of Manchester’s Takedown
+Procedures [http://man.ac.uk/04Y6Bo] or contact openresearch@manchester.ac.uk providing relevant details, so
+we can investigate your claim.
+Download date:23. Feb. 2026
+
+
+--- Page 2 ---
+FULL PAPER 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Phosphorus doped MoS2 nanosheets supported on carbon cloths 
+as efficient hydrogen generation electrocatalysts 
+Luozhen Bian,[a,b],#  Wei Gao,[c,d],# Jiamin Sun,[a,b] Mingming Han,[a,b] Fulin Li,[a,b] Zhaofeng Gao,[a,b] Lei 
+Shu,[d,e] Ning Han,[f] Zai-xing Yang,*[a,b] Aimin Song,[b] Yongquan Qu,*[c] Johnny C. Ho*[d,e] 
+Abstract: 
+Highly 
+efficient 
+and 
+stable 
+non-noble-metal 
+electrocatalysts for hydrogen generation are desired for sustainable 
+development of energy conversion and storage. Here, a facile low-
+temperature phosphidation process is developed for phosphorus 
+doping into molybdenum disulfide (MoS2) nanosheets directly 
+synthesized on carbon cloths to function as an integrated electrode 
+for efficient hydrogen evolution reaction. As compared with the un-
+doped MoS2 nanosheets, the optimal phosphorus-doped (3.3 at%) 
+MoS2 nanosheets exhibit the substantially lower overpotentials of 
+133 mV and 189 mV to drive the current densities of 20 mA cm-2 and 
+100 mA cm-2, respectively, with an impressive small Tafel slope of 
+67.0 mV dec-1. The excellent stability in acid media also guarantees 
+the phosphorus-doped MoS2 nanosheet catalysts as promising 
+candidates towards hydrogen generation for practical applications. 
+Introduction 
+In the past decades, hydrogen is not only considered as one of 
+the most promising future clean fuel, but also regarded as an 
+ideal carrier to store electricity generated from other renewable 
+energy sources in large scale for practical applications.[1-3] 
+Particularly, water electrolysis is a simple and eco-friendly 
+approach to simultaneously generate hydrogen and oxygen in 
+acidic, alkaline or neutral media.[4] The efficiency of these 
+hydrogen and oxygen evolutions is closely related to the 
+selection of electrode materials, and hence, it is important to 
+develop low-cost, highly-active and stable electrocatalysts for 
+sustainable water splitting. At the same time, although Pt is 
+known to be a very electrocatalytic active and stable material for 
+hydrogen evolution reaction (HER), its high cost and scarcity 
+greatly restrict its industrial utilizations.[5-6] In this regard, 
+extensive efforts have been devoted to investigate highly 
+efficient, non-noble metal electrocatalyst materials with low 
+overpotentials and large HER current densities. Among many 
+promising recent candidate materials, due to the large capacities 
+of well-known catalytically active edge sites and excellent 
+stability, two-dimensional (2D) transition metal dichalcogenides 
+(TMDs), such as molybdenum disulfide (MoS2) nanosheets, 
+have attracted substantial attentions for making electrochemical 
+hydrogen production efficient.[7-10]  
+Previously, MoS2 was researched as a potential candidate for 
+HER because of its low free energy of hydrogen adsorption, as 
+demonstrated by theoretical and experimental analyses.[11] 
+Nevertheless, the bulk MoS2 crystal is usually performed as the 
+poor HER electrocatalyst due to its relatively low content of 
+active catalytic sites and small specific surface area. In this case, 
+many methods have been employed to enhance its quantities of 
+electrochemical active sites and surface area since then. For 
+example, defect engineering is a newly developed method to re-
+construct the surface of MoS2 with more edges and defects, 
+which helps to expose more active catalytic sites of unsaturated 
+sulfur atoms.[12-14] On the other hand, controllable disorder 
+engineering has also been demonstrated in oxygen-incorporated 
+MoS2 ultrathin nanosheets for the efficient hydrogen evolution.[13] 
+Furthermore, 
+interface 
+engineering 
+on 
+the 
+surface 
+of 
+nanostructured MoS2 by building a heterogeneous catalyst is 
+also well established to increase the number of surface active 
+sites and correspondingly to improve the catalytic properties.[15-
+17] Recently, doping engineering has as well been proved as a 
+very effective technique to create active catalytic sites on MoS2 
+nanosheets. Because of the earth abundance and good 
+stability,[18-20] several dopants, such as phosphorus (P), carbon 
+(C) and nitrogen (N), etc., are widely employed to dope into 
+MoS2 nanosheets in order to lower the energy barrier of the 
+water-dissociation step and to facilitate the desorption of the as-
+formed hydroxide species to accelerate HER processes.[12-13, 21] 
+Specifically, Liu et al. have reported that P dopants in MoS2 
+matrix can significantly enhance the HER activity by not only 
+increasing the quantity of intrinsic basal plane active sites, but 
+also enhancing the conductivity of the materials.[22] Moreover, it 
+would be extremely attractive to prepare an integrated electrode 
+of phosphorus-doped MoS2 on a flexible substrate to afford the 
+large current density for practical utilizations. 
+In this work, we demonstrate the successful synthesis of P-
+doped MoS2 nanosheets on carbon cloths (CC) directly as an 
+integrated electrode and then investigate the effect of 
+ [a]      L.Z. Bian, J.M. Sun, M.M. Han, F.L. Li, Z.F. Gao, Prof. Z. –x. Yang 
+Shenzhen Research Institute  
+Shandong University 
+Shenzhen, 518057, P. R. China 
+           E-mail: zaixyang@sdu.edu.cn 
+ [b] 
+L.Z. Bian, J.M. Sun, M.M. Han, F.L. Li, Z.F. Gao, Prof. Z. –x. Yang, 
+Prof. A,M. Song 
+Center of Nanoelectronics and School of Microelectronics 
+Shandong University 
+Jinan, 250100, P. R. China 
+[c]       W. Gao, Prof. Y.Q. Qu 
+Center for Applied Chemical Research, Frontier Institute of Science 
+and Technology 
+Xi'an Jiaotong University 
+Xi'an, 710049, P. R. China 
+           E-mail: yongquan@mail.xjtu.edu.cn 
+[d]       L. Shu, Prof. J. C. Ho 
+Department of Materials Science and Engineering 
+City University of Hong Kong 
+83 Tat Chee Avenue, Kowloon, Hong Kong, P. R. China 
+           Email: johnnyho@cityu.edu.hk 
+[e]       L. Shu, Prof. J. C. Ho  
+Shenzhen Research Institute 
+City University of Hong Kong 
+Shenzhen, 518057, P. R. China 
+[f]        Prof. N. Han 
+State Key Laboratory of Multiphase Complex Systems, Institute of 
+Process Engineering 
+Chinese Academy of Sciences 
+Beijing, 100190, P. R. China  
+#        These authors contributed equally to this work. 
+Supporting information for this article is given via a link at the end of 
+the document. 
+
+
+--- Page 3 ---
+FULL PAPER 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+phosphorus doping for the corresponding HER processes. The 
+relationship between doping conditions and electrochemical 
+catalytic properties is also clearly understood in order to achieve 
+the high-performance catalysts based on MoS2 nanosheets with 
+the optimal P doping. Importantly, after treated with the 
+optimized gas phase phosphidation, the obtained catalysts 
+preserve their initial nanosheet morphology but present an 
+apparent improvement in their catalytic activity with a low 
+overpotential of 133 mV to drive the current density of 20 mA 
+cm-2, along with the excellent electrochemical stability. All these 
+results have evidently revealed the technological potency of our 
+P-doped MoS2 nanosheets on CC as an integrated electrode for 
+highly efficient hydrogen evolution. 
+Results and Discussion 
+Here, MoS2 nanosheets directly supported on carbon cloths 
+were prepared via a simple hydrothermal method, and their 
+morphologies were studied by SEM. As shown in Figure 1a, the 
+sheet-like morphology of MoS2 is revealed with the size of 
+hundreds of nanometers, while the inset image exhibits the 
+uniform distribution of nanosheets on carbon cloths. Doping 
+phosphorous element is then realized by using a low-
+temperature 
+gas-phase 
+phosphidation 
+method, 
+where 
+NaH2PO2ꞏH2O is functioned as the phosphorous evaporation 
+source with various time duration intervals (namely, 30, 60 and 
+90 minutes). Previously, Tour et al. reported the formation of 
+mixture phase of MoS2(1-x)Px with enhanced catalytic properties 
+for HER by thermally annealing mixtures of MoS2 and red 
+phosphorus at up to 1023 K but the nanosheet dimension and 
+morphology are inevitably altered.[23] In contrast to the work 
+mentioned 
+above, 
+in 
+this 
+work, 
+an 
+inorganic 
+salt 
+of 
+NaH2PO2ꞏH2O is employed as the phosphorous source to dope 
+MoS2 nanosheets at a much lower temperature of 573 K, 
+resulting in the preservation of the nanosheet morphology. As 
+displayed in Figure 1b and Supporting Information Figure S1a to 
+S1d, the morphology of all P-doped MoS2 nanosheets supported 
+on CC and processed with different doping duration (i.e. 30, 60 
+and 90 minutes) is well preserved as compared to the as-
+prepared un-doped MoS2 nanosheets (Figure 1a). In addition, 
+the EDS spectra further confirm the existence of P dopants in 
+MoS2 nanosheets (Figure 1c). It is obvious that the P-doped 
+MoS2 nanosheets show a higher P doping content with a longer 
+P doping duration. In specific, the doping concentration is 
+determined to be 2.1 at%, 3.3 at% and 4.9 at% for the samples 
+processed for 30 min, 60 min and 90 min of P doping, 
+respectively. At the same time, small peaks of oxygen element 
+with energy of ~ 0.55Kev are observed in EDS spectra of all 
+samples. The oxygen element may come from the adsorbed 
+water molecules and surface hydroxide species when exposing 
+to air, even after calcining in Ar. And for P-doped MoS2, partial 
+oxidation of phosphorus can also lead to the existence of 
+oxygen element. The crystal structure and phase of the as-
+prepared samples are then studied by X-ray diffractometer 
+(XRD). The corresponding XRD pattern exhibit the hexagonal 
+structure of MoS2, which perfectly agrees the crystal phase of 
+1T-molybdenite of MoS2 (Supporting Information Figure 1e).[24] 
+Also, broad peaks at about 26 and 43 degrees can be ascribed 
+to the carbon cloth as reported in the literature.[25-26] More 
+importantly, the thorough XRD characterization indicates that all 
+the P-doped MoS2 samples have the crystalline structure of 2H-
+MoS2 (PDF# 37-1492),[23-24] which is uniquely different from the 
+un-doped MoS2/CC sample. This conversion of crystalline 
+structure from 1T phase to 2H phase is mainly related to the 
+poor thermal stability of 1T-MoS2 as well as the rapid 
+transformation to thermodynamically stable 2H phase occurred 
+during the low- temperature phosphidation process.[24] All these 
+findings demonstrate that our low-temperature P doping in MoS2 
+nanosheets can preserve their morphology and lead to the 
+effective phase transformation from 1T to 2H crystalline 
+structures. 
+ 
+Figure 1. Morphology and composition of the as-prepared MoS2 nanosheets 
+and P-doped MoS2 nanosheets directly synthesized on carbon cloths. (a, b) 
+SEM images of MoS2 nanosheets and P-doped MoS2 nanosheets, (c) EDS 
+spectra of MoS2 nanosheets and P-doped MoS2 nanosheets. 
+To shed light on the composition and microstructure of the as-
+prepared MoS2 nanosheets and P-doped MoS2 nanosheets, 
+high-resolution transmission electron microscopy (HRTEM) and 
+elemental mapping characterizations are then performed. As 
+depicted in Figure 2a and 2b insets, MoS2 nanosheets with the 
+size of hundreds of nanometers are both observed for the un-
+
+
+--- Page 4 ---
+FULL PAPER 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+doped and P-doped samples, which are perfectly consistent with 
+the results observed in SEM (Figure 1a & 1b). At the same time, 
+the HRTEM images exhibit the clear and distinct interplanar 
+spacings of 0.31 nm and 0.29 nm, corresponding to the (111) 
+and (100) plane of un-doped 1T-MoS2 (Figure 2a),[27] and yield 
+the interplanar spacings of 0.25 nm and 0.22 nm, being 
+attributable to the (005) and (103) planes of P-doped 2H-MoS2 
+(Figure 2b). All these confirm again the phase transformation of 
+MoS2 nanosheets from 1T to 2H structures induced by the P 
+doping observed in XRD patterns. 
+ 
+Figure 2. Electron microscopy characterization of as-prepared MoS2 
+nanosheets and P-doped MoS2 nanosheets. (a, b) HRTEM images and the 
+corresponding fast Fourier transform (FFT) of the representative MoS2 
+nanosheet and P-doped MoS2 nanosheet (3.3 at%), respectively. The insets 
+show the low-resolution TEM images of the samples. Red circles indicate the 
+region for the high-resolution imaging given in the main panels. (c, d, e) 
+Scanning TEM image (inset) and corresponding EDS mapping of the P-doped 
+MoS2 nanosheet (3.3 at%), indicating the uniform distribution of Mo, S and P, 
+accordingly. 
+Furthermore, one can also see that there are qualitatively lot 
+more crystal defects existed in P-doped MoS2 nanosheets as 
+compared to the un-doped ones (Figure 2b). These additional 
+crystal defects can be probably accredited to the elemental 
+substitution of P into S sites in MoS2 microstructures.[28] Notably, 
+based on the EDS mapping (Figure 2c to e), all constituents, 
+including the P dopants, are uniformly distributed, indicating that 
+the P atoms are successfully and homogeneously doped into 
+MoS2 without deteriorating the nanosheet morphology. 
+Apart from the morphology, crystallinity and composition, it is 
+also important to assess the surface chemical states of all MoS2 
+samples. In this case, X-ray photoelectron spectroscopy (XPS) 
+is utilized to characterize any change in the surface chemical 
+state before and after P doping in the MoS2 nanosheets. As 
+depicted in the P 2p spectra in Figure 3a, there is not any peak 
+observed for the un-doped MoS2 sample, while obvious peaks 
+are found to be located at 133.4 eV for all P-doped MoS2 
+samples. This peak is believed to be due to the surface oxidized 
+phosphate species when P atoms are doped into the lattice of 
+MoS2.[29-30] On the other hand, for the Mo 3d and S 2p spectra as 
+shown in Figure 3b and c, there are a tiny peak at 225.6 eV as 
+well as strong peaks at 228.3 eV and 231.5 eV, corresponding 
+to the Mo-S bond, Mo4+ species of Mo 3d5/2 and Mo 3d3/2,[17] and 
+another set of strong peaks at 161.2 eV and 162.3 eV for 2p3/2 
+and 2p1/2 orbitals of S2- species in un-doped MoS2, 
+respectively.[13, 28] After P doping, the spectra of Mo 3d and S 2p 
+of MoS2 are still similar to those of the un-doped one, except for 
+the apparent shifts in their binding energies. Explicitly, the peaks 
+of Mo 3d spectra are shifted to 226.0 eV, 228.9 eV and 232.0 eV 
+correspondingly; while for S 2p spectra, the peaks are moved to 
+161.7 eV and 162.9 eV, respectively. These peak shifts may be 
+related to the low-temperature annealing process, indicating that 
+the elemental 
+ 
+Figure 3. Surface elemental analysis of as-prepared MoS2 nanosheets and P-
+doped MoS2 nanosheets. (a) P 2p bonding region, (b) Mo 3d bonding region, 
+(c) S 2p bonding region. 
+substitution of P into S sites are occurred in MoS2 crystals for 
+the doping process. The similar peak shift phenomenon has also 
+witnessed in previous literatures, in which the shifts in binding 
+energies for substitutional doped MoS2 is revealed.[17] At the 
+same time, this occurrence also suggests that annealing at 673 
+K may lead to the phase transition from 1T-MoS2 to 2H-MoS2, 
+accompanied with the downshift of binding energy of Mo as 
+
+
+--- Page 5 ---
+FULL PAPER 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+demonstrated by Xiang et al.[31] Therefore, the changes 
+observed for the surface chemical states of P-doped MoS2 as 
+compared with those of the un-doped MoS2 have evidently 
+demonstrated the interaction of P dopants and MoS2 as a result 
+of the low-temperature phosphidation process. 
+Besides, catalytic activity as well as durability of electrocatalysts 
+of various P-doped MoS2 and un-doped MoS2 nanosheets are 
+evaluated in acidic H2SO4 (0.5 M, pH = 0.6) electrolyte using a 
+three-electrode system. Polarization curves of all catalysts are 
+measured using the linear sweeping voltammetry (LSV) method 
+at a scan rate of 5 mV/s. As shown in Figure 4a, to obtain an 
+HER catalytic current density of 20 mA cm-2, an overpotential of 
+170 mV is required for un-doped MoS2 and an additional 
+overpotential  
+ 
+Figure 4. Electrochemical properties of both MoS2 nanosheets and P-doped 
+MoS2 nanosheets. (a) Polarization curves of as-synthesized MoS2 nanosheets, 
+P-doped MoS2 nanosheets with various doping durations (30, 60, and 90 
+minutes), and simply annealed MoS2 nanosheets in 0.5 M H2SO4 solution, (b) 
+Tafel slopes derived from (a), (c) The plots of capacitive current densities as a 
+function of scan rates for as-synthesized MoS2 nanosheets and P-doped MoS2 
+nanosheets with the doping duration of 60 minutes, (d) Polarization curves of 
+P-doped MoS2 nanosheets with the doping duration of 60 minutes before and 
+after stability tests. Inset shows the stability test of P-doped MoS2 nanosheets 
+with the doping duration of 60 minutes and a fixed current density of 20 mA 
+cm-2. 
+of 200 mV is needed for simply annealed MoS2 (60 min) in Ar, 
+serving as the control sample without any P doping for the 
+consistent study here. Based on the discussion XRD results 
+(Supporting Formation Figure S1e), there is a crystalline phase 
+transformation of MoS2 from 1T to 2H structures during low-
+temperature phosphidation process. Since the metallic 1T phase 
+MoS2 
+nanosheets 
+was 
+demonstrated 
+with 
+the 
+better 
+electrocatalytic performance than the semiconductor 2H phase 
+sample due to electrochemical oxidation of the edges of 2H 
+phase nanosheets, leading to a dramatic reduction in their 
+catalytic activities,[32-33] it perfectly explains the degradation in 
+overpotential of the annealed control sample. However, when P 
+doping is performed along with the annealing process, the 
+overpotential of all P-doped MoS2 nanosheet samples are 
+reduced significantly to 156 mV, 133 mV and 152 mV for the 
+doping (i.e. annealing) duration of 30 min (2.1 at%), 60 min (3.3 
+at%) and 90 min (4.9 at%), respectively, as compared with the 
+un-doped one of 170 mV in order to reach the same current 
+density of 20 mA cm-2. Even for the higher current density of 100 
+mA cm-2, a similar trend is still observed with the overpotential 
+values of 257 mV, 227 mV, 189 mV and 217 mV for the un-
+doped, 2.1 at%, 3.3 at% and 4.9 at% P-doped MoS2 nanosheet 
+samples, correspondingly. Among all of these catalysts, 3.3 at% 
+P-doped MoS2 nanosheets (i.e. 60 min doping duration) exhibit 
+the best electrochemical activity, although they consist of the 
+semiconductor 2H phase, instead of the metallic 1T phase. 
+To evaluate their kinetic properties, Tafel equation is employed 
+to describe the relationship between current and overpotential: 
+η = b log (j/j0) 
+where η is the overpotential (mV), b is the Tafel slope (mV/dec), 
+j is the current density (mA cm-2) and j0 is the exchange current 
+density (mA cm-2).[34] As extracted from Figure 4a, after iR 
+correction, the Tafel slope of 3.3 at% P-doped MoS2 (60 min 
+doping duration) is found to be 67.0 mV/dec, which is smaller 
+than the ones of 2.1 at% P-doped nanosheet (77.6 mV/dec), 4.9 
+at% P-doped nanosheets (71.1 mV/dec), undoped nanosheet 
+(102.9 mV/dec) and annealed control sample (138.9 mV/dec). 
+Based on the Tafel slope without iR correction (shown in 
+Supporting Information Figure S2), MoS2 nanosheets treated 
+with an optimal P doping of 60 min also show the superior 
+electrochemical HER activity. It is obvious that an optimal P 
+doping (i.e. 3.3 at%) is needed to enhance the number of active 
+catalytic sites and to improve the conductivity in order to achieve 
+the superior electrochemical HER activity of MoS2 nanosheets 
+directly synthesized on carbon cloths as an integrated electrode 
+system. As shown in Supporting Information Table S1, by using 
+the adopted simple low temperature annealing process, HER 
+performance of the as-prepared P-MoS2 nanosheets on CC is 
+similar to the other researches.[13, 17, 35-37] To further study the 
+difference in their intrinsic properties, the electrochemical active 
+surface area (ECSA) established from the electrochemical 
+double-layer capacitance of the catalyst surface is as well 
+utilized to compare the difference in catalytic active sites.[38] 
+Because ECSA is proportional to the electrochemical double-
+layer capacitance (Cdl) in the non-Faradaic potential region, 
+herein, cyclic voltammogram (CV) curves with various scan rates 
+are measured to calculate the Cdl values. CV curves of un-doped 
+MoS2 and P-doped (3.3 at%) MoS2 nanosheets are then 
+scanned with the rate of 10, 20, 30, 40 and 50 mV/s and 
+complied in Supporting Information Figure S3. The extracted Cdl 
+values of un-doped MoS2 and P-doped (3.3 at%) MoS2 samples 
+are found to be 7.0 and 17.6 mF cm-2, respectively (Figure 4c), 
+illustrating that the P doping can indeed result in more active 
+sites for the more efficient catalytic hydrogen generation. 
+Furthermore, the catalytic activity normalized to ECSA is also 
+given in Supporting Information Figure S4, suggesting the better 
+intrinsic activity of P-doped (3.3 at%) MoS2 nanosheets, as 
+compared with it of un-doped MoS2. 
+At the same time, stability is another momentous parameter to 
+evaluate the performance of HER electrocatalysts. The 
+chronopotentiometry technique is adopted to examine the 
+
+
+--- Page 6 ---
+FULL PAPER 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+overpotential stability with a fixed current density of 20 mA cm-2. 
+The stable overpotentials (135 mV, without iR corrections) with 
+insignificant fluctuations are observed to maintain the current 
+density of 20 mA cm-2 in acidic solutions over 10 hours for the P-
+doped (3.3 at%) MoS2 nanosheets as illustrated in the set of 
+Figure 4d. After long-term durability tests, the P-doped MoS2 
+nanosheets preserve the excellent performances in activity with 
+negligible loss of the current density, which further certifies their 
+superior catalytic durability in acidic media. In general, the HER 
+activity of MoS2 nanosheets based on their exposed edges and 
+catalytic sites would easily reach the limitation owing to the poor 
+inter-particle (or inter-domain) electron transport for the 
+insufficient conductivity.[9, 12] Therefore, chemical doping is 
+widely considered as an effective approach to improve the HER 
+activity of their inert basal plane sites in MoS2 as well as to 
+increase the intrinsic electrical conductivity.[12, 21-22] In this work, 
+as demonstrated by XPS (Figure 3), the S constituents has been 
+partially replaced by P atoms in the MoS2 crystal. Evidently, this 
+substitution would induce more active unsaturated sites and 
+defects in MoS2 microstructures, resulting in the better catalytic 
+property for hydrogen generation. The increased activity may be 
+related to the modified electronic structure of P-doped MoS2. A 
+smaller band gap is observed as compared with pristine MoS2 
+after doping P, resulting in the lower adsorption free energy of 
+hydrogen, as previous literatures demonstrated.[22, 23]  However, 
+with the increase of P content, the electrocatalytic performance 
+of MoS2 nanosheets (e.g. 4.9 at% P-doped sample with 90 min 
+doping duration) becomes degraded, which may be contributed 
+to the conducting behavior switch of MoS2 by increasing the 
+content of intercalated P in MoS2, leading in a ruined 
+conductance during the process of hydrogen generation. Also, 
+for the longer annealing time, the re-structure of P-doped MoS2 
+may be benefited to further improve the crystallinity with less 
+active site and defects. However, the detailed reason for 
+electrocatalytic performance degradation of highly doped (4.9 
+at%) P-MoS2 is complex and requires more thorough studies in 
+the near future. Anyway, all these findings have clearly 
+confirmed the favorable effect of P-doped MoS2 nanosheets 
+directly synthesized on carbon cloths as an attractive integrated 
+electrode with the superior catalytic properties for hydrogen 
+generation.  
+Conclusions 
+In summary, a facile post-growth phosphorus doping into MoS2 
+nanosheets directly synthesized on carbon cloths is successfully 
+developed 
+by 
+utilizing 
+low-temperature 
+phosphidation. 
+Phosphorus doping is found to change the surface chemical 
+states of MoS2 nanosheets, increasing their surface catalytic 
+sites and facilitating the better conductivity. The effect of 
+different doping content and annealing durations are also 
+investigated. The optimal phosphorus doped (3.3 at%) MoS2 
+nanosheets exhibit the substantially improved catalytic activity 
+for HER with a low overpotential of 133 mV to drive the current 
+density of 20 mA cm-2 and a small Tafel slope of 67.0 mV/dec, 
+as compared with the un-doped MoS2 nanosheets. All these 
+demonstrate the technological potency of our phosphidation 
+approach to modify MoS2 nanosheets to improve their catalytic 
+properties for hydrogen generation. 
+Experimental Section 
+Nanosheet synthesis 
+Carbon cloths were washed with 10% HCl, ethanol and distilled water 
+with ultrasonication sequentially, and then dried in air. MoS2 nanosheets 
+supported on carbon cloths (MoS2/CC) were then prepared using an as-
+reported hydrothermal method with some modification.[39] In detail, a 
+piece of carbon cloth (1 cm by 3 cm) was immersed into 15 ml of 
+transparent solution, containing 0.5 mmol of Na2MoO4ꞏ2H2O and 1 mmol 
+of CS(NH2)2. Next, the mixture was sealed in a Teflon-lined autoclave 
+and heated at 373 K for 20 hours. After cooling to room temperature, the 
+obtained MoS2 nanosheets supported on carbon cloths were washed 
+with distilled water and ethanol alternatively for several times and then 
+dried at 333 K overnight. By carefully measuring the mass of carbon cloth 
+before and after synthesizing MoS2, the loading mass density is 
+calculated to be 2.8 mg cm-2. 
+To prepare P-doped MoS2 nanosheets, a low-temperature phosphidation 
+method using NaH2PO2ꞏH2O as the phosphorous source was performed. 
+Typically, 300 mg of NaH2PO2ꞏH2O and the obtained MoS2/CC sample 
+were placed in the upstream and downstream of a quartz furnace tube, 
+respectively. The sample was then annealed at 673 K for 60 minutes with 
+a temperature ramping of 10 K/min under the Argon (Ar) flow of 100 
+sccm. After cooling to room temperature with the continuous Ar purge, 
+the P-doped MoS2/CC catalysts were obtained. In order to study the 
+effect of different annealing times on the catalytic property, the as-
+synthesized MoS2 was treated under the identical process conditions for 
+30 and 90 minutes, respectively. 
+Materials characterization 
+Surface morphologies of the obtained samples were examined using 
+scanning electron microscope (SEM, FEI Company, Oregon, USA/Philips 
+XL30, Philips Electronics, Amsterdam, Netherlands). Crystal structures 
+were determined by collecting XRD pattern on a Philips powder 
+diffractometer using Cu Kα radiation (λ = 1.5406 Å) and imaging with a 
+high-resolution TEM (HRTEM, JEOL 2100F, JEOL Co., Ltd., Tokyo, 
+Japan). Elemental mappings were then performed using an energy 
+dispersive x-ray (EDS) detector attached to a JEOL 2100F, and the 
+chemical composition of the samples was measured. The chemical state 
+of the as-prepared MoS2 and P-doped MoS2 nanosheets were examined 
+by X-ray photoelectron spectroscopy (ULVAC-PHI5802). For the TEM 
+studies, the nanosheets were first suspended in ethanol solution by 
+ultrasonication and then drop-casted onto the grid for the subsequent 
+characterization. 
+Electrochemical measurement 
+All the electrochemical tests were performed on a Gamry G300 
+electrochemical workstation (Gamry Instruments, USA). A setup of three-
+electrode system was employed to measure the electrochemical activity 
+and stability of P-doped MoS2/CC, where the electrocatalysts, saturated 
+calomel electrode (SCE) and Ti plate functioned as working electrode, 
+reference electrode and counter electrode, respectively. The geometrical 
+active area of P-doped MoS2/CC was defined by the silicon rubber for 
+immersing into electrolytes. Linear sweeping voltammetry (LSV) curves 
+
+
+--- Page 7 ---
+FULL PAPER 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+were measured with a scan rate of 5 mV/s in 0.5 M H2SO4 solution 
+(pH=0.6) for HER at room temperature. The HER stability tests were also 
+performed using chronopotentiometry in the basic solution. The potential 
+scale with respect to reverse hydrogen electrode (RHE) was corrected by 
+the Nernst equation, where Evs RHE = Evs SCE + 0.0592 × pH + 0.242 V. 
+The iR corrections in polarization curves were performed using the 
+current interrupt method provided by the Gamry G300 workstation.  
+Acknowledgements 
+We acknowledge the Science Technology and Innovation 
+Committee 
+of 
+Shenzhen 
+Municipality 
+(Grants 
+JCYJ20170307093131123 
+and 
+JCYJ20160229165240684), 
+“Qilu young scholar” program of Shandong University. We also 
+acknowledges the General Research Fund of the Research 
+Grants Council of Hong Kong SAR, China, under project number 
+CityU 11275916, the National Natural Science Foundation of 
+China (Grants 11404162, 51672229 and 61504151), the CAS-
+CSIRO project of the Bureau of International Co-operation of 
+Chinese Academy of Sciences (122111KYSB20150064). 
+Keywords: MoS2 nanosheets • phosphorus doping • hydrogen 
+evolution reaction • electrocatalysis 
+[1] 
+V. R. Stamenkovic, D. Strmcnik, P. P. Lopes, N. M. Markovic, Nat. 
+Mater. 2017, 16, 57-69. 
+[2] 
+S. Chu, Y. Cui, N. Liu, Nat. Mater. 2017, 16, 16-22. 
+[3] 
+P. C. Vesborg, B. Seger, I. Chorkendorff, J. Phys. Chem. Lett. 2015, 6, 
+951-957. 
+[4] 
+C. G. Morales-Guio, L.-A. Stern, X. Hu, Chem. Soc. Rev. 2014, 43, 
+6555-6569. 
+[5] 
+Y. Zheng, Y. Jiao, M. Jaroniec, S. Z. Qiao, Angew. Chem. Int. Edit. 
+2015, 54, 52-65. 
+[6] 
+J. R. McKone, S. C. Marinescu, B. S. Brunschwig, J. R. Winkler, H. B. 
+Gray, Chem. Sci. 2014, 5, 865-878. 
+[7] 
+D. Kong, J. J. Cha, H. Wang, H. R. Lee, Y. Cui, Energy Environ. Sci. 
+2013, 6, 3553-3558. 
+[8] 
+H. Vrubel, T. Moehl, M. Grätzel, X. Hu, Chem. Commun. 2013, 49, 
+8985-8987. 
+[9] 
+Y. Yan, B. Xia, Z. Xu, X. Wang, ACS Catal. 2014, 4, 1693-1705. 
+[10] 
+L. Cheng, W. Huang, Q. Gong, C. Liu, Z. Liu, Y. Li, H. Dai, Angew. 
+Chem. Int. Edit. 2014, 53, 7860-7863. 
+[11] 
+B. Hinnemann, P. G. Moses, J. Bonde, K. P. Jørgensen, J. H. Nielsen, 
+S. Horch, I. Chorkendorff, J. K. Nørskov, J. Am. Chem. Soc. 2005, 127, 
+5308-5309. 
+[12] 
+W. Xiao, P. Liu, J. Zhang, W. Song, Y. P. Feng, D. Gao, J. Ding, Adv. 
+Energy Mater. 2017, 7. 
+[13] J. Xie, J. Zhang, S. Li, F. Grote, X. Zhang, H. Zhang, R. Wang, Y. Lei, B. 
+Pan, Y. Xie, J. Am. Chem. Soc. 2013, 135, 17881-17888. 
+[14] 
+J. Xie, Y. Xie, ChemCatChem. 2015, 7, 2568-2580. 
+[15] 
+D. Merki, H. Vrubel, L. Rovelli, S. Fierro, X. Hu, Chem. Sci. 2012, 3, 
+2515-2525. 
+[16] 
+D. Escalera-López, Y. Niu, J. Yin, K. Cooke, N. V. Rees, R. E. Palmer, 
+ACS Catal. 2016, 6, 6008-6017. 
+[17] 
+J. Zhang, T. Wang, P. Liu, S. Liu, R. Dong, X. Zhuang, M. Chen, X. 
+Feng, Energy Environ. Sci. 2016, 9, 2789-2793. 
+[18] 
+D. Wang, D. Astruc, Chem. Soc. Rev. 2017, 46, 816-854. 
+[19] 
+Y. Shi, B. Zhang, Chem. Soc. Rev. 2016, 45, 1529-1541. 
+[20] 
+S. Anantharaj, S. R. Ede, K. Sakthikumar, K. Karthick, S. Mishra, S. 
+Kundu, ACS Catal. 2016, 6, 8069-8097. 
+[21] 
+X. Ren, Q. Ma, H. Fan, L. Pang, Y. Zhang, Y. Yao, X. Ren, S. F. Liu, 
+Chem. Commun. 2015, 51, 15997-16000. 
+[22] 
+P. Liu, J. Zhu, J. Zhang, P. Xi, K. Tao, D. Gao, D. Xue, ACS Energy 
+Lett. 2017, 2, 745-752. 
+[23] 
+R. Ye, P. del Angel‐Vicente, Y. Liu, M. J. Arellano‐Jimenez, Z. Peng, 
+T. Wang, Y. Li, B. I. Yakobson, S. H. Wei, M. J. Yacaman, Adv. Mater. 
+2016, 28, 1427-1432. 
+[24] 
+Q. Liu, X. Li, Q. He, A. Khalil, D. Liu, T. Xiang, X. Wu, L. Song, Small. 
+2015, 11, 5556-5564. 
+[25] 
+C. Wang, W. Wan, Y. Huang, J. Chen, H. H. Zhou, X. X. Zhang, 
+Nanoscale. 2014, 6, 5351-5358. 
+[26] C. Wu, Q. Fang, Q. Liu, D. Liu, C. Wang, T. Xiang, A. Khalil, S. Chen, L. 
+Song, Inorg. Chem. Front. 2017, 4, 663-667. 
+[27] J. Zhang, T. Wang, D. Pohl, B. Rellinghaus, R. Dong, S. Liu, X. Zhuang, 
+X. Feng, Angew. Chem. Int. Edit. 2016, 128, 6814-6819. 
+[28] 
+Z. Pu, S. Wei, Z. Chen, S. Mu, RSC Adv. 2016, 6, 11077-11080. 
+[29] 
+J. Kibsgaard, T. F. Jaramillo, Angew. Chem. Int. Edit. 2014, 53, 14433-
+14437. 
+[30] 
+P. Xiao, M. A. Sk, L. Thia, X. Ge, R. J. Lim, J.-Y. Wang, K. H. Lim, X. 
+Wang, Energy Environ. Sci. 2014, 7, 2624-2629. 
+[31] 
+Z. Xiang, Z. Zhang, X. Xu, Q. Zhang, C. Yuan, Carbon. 2016, 98, 84-89. 
+[32]    A. Ambrosi, Z. Sofer, M. Pumera, Chem. Commun. 2015, 51, 8450-
+8453. 
+[33] 
+D. Voiry, M. Salehi, R. Silva, T. Fujita, M. Chen, T. Asefa, V. B. Shenoy, 
+G. Eda, M. Chhowalla, Nano Lett. 2013, 13, 6222-6227. 
+[34] 
+X. Zou, Y. Zhang, Chem. Soc. Rev. 2015, 44, 5148-5180. 
+[35]     X. Dai, K. Du, Z. Li, M. Liu, Y. Ma, H. Sun, X. Zhang, Y. Yang, ACS  
+Appl. Mat. Interfaces. 2015, 7, 27242. 
+[36]     F. Lai, Y-E. Miao, Y. Huang, Y. Zhang, T. Liu,  ACS Appl. Mat.  
+Interfaces. 2016, 8, 3558−3566. 
+[37]     F. Li, L. Zhang, J. Li, X. Lin, X. Li, Y. Fang, J. Huang, W. Li, M. Tian, J.  
+Jin, R. Li, J. Power Sources. 2015, 292,15–22. 
+[38] 
+C. C. McCrory, S. Jung, J. C. Peters, T. F. Jaramillo, Chem. Soc. 2013, 
+135, 16977-16987. 
+[39] 
+D. Hou, W. Zhou, X. Liu, K. Zhou, J. Xie, G. Li, S. Chen, Electrochim 
+Acta. 2015, 166, 26-31. 
+
+
+--- Page 8 ---
+FULL PAPER 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Entry for the Table of Contents (Please choose one layout) 
+ 
+Layout 1: 
+ 
+FULL PAPER 
+A 
+facile 
+low-temperature 
+phosphidation process is developed 
+for 
+phosphorus 
+doping 
+into 
+molybdenum 
+disulfide 
+(MoS2) 
+nanosheets directly synthesized on 
+carbon cloths to function as an 
+integrated electrode, in which they 
+are capable to catalyze hydrogen 
+evolution 
+with 
+the 
+activity 
+and 
+stability comparable to those of 
+state-of-the art precious catalysts. 
+ 
+ 
+ 
+Luozhen Bian,[a,b],‡  Wei Gao,[c,d],‡ 
+Jiamin Sun,[a,b] Mingming Han,[a,b] Fulin 
+Li, [a,b] Zhaofeng Gao,[a,b] Lei Shu,[d,e] 
+Ning Han,[f] Zai-xing Yang,*[a,b] Aimin 
+Song,[b] Yongquan Qu,*[c] Johnny C. 
+Ho*[d,e] 
+ 
+Page No. – Page No. 
+Phosphorus doped MoS2 
+nanosheets supported on carbon 
+cloths as efficient hydrogen 
+generation electrocatalysts

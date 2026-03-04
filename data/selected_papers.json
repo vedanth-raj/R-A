@@ -1,43 +1,89 @@
 [
   {
-    "paperId": "3647d6d0f151dc05626449ee09cc7bce55be497e",
-    "title": "MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications",
+    "paperId": "3154526cb4830ec3d029119b2f9dd710981aff95",
+    "title": "Core-Shell-Yarn-Based Triboelectric Nanogenerator Textiles as Power Cloths.",
     "authors": [
       {
-        "authorId": "144727050",
-        "name": "Andrew G. Howard"
+        "authorId": "39292373",
+        "name": "A. Yu"
       },
       {
-        "authorId": "2717876",
-        "name": "Menglong Zhu"
+        "authorId": "7858972",
+        "name": "Xiong Pu"
       },
       {
-        "name": "Bo Chen"
+        "authorId": "30499757",
+        "name": "Rongmei Wen"
       },
       {
-        "authorId": "2741985",
-        "name": "Dmitry Kalenichenko"
+        "authorId": "51457222",
+        "name": "Mengmeng Liu"
       },
       {
-        "authorId": "2108301072",
-        "name": "Weijun Wang"
+        "authorId": "2114110493",
+        "name": "Tao Zhou"
       },
       {
-        "authorId": "47447630",
-        "name": "Tobias Weyand"
+        "authorId": "152645106",
+        "name": "Ke Zhang"
       },
       {
-        "authorId": "2612392",
-        "name": "M. Andreetto"
+        "authorId": "2145954782",
+        "name": "Yang Zhang"
       },
       {
-        "authorId": "2595180",
-        "name": "Hartwig Adam"
+        "authorId": "49529162",
+        "name": "J. Zhai"
+      },
+      {
+        "authorId": "145899365",
+        "name": "Weiguo Hu"
+      },
+      {
+        "authorId": "1390879413",
+        "name": "Zhong Lin Wang"
       }
     ],
     "year": 2017,
-    "abstract": "We present a class of efficient models called MobileNets for mobile and embedded vision applications. MobileNets are based on a streamlined architecture that uses depth-wise separable convolutions to build light weight deep neural networks. We introduce two simple global hyper-parameters that efficiently trade off between latency and accuracy. These hyper-parameters allow the model builder to choose the right sized model for their application based on the constraints of the problem. We present extensive experiments on resource and accuracy tradeoffs and show strong performance compared to other popular models on ImageNet classification. We then demonstrate the effectiveness of MobileNets across a wide range of applications and use cases including object detection, finegrain classification, face attributes and large scale geo-localization.",
-    "citationCount": 23880,
+    "citationCount": 228,
+    "openAccessPdf": {
+      "url": "",
+      "status": "CLOSED"
+    },
+    "hasOpenAccessPdf": true,
+    "pdfUrl": ""
+  },
+  {
+    "paperId": "c945cc5c5a511d9972a7a0c29925db88d54d3baf",
+    "title": "N-doped porous carbon nanoplates embedded with CoS2 vertically anchored on carbon cloths for flexible and ultrahigh microwave absorption",
+    "authors": [
+      {
+        "authorId": "16007777",
+        "name": "Panbo Liu"
+      },
+      {
+        "authorId": "2115802127",
+        "name": "Chenyu Zhu"
+      },
+      {
+        "authorId": "152277144",
+        "name": "Sai Gao"
+      },
+      {
+        "authorId": "6806630",
+        "name": "C. Guan"
+      },
+      {
+        "authorId": "11833442",
+        "name": "Ying Huang"
+      },
+      {
+        "authorId": "1510742263",
+        "name": "Wenjuan He"
+      }
+    ],
+    "year": 2020,
+    "citationCount": 204,
     "openAccessPdf": {
       "url": ""
     },
@@ -45,92 +91,142 @@
     "pdfUrl": ""
   },
   {
-    "paperId": "1227f2fefc26f204d2ce07b005aedd7d74e6e72a",
-    "title": "Rayyan—a web and mobile app for systematic reviews",
+    "paperId": "9ae28c9654b16409786d302da4da3bb9f9e91e98",
+    "title": "Adsorption of ibuprofen from aqueous solution on chemically surface-modified activated carbon cloths",
     "authors": [
       {
-        "authorId": "2168047",
-        "name": "M. Ouzzani"
+        "authorId": "91717500",
+        "name": "Hanen Guedidi"
       },
       {
-        "authorId": "40596127",
-        "name": "Hossam M. Hammady"
+        "authorId": "33367741",
+        "name": "L. Reinert"
       },
       {
-        "authorId": "51479457",
-        "name": "Z. Fedorowicz"
+        "authorId": "13163552",
+        "name": "Y. Soneda"
       },
       {
-        "authorId": "145188857",
-        "name": "A. Elmagarmid"
+        "authorId": "15574942",
+        "name": "N. Bellakhal"
+      },
+      {
+        "authorId": "15975547",
+        "name": "L. Duclaux"
       }
     ],
-    "year": 2016,
-    "abstract": "BackgroundSynthesis of multiple randomized controlled trials (RCTs) in a systematic review can summarize the effects of individual outcomes and provide numerical answers about the effectiveness of interventions. Filtering of searches is time consuming, and no single method fulfills the principal requirements of speed with accuracy. Automation of systematic reviews is driven by a necessity to expedite the availability of current best evidence for policy and clinical decision-making.We developed Rayyan (http://rayyan.qcri.org), a free web and mobile app, that helps expedite the initial screening of abstracts and titles using a process of semi-automation while incorporating a high level of usability. For the beta testing phase, we used two published Cochrane reviews in which included studies had been selected manually. Their searches, with 1030 records and 273 records, were uploaded to Rayyan. Different features of Rayyan were tested using these two reviews. We also conducted a survey of Rayyan’s users and collected feedback through a built-in feature.ResultsPilot testing of Rayyan focused on usability, accuracy against manual methods, and the added value of the prediction feature. The “taster” review (273 records) allowed a quick overview of Rayyan for early comments on usability. The second review (1030 records) required several iterations to identify the previously identified 11 trials. The “suggestions” and “hints,” based on the “prediction model,” appeared as testing progressed beyond five included studies. Post rollout user experiences and a reflexive response by the developers enabled real-time modifications and improvements. The survey respondents reported 40% average time savings when using Rayyan compared to others tools, with 34% of the respondents reporting more than 50% time savings. In addition, around 75% of the respondents mentioned that screening and labeling studies as well as collaborating on reviews to be the two most important features of Rayyan.As of November 2016, Rayyan users exceed 2000 from over 60 countries conducting hundreds of reviews totaling more than 1.6M citations. Feedback from users, obtained mostly through the app web site and a recent survey, has highlighted the ease in exploration of searches, the time saved, and simplicity in sharing and comparing include-exclude decisions. The strongest features of the app, identified and reported in user feedback, were its ability to help in screening and collaboration as well as the time savings it affords to users.ConclusionsRayyan is responsive and intuitive in use with significant potential to lighten the load of reviewers.",
-    "citationCount": 18165,
+    "year": 2017,
+    "citationCount": 168,
     "openAccessPdf": {
-      "url": "https://systematicreviewsjournal.biomedcentral.com/track/pdf/10.1186/s13643-016-0384-4",
+      "url": "https://doi.org/10.1016/j.arabjc.2014.03.007",
       "status": "GOLD"
     },
     "hasOpenAccessPdf": true,
-    "pdfUrl": "https://systematicreviewsjournal.biomedcentral.com/track/pdf/10.1186/s13643-016-0384-4"
+    "pdfUrl": "https://doi.org/10.1016/j.arabjc.2014.03.007"
   },
   {
-    "paperId": "c8a04d0cbb9f70e86800b11b594c9a05d7b6bac0",
-    "title": "Real-Time Obstacle Avoidance for Manipulators and Mobile Robots",
+    "paperId": "6c3be6d2b84a0a3454d4edddf20258a4e2f84247",
+    "title": "In situ Growth of Cu2O/CuO Nanosheets on Cu Coating Carbon Cloths as a Binder-Free Electrode for Asymmetric Supercapacitors",
     "authors": [
       {
-        "authorId": "1717425",
-        "name": "O. Khatib"
-      }
-    ],
-    "year": 1985,
-    "citationCount": 10116,
-    "openAccessPdf": {
-      "url": "",
-      "status": "CLOSED"
-    },
-    "hasOpenAccessPdf": true,
-    "pdfUrl": ""
-  },
-  {
-    "paperId": "2ccc619c085ab2beb6a288e8d35c1e39195cd965",
-    "title": "Microwave Mobile Communications",
-    "authors": [
-      {
-        "authorId": "51088806",
-        "name": "W. C. Jakes"
-      }
-    ],
-    "year": 1974,
-    "citationCount": 8798,
-    "openAccessPdf": {
-      "url": "",
-      "status": "CLOSED"
-    },
-    "hasOpenAccessPdf": true,
-    "pdfUrl": ""
-  },
-  {
-    "paperId": "d611f303ebab48a9cb9e265ba42c538be9f198ba",
-    "title": "Highly dynamic Destination-Sequenced Distance-Vector routing (DSDV) for mobile computers",
-    "authors": [
-      {
-        "authorId": "144304363",
-        "name": "C. Perkins"
+        "authorId": "2152895503",
+        "name": "Li'na Xu"
       },
       {
-        "authorId": "7522146",
-        "name": "P. Bhagwat"
+        "authorId": "49298452",
+        "name": "Jiao Li"
+      },
+      {
+        "authorId": "47218011",
+        "name": "Haibin Sun"
+      },
+      {
+        "authorId": "143683144",
+        "name": "Xue Guo"
+      },
+      {
+        "authorId": "5167635",
+        "name": "Jiakun Xu"
+      },
+      {
+        "authorId": "2108906818",
+        "name": "Hua Zhang"
+      },
+      {
+        "authorId": "2108198541",
+        "name": "Xiaojiao Zhang"
       }
     ],
-    "year": 1994,
-    "citationCount": 8741,
+    "year": 2019,
+    "abstract": "Cu2O/CuO nanosheets in-situ grown on Cu-Carbon cloths (Cu-CCs), namely Cu2O/CuO@Cu-CCs, are constructed by a simple strategy with electroless copper plating, chemical etching, and thermal dehydration. The as-prepared material is directly used as binder-free electrodes for supercapacitors (SCs). CCs coated with Cu, as the current collector, can effectively promote the charge collection and electron transfer, while the hierarchical Cu2O/CuO nanosheets provide massive active sites for fast faradic reactions. The composite electrode exhibits high specific capacitance [1.71 F cm−2, equivalent to 835.2 F g−1, at the current density of 10 mA cm−2 (3.57 A g−1)]. The asymmetric supercapacitor device using Cu2O/CuO@Cu-CCs as the positive electrode and activated carbon as the negative electrode, achieves a superior energy density up to 60.26 Wh kg−1 at a power density of 299.73 W kg−1 and an excellent long-term cycling stability (9.65% loss of its initial capacitance after 5,000 cycles). The excellent electrochemical performance is mainly ascribed to the unique hierarchical structure of Cu2O/CuO@Cu-CCs, making it attractive as a potential electrode material for high performance SCs.",
+    "citationCount": 89,
     "openAccessPdf": {
-      "url": "https://dl.acm.org/doi/pdf/10.1145/190809.190336",
-      "status": "BRONZE"
+      "url": "https://www.frontiersin.org/articles/10.3389/fchem.2019.00420/pdf",
+      "status": "GOLD"
     },
     "hasOpenAccessPdf": true,
-    "pdfUrl": "https://dl.acm.org/doi/pdf/10.1145/190809.190336"
+    "pdfUrl": "https://www.frontiersin.org/articles/10.3389/fchem.2019.00420/pdf"
+  },
+  {
+    "paperId": "d57c97cb8571dac1766011fd49674cf0a18e50ae",
+    "title": "Phosphorus‐Doped MoS2 Nanosheets Supported on Carbon Cloths as Efficient Hydrogen‐Generation Electrocatalysts",
+    "authors": [
+      {
+        "authorId": "41016987",
+        "name": "L. Bian"
+      },
+      {
+        "authorId": "2153576166",
+        "name": "Wei Gao"
+      },
+      {
+        "authorId": "2145751352",
+        "name": "Jiamin Sun"
+      },
+      {
+        "authorId": "2111855855",
+        "name": "Mingming Han"
+      },
+      {
+        "authorId": "2149811779",
+        "name": "Fulin Li"
+      },
+      {
+        "authorId": "49538589",
+        "name": "Zhaofeng Gao"
+      },
+      {
+        "authorId": "48141143",
+        "name": "Lei Shu"
+      },
+      {
+        "authorId": "49716240",
+        "name": "N. Han"
+      },
+      {
+        "authorId": "48598892",
+        "name": "Zai‐xing Yang"
+      },
+      {
+        "authorId": "145570322",
+        "name": "A. Song"
+      },
+      {
+        "authorId": "7812480",
+        "name": "Y. Qu"
+      },
+      {
+        "authorId": "34220786",
+        "name": "J. Ho"
+      }
+    ],
+    "year": 2018,
+    "citationCount": 69,
+    "openAccessPdf": {
+      "url": "https://pure.manchester.ac.uk/ws/files/68370934/P_MoS2_Nanosheets_HER_Revised_Paper.pdf",
+      "status": "GREEN"
+    },
+    "hasOpenAccessPdf": true,
+    "pdfUrl": "https://pure.manchester.ac.uk/ws/files/68370934/P_MoS2_Nanosheets_HER_Revised_Paper.pdf"
   }
 ]
