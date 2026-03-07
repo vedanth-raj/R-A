@@ -387,6 +387,13 @@ class AIResearchAgent {
         const resultsContainer = document.getElementById('searchResultsContainer');
         const resultsList = document.getElementById('searchResultsList');
         
+        console.log('Displaying search results:', papers); // Debug log
+        
+        if (!resultsContainer || !resultsList) {
+            console.error('Search results containers not found');
+            return;
+        }
+        
         if (papers.length === 0) {
             resultsContainer.style.display = 'none';
             return;
@@ -402,10 +409,12 @@ class AIResearchAgent {
             
             paperItem.innerHTML = `
                 <div class="paper-info">
-                    <div class="paper-title">${this.escapeHtml(paper.name)}</div>
+                    <div class="paper-title">${this.escapeHtml(paper.name || paper.title || 'Unknown Paper')}</div>
                     <div class="paper-meta">
-                        Size: ${(paper.size / 1024).toFixed(1)} KB | 
-                        Modified: ${new Date(paper.modified * 1000).toLocaleDateString()}
+                        ${paper.size ? `Size: ${(paper.size / 1024).toFixed(1)} KB | ` : ''}
+                        ${paper.modified ? `Modified: ${new Date(paper.modified * 1000).toLocaleDateString()}` : ''}
+                        ${paper.year ? `Year: ${paper.year} | ` : ''}
+                        ${paper.citations ? `Citations: ${paper.citations}` : ''}
                     </div>
                 </div>
                 <div class="paper-actions">
@@ -423,6 +432,22 @@ class AIResearchAgent {
             }
             resultsList.appendChild(paperItem);
         });
+        
+        console.log('Search results displayed successfully');
+    }
+    
+    displayResults(result) {
+        // Display search results after operation completes
+        console.log('Display results called with:', result);
+        
+        if (result && result.papers) {
+            this.displaySearchResults(result.papers);
+        } else if (result && result.count) {
+            this.showNotification(`Found ${result.count} papers`, 'success');
+            // Reload papers from server
+            this.loadSearchResults();
+            this.loadPapersDirectory();
+        }
     }
 
     updateExtractPaperSelect() {
