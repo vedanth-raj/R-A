@@ -45,10 +45,27 @@ SEMANTIC_SCHOLAR_FIELDS: List[str] = [
 ]
 
 # Data storage paths
-DATA_DIR = "./data"
+# Use /tmp for App Engine (writable), fallback to ./data for local
+# GAE_ENV=standard on App Engine; K_SERVICE set on Cloud Run
+IS_APP_ENGINE = (
+    os.getenv('GAE_ENV', '').startswith('standard') or
+    bool(os.getenv('K_SERVICE'))
+)
+if IS_APP_ENGINE:
+    DATA_DIR = "/tmp/data"
+else:
+    DATA_DIR = "./data"
+
 PAPERS_DIR = os.path.join(DATA_DIR, "papers")
+EXTRACTED_TEXTS_DIR = os.path.join(DATA_DIR, "extracted_texts")
+SECTIONS_DIR = os.path.join(DATA_DIR, "sections")
+SECTION_ANALYSIS_DIR = os.path.join(DATA_DIR, "section_analysis")
+DRAFTS_DIR = os.path.join(DATA_DIR, "drafts")
 METADATA_FILE = os.path.join(DATA_DIR, "selected_papers.json")
 
 # Optional API key for higher rate limits
 SEMANTIC_SCHOLAR_API_KEY = os.getenv("SEMANTIC_SCHOLAR_API_KEY", "")
+
+# Gemini model - use gemini-2.5-flash (current); requires google-genai package
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
 

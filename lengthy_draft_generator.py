@@ -7,14 +7,15 @@ import os
 import json
 import logging
 from typing import Dict, List, Optional
+from config import GEMINI_MODEL
 from pathlib import Path
 from datetime import datetime
 
 try:
-    import google.genai as genai
-    from google.genai import types
+    from google import genai
     GEMINI_AVAILABLE = True
 except ImportError:
+    genai = None
     GEMINI_AVAILABLE = False
 
 logger = logging.getLogger(__name__)
@@ -30,18 +31,21 @@ class LengthyDraftGenerator:
         self._setup_gemini()
     
     def _setup_gemini(self):
-        """Setup Gemini AI client."""
-        if GEMINI_AVAILABLE:
+        """Setup Gemini AI client (google-genai SDK)."""
+        if GEMINI_AVAILABLE and genai:
             gemini_key = os.getenv('GEMINI_API_KEY')
             if gemini_key:
                 try:
                     self.gemini_client = genai.Client(api_key=gemini_key)
-                    self.gemini_model = "gemini-2.5-flash"  # Latest stable model
                     self.logger.info("Gemini client initialized for lengthy draft generation")
                 except Exception as e:
                     self.logger.warning(f"Failed to initialize Gemini: {e}")
+                    self.gemini_client = None
             else:
                 self.logger.warning("No Gemini API key found in environment")
+                self.gemini_client = None
+        else:
+            self.gemini_client = None
     
     def generate_lengthy_abstract(self, topic: str, papers: List[Dict]) -> str:
         """Generate a lengthy abstract (300-400 words)."""
@@ -61,14 +65,9 @@ Make it comprehensive, detailed, and publication-ready."""
         if self.gemini_client:
             try:
                 response = self.gemini_client.models.generate_content(
-                    model=self.gemini_model,
-                    contents=prompt,
-                    config=types.GenerateContentConfig(
-                        temperature=0.7,
-                        max_output_tokens=600  # Reduced from 500 for faster generation
-                    )
+                    model=GEMINI_MODEL, contents=prompt
                 )
-                return response.text.strip()
+                return (response.text or "").strip()
             except Exception as e:
                 self.logger.error(f"Gemini generation failed: {e}")
         
@@ -95,14 +94,9 @@ Make it comprehensive and engaging."""
         if self.gemini_client:
             try:
                 response = self.gemini_client.models.generate_content(
-                    model=self.gemini_model,
-                    contents=prompt,
-                    config=types.GenerateContentConfig(
-                        temperature=0.7,
-                        max_output_tokens=1000  # Reduced from 1200 for faster generation
-                    )
+                    model=GEMINI_MODEL, contents=prompt
                 )
-                return response.text.strip()
+                return (response.text or "").strip()
             except Exception as e:
                 self.logger.error(f"Gemini generation failed: {e}")
         
@@ -127,14 +121,9 @@ Make it replicable and methodologically rigorous."""
         if self.gemini_client:
             try:
                 response = self.gemini_client.models.generate_content(
-                    model=self.gemini_model,
-                    contents=prompt,
-                    config=types.GenerateContentConfig(
-                        temperature=0.6,
-                        max_output_tokens=900  # Reduced from 1100 for faster generation
-                    )
+                    model=GEMINI_MODEL, contents=prompt
                 )
-                return response.text.strip()
+                return (response.text or "").strip()
             except Exception as e:
                 self.logger.error(f"Gemini generation failed: {e}")
         
@@ -158,14 +147,9 @@ Organize by themes, not by individual papers."""
         if self.gemini_client:
             try:
                 response = self.gemini_client.models.generate_content(
-                    model=self.gemini_model,
-                    contents=prompt,
-                    config=types.GenerateContentConfig(
-                        temperature=0.6,
-                        max_output_tokens=1000  # Reduced from 1400 for faster generation
-                    )
+                    model=GEMINI_MODEL, contents=prompt
                 )
-                return response.text.strip()
+                return (response.text or "").strip()
             except Exception as e:
                 self.logger.error(f"Gemini generation failed: {e}")
         
@@ -189,14 +173,9 @@ Be critical, insightful, and forward-looking."""
         if self.gemini_client:
             try:
                 response = self.gemini_client.models.generate_content(
-                    model=self.gemini_model,
-                    contents=prompt,
-                    config=types.GenerateContentConfig(
-                        temperature=0.7,
-                        max_output_tokens=1000  # Reduced from 1400 for faster generation
-                    )
+                    model=GEMINI_MODEL, contents=prompt
                 )
-                return response.text.strip()
+                return (response.text or "").strip()
             except Exception as e:
                 self.logger.error(f"Gemini generation failed: {e}")
         
@@ -418,19 +397,13 @@ Incorporate these instructions while maintaining quality."""
                 self.logger.info(f"Starting generation for {section_type} with custom instructions")
                 
                 response = self.gemini_client.models.generate_content(
-                    model=self.gemini_model,
-                    contents=enhanced_prompt,
-                    config=types.GenerateContentConfig(
-                        temperature=0.7,
-                        max_output_tokens=600,
-                        timeout=30  # 30 second timeout
-                    )
+                    model=GEMINI_MODEL, contents=enhanced_prompt
                 )
                 
                 elapsed = time.time() - start_time
                 self.logger.info(f"Generation completed in {elapsed:.2f} seconds")
                 
-                return response.text.strip()
+                return (response.text or "").strip()
             except TimeoutError as e:
                 self.logger.error(f"Generation timed out after 30 seconds: {e}")
                 return f"Generation timed out. Please try again with simpler instructions or a shorter section."
@@ -462,14 +435,9 @@ Return ONLY the corrected content, no explanations."""
         if self.gemini_client:
             try:
                 response = self.gemini_client.models.generate_content(
-                    model=self.gemini_model,
-                    contents=prompt,
-                    config=types.GenerateContentConfig(
-                        temperature=0.7,
-                        max_output_tokens=1200  # Reduced from 1500 for faster generation
-                    )
+                    model=GEMINI_MODEL, contents=prompt
                 )
-                return response.text.strip()
+                return (response.text or "").strip()
             except Exception as e:
                 self.logger.error(f"AI correction failed: {e}")
                 return f"Error correcting draft: {str(e)}"

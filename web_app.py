@@ -26,11 +26,23 @@ from lengthy_draft_generator import LengthyDraftGenerator
 from ai_conversation_engine import AIConversationEngine
 from error_handler import handle_error, safe_execute
 from performance_monitor import monitor_performance
+from config import (
+    DATA_DIR,
+    PAPERS_DIR,
+    EXTRACTED_TEXTS_DIR,
+    SECTIONS_DIR,
+    SECTION_ANALYSIS_DIR,
+    DRAFTS_DIR
+)
+
+# Ensure data directories exist (critical for GCP App Engine)
+for _d in [DATA_DIR, PAPERS_DIR, EXTRACTED_TEXTS_DIR]:
+    Path(_d).mkdir(parents=True, exist_ok=True)
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'litwise_ai_secret_key_2024'
-app.config['SESSION_TYPE'] = 'filesystem'
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'litwise_ai_secret_key_2024')
 app.config['PERMANENT_SESSION_LIFETIME'] = 3600  # 1 hour session timeout
+# Use default cookie-based session (works on GCP; filesystem session needs writable disk)
 socketio = SocketIO(app, cors_allowed_origins="*")
 
 # Global variables for tracking operations
@@ -51,60 +63,74 @@ class WebInterface:
         self.ai_conversation = AIConversationEngine()  # New conversational AI
         
     def search_papers(self, query, max_papers=5, year_start=None, year_end=None, session_id=None):
-        """Search for papers with optimized performance"""
+        """Search for papers - uses direct API calls (GCP-safe, no subprocess)"""
         try:
-            import subprocess
+            from config import INITIAL_SEARCH_LIMIT, METADATA_FILE
+            from paper_retrieval.searcher import SemanticScholarSearcher
+            from paper_retrieval.selector import PaperSelector
+            from paper_retrieval.downloader import PDFDownloader
+            from utils.helpers import ensure_directory
             
-            # main.py supports: topic, --max-papers, --randomize, --diversity (no year filters)
-            cmd = ["python", "main.py", query, "--max-papers", str(max_papers)]
-            # year_start/year_end not passed - main.py does not support them yet
+            max_papers = min(max(1, max_papers), 20)
+            ensure_directory(Path(PAPERS_DIR))
             
-            # Add timeout and optimize execution
-            result = subprocess.run(
-                cmd, 
-                capture_output=True, 
-                text=True,
-                timeout=60,  # 60 second timeout
-                cwd=os.getcwd()
-            )
+            # Step 1: Search Semantic Scholar
+            searcher = SemanticScholarSearcher()
+            papers = searcher.search_papers_paginated(query, total_limit=INITIAL_SEARCH_LIMIT)
             
-            if result.returncode == 0:
-                # Store search results for this session
-                if session_id:
-                    # Get the newly downloaded papers
-                    papers_dir = Path("data/papers")
-                    if papers_dir.exists():
-                        papers = []
-                        for file_path in papers_dir.glob("*.pdf"):
-                            paper_name = file_path.stem
-                            papers.append({
-                                "name": paper_name,
-                                "file": str(file_path),
-                                "size": file_path.stat().st_size,
-                                "modified": file_path.stat().st_mtime,
-                                "filename": file_path.name
-                            })
-                        # Store only papers from this search (sorted by modified time, take most recent)
-                        recent_papers = sorted(papers, key=lambda x: x["modified"], reverse=True)[:max_papers]
-                        session_search_results[session_id] = recent_papers
-                
-                return {"success": True, "message": "Search completed successfully"}
-            else:
-                return {"success": False, "error": result.stderr}
-                
-        except subprocess.TimeoutExpired:
-            return {"success": False, "error": "Search timed out. Please try again."}
+            if not papers:
+                return {"success": False, "error": "No papers found for the given topic."}
+            
+            # Step 2: Select top papers
+            selector = PaperSelector()
+            selected_papers = selector.select_papers(papers, max_papers=max_papers, randomize=False)
+            
+            if not selected_papers:
+                return {"success": False, "error": "No papers could be selected."}
+            
+            # Step 3: Download PDFs
+            downloader = PDFDownloader()
+            download_results = downloader.download_papers(selected_papers)
+            
+            # Step 4: Save metadata
+            papers_data = []
+            for p in selected_papers:
+                papers_data.append(p.model_dump(mode='json', exclude_none=True))
+            with open(METADATA_FILE, 'w', encoding='utf-8') as f:
+                json.dump(papers_data, f, indent=2, ensure_ascii=False)
+            
+            # Store search results for this session
+            if session_id:
+                papers_dir = Path(PAPERS_DIR)
+                if papers_dir.exists():
+                    papers_list = []
+                    for file_path in papers_dir.glob("*.pdf"):
+                        papers_list.append({
+                            "name": file_path.stem,
+                            "file": str(file_path),
+                            "size": file_path.stat().st_size,
+                            "modified": file_path.stat().st_mtime,
+                            "filename": file_path.name
+                        })
+                    recent_papers = sorted(papers_list, key=lambda x: x["modified"], reverse=True)[:max_papers]
+                    session_search_results[session_id] = recent_papers
+            
+            return {"success": True, "message": "Search completed successfully"}
+            
         except Exception as e:
             return {"success": False, "error": str(e)}
     
     def extract_text_from_pdfs(self):
-        """Extract text from all downloaded PDFs (checks data/papers then Downloaded_pdfs)"""
+        """Extract text from all downloaded PDFs (checks PAPERS_DIR then fallbacks)"""
         try:
             from paper_retrieval.text_extractor import process_downloaded_pdfs
-            # Use data/papers (where main.py saves PDFs); fallback to Downloaded_pdfs
-            for pdf_dir in ["data/papers", "Downloaded_pdfs"]:
+            # Use PAPERS_DIR (works for both local and GCP /tmp/data/papers)
+            for pdf_dir in [PAPERS_DIR, "data/papers", "Downloaded_pdfs"]:
                 if Path(pdf_dir).exists() and list(Path(pdf_dir).glob("*.pdf")):
-                    results = process_downloaded_pdfs(downloaded_dir=pdf_dir)
+                    results = process_downloaded_pdfs(
+                        downloaded_dir=pdf_dir,
+                        output_dir=EXTRACTED_TEXTS_DIR
+                    )
                     count = len(results.get("success", []))
                     return {"success": True, "extracted_count": count, "directory": pdf_dir}
             # No PDFs in either directory
@@ -115,7 +141,7 @@ class WebInterface:
     def get_available_papers(self):
         """Get list of available extracted papers"""
         try:
-            papers_dir = Path("data/extracted_texts")
+            papers_dir = Path(EXTRACTED_TEXTS_DIR)
             if not papers_dir.exists():
                 return {"papers": []}
             
@@ -137,7 +163,7 @@ class WebInterface:
         """Get list of downloaded PDF papers"""
         try:
             # Check both possible directories
-            papers_dirs = [Path("data/papers"), Path("Downloaded_pdfs")]
+            papers_dirs = [Path(PAPERS_DIR), Path("Downloaded_pdfs")]
             papers = []
             
             for papers_dir in papers_dirs:
@@ -356,6 +382,16 @@ class WebInterface:
 # Initialize web interface
 web_interface = WebInterface()
 
+@app.route('/api/health')
+def health():
+    """Health check - verifies API keys are configured (for GCP debugging)."""
+    from config import SEMANTIC_SCHOLAR_API_KEY
+    return jsonify({
+        "status": "ok",
+        "semantic_scholar_configured": bool(SEMANTIC_SCHOLAR_API_KEY),
+        "gemini_configured": bool(os.getenv("GEMINI_API_KEY")),
+    })
+
 @app.route('/')
 def index():
     """Main page"""
@@ -508,7 +544,7 @@ def get_papers():
 def view_papers_directory():
     """View papers directory API endpoint"""
     try:
-        papers_dir = Path("data/papers")
+        papers_dir = Path(PAPERS_DIR)
         if not papers_dir.exists():
             return jsonify({"papers": [], "message": "Papers directory not found"})
         
@@ -776,9 +812,9 @@ def extract_selected_paper():
             result = extractor.extract_text_from_pdf(paper_file)
             
             if result:
-                # Save extracted text
-                output_dir = Path("data/extracted_texts")
-                output_dir.mkdir(exist_ok=True)
+                # Save extracted text (use config path for GCP compatibility)
+                output_dir = Path(EXTRACTED_TEXTS_DIR)
+                output_dir.mkdir(parents=True, exist_ok=True)
                 
                 paper_name = Path(paper_file).stem
                 output_file = output_dir / f"{paper_name}_extracted.txt"
@@ -854,8 +890,8 @@ def extract_selected_paper():
 def download_paper(filename):
     """Download paper API endpoint"""
     try:
-        # Check both possible directories
-        papers_dirs = [Path("data/papers"), Path("Downloaded_pdfs")]
+        # Check PAPERS_DIR first (GCP uses /tmp/data/papers), then fallbacks
+        papers_dirs = [Path(PAPERS_DIR), Path("data/papers"), Path("Downloaded_pdfs")]
         
         for papers_dir in papers_dirs:
             file_path = papers_dir / filename
@@ -1546,7 +1582,7 @@ def handle_disconnect():
         print('Client disconnected')
 
 if __name__ == '__main__':
-    # Create necessary directories
+    # Create necessary directories (data dirs already created at import)
     os.makedirs('templates', exist_ok=True)
     os.makedirs('static/css', exist_ok=True)
     os.makedirs('static/js', exist_ok=True)

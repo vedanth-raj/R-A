@@ -1,0 +1,33 @@
+runtime: python311
+
+instance_class: F2
+
+# API keys - for production, use Secret Manager:
+# gcloud secrets create SEMANTIC_SCHOLAR_API_KEY --data-file=-
+# Then reference in app.yaml env_variables via Beta features
+env_variables:
+  FLASK_ENV: "production"
+  GEMINI_API_KEY: "AIzaSyBaVWtZkWfeFhdgaX6bD_RinoYhd5b2tD0"
+  GEMINI_MODEL: "gemini-2.5-flash"
+  SEMANTIC_SCHOLAR_API_KEY: "Lpesj1rrkxaP2zMWV0oqH2PNQN3KcoZR9tLNjmld"
+  SECRET_KEY: "litwise-ai-secret-2024-prod-key-secure"
+
+automatic_scaling:
+  target_cpu_utilization: 0.65
+  min_instances: 1
+  max_instances: 3
+  min_pending_latency: 30ms
+  max_pending_latency: automatic
+  max_concurrent_requests: 50
+
+handlers:
+- url: /static
+  static_dir: static
+  secure: always
+
+- url: /.*
+  script: auto
+  secure: always
+
+# Use standard gunicorn (WebSocket disabled for now)
+entrypoint: gunicorn --workers 1 --threads 8 --timeout 0 --bind :$PORT application:application

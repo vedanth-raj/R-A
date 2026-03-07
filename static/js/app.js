@@ -3,7 +3,9 @@
 
 class AIResearchAgent {
     constructor() {
-        this.socket = io();
+        // Disable WebSocket for App Engine deployment
+        this.socket = null;
+        this.useWebSocket = false;
         this.currentTab = 'search';
         this.papers = [];
         this.selectedPapers = new Set();
@@ -15,7 +17,8 @@ class AIResearchAgent {
 
     init() {
         this.setupEventListeners();
-        this.setupSocketListeners();
+        // Skip WebSocket setup for App Engine
+        // this.setupSocketListeners();
         this.loadPapers();
         this.loadDownloadedPapers();
         this.loadSearchResults();
@@ -159,6 +162,12 @@ class AIResearchAgent {
     }
 
     setupSocketListeners() {
+        // WebSocket disabled for App Engine deployment
+        if (!this.socket || !this.useWebSocket) {
+            console.log('WebSocket disabled - using polling mode');
+            return;
+        }
+        
         this.socket.on('connect', () => {
             console.log('Connected to server');
             this.showNotification('Connected to LitWise AI', 'success');
@@ -235,6 +244,7 @@ class AIResearchAgent {
             if (data.status === 'started') {
                 this.activeOperations[data.operation_id] = 'search';
                 this.showNotification('Search started successfully', 'success');
+                this.pollOperationStatus(data.operation_id);
             } else {
                 this.hideProgress('search');
                 this.showNotification('Failed to start search', 'error');
@@ -243,6 +253,42 @@ class AIResearchAgent {
             this.hideProgress('search');
             this.showNotification('Search failed: ' + error.message, 'error');
         }
+    }
+
+    async pollOperationStatus(operationId) {
+        const pollInterval = 1500;
+        const maxAttempts = 120;
+        let attempts = 0;
+
+        const poll = async () => {
+            try {
+                const response = await fetch(`/api/operation_status/${operationId}`);
+                const data = await response.json();
+                
+                if (data.error === 'Operation not found') {
+                    return;
+                }
+                
+                if (data.status === 'running') {
+                    this.updateOperationProgress({ operation_id: operationId, ...data });
+                } else if (data.status === 'completed' || data.status === 'error') {
+                    this.updateOperationProgress({ operation_id: operationId, ...data });
+                    return;
+                }
+                
+                attempts++;
+                if (attempts < maxAttempts) {
+                    setTimeout(poll, pollInterval);
+                }
+            } catch (error) {
+                console.error('Poll error:', error);
+                if (attempts < maxAttempts) {
+                    setTimeout(poll, pollInterval);
+                }
+            }
+        };
+        
+        setTimeout(poll, pollInterval);
     }
 
     async extractSelectedPaper() {
@@ -271,6 +317,7 @@ class AIResearchAgent {
             if (data.status === 'started') {
                 this.activeOperations[data.operation_id] = 'extract';
                 this.showNotification('Text extraction started', 'success');
+                this.pollOperationStatus(data.operation_id);
             } else {
                 this.hideProgress('extract');
                 this.showNotification('Failed to start text extraction', 'error');
@@ -296,7 +343,7 @@ class AIResearchAgent {
         const papersList = document.getElementById('papersDirectoryList');
         
         if (papers.length === 0) {
-            papersList.innerHTML = '<p style="color: var(--text-secondary); text-align: center; padding: 2rem;">No papers found in data/papers directory.</p>';
+            papersList.innerHTML = '<p style="color: var(--text-secondary); text-align: center; padding: 2rem;">No papers found. Try searching for papers first.</p>';
             return;
         }
 
@@ -351,22 +398,29 @@ class AIResearchAgent {
         papers.forEach(paper => {
             const paperItem = document.createElement('div');
             paperItem.className = 'paper-item';
+            const filename = paper.filename || (paper.file ? paper.file.split(/[/\\]/).pop() : null) || (paper.name + '.pdf');
             
             paperItem.innerHTML = `
                 <div class="paper-info">
-                    <div class="paper-title">${paper.name}</div>
+                    <div class="paper-title">${this.escapeHtml(paper.name)}</div>
                     <div class="paper-meta">
                         Size: ${(paper.size / 1024).toFixed(1)} KB | 
                         Modified: ${new Date(paper.modified * 1000).toLocaleDateString()}
                     </div>
                 </div>
                 <div class="paper-actions">
-                    <button class="btn btn-sm btn-primary" onclick="window.downloadPaper('${paper.file}')">
+                    <button class="btn btn-sm btn-primary btn-download-paper" data-filename="${this.escapeHtml(filename)}">
                         <i class="fas fa-download"></i> Download
                     </button>
                 </div>
             `;
             
+            const downloadBtn = paperItem.querySelector('.btn-download-paper');
+            if (downloadBtn) {
+                downloadBtn.addEventListener('click', () => {
+                    window.downloadPaper(downloadBtn.dataset.filename);
+                });
+            }
             resultsList.appendChild(paperItem);
         });
     }
@@ -401,6 +455,7 @@ class AIResearchAgent {
             if (data.status === 'started') {
                 this.activeOperations[data.operation_id] = 'extract';
                 this.showNotification('Text extraction started', 'success');
+                this.pollOperationStatus(data.operation_id);
             } else {
                 this.hideProgress('extract');
                 this.showNotification('Failed to start text extraction', 'error');
@@ -437,6 +492,7 @@ class AIResearchAgent {
             if (data.status === 'started') {
                 this.activeOperations[data.operation_id] = 'analyze';
                 this.showNotification('Paper analysis started', 'success');
+                this.pollOperationStatus(data.operation_id);
             } else {
                 this.hideProgress('analyze');
                 this.showNotification('Failed to start paper analysis', 'error');
@@ -471,6 +527,7 @@ class AIResearchAgent {
             if (data.status === 'started') {
                 this.activeOperations[data.operation_id] = 'compare';
                 this.showNotification('Paper comparison started', 'success');
+                this.pollOperationStatus(data.operation_id);
             } else {
                 this.hideProgress('compare');
                 this.showNotification('Failed to start paper comparison', 'error');
@@ -524,6 +581,7 @@ class AIResearchAgent {
                 if (data.status === 'started') {
                     this.activeOperations[data.operation_id] = 'draft';
                     this.showNotification('AI is working on your draft...', 'success');
+                    this.pollOperationStatus(data.operation_id);
                 } else {
                     this.hideProgress('draft');
                     this.showNotification('Failed to start AI generation', 'error');
@@ -548,6 +606,7 @@ class AIResearchAgent {
                 if (data.status === 'started') {
                     this.activeOperations[data.operation_id] = 'draft';
                     this.showNotification('Draft generation with custom instructions started', 'success');
+                    this.pollOperationStatus(data.operation_id);
                 } else {
                     this.hideProgress('draft');
                     this.showNotification('Failed to start draft generation', 'error');
@@ -571,6 +630,7 @@ class AIResearchAgent {
                 if (data.status === 'started') {
                     this.activeOperations[data.operation_id] = 'draft';
                     this.showNotification('Draft generation started', 'success');
+                    this.pollOperationStatus(data.operation_id);
                 } else {
                     this.hideProgress('draft');
                     this.showNotification('Failed to start draft generation', 'error');
@@ -681,6 +741,7 @@ class AIResearchAgent {
             if (data.status === 'started') {
                 this.activeOperations[data.operation_id] = 'draft';
                 this.showNotification('Comprehensive draft generation started', 'success');
+                this.pollOperationStatus(data.operation_id);
             } else {
                 this.hideProgress('draft');
                 this.showNotification('Failed to start comprehensive draft generation', 'error');
@@ -1318,6 +1379,7 @@ class AIResearchAgent {
                 if (data.status === 'started') {
                     this.activeOperations[data.operation_id] = 'improvement';
                     this.showNotification('AI is working on improvements...', 'success');
+                    this.pollOperationStatus(data.operation_id);
                 } else {
                     this.hideProgress('draft');
                     this.showNotification('Failed to start improvement', 'error');
@@ -1341,6 +1403,7 @@ class AIResearchAgent {
                 if (data.status === 'started') {
                     this.activeOperations[data.operation_id] = 'correction';
                     this.showNotification('AI correction started', 'success');
+                    this.pollOperationStatus(data.operation_id);
                 } else {
                     this.hideProgress('draft');
                     this.showNotification('Failed to start correction', 'error');

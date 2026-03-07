@@ -1,0 +1,50 @@
+# Git files
+.git
+.gitignore
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info
+dist/
+build/
+
+# Data and logs
+data/
+*.log
+ai_research_agent.log
+
+# Environment
+.env
+
+# IDEs
+.vscode/
+.idea/
+.cursor/
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# AWS
+.ebextensions/
+.ebignore
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Documentation (optional - remove if you want to include)
+*.md
+!README.md

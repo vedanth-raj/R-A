@@ -1,0 +1,522 @@
+# 🗺️ AWS Deployment Flowchart
+
+Visual guide to the deployment process.
+
+---
+
+## 📊 DEPLOYMENT PROCESS OVERVIEW
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    START DEPLOYMENT                          │
+└─────────────────────┬───────────────────────────────────────┘
+                      │
+                      ▼
+┌─────────────────────────────────────────────────────────────┐
+│  PHASE 1: PREPARATION (5 minutes)                           │
+├─────────────────────────────────────────────────────────────┤
+│  ☐ Create AWS account                                       │
+│  ☐ Get API keys (Gemini, Semantic Scholar)                  │
+│  ☐ Test application locally                                 │
+│  ☐ Create ZIP file (exclude .venv, .git, data)              │
+│  ☐ Verify application.py exists                             │
+│  ☐ Verify requirements.txt is complete                      │
+└─────────────────────┬───────────────────────────────────────┘
+                      │
+                      ▼
+┌─────────────────────────────────────────────────────────────┐
+│  PHASE 2: AWS CONSOLE SETUP (15 minutes)                    │
+├─────────────────────────────────────────────────────────────┤
+│  1. Sign in to AWS Console                                  │
+│  2. Navigate to Elastic Beanstalk                           │
+│  3. Click "Create Application"                              │
+│  4. Fill in application details                             │
+│  5. Upload ZIP file                                         │
+│  6. Configure service access                                │
+│  7. Set up networking                                       │
+│  8. Configure instance settings                             │
+│  9. Enable monitoring                                       │
+│  10. Review and submit                                      │
+└─────────────────────┬───────────────────────────────────────┘
+                      │
+                      ▼
+┌─────────────────────────────────────────────────────────────┐
+│  PHASE 3: WAIT FOR CREATION (10-15 minutes)                 │
+├─────────────────────────────────────────────────────────────┤
+│  AWS is creating:                                           │
+│  • Security groups                                          │
+│  • EC2 instance                                             │
+│  • Installing Python                                        │
+│  • Installing dependencies                                  │
+│  • Deploying application                                    │
+│  • Health checks                                            │
+│                                                             │
+│  Status: Creating... → Ok ✓                                 │
+└─────────────────────┬───────────────────────────────────────┘
+                      │
+                      ▼
+┌─────────────────────────────────────────────────────────────┐
+│  PHASE 4: CONFIGURATION (5 minutes)                         │
+├─────────────────────────────────────────────────────────────┤
+│  1. Go to Configuration → Software                          │
+│  2. Add environment variables:                              │
+│     • GEMINI_API_KEY                                        │
+│     • SEMANTIC_SCHOLAR_API_KEY                              │
+│     • FLASK_ENV=production                                  │
+│     • SECRET_KEY                                            │
+│  3. Apply changes                                           │
+│  4. Wait for restart (2-3 minutes)                          │
+└─────────────────────┬───────────────────────────────────────┘
+                      │
+                      ▼
+┌─────────────────────────────────────────────────────────────┐
+│  PHASE 5: VERIFICATION (5 minutes)                          │
+├─────────────────────────────────────────────────────────────┤
+│  ☐ Environment status is green "Ok"                         │
+│  ☐ URL is accessible                                        │
+│  ☐ Application loads                                        │
+│  ☐ Test all features                                        │
+│  ☐ Check logs for errors                                    │
+│  ☐ Set up billing alerts                                    │
+└─────────────────────┬───────────────────────────────────────┘
+                      │
+                      ▼
+┌─────────────────────────────────────────────────────────────┐
+│                  DEPLOYMENT COMPLETE! 🎉                     │
+│                                                             │
+│  Your app is live at:                                       │
+│  http://ai-research-prod.us-east-1.elasticbeanstalk.com     │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 🔄 DECISION TREE: WHICH DEPLOYMENT METHOD?
+
+```
+                    START
+                      │
+                      ▼
+        ┌─────────────────────────┐
+        │  Do you want easy       │
+        │  automated management?  │
+        └──────────┬──────────────┘
+                   │
+         ┌─────────┴─────────┐
+         │                   │
+        YES                 NO
+         │                   │
+         ▼                   ▼
+┌─────────────────┐  ┌──────────────────┐
+│ ELASTIC         │  │ Do you need      │
+│ BEANSTALK       │  │ full control?    │
+│                 │  └────────┬─────────┘
+│ ✓ Easy setup    │           │
+│ ✓ Auto-scaling  │  ┌────────┴────────┐
+│ ✓ Monitoring    │  │                 │
+│ ✓ Free tier     │ YES               NO
+│                 │  │                 │
+│ Time: 30 min    │  ▼                 ▼
+└─────────────────┘  ┌──────────┐  ┌──────────┐
+                     │ EC2      │  │ Use EB   │
+                     │ MANUAL   │  │ anyway   │
+                     │          │  └──────────┘
+                     │ ✓ Control│
+                     │ ✓ Custom │
+                     │ ✗ Complex│
+                     │          │
+                     │ Time: 2h │
+                     └──────────┘
+```
+
+---
+
+## 🚨 TROUBLESHOOTING FLOWCHART
+
+```
+                Application Not Working?
+                         │
+                         ▼
+        ┌────────────────────────────────┐
+        │ What's the problem?            │
+        └────────┬───────────────────────┘
+                 │
+    ┌────────────┼────────────┬──────────────┐
+    │            │            │              │
+    ▼            ▼            ▼              ▼
+┌────────┐  ┌────────┐  ┌─────────┐  ┌──────────┐
+│ 502    │  │ Won't  │  │ Slow    │  │ WebSocket│
+│ Error  │  │ Start  │  │ Perf.   │  │ Failed   │
+└───┬────┘  └───┬────┘  └────┬────┘  └────┬─────┘
+    │           │             │             │
+    ▼           ▼             ▼             ▼
+┌────────┐  ┌────────┐  ┌─────────┐  ┌──────────┐
+│ Check  │  │ Check  │  │ Upgrade │  │ Add      │
+│ Logs   │  │ Env    │  │ Instance│  │ WS Config│
+│        │  │ Vars   │  │ Type    │  │          │
+│ Verify │  │        │  │         │  │ Check    │
+│ app.py │  │ Check  │  │ t2.small│  │ eventlet │
+│        │  │ req.txt│  │         │  │          │
+└────────┘  └────────┘  └─────────┘  └──────────┘
+```
+
+---
+
+## 💰 COST DECISION TREE
+
+```
+                    How much traffic?
+                           │
+              ┌────────────┼────────────┐
+              │            │            │
+              ▼            ▼            ▼
+        ┌──────────┐ ┌──────────┐ ┌──────────┐
+        │ Testing/ │ │ Low      │ │ High     │
+        │ Dev      │ │ Traffic  │ │ Traffic  │
+        └────┬─────┘ └────┬─────┘ └────┬─────┘
+             │            │            │
+             ▼            ▼            ▼
+        ┌──────────┐ ┌──────────┐ ┌──────────┐
+        │ t2.micro │ │ t2.small │ │ t2.medium│
+        │          │ │          │ │ or       │
+        │ 1GB RAM  │ │ 2GB RAM  │ │ t3.medium│
+        │ FREE*    │ │ ~$17/mo  │ │ ~$30/mo  │
+        │          │ │          │ │          │
+        │ Single   │ │ Single   │ │ Load     │
+        │ Instance │ │ Instance │ │ Balanced │
+        └──────────┘ └──────────┘ └──────────┘
+        
+        * Free tier first 12 months
+```
+
+---
+
+## 📊 DEPLOYMENT TIMELINE
+
+```
+Time    Activity                          Status
+─────────────────────────────────────────────────────
+0:00    Start preparation                 ⚪ Not started
+0:05    Create ZIP file                   🟡 In progress
+0:10    Sign in to AWS                    🟡 In progress
+0:15    Create application                🟡 In progress
+0:20    Upload ZIP                        🟡 In progress
+0:25    Configure settings                🟡 In progress
+0:30    Submit creation                   🟡 In progress
+        ↓
+0:30    AWS creating environment          🟡 Creating...
+0:35    Installing dependencies           🟡 Creating...
+0:40    Deploying application             🟡 Creating...
+0:45    Health checks                     🟡 Creating...
+        ↓
+0:45    Environment created               🟢 Ok
+0:50    Add environment variables         🟡 Updating...
+0:53    Restart complete                  🟢 Ok
+0:55    Test application                  🟢 Testing
+1:00    Deployment complete!              ✅ Success!
+
+Total Time: ~60 minutes (30 min active, 30 min waiting)
+```
+
+---
+
+## 🔄 UPDATE WORKFLOW
+
+```
+┌─────────────────────────────────────────┐
+│  Code Changes Made Locally              │
+└──────────────┬──────────────────────────┘
+               │
+               ▼
+┌─────────────────────────────────────────┐
+│  Test Locally                           │
+│  • Run application                      │
+│  • Test all features                    │
+│  • Fix any bugs                         │
+└──────────────┬──────────────────────────┘
+               │
+               ▼
+┌─────────────────────────────────────────┐
+│  Create New ZIP File                    │
+│  • Version: v1.1, v1.2, etc.            │
+│  • Exclude .venv, .git, data            │
+└──────────────┬──────────────────────────┘
+               │
+               ▼
+┌─────────────────────────────────────────┐
+│  Upload to AWS                          │
+│  • Application Versions → Upload        │
+│  • Label: v1.1                          │
+└──────────────┬──────────────────────────┘
+               │
+               ▼
+┌─────────────────────────────────────────┐
+│  Deploy to Environment                  │
+│  • Upload and Deploy button             │
+│  • Select new version                   │
+│  • Wait 3-5 minutes                     │
+└──────────────┬──────────────────────────┘
+               │
+               ▼
+┌─────────────────────────────────────────┐
+│  Verify Deployment                      │
+│  • Check status is "Ok"                 │
+│  • Test application                     │
+│  • Review logs                          │
+└──────────────┬──────────────────────────┘
+               │
+               ▼
+┌─────────────────────────────────────────┐
+│  Update Complete! ✅                     │
+└─────────────────────────────────────────┘
+```
+
+---
+
+## 🎯 FEATURE TESTING CHECKLIST FLOW
+
+```
+Application Deployed
+        │
+        ▼
+┌─────────────────┐
+│ Basic Access    │
+│ ☐ URL loads     │
+│ ☐ No 502 error  │
+│ ☐ UI displays   │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ Search Papers   │
+│ ☐ Search works  │
+│ ☐ Results show  │
+│ ☐ PDFs download │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ Text Extract    │
+│ ☐ Extract works │
+│ ☐ Text visible  │
+│ ☐ No errors     │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ Draft Generate  │
+│ ☐ Generate works│
+│ ☐ Content good  │
+│ ☐ API key works │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ WebSocket       │
+│ ☐ Real-time OK  │
+│ ☐ Progress bars │
+│ ☐ Updates work  │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ All Tests Pass! │
+│ ✅ Ready to use │
+└─────────────────┘
+```
+
+---
+
+## 🔐 SECURITY SETUP FLOW
+
+```
+┌─────────────────────────────────────────┐
+│  Environment Variables                  │
+│  • GEMINI_API_KEY                       │
+│  • SEMANTIC_SCHOLAR_API_KEY             │
+│  • FLASK_ENV=production                 │
+│  • SECRET_KEY                           │
+└──────────────┬──────────────────────────┘
+               │
+               ▼
+┌─────────────────────────────────────────┐
+│  Security Groups                        │
+│  • Port 80 (HTTP) - Open                │
+│  • Port 443 (HTTPS) - Open (optional)   │
+│  • Port 22 (SSH) - Your IP only         │
+└──────────────┬──────────────────────────┘
+               │
+               ▼
+┌─────────────────────────────────────────┐
+│  IAM Roles                              │
+│  • Service role: EB operations          │
+│  • Instance profile: EC2 permissions    │
+└──────────────┬──────────────────────────┘
+               │
+               ▼
+┌─────────────────────────────────────────┐
+│  HTTPS (Optional but Recommended)       │
+│  • Get SSL certificate                  │
+│  • Configure load balancer              │
+│  • Redirect HTTP to HTTPS               │
+└──────────────┬──────────────────────────┘
+               │
+               ▼
+┌─────────────────────────────────────────┐
+│  Security Complete! 🔒                  │
+└─────────────────────────────────────────┘
+```
+
+---
+
+## 📊 MONITORING DASHBOARD LAYOUT
+
+```
+┌─────────────────────────────────────────────────────────┐
+│  ELASTIC BEANSTALK ENVIRONMENT OVERVIEW                 │
+├─────────────────────────────────────────────────────────┤
+│                                                         │
+│  Status: 🟢 Ok          Health: 🟢 Ok                   │
+│  URL: http://ai-research-prod.us-east-1...              │
+│                                                         │
+├─────────────────────────────────────────────────────────┤
+│  TABS:                                                  │
+│  [Overview] [Configuration] [Logs] [Monitoring] [...]  │
+├─────────────────────────────────────────────────────────┤
+│                                                         │
+│  MONITORING TAB:                                        │
+│                                                         │
+│  ┌─────────────────────────────────────────────────┐   │
+│  │ Environment Health                              │   │
+│  │ ▁▂▃▅▇█████████████████████████ 100%            │   │
+│  └─────────────────────────────────────────────────┘   │
+│                                                         │
+│  ┌─────────────────────────────────────────────────┐   │
+│  │ CPU Utilization                                 │   │
+│  │ ▁▁▂▂▃▃▄▄▅▅▆▆▇▇ 45%                             │   │
+│  └─────────────────────────────────────────────────┘   │
+│                                                         │
+│  ┌─────────────────────────────────────────────────┐   │
+│  │ Network In/Out                                  │   │
+│  │ ▁▂▁▂▃▂▃▄▃▄▅▄▅ 2.5 MB/s                         │   │
+│  └─────────────────────────────────────────────────┘   │
+│                                                         │
+│  ┌─────────────────────────────────────────────────┐   │
+│  │ Requests                                        │   │
+│  │ ▁▂▃▄▅▆▇█▇▆▅▄▃▂▁ 150 req/min                    │   │
+│  └─────────────────────────────────────────────────┘   │
+│                                                         │
+└─────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 🎯 QUICK REFERENCE: COMMON PATHS
+
+### To View Logs:
+```
+AWS Console → Elastic Beanstalk → Your Environment
+→ Logs → Request Logs → Last 100 Lines
+```
+
+### To Add Environment Variables:
+```
+AWS Console → Elastic Beanstalk → Your Environment
+→ Configuration → Software → Edit → Environment properties
+```
+
+### To Update Application:
+```
+AWS Console → Elastic Beanstalk → Application versions
+→ Upload → Choose file → Deploy
+```
+
+### To Change Instance Type:
+```
+AWS Console → Elastic Beanstalk → Your Environment
+→ Configuration → Instances → Edit → Instance type
+```
+
+### To Terminate Environment:
+```
+AWS Console → Elastic Beanstalk → Your Environment
+→ Actions → Terminate environment
+```
+
+---
+
+## 📞 SUPPORT DECISION TREE
+
+```
+                Having Issues?
+                      │
+                      ▼
+        ┌─────────────────────────┐
+        │ Have you checked logs?  │
+        └──────────┬──────────────┘
+                   │
+         ┌─────────┴─────────┐
+         │                   │
+        NO                  YES
+         │                   │
+         ▼                   ▼
+    ┌─────────┐      ┌──────────────┐
+    │ Check   │      │ Found error? │
+    │ Logs    │      └──────┬───────┘
+    │ First!  │             │
+    └─────────┘    ┌────────┴────────┐
+                   │                 │
+                  YES               NO
+                   │                 │
+                   ▼                 ▼
+         ┌──────────────────┐  ┌──────────────┐
+         │ Check            │  │ Check        │
+         │ Troubleshooting  │  │ AWS Status   │
+         │ Guide            │  │ Page         │
+         └────────┬─────────┘  └──────┬───────┘
+                  │                   │
+                  ▼                   ▼
+         ┌──────────────────┐  ┌──────────────┐
+         │ Fixed?           │  │ AWS Issue?   │
+         └────────┬─────────┘  └──────┬───────┘
+                  │                   │
+         ┌────────┴────────┐  ┌───────┴────────┐
+         │                 │  │                │
+        YES               NO  YES              NO
+         │                 │  │                │
+         ▼                 ▼  ▼                ▼
+    ┌─────────┐    ┌──────────┐  ┌─────────┐  ┌──────────┐
+    │ Great!  │    │ Contact  │  │ Wait    │  │ Contact  │
+    │ Done!   │    │ AWS      │  │ for     │  │ AWS      │
+    │ ✅      │    │ Support  │  │ Fix     │  │ Support  │
+    └─────────┘    └──────────┘  └─────────┘  └──────────┘
+```
+
+---
+
+## 🎉 SUCCESS INDICATORS
+
+```
+┌─────────────────────────────────────────┐
+│  ✅ DEPLOYMENT SUCCESSFUL WHEN:         │
+├─────────────────────────────────────────┤
+│                                         │
+│  🟢 Environment Status: Ok              │
+│  🟢 Health Status: Ok                   │
+│  🟢 URL Accessible                      │
+│  🟢 Application Loads                   │
+│  🟢 All Features Work                   │
+│  🟢 No Errors in Logs                   │
+│  🟢 API Keys Working                    │
+│  🟢 WebSocket Connected                 │
+│  🟢 Performance Good                    │
+│  🟢 Billing Alerts Set                  │
+│                                         │
+│  🎉 READY FOR PRODUCTION!               │
+│                                         │
+└─────────────────────────────────────────┘
+```
+
+---
+
+**Use this flowchart alongside the detailed guides for a complete understanding of the deployment process!**
