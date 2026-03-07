@@ -240,11 +240,3 @@ Output: Full details of all saved papers
 
 **Problem**: Same papers every time
 - **Solution**: Use `--randomize` flag to get different papers
-
-### 📄 License
-
-This project is part of an academic research system.
-
-### 🤝 Contributing
-
-This is Milestone 1 of a larger project. Code is modular and ready for integration with future milestones.
