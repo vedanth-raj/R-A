@@ -139,13 +139,12 @@ AI ASSISTANT: """
             
             self.logger.info(f"Starting conversational generation for {section_type}")
             
-            response = self.gemini_client.models.generate_content(
-                model=GEMINI_MODEL,
-                contents=prompt,
-                config=types.GenerateContentConfig(
+            kwargs = {"model": GEMINI_MODEL, "contents": prompt}
+            if types:
+                kwargs["config"] = types.GenerateContentConfig(
                     temperature=0.7, max_output_tokens=2048
                 )
-            )
+            response = self.gemini_client.models.generate_content(**kwargs)
             
             elapsed = time.time() - start_time
             self.logger.info(f"Conversational generation completed in {elapsed:.2f} seconds")
@@ -205,13 +204,12 @@ Format:
 [Improved content]"""
         
         try:
-            response = self.gemini_client.models.generate_content(
-                model=GEMINI_MODEL,
-                contents=prompt,
-                config=types.GenerateContentConfig(
+            kwargs = {"model": GEMINI_MODEL, "contents": prompt}
+            if types:
+                kwargs["config"] = types.GenerateContentConfig(
                     temperature=0.8, max_output_tokens=1024
                 )
-            )
+            response = self.gemini_client.models.generate_content(**kwargs)
             
             full_response = (response.text or "").strip()
             
@@ -256,13 +254,12 @@ For example:
 Ask questions relevant to a {section_type} section."""
         
         try:
-            response = self.gemini_client.models.generate_content(
-                model=GEMINI_MODEL,
-                contents=prompt,
-                config=types.GenerateContentConfig(
+            kwargs = {"model": GEMINI_MODEL, "contents": prompt}
+            if types:
+                kwargs["config"] = types.GenerateContentConfig(
                     temperature=0.9, max_output_tokens=512
                 )
-            )
+            response = self.gemini_client.models.generate_content(**kwargs)
             
             return (response.text or "").strip()
             
