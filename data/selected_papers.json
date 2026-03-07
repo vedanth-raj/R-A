@@ -1,181 +1,142 @@
 [
   {
-    "paperId": "8287f95309e50a1e243c48e6890762f09c02a21f",
-    "title": "Adhesive force of a single gecko foot-hair",
+    "paperId": "a4cebe38cfbc477ff9727eeb55a8a286d497a776",
+    "title": "Yielding of steel sheets containing slits",
     "authors": [
       {
-        "authorId": "4334174",
-        "name": "Kellar Autumn"
-      },
-      {
-        "authorId": "40799915",
-        "name": "Yiching A. Liang"
-      },
-      {
-        "authorId": "144526852",
-        "name": "S. Hsieh"
-      },
-      {
-        "authorId": "2591138",
-        "name": "W. Zesch"
-      },
-      {
-        "authorId": "31343783",
-        "name": "W. P. Chan"
-      },
-      {
-        "authorId": "2280144",
-        "name": "T. Kenny"
-      },
-      {
-        "authorId": "1773013",
-        "name": "R. Fearing"
-      },
-      {
-        "authorId": "143941382",
-        "name": "R. Full"
+        "authorId": "95484177",
+        "name": "D. S. Dugdale"
       }
     ],
-    "year": 2000,
-    "citationCount": 2573,
+    "year": 1960,
+    "citationCount": 7665,
     "openAccessPdf": {
       "url": "",
       "status": "CLOSED"
-    },
-    "hasOpenAccessPdf": true,
-    "pdfUrl": ""
+    }
   },
   {
-    "paperId": "df040f54f02fe3e9e19b82e017b245ff6e603456",
-    "title": "Label-retaining cells reside in the bulge area of pilosebaceous unit: implications for follicular stem cells, hair cycle, and skin carcinogenesis.",
+    "paperId": "3058b0c97cfa2a25bc86edbd947aa1692d5d1e41",
+    "title": "The Deformation and Ageing of Mild Steel: III Discussion of Results",
     "authors": [
       {
-        "authorId": "3569251",
-        "name": "G. Cotsarelis"
-      },
-      {
-        "authorId": "4906477",
-        "name": "T. Sun"
-      },
-      {
-        "authorId": "32243599",
-        "name": "R. Lavker"
+        "authorId": "153713036",
+        "name": "E. Hall"
       }
     ],
-    "year": 1990,
-    "citationCount": 2312,
+    "year": 1951,
+    "citationCount": 7043,
     "openAccessPdf": {
       "url": "",
       "status": "CLOSED"
-    },
-    "hasOpenAccessPdf": true,
-    "pdfUrl": ""
+    }
   },
   {
-    "paperId": "78b482bd463a2e29e2aae66b9cf8e24a66b06fe6",
-    "title": "Stress-related and basic determinants of hair cortisol in humans: A meta-analysis.",
+    "paperId": "1839bb474bc1ddb642afd8d34ecbe40a8f3b3616",
+    "title": "Eurocode 3: Design of steel structures",
     "authors": [
       {
-        "authorId": "5671281",
-        "name": "T. Stalder"
-      },
-      {
-        "authorId": "1398356079",
-        "name": "S. Steudte-Schmiedgen"
-      },
-      {
-        "authorId": "143607172",
-        "name": "N. Alexander"
-      },
-      {
-        "authorId": "2316704420",
-        "name": "T. Klucken"
-      },
-      {
-        "authorId": "48763956",
-        "name": "Ann M. Vater"
-      },
-      {
-        "authorId": "7180014",
-        "name": "Susann Wichmann"
-      },
-      {
-        "authorId": "145712239",
-        "name": "C. Kirschbaum"
-      },
-      {
-        "authorId": "2110627061",
-        "name": "Robert Miller"
-      }
-    ],
-    "year": 2016,
-    "citationCount": 747,
-    "openAccessPdf": {
-      "url": "",
-      "status": "CLOSED"
-    },
-    "hasOpenAccessPdf": true,
-    "pdfUrl": ""
-  },
-  {
-    "paperId": "680078951d9669e2c6ab284d2b5b48c00d56d5ac",
-    "title": "Soft Hair on Black Holes.",
-    "authors": [
-      {
-        "authorId": "49244787",
-        "name": "S. Hawking"
-      },
-      {
-        "authorId": "32093077",
-        "name": "M. Perry"
-      },
-      {
-        "authorId": "2176355",
-        "name": "A. Strominger"
-      }
-    ],
-    "year": 2016,
-    "abstract": "It has recently been shown that Bondi-van der Burg-Metzner-Sachs supertranslation symmetries imply an infinite number of conservation laws for all gravitational theories in asymptotically Minkowskian spacetimes. These laws require black holes to carry a large amount of soft (i.e., zero-energy) supertranslation hair. The presence of a Maxwell field similarly implies soft electric hair. This Letter gives an explicit description of soft hair in terms of soft gravitons or photons on the black hole horizon, and shows that complete information about their quantum state is stored on a holographic plate at the future boundary of the horizon. Charge conservation is used to give an infinite number of exact relations between the evaporation products of black holes which have different soft hair but are otherwise identical. It is further argued that soft hair which is spatially localized to much less than a Planck length cannot be excited in a physically realizable process, giving an effective number of soft degrees of freedom proportional to the horizon area in Planck units.",
-    "citationCount": 743,
-    "openAccessPdf": {
-      "url": "https://link.aps.org/accepted/10.1103/PhysRevLett.116.231301",
-      "status": "BRONZE"
-    },
-    "hasOpenAccessPdf": true,
-    "pdfUrl": "https://link.aps.org/accepted/10.1103/PhysRevLett.116.231301"
-  },
-  {
-    "paperId": "2e2d48a94dbc4c667b05c371859c77ab85257326",
-    "title": "A Thermally Insulating Textile Inspired by Polar Bear Hair",
-    "authors": [
-      {
-        "authorId": "2115349549",
-        "name": "Ying Cui"
-      },
-      {
-        "authorId": "35721459",
-        "name": "Huaxin Gong"
-      },
-      {
-        "authorId": "2115658677",
-        "name": "Yujie Wang"
-      },
-      {
-        "authorId": "48109130",
-        "name": "Dewen Li"
-      },
-      {
-        "authorId": "143605762",
-        "name": "Hao Bai"
+        "authorId": "2115448357",
+        "name": "D. Brown"
       }
     ],
     "year": 2018,
-    "citationCount": 556,
+    "abstract": "Structural engineers should be encouraged that at least in steel, design conforming to Eurocode 3 (BS EN 1993-1-1) is not signifi cantly different to BS 5950. In fact, if the changes in presentation are stripped away, in most areas design is almost identical to both standards. This is of course to be expected, as the steel itself knows no difference, and the UK has enjoyed the benefi ts of mature design standards for decades – it would be very surprising if there were dramatic changes from previous UK practice. There are wellknown changes:",
+    "citationCount": 2787,
+    "openAccessPdf": {
+      "url": ""
+    }
+  },
+  {
+    "paperId": "e5a2d426a2b06c98e4ae7c2d6e86a56670300852",
+    "title": "Probabilistic Basis for 2000 SAC Federal Emergency Management Agency Steel Moment Frame Guidelines",
+    "authors": [
+      {
+        "authorId": "145134572",
+        "name": "C. Cornell"
+      },
+      {
+        "authorId": "23572416",
+        "name": "F. Jalayer"
+      },
+      {
+        "authorId": "40602877",
+        "name": "R. Hamburger"
+      },
+      {
+        "authorId": "70244634",
+        "name": "D. Foutch"
+      }
+    ],
+    "year": 2002,
+    "citationCount": 2105,
     "openAccessPdf": {
       "url": "",
       "status": "CLOSED"
-    },
-    "hasOpenAccessPdf": true,
-    "pdfUrl": ""
+    }
+  },
+  {
+    "paperId": "54c1f7896bd789fc62ba3f1e0e5cdba6a0e46809",
+    "title": "Ultrastrong steel via minimal lattice misfit and high-density nanoprecipitation",
+    "authors": [
+      {
+        "authorId": "50558718",
+        "name": "Suihe Jiang"
+      },
+      {
+        "authorId": "2619151",
+        "name": "Hui Wang"
+      },
+      {
+        "authorId": "2108185426",
+        "name": "Yuan Wu"
+      },
+      {
+        "authorId": "2110678550",
+        "name": "Xiongjun Liu"
+      },
+      {
+        "authorId": "2155543024",
+        "name": "Honghong Chen"
+      },
+      {
+        "authorId": "7890653",
+        "name": "Mengji Yao"
+      },
+      {
+        "authorId": "8698304",
+        "name": "B. Gault"
+      },
+      {
+        "authorId": "33003204",
+        "name": "D. Ponge"
+      },
+      {
+        "authorId": "144763237",
+        "name": "D. Raabe"
+      },
+      {
+        "authorId": "40627323",
+        "name": "A. Hirata"
+      },
+      {
+        "authorId": "2130461788",
+        "name": "Mingwei Chen"
+      },
+      {
+        "authorId": "119917647",
+        "name": "Yandong Wang"
+      },
+      {
+        "authorId": "7721773",
+        "name": "Zhaoping Lu"
+      }
+    ],
+    "year": 2017,
+    "citationCount": 1166,
+    "openAccessPdf": {
+      "url": "",
+      "status": "CLOSED"
+    }
   }
 ]
