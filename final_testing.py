@@ -12,6 +12,9 @@ from pathlib import Path
 from datetime import datetime
 from typing import Dict, List, Any, Optional, Tuple
 
+from dotenv import load_dotenv
+load_dotenv()
+
 # Import all components for testing
 from enhanced_gpt_generator import EnhancedGPTDraftGenerator
 from content_reviewer import ContentReviewer

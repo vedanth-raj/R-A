@@ -100,11 +100,38 @@ class PDFDownloader:
                     )
                     return None
             
+            # Ensure directory exists and has write permissions
+            try:
+                os.makedirs(os.path.dirname(filepath), mode=0o777, exist_ok=True)
+                try:
+                    os.chmod(os.path.dirname(filepath), 0o777)
+                except Exception:
+                    pass
+            except Exception:
+                pass
+
             # Download and save
-            with open(filepath, "wb") as f:
-                for chunk in response.iter_content(chunk_size=8192):
-                    if chunk:
-                        f.write(chunk)
+            try:
+                with open(filepath, "wb") as f:
+                    for chunk in response.iter_content(chunk_size=8192):
+                        if chunk:
+                            f.write(chunk)
+            except PermissionError:
+                # Attempt to chmod directory or write to /tmp fallback if on Linux
+                try:
+                    os.chmod(os.path.dirname(filepath), 0o777)
+                    with open(filepath, "wb") as f:
+                        for chunk in response.iter_content(chunk_size=8192):
+                            if chunk:
+                                f.write(chunk)
+                except Exception as pe:
+                    fallback_dir = "/tmp/litwise_papers"
+                    os.makedirs(fallback_dir, mode=0o777, exist_ok=True)
+                    filepath = os.path.join(fallback_dir, filename)
+                    with open(filepath, "wb") as f:
+                        for chunk in response.iter_content(chunk_size=8192):
+                            if chunk:
+                                f.write(chunk)
             
             file_size = os.path.getsize(filepath)
             logger.info(f"Downloaded PDF: {filename} ({file_size:,} bytes)")

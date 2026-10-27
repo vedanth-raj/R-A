@@ -245,6 +245,29 @@ class APAFormatter:
         
         return ' '.join(parts)
     
+    def format_journal_article(self, authors: List[str], year: Any, title: str, 
+                               journal: str, volume: Optional[str] = None, 
+                               issue: Optional[str] = None, pages: Optional[str] = None,
+                               doi: Optional[str] = None, url: Optional[str] = None) -> str:
+        """Format journal article from parameter arguments (convenience method)."""
+        try:
+            year_int = int(year)
+        except (ValueError, TypeError):
+            year_int = 2024
+        ref = Reference(
+            authors=authors,
+            year=year_int,
+            title=title,
+            journal=journal,
+            volume=volume,
+            issue=issue,
+            pages=pages,
+            doi=doi,
+            url=url,
+            ref_type="journal"
+        )
+        return self.format_journal_reference(ref)
+
     def format_book_reference(self, reference: Reference) -> str:
         """
         Format a book reference.

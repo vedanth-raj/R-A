@@ -15,4 +15,4 @@ ngrok/
 *.md
 documentation/
 .cursor/
-.ebextensions/
+# .ebextensions/

@@ -3,9 +3,6 @@ requests>=2.31.0
 pydantic>=2.5.0
 tqdm>=4.66.0
 
-# Google AI (Gemini) - use google-genai (new SDK); google-generativeai is deprecated
-google-genai>=1.0.0
-
 # LangChain ecosystem (for future milestones, but required now)
 langchain>=0.1.0
 langgraph>=0.0.26
@@ -44,5 +41,9 @@ psutil>=5.9.0
 # PDF generation
 reportlab>=4.0.0
 
-# GCP deployment
+# Google Gemini SDK
+google-genai>=0.1.0
+
+# AWS deployment
 gunicorn>=21.0.0
+eventlet>=0.33.0

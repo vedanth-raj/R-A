@@ -148,7 +148,7 @@ Before deploying, ensure you have these files ready:
 
 ### Step 7: Configure Updates, Monitoring, and Logging
 
-1. **Health reporting**: Enhanced (recommended)       
+1. **Health reporting**: Enhanced (recommended)
 
 2. **Managed updates**: Enable (recommended)
    - Update level: Minor and patch

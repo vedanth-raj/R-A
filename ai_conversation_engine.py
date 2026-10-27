@@ -6,16 +6,13 @@ Provides natural, conversational AI interaction like Gemini AI
 import os
 import logging
 from typing import Dict, List, Optional, Tuple
-from config import GEMINI_MODEL
 from datetime import datetime
 
 try:
-    from google import genai
+    import google.genai as genai
     from google.genai import types
     GEMINI_AVAILABLE = True
 except ImportError:
-    genai = None
-    types = None
     GEMINI_AVAILABLE = False
 
 logger = logging.getLogger(__name__)
@@ -41,21 +38,18 @@ class AIConversationEngine:
         self._setup_gemini()
     
     def _setup_gemini(self):
-        """Setup Gemini AI client (google-genai SDK)."""
-        if GEMINI_AVAILABLE and genai:
+        """Setup Gemini AI client."""
+        if GEMINI_AVAILABLE:
             gemini_key = os.getenv('GEMINI_API_KEY')
             if gemini_key:
                 try:
                     self.gemini_client = genai.Client(api_key=gemini_key)
+                    self.gemini_model = "gemini-2.5-flash"  # Latest stable model
                     self.logger.info("AI Conversation Engine initialized with Gemini")
                 except Exception as e:
                     self.logger.warning(f"Failed to initialize Gemini: {e}")
-                    self.gemini_client = None
             else:
                 self.logger.warning("No Gemini API key found in environment")
-                self.gemini_client = None
-        else:
-            self.gemini_client = None
     
     def set_context(self, topic: str, papers: List[Dict], user_preferences: Dict = None):
         """Set the conversation context."""
@@ -99,9 +93,15 @@ AI ASSISTANT: """
         
         try:
             response = self.gemini_client.models.generate_content(
-                model=GEMINI_MODEL, contents=full_prompt
+                model=self.gemini_model,
+                contents=full_prompt,
+                config=types.GenerateContentConfig(
+                    temperature=0.8,  # Higher for more natural conversation
+                    max_output_tokens=1000
+                )
             )
-            ai_response = (response.text or "").strip()
+            
+            ai_response = response.text.strip()
             
             # Add AI response to history
             self.conversation_history.append({
@@ -139,17 +139,20 @@ AI ASSISTANT: """
             
             self.logger.info(f"Starting conversational generation for {section_type}")
             
-            kwargs = {"model": GEMINI_MODEL, "contents": prompt}
-            if types:
-                kwargs["config"] = types.GenerateContentConfig(
-                    temperature=0.7, max_output_tokens=2048
+            response = self.gemini_client.models.generate_content(
+                model=self.gemini_model,
+                contents=prompt,
+                config=types.GenerateContentConfig(
+                    temperature=0.7,
+                    max_output_tokens=800,
+                    timeout=30  # 30 second timeout
                 )
-            response = self.gemini_client.models.generate_content(**kwargs)
+            )
             
             elapsed = time.time() - start_time
             self.logger.info(f"Conversational generation completed in {elapsed:.2f} seconds")
             
-            full_response = (response.text or "").strip()
+            full_response = response.text.strip()
             
             # Try to separate explanation from content
             if "---DRAFT CONTENT---" in full_response:
@@ -204,14 +207,16 @@ Format:
 [Improved content]"""
         
         try:
-            kwargs = {"model": GEMINI_MODEL, "contents": prompt}
-            if types:
-                kwargs["config"] = types.GenerateContentConfig(
-                    temperature=0.8, max_output_tokens=1024
+            response = self.gemini_client.models.generate_content(
+                model=self.gemini_model,
+                contents=prompt,
+                config=types.GenerateContentConfig(
+                    temperature=0.8,
+                    max_output_tokens=1000  # Reduced from 1500 for speed
                 )
-            response = self.gemini_client.models.generate_content(**kwargs)
+            )
             
-            full_response = (response.text or "").strip()
+            full_response = response.text.strip()
             
             # Separate explanation from improved content
             if "---IMPROVED DRAFT---" in full_response:
@@ -254,14 +259,16 @@ For example:
 Ask questions relevant to a {section_type} section."""
         
         try:
-            kwargs = {"model": GEMINI_MODEL, "contents": prompt}
-            if types:
-                kwargs["config"] = types.GenerateContentConfig(
-                    temperature=0.9, max_output_tokens=512
+            response = self.gemini_client.models.generate_content(
+                model=self.gemini_model,
+                contents=prompt,
+                config=types.GenerateContentConfig(
+                    temperature=0.9,
+                    max_output_tokens=300
                 )
-            response = self.gemini_client.models.generate_content(**kwargs)
+            )
             
-            return (response.text or "").strip()
+            return response.text.strip()
             
         except Exception as e:
             self.logger.error(f"Clarification request failed: {e}")

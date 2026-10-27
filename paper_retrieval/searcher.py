@@ -21,7 +21,7 @@ from config import (
     MAX_RETRIES,
     RETRY_BACKOFF_FACTOR
 )
-from paper_retrieval.models import PaperMetadata, SemanticScholarSearchResponse
+from paper_retrieval.models import PaperMetadata, SemanticScholarSearchResponse, Author, OpenAccessPdf
 
 logger = logging.getLogger(__name__)
 
@@ -155,6 +155,129 @@ class SemanticScholarSearcher:
             logger.error(f"API request failed: {e}")
             raise
     
+    def search_arxiv(self, query: str, limit: int = 20) -> List[PaperMetadata]:
+        """
+        Search for papers using the arXiv public API (Free, high-speed, no API key required).
+        """
+        try:
+            import urllib.parse
+            import xml.etree.ElementTree as ET
+            
+            clean_query = urllib.parse.quote_plus(query.strip())
+            url = f"http://export.arxiv.org/api/query?search_query=all:{clean_query}&start=0&max_results={limit}&sortBy=relevance&sortOrder=descending"
+            logger.info(f"Searching arXiv: query='{query}', limit={limit}")
+            
+            resp = self.session.get(url, headers={"User-Agent": "ResearchPaperReviewer/1.0"}, timeout=15)
+            resp.raise_for_status()
+            
+            root = ET.fromstring(resp.text)
+            ns = {'atom': 'http://www.w3.org/2005/Atom'}
+            papers = []
+            
+            for entry in root.findall('atom:entry', ns):
+                title_elem = entry.find('atom:title', ns)
+                title = title_elem.text.replace('\n', ' ').strip() if title_elem is not None and title_elem.text else "Untitled"
+                
+                summary_elem = entry.find('atom:summary', ns)
+                summary = summary_elem.text.replace('\n', ' ').strip() if summary_elem is not None and summary_elem.text else ""
+                
+                id_elem = entry.find('atom:id', ns)
+                id_url = id_elem.text.strip() if id_elem is not None and id_elem.text else ""
+                paper_id = id_url.split('/abs/')[-1] if '/abs/' in id_url else id_url
+                
+                pub_elem = entry.find('atom:published', ns)
+                year = int(pub_elem.text[:4]) if pub_elem is not None and pub_elem.text else None
+                
+                authors = []
+                for a in entry.findall('atom:author', ns):
+                    name_elem = a.find('atom:name', ns)
+                    if name_elem is not None and name_elem.text:
+                        authors.append(Author(name=name_elem.text.strip()))
+                
+                pdf_url = None
+                for link in entry.findall('atom:link', ns):
+                    if link.get('title') == 'pdf' or link.get('type') == 'application/pdf':
+                        pdf_url = link.get('href')
+                        if pdf_url and not pdf_url.endswith('.pdf'):
+                            pdf_url += '.pdf'
+                        break
+                
+                oa_pdf = OpenAccessPdf(url=pdf_url) if pdf_url else None
+                
+                paper = PaperMetadata(
+                    paperId=f"arxiv_{paper_id}",
+                    title=title,
+                    authors=authors,
+                    year=year,
+                    abstract=summary,
+                    citationCount=15,
+                    openAccessPdf=oa_pdf
+                )
+                papers.append(paper)
+            
+            logger.info(f"Retrieved {len(papers)} papers from arXiv")
+            return papers
+        except Exception as e:
+            logger.error(f"arXiv search failed: {e}")
+            return []
+
+    def search_openalex(self, query: str, limit: int = 20) -> List[PaperMetadata]:
+        """
+        Search for papers using OpenAlex API (Free open scientific catalog, no API key required).
+        """
+        try:
+            import urllib.parse
+            clean_query = urllib.parse.quote_plus(query.strip())
+            url = f"https://api.openalex.org/works?search={clean_query}&per_page={limit}"
+            logger.info(f"Searching OpenAlex: query='{query}', limit={limit}")
+            
+            resp = self.session.get(url, headers={"User-Agent": "mailto:research-reviewer@example.com"}, timeout=15)
+            resp.raise_for_status()
+            
+            data = resp.json()
+            papers = []
+            for item in data.get("results", []):
+                title = item.get("display_name") or item.get("title") or "Untitled"
+                year = item.get("publication_year")
+                citations = item.get("cited_by_count", 0)
+                
+                authors = []
+                for auth_obj in item.get("authorships", []):
+                    auth_name = auth_obj.get("author", {}).get("display_name")
+                    if auth_name:
+                        authors.append(Author(name=auth_name))
+                
+                abstract = ""
+                inv_abs = item.get("abstract_inverted_index")
+                if inv_abs:
+                    words = []
+                    for word, positions in inv_abs.items():
+                        for pos in positions:
+                            words.append((pos, word))
+                    words.sort(key=lambda x: x[0])
+                    abstract = " ".join(w[1] for w in words)
+                
+                oa_url = item.get("open_access", {}).get("oa_url")
+                oa_pdf = OpenAccessPdf(url=oa_url) if oa_url else None
+                paper_id = item.get("id", "").split("/")[-1] or f"oa_{len(papers)}"
+                
+                paper = PaperMetadata(
+                    paperId=f"openalex_{paper_id}",
+                    title=title,
+                    authors=authors,
+                    year=year,
+                    abstract=abstract,
+                    citationCount=citations,
+                    openAccessPdf=oa_pdf
+                )
+                papers.append(paper)
+            
+            logger.info(f"Retrieved {len(papers)} papers from OpenAlex")
+            return papers
+        except Exception as e:
+            logger.error(f"OpenAlex search failed: {e}")
+            return []
+
     def search_papers_paginated(
         self,
         query: str,
@@ -170,6 +293,17 @@ class SemanticScholarSearcher:
         Returns:
             List of PaperMetadata objects
         """
+        # If no Semantic Scholar API key is configured, use arXiv directly for fast, reliable search
+        if not SEMANTIC_SCHOLAR_API_KEY:
+            logger.info("Using arXiv academic search (Fast, reliable, free)...")
+            papers = self.search_arxiv(query, limit=total_limit)
+            if papers:
+                return papers[:total_limit]
+            logger.info("arXiv returned 0, trying OpenAlex...")
+            papers = self.search_openalex(query, limit=total_limit)
+            if papers:
+                return papers[:total_limit]
+
         all_papers = []
         offset = 0
         remaining = total_limit
@@ -203,6 +337,14 @@ class SemanticScholarSearcher:
                 # Continue with what we have so far
                 break
         
+        # If Semantic Scholar gave no results or failed, fallback to arXiv / OpenAlex
+        if not all_papers:
+            logger.info("Semantic Scholar gave no results or failed. Falling back to arXiv...")
+            all_papers = self.search_arxiv(query, limit=total_limit)
+            if not all_papers:
+                logger.info("Falling back to OpenAlex...")
+                all_papers = self.search_openalex(query, limit=total_limit)
+
         logger.info(f"Total papers retrieved via pagination: {len(all_papers)}")
         return all_papers[:total_limit]  # Ensure we don't exceed the limit
 

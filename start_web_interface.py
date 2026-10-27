@@ -99,7 +99,7 @@ def main():
     try:
         # Import and run the web app
         from web_app import app, socketio
-        socketio.run(app, debug=False, host='0.0.0.0', port=5000)
+        socketio.run(app, debug=False, host='0.0.0.0', port=5000, allow_unsafe_werkzeug=True)
     except KeyboardInterrupt:
         print("\n👋 Shutting down AI Research Agent...")
     except Exception as e:

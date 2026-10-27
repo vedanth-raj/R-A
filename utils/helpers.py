@@ -107,11 +107,16 @@ def generate_pdf_filename(title: str, authors: Optional[list], year: Optional[in
 
 def ensure_directory(path: str) -> None:
     """
-    Ensure a directory exists, creating it if necessary.
+    Ensure a directory exists, creating it if necessary with full write permissions.
     
     Args:
         path: Directory path to ensure exists
     """
-    Path(path).mkdir(parents=True, exist_ok=True)
+    p = Path(path)
+    p.mkdir(parents=True, exist_ok=True)
+    try:
+        p.chmod(0o777)
+    except Exception:
+        pass
     logger.debug(f"Ensured directory exists: {path}")
 

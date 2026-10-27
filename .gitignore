@@ -38,14 +38,38 @@ ENV/
 *.swo
 *~
 
-# Data files (optional - uncomment if you don't want to track data)
-# data/
-# *.pdf
+# Downloaded papers and extracted texts
+data/papers/*.pdf
+data/extracted_texts/*
+Downloaded_pdfs/
+
+# Generated data and reports
+data/final_reports/test_results_*.json
+data/final_reports/workflow_results_*.json
+data/final_reports/final_report_*.md
+data/reviews/review_results_*.json
+data/revisions/revision_history_*.json
+data/papers/generated_draft.txt
 
 # Logs
 *.log
 
-# Ngrok
+# Deployment bundles and archives
+deploy-bundle*.zip
+*.zip
+
+# Ngrok and binaries
 ngrok.exe
 ngrok.zip
 ngrok/
+.ngrok.exe.old
+*.exe
+
+# Alternative interfaces (web_app.py is primary)
+enhanced_gradio_interface.py
+futuristic_flask_app.py
+futuristic_gradio_app.py
+gradio_interface.py
+lab_pulse_interface.py
+templates/enhanced_futuristic.html
+
