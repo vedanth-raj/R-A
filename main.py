@@ -26,7 +26,7 @@ from utils.helpers import ensure_directory
 logger = logging.getLogger(__name__)
 
 
-def save_metadata(papers: List[PaperMetadata], filepath: str) -> None:
+def save_metadata(papers: List[PaperMetadata], filepath: str, download_results: dict = None) -> None:
 
     ensure_directory(Path(filepath).parent)
     
@@ -37,6 +37,12 @@ def save_metadata(papers: List[PaperMetadata], filepath: str) -> None:
         # Add download status info
         paper_dict["hasOpenAccessPdf"] = paper.has_open_pdf()
         paper_dict["pdfUrl"] = paper.get_pdf_url()
+        if download_results and paper.paperId in download_results:
+            info = download_results[paper.paperId]
+            paper_dict["downloaded"] = info.get("downloaded", False)
+            paper_dict["filepath"] = info.get("filepath")
+            if paper_dict["filepath"]:
+                paper_dict["filename"] = Path(paper_dict["filepath"]).name
         papers_data.append(paper_dict)
     
     with open(filepath, 'w', encoding='utf-8') as f:
@@ -141,7 +147,7 @@ def main():
         
         # Step 4: Save metadata
         print("Saving metadata...")
-        save_metadata(selected_papers, METADATA_FILE)
+        save_metadata(selected_papers, METADATA_FILE, download_results)
         print(f"Metadata saved to {METADATA_FILE}\n")
         
         # Step 5: Generate draft if requested

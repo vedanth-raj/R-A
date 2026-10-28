@@ -88,16 +88,20 @@ class AIResearchAgent:
         
         try:
             import subprocess
+            import sys
             
-            cmd = ["python", "main.py", topic, "--max-papers", str(max_papers)]
-            result = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
+            cmd = [sys.executable, "main.py", topic, "--max-papers", str(max_papers)]
+            result = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
             
             if result.returncode == 0:
                 self.logger.info("Paper search completed successfully")
                 return {"success": True, "message": "Search completed"}
             else:
-                self.logger.error(f"Search failed: {result.stderr}")
-                return {"success": False, "error": result.stderr}
+                err_lines = [l for l in (result.stderr or "").splitlines() if "RequestsDependencyWarning" not in l and "warnings.warn" not in l]
+                out_lines = [l for l in (result.stdout or "").splitlines() if "RequestsDependencyWarning" not in l and "warnings.warn" not in l]
+                clean_err = "\n".join(err_lines).strip() or "\n".join(out_lines).strip() or "Search failed"
+                self.logger.error(f"Search failed: {clean_err}")
+                return {"success": False, "error": clean_err}
                 
         except Exception as e:
             self.logger.error(f"Error searching papers: {e}")

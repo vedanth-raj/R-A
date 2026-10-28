@@ -35,11 +35,11 @@ class SemanticScholarSearcher:
         """Initialize the searcher with a session configured for retries."""
         self.session = requests.Session()
         
-        # Configure retry strategy
+        # Configure retry strategy (avoid retrying 429 so fallback occurs immediately)
         retry_strategy = Retry(
-            total=MAX_RETRIES,
+            total=MAX_RETRIES if SEMANTIC_SCHOLAR_API_KEY else 1,
             backoff_factor=RETRY_BACKOFF_FACTOR,
-            status_forcelist=[429, 500, 502, 503, 504],  # Rate limit and server errors
+            status_forcelist=[500, 502, 503, 504],
             allowed_methods=["GET"]
         )
         adapter = HTTPAdapter(max_retries=retry_strategy)
@@ -63,7 +63,8 @@ class SemanticScholarSearcher:
         self,
         query: str,
         limit: int = MAX_RESULTS_PER_REQUEST,
-        offset: int = 0
+        offset: int = 0,
+        max_results: Optional[int] = None
     ) -> SemanticScholarSearchResponse:
         """
         Search for papers on Semantic Scholar.
@@ -72,6 +73,7 @@ class SemanticScholarSearcher:
             query: Search query string
             limit: Maximum number of results (up to 100)
             offset: Offset for pagination
+            max_results: Alias for limit
             
         Returns:
             SemanticScholarSearchResponse with paper data
@@ -79,6 +81,9 @@ class SemanticScholarSearcher:
         Raises:
             requests.RequestException: If API request fails
         """
+        if max_results is not None:
+            limit = max_results
+
         # Clamp limit to API maximum
         limit = min(limit, MAX_RESULTS_PER_REQUEST)
         
@@ -164,7 +169,7 @@ class SemanticScholarSearcher:
             import xml.etree.ElementTree as ET
             
             clean_query = urllib.parse.quote_plus(query.strip())
-            url = f"http://export.arxiv.org/api/query?search_query=all:{clean_query}&start=0&max_results={limit}&sortBy=relevance&sortOrder=descending"
+            url = f"https://export.arxiv.org/api/query?search_query=all:{clean_query}&start=0&max_results={limit}&sortBy=relevance&sortOrder=descending"
             logger.info(f"Searching arXiv: query='{query}', limit={limit}")
             
             resp = self.session.get(url, headers={"User-Agent": "ResearchPaperReviewer/1.0"}, timeout=15)

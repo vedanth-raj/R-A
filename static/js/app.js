@@ -34,8 +34,38 @@ class AIResearchAgent {
         // Search form
         document.getElementById('searchForm').addEventListener('submit', (e) => {
             e.preventDefault();
+            this.hideLiveSearchDropdown();
             this.searchPapers();
         });
+
+        // Instant Live Search while typing topics
+        const searchInput = document.getElementById('searchQuery');
+        if (searchInput) {
+            let debounceTimer = null;
+            searchInput.addEventListener('input', (e) => {
+                const query = e.target.value.trim();
+                clearTimeout(debounceTimer);
+                if (query.length < 2) {
+                    this.hideLiveSearchDropdown();
+                    return;
+                }
+                debounceTimer = setTimeout(() => {
+                    this.fetchLiveSearchResults(query);
+                }, 350);
+            });
+
+            searchInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    this.hideLiveSearchDropdown();
+                }
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.live-search-wrapper')) {
+                    this.hideLiveSearchDropdown();
+                }
+            });
+        }
 
         // Extract buttons
         const extractSelectedBtn = document.getElementById('extractSelectedBtn');
@@ -214,6 +244,27 @@ class AIResearchAgent {
             return;
         }
 
+        this.hideLiveSearchDropdown();
+
+        // Immediately reveal Search Results container below with active live loading state
+        const resultsContainer = document.getElementById('searchResultsContainer');
+        const resultsList = document.getElementById('searchResultsList');
+        const liveBadge = document.getElementById('liveResultsBadge');
+        if (resultsContainer && resultsList) {
+            resultsContainer.style.display = 'block';
+            if (liveBadge) liveBadge.style.display = 'inline-flex';
+            resultsList.innerHTML = `
+                <div class="live-search-loading-box">
+                    <div class="live-pulse-spinner"><i class="fas fa-circle-notch fa-spin"></i></div>
+                    <div class="live-search-loading-text">
+                        <div class="live-title">Searching for topic: <strong>${this.escapeHtml(query)}</strong></div>
+                        <div class="live-subtitle">Querying academic databases (arXiv & Semantic Scholar)... Live results will appear below momentarily.</div>
+                    </div>
+                </div>
+            `;
+            resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
         try {
             this.showProgress('search', 'Starting search...');
             
@@ -224,8 +275,11 @@ class AIResearchAgent {
                 },
                 body: JSON.stringify({
                     query,
-                    maxPapers: parseInt(maxPapers),
+                    max_papers: parseInt(maxPapers) || 5,
+                    maxPapers: parseInt(maxPapers) || 5,
+                    year_start: yearStart ? parseInt(yearStart) : null,
                     yearStart: yearStart ? parseInt(yearStart) : null,
+                    year_end: yearEnd ? parseInt(yearEnd) : null,
                     yearEnd: yearEnd ? parseInt(yearEnd) : null
                 })
             });
@@ -235,6 +289,7 @@ class AIResearchAgent {
             if (data.status === 'started') {
                 this.activeOperations[data.operation_id] = 'search';
                 this.showNotification('Search started successfully', 'success');
+                this.pollOperation(data.operation_id, 'search');
             } else {
                 this.hideProgress('search');
                 this.showNotification('Failed to start search', 'error');
@@ -325,6 +380,114 @@ class AIResearchAgent {
         });
     }
 
+    async fetchLiveSearchResults(query) {
+        const dropdown = document.getElementById('liveSearchResultsDropdown');
+        const list = document.getElementById('liveSearchResultsList');
+        const status = document.getElementById('liveSearchStatus');
+        if (!dropdown || !list) return;
+
+        dropdown.style.display = 'block';
+        if (status) status.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Searching...';
+        list.innerHTML = `<div class="live-search-item-loading">Searching papers for "<strong>${this.escapeHtml(query)}</strong>"...</div>`;
+
+        try {
+            const response = await fetch(`/api/live_search?query=${encodeURIComponent(query)}`);
+            const data = await response.json();
+            
+            // Check if user changed the query in the meantime
+            const currentQuery = document.getElementById('searchQuery').value.trim();
+            if (currentQuery && !currentQuery.toLowerCase().startsWith(query.toLowerCase()) && currentQuery !== query) {
+                return;
+            }
+
+            if (status) status.innerHTML = `${(data.results || []).length} results`;
+
+            if (!data.results || data.results.length === 0) {
+                list.innerHTML = '<div class="live-search-item-empty"><i class="fas fa-info-circle"></i> No instant matches found. Click <strong>Search Papers</strong> for exhaustive academic search.</div>';
+                return;
+            }
+
+            list.innerHTML = '';
+            data.results.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'live-search-item';
+                itemDiv.innerHTML = `
+                    <div class="live-item-content">
+                        <div class="live-item-title">${this.escapeHtml(item.title)}</div>
+                        <div class="live-item-meta">
+                            <span><i class="far fa-user"></i> ${this.escapeHtml(item.authors || 'Unknown')}</span>
+                            <span><i class="far fa-calendar-alt"></i> ${item.year || 'n.d.'}</span>
+                            ${item.citations ? `<span><i class="fas fa-quote-right"></i> ${item.citations} citations</span>` : ''}
+                        </div>
+                        ${item.abstract ? `<div class="live-item-abstract">${this.escapeHtml(item.abstract)}</div>` : ''}
+                    </div>
+                    <div class="live-item-actions">
+                        <button type="button" class="btn btn-sm btn-primary" title="Search topic">
+                            <i class="fas fa-search"></i> Select
+                        </button>
+                    </div>
+                `;
+
+                itemDiv.addEventListener('click', () => {
+                    document.getElementById('searchQuery').value = item.title;
+                    this.hideLiveSearchDropdown();
+                    this.searchPapers();
+                });
+
+                list.appendChild(itemDiv);
+            });
+        } catch (err) {
+            console.warn('Live search error:', err);
+            if (list) list.innerHTML = '<div class="live-search-item-empty">Instant preview unavailable. Click "Search Papers" below.</div>';
+        }
+    }
+
+    hideLiveSearchDropdown() {
+        const dropdown = document.getElementById('liveSearchResultsDropdown');
+        if (dropdown) dropdown.style.display = 'none';
+    }
+
+    pollOperation(operationId, operationType) {
+        // Fallback polling in case WebSockets fail or disconnect
+        const pollInterval = setInterval(async () => {
+            if (!this.activeOperations[operationId]) {
+                clearInterval(pollInterval);
+                return;
+            }
+            try {
+                const response = await fetch(`/api/operation_status/${operationId}`);
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.status === 'running') {
+                        if (data.message) {
+                            this.updateProgress(operationType, data.progress || 50, data.message);
+                        }
+                        if (data.papers && data.papers.length > 0 && operationType === 'search') {
+                            this.displaySearchResults(data.papers);
+                            const badge = document.getElementById('liveResultsBadge');
+                            if (badge) badge.style.display = 'inline-flex';
+                        }
+                    } else if (data.status === 'completed' || data.status === 'error') {
+                        clearInterval(pollInterval);
+                        const badge = document.getElementById('liveResultsBadge');
+                        if (badge) badge.style.display = 'none';
+                        this.updateOperationProgress({
+                            operation_id: operationId,
+                            status: data.status,
+                            message: data.status === 'completed' ? (data.message || 'Operation completed') : (data.error || 'Operation failed'),
+                            progress: 100,
+                            result: data.result,
+                            papers: data.papers,
+                            error: data.error
+                        });
+                    }
+                }
+            } catch (err) {
+                console.warn('Polling error:', err);
+            }
+        }, 2000);
+    }
+
     async loadSearchResults() {
         try {
             const response = await fetch('/api/get_search_results');
@@ -340,7 +503,9 @@ class AIResearchAgent {
         const resultsContainer = document.getElementById('searchResultsContainer');
         const resultsList = document.getElementById('searchResultsList');
         
-        if (papers.length === 0) {
+        if (!resultsContainer || !resultsList) return;
+
+        if (!papers || papers.length === 0) {
             resultsContainer.style.display = 'none';
             return;
         }
@@ -352,18 +517,50 @@ class AIResearchAgent {
             const paperItem = document.createElement('div');
             paperItem.className = 'paper-item';
             
+            const title = paper.title || paper.name || 'Untitled Paper';
+            const authors = typeof paper.authors === 'string' ? paper.authors : 
+                           (Array.isArray(paper.authors) ? paper.authors.map(a => typeof a === 'object' ? (a.name || '') : a).filter(Boolean).join(', ') : 'Unknown Authors');
+            
+            const metaParts = [];
+            if (authors) metaParts.push(`<strong>Authors:</strong> ${authors}`);
+            if (paper.year) metaParts.push(`<strong>Year:</strong> ${paper.year}`);
+            if (paper.citations !== undefined && paper.citations !== null) metaParts.push(`<strong>Citations:</strong> ${paper.citations}`);
+            if (paper.size) metaParts.push(`<strong>Size:</strong> ${(paper.size / 1024).toFixed(1)} KB`);
+
+            const isDownloaded = Boolean(paper.downloaded || paper.file || (paper.filename && paper.filename.endsWith('.pdf')));
+            let statusBadge = '';
+            if (isDownloaded) {
+                statusBadge = '<span class="live-badge badge-ready"><i class="fas fa-check-circle"></i> PDF Ready</span>';
+            } else if (paper.has_pdf) {
+                statusBadge = '<span class="live-badge badge-downloading"><i class="fas fa-spinner fa-spin"></i> Fetching PDF...</span>';
+            } else {
+                statusBadge = '<span class="live-badge badge-meta"><i class="fas fa-book-open"></i> Reference Only</span>';
+            }
+            
+            const abstractHtml = paper.abstract ? `<p class="paper-abstract" style="color: var(--text-secondary, #94a3b8); font-size: 0.875rem; margin-top: 0.5rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">${paper.abstract}</p>` : '';
+            
+            const fileTarget = paper.filename || paper.file || paper.name || '';
+            const downloadBtn = fileTarget ? `
+                <button class="btn btn-sm btn-primary" onclick="window.downloadPaper('${fileTarget.replace(/\\/g, '/')}')">
+                    <i class="fas fa-download"></i> Download
+                </button>
+            ` : (paper.pdf_url ? `
+                <a class="btn btn-sm btn-primary" href="${paper.pdf_url}" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> View PDF
+                </a>
+            ` : '');
+            
             paperItem.innerHTML = `
-                <div class="paper-info">
-                    <div class="paper-title">${paper.name}</div>
-                    <div class="paper-meta">
-                        Size: ${(paper.size / 1024).toFixed(1)} KB | 
-                        Modified: ${new Date(paper.modified * 1000).toLocaleDateString()}
+                <div class="paper-info" style="flex: 1;">
+                    <div style="margin-bottom: 0.35rem;">${statusBadge}</div>
+                    <div class="paper-title" style="font-weight: 600; font-size: 1.05rem; margin-bottom: 0.25rem;">${title}</div>
+                    <div class="paper-meta" style="font-size: 0.85rem; color: var(--text-muted, #64748b);">
+                        ${metaParts.join(' | ')}
                     </div>
+                    ${abstractHtml}
                 </div>
-                <div class="paper-actions">
-                    <button class="btn btn-sm btn-primary" onclick="window.downloadPaper('${(paper.filename || paper.name || paper.file || '').replace(/\\/g, '/')}')">
-                        <i class="fas fa-download"></i> Download
-                    </button>
+                <div class="paper-actions" style="margin-left: 1rem; align-self: flex-start;">
+                    ${downloadBtn}
                 </div>
             `;
             
@@ -870,7 +1067,14 @@ class AIResearchAgent {
         
         if (data.status === 'running') {
             this.updateProgress(operationType, data.progress || 50, data.message);
+            if (data.papers && data.papers.length > 0 && operationType === 'search') {
+                this.displaySearchResults(data.papers);
+                const badge = document.getElementById('liveResultsBadge');
+                if (badge) badge.style.display = 'inline-flex';
+            }
         } else if (data.status === 'completed') {
+            const badge = document.getElementById('liveResultsBadge');
+            if (badge) badge.style.display = 'none';
             this.hideProgress(operationType);
             this.showNotification(data.message, 'success');
             this.handleOperationResult(operationType, data.result);
@@ -1492,23 +1696,29 @@ class AIResearchAgent {
     }
 
     displayResults(result) {
+        if (result && result.papers && Array.isArray(result.papers) && result.papers.length > 0) {
+            this.displaySearchResults(result.papers);
+        } else {
+            this.loadSearchResults();
+        }
+        
         const resultsContent = document.getElementById('resultsContent');
-        
-        let html = `
-            <div class="result-item">
-                <div class="result-header">
-                    <div class="result-title">Operation Completed</div>
-                    <div class="result-meta">${new Date().toLocaleString()}</div>
-                </div>
-                <div class="result-content">
-                    <pre style="background: var(--bg-secondary); padding: 1rem; border-radius: 4px; overflow-x: auto;">
+        if (resultsContent) {
+            let html = `
+                <div class="result-item">
+                    <div class="result-header">
+                        <div class="result-title">Operation Completed</div>
+                        <div class="result-meta">${new Date().toLocaleString()}</div>
+                    </div>
+                    <div class="result-content">
+                        <pre style="background: var(--bg-secondary); padding: 1rem; border-radius: 4px; overflow-x: auto;">
 ${JSON.stringify(result, null, 2)}
-                    </pre>
+                        </pre>
+                    </div>
                 </div>
-            </div>
-        `;
-        
-        resultsContent.innerHTML = html;
+            `;
+            resultsContent.innerHTML = html;
+        }
     }
 
     showProgress(type, message) {

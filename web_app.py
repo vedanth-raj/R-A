@@ -71,51 +71,244 @@ class WebInterface:
         self.draft_generator = LengthyDraftGenerator()
         self.ai_conversation = AIConversationEngine()  # New conversational AI
         
-    def search_papers(self, query, max_papers=5, year_start=None, year_end=None, session_id=None):
-        """Search for papers with optimized performance"""
+    def search_papers(self, query, max_papers=5, year_start=None, year_end=None, session_id=None, progress_callback=None):
+        """Search for papers with optimized performance, live streaming, and rich metadata extraction"""
+        try:
+            max_papers = max(1, min(int(max_papers), 20))
+        except (ValueError, TypeError):
+            max_papers = 5
+
+        # 1. Try fast native retrieval first for instantaneous live results
+        try:
+            from paper_retrieval.searcher import SemanticScholarSearcher
+            from paper_retrieval.selector import PaperSelector
+            from paper_retrieval.downloader import PDFDownloader
+            from paper_retrieval.models import PaperMetadata
+            from utils.helpers import ensure_directory, generate_pdf_filename
+            from config import METADATA_FILE, PAPERS_DIR, INITIAL_SEARCH_LIMIT
+            from main import save_metadata
+
+            if progress_callback:
+                progress_callback(15, f"Searching academic sources for: '{query}'...")
+
+            searcher = SemanticScholarSearcher()
+            limit = max(INITIAL_SEARCH_LIMIT, max_papers * 2)
+            papers = searcher.search_papers_paginated(query, total_limit=limit)
+
+            # Apply year filter if requested
+            if year_start or year_end:
+                filtered = []
+                for p in papers:
+                    if p.year:
+                        if year_start and p.year < year_start:
+                            continue
+                        if year_end and p.year > year_end:
+                            continue
+                    filtered.append(p)
+                if filtered:
+                    papers = filtered
+
+            if not papers:
+                return {"success": False, "error": f"No papers found for topic: '{query}'"}
+
+            if progress_callback:
+                progress_callback(30, f"Retrieved {len(papers)} candidate papers. Selecting top {max_papers}...")
+
+            selector = PaperSelector()
+            selected_papers = selector.select_papers(papers, max_papers=max_papers)
+
+            if not selected_papers:
+                return {"success": False, "error": "No papers selected from search results."}
+
+            papers_dir = Path("data/papers")
+            ensure_directory(papers_dir)
+
+            # Build initial papers list immediately so user sees live results right away!
+            papers_list = []
+            for item in selected_papers:
+                paper_title = item.title or "Untitled Paper"
+                authors_list = item.authors or []
+                author_names = ", ".join([
+                    a.name if hasattr(a, 'name') and a.name else (a.get('name', '') if isinstance(a, dict) else str(a))
+                    for a in authors_list if a
+                ])
+                expected = generate_pdf_filename(paper_title, authors_list, item.year)
+                already_exists = (papers_dir / expected).exists()
+                has_pdf = item.has_open_pdf() if hasattr(item, 'has_open_pdf') else True
+                pdf_url = item.get_pdf_url() if hasattr(item, 'get_pdf_url') else None
+
+                file_size = (papers_dir / expected).stat().st_size if already_exists else 0
+                papers_list.append({
+                    "name": paper_title,
+                    "title": paper_title,
+                    "authors": author_names,
+                    "year": item.year or "n.d.",
+                    "abstract": item.abstract or "",
+                    "citations": getattr(item, 'citationCount', 0) or 0,
+                    "file": expected if already_exists else "",
+                    "filename": expected if already_exists else "",
+                    "size": file_size,
+                    "modified": time.time(),
+                    "has_pdf": has_pdf,
+                    "pdf_url": pdf_url,
+                    "downloaded": already_exists
+                })
+
+            # Emit initial live results to the UI!
+            if progress_callback:
+                progress_callback(50, f"Found {len(papers_list)} papers! Displaying live results below & downloading PDFs...", papers=papers_list)
+
+            # Download open-access PDFs
+            downloader = PDFDownloader()
+            download_results = {}
+            for i, paper in enumerate(selected_papers):
+                if progress_callback:
+                    progress_callback(
+                        50 + int((i / len(selected_papers)) * 45),
+                        f"Downloading PDF {i+1}/{len(selected_papers)}: {paper.title[:35]}...",
+                        papers=papers_list
+                    )
+
+                try:
+                    filepath = downloader.download_pdf(paper)
+                    downloaded = filepath is not None and Path(filepath).exists()
+                    download_results[paper.paperId] = {
+                        "downloaded": downloaded,
+                        "filepath": filepath,
+                        "error": None if downloaded else "Download failed or no open-access PDF"
+                    }
+                    if downloaded:
+                        fname = Path(filepath).name
+                        papers_list[i]["file"] = fname
+                        papers_list[i]["filename"] = fname
+                        papers_list[i]["downloaded"] = True
+                        papers_list[i]["size"] = Path(filepath).stat().st_size
+                except Exception as dl_err:
+                    download_results[paper.paperId] = {
+                        "downloaded": False,
+                        "filepath": None,
+                        "error": str(dl_err)
+                    }
+
+            # Save metadata
+            try:
+                save_metadata(selected_papers, METADATA_FILE, download_results)
+            except Exception as sm_err:
+                print(f"Warning saving metadata: {sm_err}")
+
+            if session_id:
+                session_search_results[session_id] = papers_list
+            self.last_search_results = papers_list
+
+            if progress_callback:
+                progress_callback(100, f"Successfully retrieved {len(papers_list)} papers", papers=papers_list)
+
+            return {
+                "success": True,
+                "message": f"Successfully retrieved {len(papers_list)} papers",
+                "papers": papers_list,
+                "count": len(papers_list)
+            }
+
+        except Exception as fast_search_err:
+            print(f"Direct search encountered an issue, falling back to subprocess: {fast_search_err}")
+
+        # 2. Subprocess fallback
         try:
             import subprocess
-            
-            # main.py supports: topic, --max-papers, --randomize, --diversity (no year filters)
             import sys
-            cmd = [sys.executable, "main.py", query, "--max-papers", str(max_papers)]
-            # year_start/year_end not passed - main.py does not support them yet
             
-            # Add timeout and optimize execution
+            cmd = [sys.executable, "main.py", query, "--max-papers", str(max_papers)]
+            
+            # 120 second timeout for searching and downloading PDFs
             result = subprocess.run(
                 cmd, 
                 capture_output=True, 
                 text=True,
-                timeout=60,  # 60 second timeout
+                timeout=120,
                 cwd=os.getcwd()
             )
             
             if result.returncode == 0:
-                # Store search results for this session
-                if session_id:
-                    # Get the newly downloaded papers
+                papers = []
+                metadata_file = Path("data/selected_papers.json")
+                if metadata_file.exists():
+                    try:
+                        with open(metadata_file, "r", encoding="utf-8") as f:
+                            meta_list = json.load(f)
+                            for item in meta_list:
+                                paper_title = item.get("title") or "Untitled Paper"
+                                authors_list = item.get("authors", [])
+                                author_names = ", ".join([
+                                    a.get("name", "") if isinstance(a, dict) else str(a)
+                                    for a in authors_list if a
+                                ])
+                                filename = item.get("filename")
+                                if not filename:
+                                    from utils.helpers import generate_pdf_filename
+                                    expected = generate_pdf_filename(paper_title, item.get("authors"), item.get("year"))
+                                    if (Path("data/papers") / expected).exists():
+                                        filename = expected
+                                    else:
+                                        filename = f"{item.get('paperId', 'paper')}.pdf"
+                                
+                                file_size = 0
+                                pdf_path = Path("data/papers") / filename
+                                if pdf_path.exists():
+                                    file_size = pdf_path.stat().st_size
+                                
+                                papers.append({
+                                    "name": paper_title,
+                                    "title": paper_title,
+                                    "authors": author_names,
+                                    "year": item.get("year"),
+                                    "abstract": item.get("abstract", ""),
+                                    "citations": item.get("citationCount", 0),
+                                    "file": filename,
+                                    "filename": filename,
+                                    "size": file_size,
+                                    "modified": time.time(),
+                                    "has_pdf": item.get("hasOpenAccessPdf", True),
+                                    "pdf_url": item.get("pdfUrl") or (item.get("openAccessPdf", {}) or {}).get("url")
+                                })
+                    except Exception as e:
+                        print(f"Warning: Failed to parse selected_papers.json: {e}")
+                
+                # Fallback to scanning data/papers/*.pdf if metadata was not loaded
+                if not papers:
                     papers_dir = Path("data/papers")
                     if papers_dir.exists():
-                        papers = []
-                        for file_path in papers_dir.glob("*.pdf"):
+                        pdf_files = sorted(papers_dir.glob("*.pdf"), key=lambda x: x.stat().st_mtime, reverse=True)[:max_papers]
+                        for file_path in pdf_files:
                             paper_name = file_path.stem
                             papers.append({
                                 "name": paper_name,
+                                "title": paper_name,
                                 "file": file_path.name,
+                                "filename": file_path.name,
                                 "size": file_path.stat().st_size,
-                                "modified": file_path.stat().st_mtime,
-                                "filename": file_path.name
+                                "modified": file_path.stat().st_mtime
                             })
-                        # Store only papers from this search (sorted by modified time, take most recent)
-                        recent_papers = sorted(papers, key=lambda x: x["modified"], reverse=True)[:max_papers]
-                        session_search_results[session_id] = recent_papers
                 
-                return {"success": True, "message": "Search completed successfully"}
+                if session_id:
+                    session_search_results[session_id] = papers
+                self.last_search_results = papers
+                
+                return {
+                    "success": True,
+                    "message": f"Successfully retrieved {len(papers)} papers",
+                    "papers": papers,
+                    "count": len(papers)
+                }
             else:
-                return {"success": False, "error": result.stderr}
+                # Clean warnings from stderr/stdout
+                err_lines = [l for l in (result.stderr or "").splitlines() if "RequestsDependencyWarning" not in l and "warnings.warn" not in l]
+                out_lines = [l for l in (result.stdout or "").splitlines() if "RequestsDependencyWarning" not in l and "warnings.warn" not in l]
+                clean_error = "\n".join(err_lines).strip() or "\n".join(out_lines).strip() or "Search process failed"
+                return {"success": False, "error": clean_error}
                 
         except subprocess.TimeoutExpired:
-            return {"success": False, "error": "Search timed out. Please try again."}
+            return {"success": False, "error": "Search timed out. Please try with fewer papers or another topic."}
         except Exception as e:
             return {"success": False, "error": str(e)}
     
@@ -179,14 +372,52 @@ class WebInterface:
             return {"papers": [], "error": str(e)}
     
     def get_search_results(self, session_id=None):
-        """Get recent search results for the current session"""
+        """Get recent search results for the current session or fallback to latest search"""
         try:
-            # Return session-specific search results
-            if session_id and session_id in session_search_results:
+            if session_id and session_id in session_search_results and session_search_results[session_id]:
                 return {"papers": session_search_results[session_id]}
-            else:
-                # Return empty for new sessions
-                return {"papers": []}
+            if hasattr(self, 'last_search_results') and self.last_search_results:
+                return {"papers": self.last_search_results}
+            metadata_file = Path("data/selected_papers.json")
+            if metadata_file.exists():
+                with open(metadata_file, 'r', encoding='utf-8') as f:
+                    meta_list = json.load(f)
+                    papers = []
+                    for item in meta_list:
+                        paper_title = item.get("title") or "Untitled Paper"
+                        authors_list = item.get("authors", [])
+                        author_names = ", ".join([
+                            a.get("name", "") if isinstance(a, dict) else str(a)
+                            for a in authors_list if a
+                        ])
+                        filename = item.get("filename")
+                        if not filename:
+                            from utils.helpers import generate_pdf_filename
+                            expected = generate_pdf_filename(paper_title, item.get("authors"), item.get("year"))
+                            if (Path("data/papers") / expected).exists():
+                                filename = expected
+                            else:
+                                filename = f"{item.get('paperId', 'paper')}.pdf"
+                        file_size = 0
+                        pdf_path = Path("data/papers") / filename
+                        if pdf_path.exists():
+                            file_size = pdf_path.stat().st_size
+                        papers.append({
+                            "name": paper_title,
+                            "title": paper_title,
+                            "authors": author_names,
+                            "year": item.get("year"),
+                            "abstract": item.get("abstract", ""),
+                            "citations": item.get("citationCount", 0),
+                            "file": filename,
+                            "filename": filename,
+                            "size": file_size,
+                            "has_pdf": item.get("hasOpenAccessPdf", True),
+                            "pdf_url": item.get("pdfUrl")
+                        })
+                    if papers:
+                        return {"papers": papers}
+            return {"papers": []}
         except Exception as e:
             return {"papers": [], "error": str(e)}
     
@@ -386,14 +617,58 @@ def index():
         session['session_id'] = f"session_{int(time.time())}_{os.urandom(4).hex()}"
     return render_template('index.html')
 
+@app.route('/api/live_search', methods=['GET', 'POST'])
+def live_search():
+    """Fast live search endpoint providing instant results while typing a topic"""
+    query = request.args.get('query') or (request.json or {}).get('query', '')
+    query = query.strip()
+    if not query or len(query) < 2:
+        return jsonify({"results": []})
+    
+    try:
+        from paper_retrieval.searcher import SemanticScholarSearcher
+        searcher = SemanticScholarSearcher()
+        # Fast limit of 5 papers for instant typing response
+        papers = searcher.search_papers_paginated(query, total_limit=5)
+        
+        results = []
+        for p in papers:
+            title = p.title or "Untitled"
+            authors_list = p.authors or []
+            authors_str = ", ".join([
+                a.name if hasattr(a, 'name') and a.name else (a.get('name', '') if isinstance(a, dict) else str(a))
+                for a in authors_list[:3]
+            ])
+            if len(authors_list) > 3:
+                authors_str += " et al."
+            
+            results.append({
+                "title": title,
+                "authors": authors_str or "Unknown Authors",
+                "year": p.year or "n.d.",
+                "citations": getattr(p, 'citationCount', 0) or 0,
+                "abstract": (p.abstract or "")[:180] + ("..." if p.abstract and len(p.abstract) > 180 else ""),
+                "has_pdf": p.has_open_pdf() if hasattr(p, 'has_open_pdf') else False,
+                "pdf_url": p.get_pdf_url() if hasattr(p, 'get_pdf_url') else None
+            })
+            
+        return jsonify({"results": results, "query": query})
+    except Exception as e:
+        print(f"Error in live_search: {e}")
+        return jsonify({"results": [], "error": str(e)})
+
 @app.route('/api/search_papers', methods=['POST'])
 def search_papers():
-    """Search for papers API endpoint"""
-    data = request.json
+    """Search for papers API endpoint with real-time live streaming"""
+    data = request.json or {}
     query = data.get('query', '')
-    max_papers = data.get('max_papers', 5)
-    year_start = data.get('year_start')
-    year_end = data.get('year_end')
+    max_papers = data.get('max_papers') or data.get('maxPapers') or 5
+    try:
+        max_papers = int(max_papers)
+    except (ValueError, TypeError):
+        max_papers = 5
+    year_start = data.get('year_start') or data.get('yearStart')
+    year_end = data.get('year_end') or data.get('yearEnd')
     
     # Get or create session ID
     session_id = session.get('session_id')
@@ -402,31 +677,46 @@ def search_papers():
         session['session_id'] = session_id
     
     operation_id = f"search_{int(time.time())}"
-    active_operations[operation_id] = {"status": "running", "progress": 0}
+    active_operations[operation_id] = {"status": "running", "progress": 0, "papers": []}
     
     def run_search():
         try:
-            socketio.emit('operation_update', {
-                'operation_id': operation_id,
-                'status': 'running',
-                'message': f'Searching for papers: {query}',
-                'progress': 10
-            })
+            def progress_callback(progress, message, papers=None):
+                active_operations[operation_id] = {
+                    "status": "running",
+                    "progress": progress,
+                    "message": message,
+                    "papers": papers or active_operations[operation_id].get("papers", [])
+                }
+                update_payload = {
+                    'operation_id': operation_id,
+                    'status': 'running',
+                    'message': message,
+                    'progress': progress
+                }
+                if papers is not None:
+                    update_payload['papers'] = papers
+                socketio.emit('operation_update', update_payload)
+
+            progress_callback(10, f'Searching for papers: {query}')
             
-            result = web_interface.search_papers(query, max_papers, year_start, year_end, session_id)
+            result = web_interface.search_papers(query, max_papers, year_start, year_end, session_id, progress_callback=progress_callback)
             
-            if result["success"]:
+            if result.get("success"):
+                final_papers = result.get("papers", [])
                 active_operations[operation_id] = {
                     "status": "completed",
                     "progress": 100,
-                    "result": result
+                    "result": result,
+                    "papers": final_papers
                 }
                 socketio.emit('operation_update', {
                     'operation_id': operation_id,
                     'status': 'completed',
-                    'message': 'Search completed successfully',
+                    'message': result.get('message', 'Search completed successfully'),
                     'progress': 100,
-                    'result': result
+                    'result': result,
+                    'papers': final_papers
                 })
             else:
                 active_operations[operation_id] = {
